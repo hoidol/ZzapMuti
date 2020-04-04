@@ -50,8 +50,8 @@ public class UnitManager : MonoBehaviour
 
     public Unit CombineUnit(Unit _tUnit, Unit _mUnit) // 유닛 병합
     {
-        
 
+        return null;
     }
 
 
