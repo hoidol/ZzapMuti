@@ -26,11 +26,11 @@ public class DataManager : MonoBehaviour
         _unitDataContainer = JsonUtility.FromJson<UnitDataContainer>(_unitDataJStr);
     }
 
-    public UnitData GetUnitDataWithUnitName(string _uName)
+    public UnitData GetUnitDataWithUnitIdx(string _uIdx)
     {
         for(int i = 0; i < _unitDataContainer.UnitData.Length; i++)
         {
-            if (_unitDataContainer.UnitData[i].UnitName.Equals(_uName))
+            if (_unitDataContainer.UnitData[i].UnitIdx.Equals(_uIdx))
             {
                 return _unitDataContainer.UnitData[i];
             }
