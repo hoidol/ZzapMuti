@@ -4,10 +4,34 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public TeamType _teamType;
+    [SerializeField] TeamType _teamType;
+    public TeamType _TeamType
+    {
+        get { return _teamType; }
+    }
+
+    [SerializeField] private float _maxHp;
+    public float _MaxHp
+    {
+        get { return _maxHp; }
+    }
+
+    private float _hp;
+    public float _Hp
+    {
+        get { return _hp; }
+    }
+
+
+    public void Init(TeamType _teamTy)
+    {
+        _teamType = _teamTy;
+        _maxHp = 50;
+        _hp = _maxHp;
+    }
 }
 public enum TeamType
 {
-    Rad,
-        Blue
+    Red,
+    Blue
 }

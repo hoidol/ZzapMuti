@@ -5,7 +5,10 @@ using UnityEngine;
 public class TileManager : MonoBehaviour
 {
     private static TileManager _instance;
-    public static TileManager _Instance;
+    public static TileManager _Instance
+    {
+        get { return _instance; }
+    }
 
     [SerializeField] private TileGroup _tileGroup;
 
@@ -26,4 +29,8 @@ public class TileManager : MonoBehaviour
         return _tileGroup._Tiles[_index];
     }
 
+    public void CreateUnit(string _unitIdx,TeamType _teamTy)
+    {
+        _tileGroup.GetCreateAbleTile(_teamTy).SetUnit(_unitIdx);
+    }
 }

@@ -46,4 +46,42 @@ public class TileGroup : MonoBehaviour
         //중앙 정렬
         transform.position = new Vector3(-_tileWidth / 2 * _tileDistance, transform.position.y, transform.position.z);
     }
+
+    public Tile GetTile(int _xIdx, int _yIdx)
+    {
+        int _index = _xIdx + _yIdx * _tileWidth;
+        return _tiles[_index];
+    }
+
+    public Tile GetCreateAbleTile(TeamType _teamTy)
+    {
+        Tile tileTemp=null;
+
+        if (_teamTy == TeamType.Red)
+        {
+            for (int i = 0; i < _tileHeight / 2; i++)
+            {
+                for (int j = _tileWidth - 1; j >= 0; j--)
+                {
+                    tileTemp = GetTile(j, i);
+                    if (!tileTemp.hasUnit)
+                        return tileTemp;
+                }
+            }
+        }
+        else
+        {
+            for (int i = _tileHeight-1; i > _tileHeight / 2; i--)
+            {
+                for (int j = 0; j < _tileWidth; j++)
+                {
+                    tileTemp = GetTile(j, i);
+                    if (!tileTemp.hasUnit)
+                        return tileTemp;
+                }
+            }
+        }
+
+        return null;
+    }
 }

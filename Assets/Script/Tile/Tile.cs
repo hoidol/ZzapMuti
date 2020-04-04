@@ -23,9 +23,30 @@ public class Tile : MonoBehaviour
         transform.localPosition = _tilePosIdx * _distance;
     }
 
-    private UnitData _unitIndex;
-    public UnitData _UnitIndex
+    private Unit _unitIndex;
+    public Unit _UnitIndex
     {
         get { return _unitIndex; }
+    }
+
+    public bool hasUnit = false;
+
+    public void SetUnit(Unit _unit)
+    {
+        _unitIndex = _unit;
+
+        if (_unit == null)
+            _tileSpriteRenderer.color = Color.white;
+        else
+            _tileSpriteRenderer.color = Color.black;
+    }
+    public void SetUnit(string _unitIdx)
+    {
+        UnitData _uniData= DataManager.Instance.GetUnitDataWithUnitIdx(_unitIdx);
+
+        hasUnit = true;
+        //_unitIndex = UnitManager.Instance.CreateUnitWithUnitIdx(_unitIdx,TeamType.Rad);
+
+        _tileSpriteRenderer.color = Color.black;
     }
 }
