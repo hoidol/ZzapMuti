@@ -50,8 +50,8 @@ public class UnitManager : MonoBehaviour
 
     public Unit CombineUnit(Unit _tUnit, Unit _mUnit) // 유닛 병합
     {
-
-        return null;
+        int _nextLv = _tUnit._unitData.ReinforceLv + _mUnit._unitData.ReinforceLv;
+        return CreateUnitWithUnitIdx(GetNextLvUnit(_tUnit._unitData.UnitName, _nextLv).UnitIdx, _tUnit._teamType);
     }
 
 
@@ -89,12 +89,11 @@ public class UnitManager : MonoBehaviour
     }
 
 
-    UnitData GetNextLvUnit(UnitData _curUData)
+    UnitData GetNextLvUnit(string _uName,int _nextLv)
     {
-        int _nextLv = _curUData.ReinforceLv+1;
         for(int i =0; i < DataManager.Instance._unitDataContainer.UnitData.Length; i++)
         {
-            if (DataManager.Instance._unitDataContainer.UnitData[i].UnitName.Equals(_curUData.UnitName))
+            if (DataManager.Instance._unitDataContainer.UnitData[i].UnitName.Equals(_uName))
             {
                 if (DataManager.Instance._unitDataContainer.UnitData[i].ReinforceLv == _nextLv)
                     return DataManager.Instance._unitDataContainer.UnitData[i];
