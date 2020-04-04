@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 20
+<<<<<<< HEAD
   productGUID: 131be7361c83eb74c97a9b58c9e4aecd
+=======
+  productGUID: 1cd65f051a1533043bb509abf41c105a
+>>>>>>> Tile_Minok
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
