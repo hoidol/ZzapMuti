@@ -22,4 +22,10 @@ public class Tile : MonoBehaviour
 
         transform.localPosition = _tilePosIdx * _distance;
     }
+
+    private UnitData _unitIndex;
+    public UnitData _UnitIndex
+    {
+        get { return _unitIndex; }
+    }
 }
