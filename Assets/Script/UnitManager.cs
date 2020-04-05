@@ -19,6 +19,8 @@ public class UnitManager : MonoBehaviour
     List<Unit> _poolingUnits = new List<Unit>();
     public List<Unit> _curUnitsOnTile = new List<Unit>(); //타일에 있는 유닛들
 
+
+    TeamType _curTurnTeamType;
     private void Awake()
     {
         if (_instance == null)
@@ -28,11 +30,81 @@ public class UnitManager : MonoBehaviour
     {
         _curUnitsOnTile.Clear();
     }
-
+    public void StartGame()
+    {
+        _curTurnTeamType = Random.Range(0, 2) == 0 ? TeamType.Red : TeamType.Blue;
+    }
 
     public void StartBattle()
     {
+        StartCoroutine(ProcessBattle());
     }
+
+
+
+    IEnumerator ProcessBattle()
+    {
+        yield return new WaitForSeconds(1); // 
+
+        while (true)
+        {
+            for (int i = 0; i < _curUnitsOnTile.Count; i++)
+            {
+                if (_curUnitsOnTile[i]._teamType == _curTurnTeamType)
+                {
+                    if (_curUnitsOnTile[i].CheckAbleToAttack())
+                        continue;
+
+                    Tile _tile = null;// TileManager._Instance.GetTileToMove(_curUnitsOnTile[i], SearchEnemyUnit(_curUnitsOnTile[i]));
+                    _curUnitsOnTile[i].MoveToTile(_tile);
+                    //타겟 적 유닛, 현재 움직여야될 유닛
+                }
+            }
+            // _curTurnTeamType  차례바꾸기
+            if (_curTurnTeamType == TeamType.Red)
+                _curTurnTeamType = TeamType.Blue;
+            else
+                _curTurnTeamType = TeamType.Red;
+
+            for (int i = 0; i < _curUnitsOnTile.Count; i++)
+            {
+                if (_curUnitsOnTile[i]._teamType == _curTurnTeamType)
+                {
+                    if (_curUnitsOnTile[i].CheckAbleToAttack())
+                        continue;
+
+                    Tile _tile = null;// TileManager._Instance.GetTileToMove(_curUnitsOnTile[i], SearchEnemyUnit(_curUnitsOnTile[i]));
+                    _curUnitsOnTile[i].MoveToTile(_tile);
+
+                }
+            }
+            yield return new WaitForSeconds(0.65f);
+        }
+    }
+
+
+
+    //타겟 적 유닛 
+    Unit SearchEnemyUnit(Unit _unit)
+    {
+        // 탐색
+        float _minDis = float.MaxValue;
+        Unit _targetUnit = null;
+        for(int i =0;i< _curUnitsOnTile.Count; i++)
+        {
+            if (_unit._teamType == _curUnitsOnTile[i]._teamType)
+                continue;
+            float _tempDis = Vector2.SqrMagnitude(_unit._tr.position - _curUnitsOnTile[i]._tr.position);
+            if (_minDis > _tempDis)
+            {
+                _minDis = _tempDis;
+                _targetUnit = _curUnitsOnTile[i];
+            }
+        }
+        return _targetUnit;
+    }
+
+
 
     public void FinishBattle()
     {
