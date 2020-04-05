@@ -5,6 +5,7 @@ using UnityEngine;
 public class UnitManager : MonoBehaviour
 {
     private static UnitManager _instance;
+
     public static UnitManager Instance
     {
         get
@@ -25,7 +26,10 @@ public class UnitManager : MonoBehaviour
     {
         if (_instance == null)
             _instance = this;
+
     }
+
+    
     public void InitUnitMgr()
     {
         _curUnitsOnTile.Clear();
@@ -39,9 +43,6 @@ public class UnitManager : MonoBehaviour
     {
         StartCoroutine(ProcessBattle());
     }
-
-
-
     IEnumerator ProcessBattle()
     {
         yield return new WaitForSeconds(1); // 
@@ -49,14 +50,21 @@ public class UnitManager : MonoBehaviour
         while (true)
         {
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
+                _curUnitsOnTile[i]._aStartTile.TakeTile(false);
+
+            AstarPath.active.Scan();
+
+            for (int i = 0; i < _curUnitsOnTile.Count; i++)
             {
                 if (_curUnitsOnTile[i]._teamType == _curTurnTeamType)
                 {
                     if (_curUnitsOnTile[i].CheckAbleToAttack())
                         continue;
 
-                    Tile _tile = null;// TileManager._Instance.GetTileToMove(_curUnitsOnTile[i], SearchEnemyUnit(_curUnitsOnTile[i]));
-                    _curUnitsOnTile[i].MoveToTile(_tile);
+                    //Tile _tile = null;// TileManager._Instance.GetTileToMove(_curUnitsOnTile[i], SearchEnemyUnit(_curUnitsOnTile[i]));
+                    //_curUnitsOnTile[i].MoveToTile(_tile)
+                    Debug.Log("MoveToTile 호출!! 1");
+                    UnitMoveManager.Instance.GetMoveUnitNextTile(_curUnitsOnTile[i])
                     //타겟 적 유닛, 현재 움직여야될 유닛
                 }
             }
@@ -73,16 +81,20 @@ public class UnitManager : MonoBehaviour
                     if (_curUnitsOnTile[i].CheckAbleToAttack())
                         continue;
 
-                    Tile _tile = null;// TileManager._Instance.GetTileToMove(_curUnitsOnTile[i], SearchEnemyUnit(_curUnitsOnTile[i]));
-                    _curUnitsOnTile[i].MoveToTile(_tile);
-
+                    Debug.Log("MoveToTile 호출!! 2");
+                    //Tile _tile = null;// TileManager._Instance.GetTileToMove(_curUnitsOnTile[i], SearchEnemyUnit(_curUnitsOnTile[i]));
+                    //_curUnitsOnTile[i].MoveToTile(_tile);
+                    UnitMoveManager.Instance.GetMoveUnitNextTile(_curUnitsOnTile[i])
                 }
             }
-            yield return new WaitForSeconds(0.65f);
+            yield return new WaitForSeconds(1f);
         }
     }
 
 
+    //이건 근거리고
+              
+    //원거리 유닛은 이걸로 가져올 필요가 없지
 
     //타겟 적 유닛 
     Unit SearchEnemyUnit(Unit _unit)
@@ -103,8 +115,6 @@ public class UnitManager : MonoBehaviour
         }
         return _targetUnit;
     }
-
-
 
     public void FinishBattle()
     {
@@ -176,5 +186,23 @@ public class UnitManager : MonoBehaviour
         return null;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            for (int i = 0; i < _curUnitsOnTile.Count; i++)
+                _curUnitsOnTile[i].InitUnit(TeamType.Red);
+        }
+        else if (Input.GetKeyDown(KeyCode.B))
+        {
+            //AstarPath.active.Scan();
+            StartGame();
+            StartBattle();
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            AstarPath.active.Scan();
+        }
+    }
 
 }

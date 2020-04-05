@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 346286132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 2957442778084682243}
   m_RootOrder: 0
@@ -67,8 +67,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 755837793
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 5524432590045150944, guid: aa45b394823e9d1448d4e567c0756872,
     type: 3}
@@ -183,7 +183,7 @@ RectTransform:
   m_GameObject: {fileID: 678555834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1371693259}
   - {fileID: 794858287}
@@ -633,8 +633,9 @@ MonoBehaviour:
     MaxMana: 0
     ManaChargeAmount: 0
   _tr: {fileID: 0}
-  _teamType: 0
+  _teamType: 1
   _tile: {fileID: 0}
+  _aStartTile: {fileID: 0}
   _stateMgr: {fileID: 0}
   _animMgr: {fileID: 0}
   _behaviourMgr: {fileID: 0}

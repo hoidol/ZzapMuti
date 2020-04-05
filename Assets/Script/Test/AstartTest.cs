@@ -29,9 +29,7 @@ public class AstartTest : MonoBehaviour
     private void Start()
     {
         _seeker = GetComponent<Seeker>();
-
-        _seeker.StartPath(_tr.position, _target.position, OnPathComplete);
-        
+        _seeker.StartPath(_tr.position, _target.position, OnPathComplete);        
     }
 
     void OnPathComplete(Path p)
@@ -76,18 +74,7 @@ public class AstartTest : MonoBehaviour
             StartCoroutine(ProcessMove(_path.vectorPath[currentWayPoint]));
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            StopAllCoroutines();
-            _seeker.StartPath(_tr.position, _target.position, OnPathComplete);
-        }else if (Input.GetKeyDown(KeyCode.S))
-        {
-            AstarPath.active.Scan();
-        }
-    }
-
+   
     string CheckMoveDirection(Vector2 _moveVec)
     {
         if (_moveVec.x > 0 && _moveVec.y > 0)
@@ -108,9 +95,6 @@ public class AstartTest : MonoBehaviour
             return "아래로";
         else
             return "경로없음";
-
-
-
     }
 
     private void FixedUpdate()

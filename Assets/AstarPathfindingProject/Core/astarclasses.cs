@@ -900,7 +900,7 @@ namespace Pathfinding {
 	 */
 	public delegate void OnPathDelegate (Path p);
 
-	public delegate void OnGraphDelegate (NavGraph graph);
+    public delegate void OnGraphDelegate (NavGraph graph);
 
 	public delegate void OnScanDelegate (AstarPath script);
 
