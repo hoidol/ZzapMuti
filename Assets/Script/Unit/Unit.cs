@@ -32,12 +32,12 @@ public class Unit : MonoBehaviour
 
     }
 
-    public void CheckAbleToAttack()
+    public bool CheckAbleToAttack()
     {
-
+        return false;
     }
 
-    public void MoveToEnemyUnit(Tile _t)
+    public void MoveToTile(Tile _t)
     {
 
     }
