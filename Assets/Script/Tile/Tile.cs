@@ -42,31 +42,59 @@ public class Tile : MonoBehaviour
         get { return _reservationUnit; }
     }
 
-    [SerializeField] private bool hasObstacle;
+    [SerializeField] private TileIndexType _tileIndexType;
+    public TileIndexType _TileIndexType
+    {
+        get { return _tileIndexType; }
+    }
 
     public bool hasUnit = false;
 
+    public void Awake()
+    {
+        Init();
+    }
+
+    public void Init()
+    {
+        if(_tileIndexType==TileIndexType.Obstacle)
+            _tileSpriteRenderer.color = Color.red;
+    }
+
+    public void SetNothing()
+    {
+        _unitIndex = null;
+        _tileSpriteRenderer.color = Color.white;
+        _tileIndexType = TileIndexType.Nothing;
+    }
+
     public void SetUnit(Unit _unit)
     {
-        _unitIndex = _unit;
-
-        _unit._tile = this;
+        _unitIndex = _unit;    
+ 
+        _unitIndex._tile = this;
+        _unitIndex.transform.position = this.transform.position;
 
         if (_unit == null)
             _tileSpriteRenderer.color = Color.white;
         else
             _tileSpriteRenderer.color = Color.black;
+
+        _tileIndexType = TileIndexType.Unit;
     }
+
     public void SetUnit(string _unitIdx, TeamType _teamTy)
     {
         UnitData _uniData= DataManager.Instance.GetUnitDataWithUnitIdx(_unitIdx);
 
         hasUnit = true;
 
-        _unitIndex._tile = this;
         _unitIndex = UnitManager.Instance.CreateUnitWithUnitIdx(_unitIdx, _teamTy);
         _unitIndex.transform.position = this.transform.position;
+        _unitIndex._tile = this;
 
         _tileSpriteRenderer.color = Color.black;
+
+        _tileIndexType = TileIndexType.Unit;
     }
 }
