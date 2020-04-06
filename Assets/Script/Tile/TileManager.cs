@@ -38,6 +38,17 @@ public class TileManager : MonoBehaviour
         _tileGroup.GetCreateAbleTile(_teamTy).SetUnit(_unitIdx, _teamTy);
     }
 
+    public Tile[] GetAllTile()
+    {
+        return _tileGroup._Tiles;
+    }
+
+    public int GetTileIndex(int _xIdx, int _yIdx)
+    {
+        int _index = _xIdx + _yIdx * _tileGroup._TileWidth;
+        return _index;
+    }
+
     public Tile GetTileToMove(Unit _targetUnit,Unit _ownerUnit)
     {
         Vector2 _ownerPos = _ownerUnit._tile._TilePosIndex;

@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TileIndexType
+{
+    Nothing,
+    Unit,
+    Obstacle
+}
+
 public class Tile : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _tileSpriteRenderer;
@@ -34,6 +41,8 @@ public class Tile : MonoBehaviour
     {
         get { return _reservationUnit; }
     }
+
+    [SerializeField] private bool hasObstacle;
 
     public bool hasUnit = false;
 
