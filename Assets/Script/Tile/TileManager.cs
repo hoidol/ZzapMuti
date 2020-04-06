@@ -11,6 +11,10 @@ public class TileManager : MonoBehaviour
     }
 
     [SerializeField] private TileGroup _tileGroup;
+    public TileGroup _TileGroup
+    {
+        get { return _tileGroup; }
+    }
 
     public void Awake()
     {
@@ -31,6 +35,24 @@ public class TileManager : MonoBehaviour
 
     public void CreateUnit(string _unitIdx,TeamType _teamTy)
     {
-        _tileGroup.GetCreateAbleTile(_teamTy).SetUnit(_unitIdx);
+        _tileGroup.GetCreateAbleTile(_teamTy).SetUnit(_unitIdx, _teamTy);
+    }
+
+    public Tile GetTileToMove(Unit _targetUnit,Unit _ownerUnit)
+    {
+        Vector2 _ownerPos = _ownerUnit._tile._TilePosIndex;
+        Vector2 _targerPos = _targetUnit._tile._TilePosIndex;
+
+        float xDistance = _targerPos.x - _ownerPos.x;
+        float yDistance = _targerPos.y - _ownerPos.y;
+
+        float xDisAbs = Mathf.Abs(xDistance);
+        float yDisAbs = Mathf.Abs(yDistance);
+        //y우선인지 x우선인지 탐색
+        if (yDisAbs > 1)
+        {
+        }
+
+        return null;
     }
 }

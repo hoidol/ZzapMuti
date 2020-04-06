@@ -29,23 +29,34 @@ public class Tile : MonoBehaviour
         get { return _unitIndex; }
     }
 
+    private Unit _reservationUnit;
+    public Unit _ReservationUnit
+    {
+        get { return _reservationUnit; }
+    }
+
     public bool hasUnit = false;
 
     public void SetUnit(Unit _unit)
     {
         _unitIndex = _unit;
 
+        _unit._tile = this;
+
         if (_unit == null)
             _tileSpriteRenderer.color = Color.white;
         else
             _tileSpriteRenderer.color = Color.black;
     }
-    public void SetUnit(string _unitIdx)
+    public void SetUnit(string _unitIdx, TeamType _teamTy)
     {
         UnitData _uniData= DataManager.Instance.GetUnitDataWithUnitIdx(_unitIdx);
 
         hasUnit = true;
-        //_unitIndex = UnitManager.Instance.CreateUnitWithUnitIdx(_unitIdx,TeamType.Rad);
+
+        _unitIndex._tile = this;
+        _unitIndex = UnitManager.Instance.CreateUnitWithUnitIdx(_unitIdx, _teamTy);
+        _unitIndex.transform.position = this.transform.position;
 
         _tileSpriteRenderer.color = Color.black;
     }
