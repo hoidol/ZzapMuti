@@ -57,9 +57,7 @@ public class UnitManager : MonoBehaviour
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
             {
                 if (_curUnitsOnTile[i]._teamType == _curTurnTeamType)
-                {
                     _curUnitsOnTile[i].CheckAttackOrMove(PathCallBack);
-                }
             }
             // _curTurnTeamType  차례바꾸기
             if (_curTurnTeamType == TeamType.Red)
@@ -67,13 +65,13 @@ public class UnitManager : MonoBehaviour
             else
                 _curTurnTeamType = TeamType.Red;
 
+
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
             {
                 if (_curUnitsOnTile[i]._teamType == _curTurnTeamType)
-                {
                     _curUnitsOnTile[i].CheckAttackOrMove(PathCallBack);
-                }
             }
+
             yield return new WaitForSeconds(1f);
         }
     }

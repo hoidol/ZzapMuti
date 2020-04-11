@@ -50,7 +50,7 @@ public class MoveManager : MonoBehaviour
         if (_path.vectorPath.Count > 0)
          {
                Debug.Log("_path.vectorPath[0] - _unit._tr.position : " + (_path.vectorPath[1] - _unit._tr.position) + "Unit Name : " + _unit.name);               
-                switch (GetMoveDirection(_path.vectorPath[0] - _unit._tr.position))
+                switch (GetMoveDirection(_path.vectorPath[1] - _path.vectorPath[0]))
                 {
                     case MoveDirection.Up:
                     _nextX = (int)_unit._aStartTile._vec2.x;
