@@ -19,7 +19,8 @@ public class UnitManager : MonoBehaviour
 
     List<Unit> _poolingUnits = new List<Unit>();
     public List<Unit> _curUnitsOnTile = new List<Unit>(); //타일에 있는 유닛들
-
+    public List<Unit> _curRedUnitsOnTile = new List<Unit>();
+    public List<Unit> _curBlueUnitsOnTile = new List<Unit>();
 
     TeamType _curTurnTeamType;
     private void Awake()
@@ -46,26 +47,18 @@ public class UnitManager : MonoBehaviour
     IEnumerator ProcessBattle()
     {
         yield return new WaitForSeconds(1); // 
-
+        
         while (true)
         {
+            _pathCallBackCount = _curUnitsOnTile.Count;
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
-                _curUnitsOnTile[i]._aStartTile.TakeTile(false);
-
-            AstarPath.active.Scan();
+                _curUnitsOnTile[i]._aStartTile.TakeTile(null, false);
 
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
             {
                 if (_curUnitsOnTile[i]._teamType == _curTurnTeamType)
                 {
-                    if (_curUnitsOnTile[i].CheckAbleToAttack())
-                        continue;
-
-                    //Tile _tile = null;// TileManager._Instance.GetTileToMove(_curUnitsOnTile[i], SearchEnemyUnit(_curUnitsOnTile[i]));
-                    //_curUnitsOnTile[i].MoveToTile(_tile)
-                    Debug.Log("MoveToTile 호출!! 1");
-                    UnitMoveManager.Instance.GetMoveUnitNextTile(_curUnitsOnTile[i])
-                    //타겟 적 유닛, 현재 움직여야될 유닛
+                    _curUnitsOnTile[i].CheckAttackOrMove(PathCallBack);
                 }
             }
             // _curTurnTeamType  차례바꾸기
@@ -78,19 +71,24 @@ public class UnitManager : MonoBehaviour
             {
                 if (_curUnitsOnTile[i]._teamType == _curTurnTeamType)
                 {
-                    if (_curUnitsOnTile[i].CheckAbleToAttack())
-                        continue;
-
-                    Debug.Log("MoveToTile 호출!! 2");
-                    //Tile _tile = null;// TileManager._Instance.GetTileToMove(_curUnitsOnTile[i], SearchEnemyUnit(_curUnitsOnTile[i]));
-                    //_curUnitsOnTile[i].MoveToTile(_tile);
-                    UnitMoveManager.Instance.GetMoveUnitNextTile(_curUnitsOnTile[i])
+                    _curUnitsOnTile[i].CheckAttackOrMove(PathCallBack);
                 }
             }
             yield return new WaitForSeconds(1f);
         }
     }
-
+    // 살아있는 모든 유닛 카운트
+    public int _pathCallBackCount;
+    public void PathCallBack()
+    {
+        _pathCallBackCount--;
+        if (_pathCallBackCount <= 0)
+        {
+            Debug.Log("PathCallBack() 호출");
+            for (int i = 0; i < _curUnitsOnTile.Count; i++)
+                _curUnitsOnTile[i].MoveToTile();
+        }
+    }
 
     //이건 근거리고
               
@@ -127,6 +125,15 @@ public class UnitManager : MonoBehaviour
         _unit.InitUnit(_tType);
         _curUnitsOnTile.Add(_unit);
 
+        switch (_tType)
+        {
+            case TeamType.Red:
+                _curRedUnitsOnTile.Add(_unit);
+                break;
+            case TeamType.Blue:
+                _curBlueUnitsOnTile.Add(_unit);
+                break;
+        }
         return _unit;         
     }
 
@@ -139,6 +146,11 @@ public class UnitManager : MonoBehaviour
 
     public void RemoveUnit(Unit _u) // 캐릭터 병합 시 
     {
+        if (_u._teamType == TeamType.Red)
+            _curRedUnitsOnTile.Remove(_u);
+        else
+            _curBlueUnitsOnTile.Remove(_u);
+
         _curUnitsOnTile.Remove(_u);
     }
     Unit BringAbleToUseUnit(string _uIdx)
@@ -190,6 +202,12 @@ public class UnitManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+
+            for (int i = 0; i < AstarPath.active.graphs.Length; i++)
+            {
+                Debug.Log("AstarPath.active.graphs : " + AstarPath.active.graphs[i].graphIndex);
+            }
+
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
                 _curUnitsOnTile[i].InitUnit(TeamType.Red);
         }

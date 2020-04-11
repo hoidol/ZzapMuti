@@ -8,6 +8,7 @@ public class AStarPathTile : MonoBehaviour
     public bool _takedTile;
 
     public Vector2 _vec2;
+    public Unit _ownUnit;
     private void Start()
     {
         _tile = GetComponent<Tile>();
@@ -15,9 +16,9 @@ public class AStarPathTile : MonoBehaviour
     } 
 
 
-    public void TakeTile(bool _b)
+    public void TakeTile(Unit _u, bool _b)
     {
-        
+        _ownUnit = _u;
         _takedTile = _b;
         if (_takedTile)
             gameObject.layer = 8;

@@ -15,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - TakedTile
-  - Tile
+  - Obstacle
+  - 
   - 
   - 
   - 
@@ -44,5 +44,5 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Unit
-    uniqueID: 755837793
+    uniqueID: 3075581647
     locked: 0

@@ -11,7 +11,7 @@ public class UnitCardUI : MonoBehaviour
 
     public void Start()
     {
-        SetUnitData(DataManager.Instance._unitDataContainer.UnitData[Random.Range(1, 4)]);
+        SetUnitData(DataManager.Instance._unitDataContainer.UnitData[9]);
     }
 
     public void SetUnitData(UnitData _unitDa)

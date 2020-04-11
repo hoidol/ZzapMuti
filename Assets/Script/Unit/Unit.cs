@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Pathfinding;
+using System;
+
 public class Unit : MonoBehaviour
 {
     public string _unitIdx;
@@ -13,10 +15,12 @@ public class Unit : MonoBehaviour
     public Tile _tile;
     public AStarPathTile _aStartTile;
 
-    public StateManager _stateMgr;
-    public AnimManager _animMgr;
-    public BehaviourManager _behaviourMgr;
+    [HideInInspector] public StateManager _stateMgr;
+    [HideInInspector] public AnimManager _animMgr;
+    [HideInInspector] public BehaviourManager _behaviourMgr;
+    [HideInInspector] public MoveManager _moveMgr;
 
+    public Seeker _seeker;
 
     public void InitUnit(TeamType _tType)
     {
@@ -24,34 +28,104 @@ public class Unit : MonoBehaviour
         // _unitData = DataManager.Instance.GetUnitDataWithUnitIdx(_unitIdx);
         //_teamType = _tType;
         _tr.position = _tile.transform.position;
-        _aStartTile.TakeTile(true);
+        _aStartTile.TakeTile(this,true);
 
         _stateMgr = GetComponentInChildren<StateManager>();
         _animMgr = GetComponentInChildren<AnimManager>();
         _behaviourMgr = GetComponentInChildren<BehaviourManager>();
+        _moveMgr = GetComponentInChildren<MoveManager>();
+
+        _seeker = GetComponentInChildren<Seeker>();
+
+        _moveMgr.InitMoveMgr(this);
     }
-
-
     public void StartBattle()
     {
+    }
+
+
+    bool _needToMove;
+    public void CheckAttackOrMove(Action _pCallback)
+    {
+        _unitMgrCallback = _pCallback;
+
+        if (CheckAbleToAttack())//싸울 수 있으면
+        {
+            _needToMove = false;
+            _unitMgrCallback.Invoke();
+        }
+        else
+        {
+            _needToMove = true;
+            TryToMove();
+        }
 
     }
 
-    public bool CheckAbleToAttack()
+    public delegate void PathCallBack(AStarPathTile a);
+    Action _unitMgrCallback;
+    public void TryToMove()
     {
+        _moveMgr.GetNextTile(Function);
+    }
+
+    public void Function(AStarPathTile _aPTile)
+    {
+        _aStartTile.TakeTile(null,false);
+        _nextTile = _aPTile;
+        _aStartTile = _aPTile;
+        _aStartTile.TakeTile(this, true);
+
+        if (!AstarPath.active.isScanning)
+            AstarPath.active.Scan();
+        _unitMgrCallback.Invoke();
+    }
+
+    List<AStarPathTile> _list = new List<AStarPathTile>();
+    bool CheckAbleToAttack()
+    {
+        //실제 거리가 가까우면
+        _list.Clear();
+
+        AStarPathTile _tile = GetTile((int)_aStartTile._vec2.x + 1, (int)_aStartTile._vec2.y);
+        if(_tile!= null)
+            _list.Add(_tile);
+        _tile = GetTile((int)_aStartTile._vec2.x - 1, (int)_aStartTile._vec2.y);
+        if (_tile != null)
+            _list.Add(_tile);
+         _tile = GetTile((int)_aStartTile._vec2.x, (int)_aStartTile._vec2.y + 1);
+        if (_tile != null)
+            _list.Add(_tile);
+         _tile = GetTile((int)_aStartTile._vec2.x, (int)_aStartTile._vec2.y - 1);
+        if (_tile != null)
+            _list.Add(_tile);
+
+        for(int i =0;i< _list.Count; i++)
+        {
+            if (_list[i]._ownUnit == null)
+                continue;
+
+            if (_list[i]._ownUnit._teamType != _teamType)
+                return true;
+        }
+
         return false;
     }
-
-    public void MoveToTile(Tile _t)
+    AStarPathTile _nextTile;
+    public void MoveToTile()
     {
-        StartCoroutine(ProcessMoving(_t));
+        if(_aStartTile != null)
+            StartCoroutine(ProcessMoving(_nextTile._tile));
     }
 
     IEnumerator ProcessMoving(Tile _t)
     {
+        if (!_needToMove)
+            yield break;
+
         while (true)
         {
-            _tr.position = Vector2.MoveTowards(_tr.position, _t.transform.position, Time.deltaTime * 60);
+            _tr.position = Vector2.MoveTowards(_tr.position, _nextTile.transform.position, Time.deltaTime * 60);
             yield return null;
         }
     }
@@ -59,8 +133,16 @@ public class Unit : MonoBehaviour
     {
 
     }
-   
 
 
-    
+
+    public AStarPathTile GetTile(int _xIdx, int _yIdx)
+    {
+        int _index = _xIdx + _yIdx * 5;
+        if (_index >= UnitMoveManager.Instance._aStarPathTiles.Length || _index < 0)
+            return null;
+        else
+            return UnitMoveManager.Instance._aStarPathTiles[_index];
+    }
+
 }

@@ -69,9 +69,9 @@ public class TileGroup : MonoBehaviour
                 }
             }
         }
-        else
+        else if (_teamTy == TeamType.Blue)
         {
-            for (int i = _tileHeight-1; i > _tileHeight / 2; i--)
+            for (int i = _tileHeight-1; i >= _tileHeight / 2; i--)
             {
                 for (int j = 0; j < _tileWidth; j++)
                 {
