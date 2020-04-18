@@ -7,10 +7,45 @@ using UnityEngine;
 public class MoveManager : MonoBehaviour
 {
     Unit _unit;
+
+    UnitMove _unitMove;
     public void InitMoveMgr(Unit _u)
     {
-        _unit = _u; 
+        _unit = _u;
+        _unitMove = GetComponentInChildren<UnitMove>();
+        _unitMove.InitUnitMove(_unit);
     }
+
+
+    public void StartBattle()
+    {
+        _unitMove.StartBattle();
+    }
+    public void MoveToUnit(Unit _targetUnit)
+    {
+        _unitMove.MoveToUnit(_targetUnit);
+    }
+   
+    public void StopMove() {
+
+        _unitMove.StopMove();
+    }
+
+    public void FinishBattle()
+    {
+
+    }
+
+
+    public void Die()
+    {
+        StopAllCoroutines();
+    }
+
+
+
+
+
 
     Action<AStarPathTile> _moveCallback;
     public void GetNextTile(Action<AStarPathTile> _a)
@@ -43,13 +78,10 @@ public class MoveManager : MonoBehaviour
         AStarPathTile _nextAStarTile = null;
         int _nextX = 0;
         int _nextY = 0;
-        Debug.Log("Unit Name : " + _unit.name);
-        for (int i = 0; i < _path.vectorPath.Count; i++)
-            Debug.Log("_path.vectorPath[" + i + "] : " + (_path.vectorPath[i]-_unit._tr.position));
 
         if (_path.vectorPath.Count > 0)
          {
-               Debug.Log("_path.vectorPath[0] - _unit._tr.position : " + (_path.vectorPath[1] - _unit._tr.position) + "Unit Name : " + _unit.name);               
+               Debug.Log("_path.vectorPath[0] - _unit._tr.position : " + (_path.vectorPath[1] - _path.vectorPath[0]) + "Unit Name : " + _unit.name);               
                 switch (GetMoveDirection(_path.vectorPath[1] - _path.vectorPath[0]))
                 {
                     case MoveDirection.Up:

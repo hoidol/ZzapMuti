@@ -8,8 +8,12 @@ public class UnitData
     public string Class;
     public float Hp;
     public float Defence;
+    public float MagicResistance;
+    public string DamageType;
+    public float Damage;
     public float AttackSpeed;
     public float AttackDistance;
+    public string SkillDamageType;
     public float SkillDamage;
     public float DodgeRate;
     public float RecoverRate;

@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class UnitBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool _nonTarget;
+
+    public Unit _unit;
+    
+    public virtual void InitUnitBehaviour(Unit _u)
     {
-        
+        _unit = _u;
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void DoBehaviour()
     {
-        
+
     }
+    public virtual void DoBehaviour(Unit _tUnit)
+    {
+
+    }
+
+
+
+
 }

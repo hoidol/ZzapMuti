@@ -10,7 +10,6 @@ public class Unit : MonoBehaviour
     public string _unitIdx;
     public UnitData _unitData;
     public Transform _tr;
-
     public TeamType _teamType;
     public Tile _tile;
     public AStarPathTile _aStartTile;
@@ -22,10 +21,14 @@ public class Unit : MonoBehaviour
 
     public Seeker _seeker;
 
+    public Damage _normalDamage;
+    public Damage _skillDamage;
+    
     public void InitUnit(TeamType _tType)
     {
         _tr = transform;
-        // _unitData = DataManager.Instance.GetUnitDataWithUnitIdx(_unitIdx);
+        _unitData = DataManager.Instance.GetUnitDataWithUnitIdx(_unitIdx);
+
         //_teamType = _tType;
         _tr.position = _tile.transform.position;
         _aStartTile.TakeTile(this,true);
@@ -34,17 +37,92 @@ public class Unit : MonoBehaviour
         _animMgr = GetComponentInChildren<AnimManager>();
         _behaviourMgr = GetComponentInChildren<BehaviourManager>();
         _moveMgr = GetComponentInChildren<MoveManager>();
-
         _seeker = GetComponentInChildren<Seeker>();
 
+        _stateMgr.InitStateMgr(this);
+        _animMgr.InitAnimMgr(this);
+        _behaviourMgr.InitBehaviourMgr(this);
         _moveMgr.InitMoveMgr(this);
+
+
+        if (_unitData.DamageType.Equals("Physic"))
+            _normalDamage.Type = DamageType.Physic;
+        else
+            _normalDamage.Type = DamageType.Magic;
+        _normalDamage.DamagePower = _unitData.Damage;
+
+        if (_unitData.SkillDamageType.Equals("Physic"))
+            _skillDamage.Type = DamageType.Physic;
+        else
+            _skillDamage.Type = DamageType.Magic;
+
+        _skillDamage.DamagePower = _unitData.SkillDamage;
+
     }
+
     public void StartBattle()
     {
+        _stateMgr.StartBattle();
+        _animMgr.StartBattle();
+        _behaviourMgr.StartBattle();
+        _moveMgr.StartBattle();
     }
 
 
-    bool _needToMove;
+
+    public bool _ableToAttack;
+    public bool _needToMove;
+    public void CheckMoveAndAttack()
+    {
+        //각자 알아서 찾고 이동해
+        Unit _targetUnit = UnitManager.Instance.SearchEnemyUnit(this);
+        if (_targetUnit == null)
+            return;
+
+        if (_unitData.AttackDistance >= Vector2.SqrMagnitude(_tr.position - _targetUnit._tr.position)) // 공격 가능 상태
+        {
+            _ableToAttack = true;
+            _needToMove = false;
+            _behaviourMgr.DoBehaviour(_targetUnit);
+        }
+        else
+        {
+            _ableToAttack = false;
+            _needToMove = true;
+            _moveMgr.MoveToUnit(_targetUnit);
+        }
+
+    }
+
+    public void FinishBattle()
+    {
+
+        _stateMgr.FinishBattle();
+        _animMgr.FinishBattle();
+        _behaviourMgr.FinishBattle();
+        _moveMgr.FinishBattle();
+    }
+
+
+
+
+    public void Die()
+    {
+        _stateMgr.Die();
+        _animMgr.Die();
+        _behaviourMgr.Die();
+        _moveMgr.Die();
+
+        _needToMove = false;
+        _ableToAttack = false;
+
+        gameObject.SetActive(false);
+    }
+
+
+
+
+
     public void CheckAttackOrMove(Action _pCallback)
     {
         _unitMgrCallback = _pCallback;
@@ -129,10 +207,7 @@ public class Unit : MonoBehaviour
             yield return null;
         }
     }
-    public void FinishBattle()
-    {
 
-    }
 
 
 
@@ -146,3 +221,5 @@ public class Unit : MonoBehaviour
     }
 
 }
+
+

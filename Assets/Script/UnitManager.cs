@@ -42,64 +42,46 @@ public class UnitManager : MonoBehaviour
 
     public void StartBattle()
     {
-        StartCoroutine(ProcessBattle());
+        for (int i = 0; i < _curUnitsOnTile.Count; i++)
+        {
+            if (!_curUnitsOnTile[i].gameObject.activeSelf)
+                continue;
+            _curUnitsOnTile[i].StartBattle();
+        }
+        StartCoroutine(ProcessUnit());
     }
-    IEnumerator ProcessBattle()
+
+
+    IEnumerator ProcessUnit()
     {
-        yield return new WaitForSeconds(1); // 
-        
         while (true)
         {
-            _pathCallBackCount = _curUnitsOnTile.Count;
-            for (int i = 0; i < _curUnitsOnTile.Count; i++)
-                _curUnitsOnTile[i]._aStartTile.TakeTile(null, false);
-
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
             {
-                if (_curUnitsOnTile[i]._teamType == _curTurnTeamType)
-                    _curUnitsOnTile[i].CheckAttackOrMove(PathCallBack);
-            }
-            // _curTurnTeamType  차례바꾸기
-            if (_curTurnTeamType == TeamType.Red)
-                _curTurnTeamType = TeamType.Blue;
-            else
-                _curTurnTeamType = TeamType.Red;
-
-
-            for (int i = 0; i < _curUnitsOnTile.Count; i++)
-            {
-                if (_curUnitsOnTile[i]._teamType == _curTurnTeamType)
-                    _curUnitsOnTile[i].CheckAttackOrMove(PathCallBack);
+                if (!_curUnitsOnTile[i].gameObject.activeSelf)
+                    continue;
+                _curUnitsOnTile[i].CheckMoveAndAttack();
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return null;
         }
-    }
-    // 살아있는 모든 유닛 카운트
-    public int _pathCallBackCount;
-    public void PathCallBack()
-    {
-        _pathCallBackCount--;
-        if (_pathCallBackCount <= 0)
-        {
-            Debug.Log("PathCallBack() 호출");
-            for (int i = 0; i < _curUnitsOnTile.Count; i++)
-                _curUnitsOnTile[i].MoveToTile();
-        }
-    }
+    }    
 
     //이건 근거리고
               
     //원거리 유닛은 이걸로 가져올 필요가 없지
 
     //타겟 적 유닛 
-    Unit SearchEnemyUnit(Unit _unit)
+    public Unit SearchEnemyUnit(Unit _unit)
     {
         // 탐색
         float _minDis = float.MaxValue;
         Unit _targetUnit = null;
         for(int i =0;i< _curUnitsOnTile.Count; i++)
         {
+            if (!_curUnitsOnTile[i].gameObject.activeSelf)
+                continue;
+
             if (_unit._teamType == _curUnitsOnTile[i]._teamType)
                 continue;
             float _tempDis = Vector2.SqrMagnitude(_unit._tr.position - _curUnitsOnTile[i]._tr.position);

@@ -8,4 +8,20 @@ public class AnimManager : MonoBehaviour
     {
 
     }
+
+    public void StartBattle()
+    {
+
+    }
+    
+    public void FinishBattle()
+    {
+
+    }
+
+
+    public void Die()
+    {
+        StopAllCoroutines();
+    }
 }
