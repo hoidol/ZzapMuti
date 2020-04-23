@@ -22,30 +22,53 @@ public class TileMousePointer : MonoBehaviour
 
                     if (_nowSelectTile._TileIndexType == TileIndexType.Unit)
                     {
-
+                        _pointerSpriteRenderer.sprite = _nowSelectTile._UnitIndex.GetComponentInChildren<SpriteRenderer>().sprite;
                     }
                 }
             }
         }
 
+        if (_pointerSpriteRenderer.sprite != null)
+            FollowSpriteToMousePointer();
+
 
         if (Input.GetMouseButtonUp(0))
         {
+            _pointerSpriteRenderer.sprite = null;
             if (GetCastedTile(out _nowClickObject))
             {
                 Tile _tileTemp = _nowClickObject.collider.GetComponent<Tile>();
 
                 if (_tileTemp != null)
                 {
-                    if (_nowSelectTile ._TileIndexType==TileIndexType.Unit&& _tileTemp._TileIndexType == TileIndexType.Nothing)
+                    //유닛 이동
+                    if (_nowSelectTile._TileIndexType==TileIndexType.Unit&& _tileTemp._TileIndexType == TileIndexType.Nothing)
                     {
                         Debug.Log(_tileTemp._TilePosIndex);
+
+                        if (_nowSelectTile._TileTeam != _tileTemp._TileTeam)
+                            return;
+
                         _tileTemp.SetUnit(_nowSelectTile._UnitIndex);
                         _nowSelectTile.SetNothing();
+
+                    }
+                    else if(_nowSelectTile._TileIndexType == TileIndexType.Unit && _tileTemp._TileIndexType == TileIndexType.Unit)
+                    {
+                        if(_nowSelectTile._UnitIndex._unitIdx==_tileTemp._UnitIndex._unitIdx)
+                        {
+                            //강화
+                        }
                     }
                 }
             }
         }
+    }
+
+    public void FollowSpriteToMousePointer()
+    {
+        _pointerSpriteRenderer.transform.position =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        _pointerSpriteRenderer.transform.position = new Vector3(_pointerSpriteRenderer.transform.position.x, _pointerSpriteRenderer.transform.position.y, 0);
     }
 
     public void SetUnitSprite()
