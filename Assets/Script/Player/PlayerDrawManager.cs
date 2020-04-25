@@ -6,16 +6,24 @@ public class PlayerDrawManager : MonoBehaviour
     [SerializeField] private UnitCardUI[] _unitCardUIs;
 
     private DeckData[] _canChoiceDecks=new DeckData[3];
+    private EnumInfo.TeamType _nowTeam;
 
-    public void SetPlayerDraw(DeckData[] _playerDeck)
+    private System.Action _drawFunc;
+
+    public void SetPlayerDraw(DeckData[] _playerDeck,EnumInfo.TeamType _drawTeam,System.Action _drawCall)
     {
+        _nowTeam = _drawTeam;
         _canChoiceDecks = GetRandomDeck(_playerDeck);
 
         for(int i=0;i< _unitCardUIs.Length;i++)
         {
-            _unitCardUIs[i].SetUnitData(_canChoiceDecks[i]);
+            _unitCardUIs[i].gameObject.SetActive(true);
+            _unitCardUIs[i].SetUnitData(_canChoiceDecks[i], _drawTeam);
             _unitCardUIs[i].CreateEvent += SelectDeckCall;
         }
+
+        _drawFunc = _drawCall;
+        Debug.Log("SetPlayeDRaw");
     }
 
     public void SelectDeckCall()
@@ -23,7 +31,10 @@ public class PlayerDrawManager : MonoBehaviour
         for (int i = 0; i < _unitCardUIs.Length; i++)
         {
             _unitCardUIs[i].CreateEvent -= SelectDeckCall;
+            _unitCardUIs[i].gameObject.SetActive(false);
         }
+
+        _drawFunc();
     }
 
     public DeckData[] GetRandomDeck(DeckData[] _playerDeck)

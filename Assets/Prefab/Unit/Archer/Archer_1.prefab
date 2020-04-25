@@ -659,9 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nonTarget: 0
   _unit: {fileID: 0}
-  _nextBehaviours:
-  - {fileID: 0}
-  - {fileID: 6595679659296451610}
+  _nextBehaviours: []
 --- !u!1 &2613148759891758453
 GameObject:
   m_ObjectHideFlags: 0
