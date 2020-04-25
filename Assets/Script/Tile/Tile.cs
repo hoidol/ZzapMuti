@@ -48,6 +48,15 @@ public class Tile : MonoBehaviour
         get { return _tileIndexType; }
     }
 
+    [SerializeField] private TeamType _tileTeam;
+    public TeamType _TileTeam
+    {
+        get { return _tileTeam; }
+        set { _tileTeam = value;
+            SetTileTeamColor();
+        }
+    }
+
     public bool hasUnit = false;
 
     public void Awake()
@@ -66,6 +75,7 @@ public class Tile : MonoBehaviour
         _unitIndex = null;
         _tileSpriteRenderer.color = Color.white;
         _tileIndexType = TileIndexType.Nothing;
+        SetTileTeamColor();
     }
 
     public void SetUnit(Unit _unit)
@@ -96,5 +106,13 @@ public class Tile : MonoBehaviour
         _tileSpriteRenderer.color = Color.black;
 
         _tileIndexType = TileIndexType.Unit;
+    }
+
+    public void SetTileTeamColor()
+    {
+        if (_TileTeam == TeamType.Red)
+            _tileSpriteRenderer.color = new Color(.7f, .4f, .4f, 1);
+        else
+            _tileSpriteRenderer.color = new Color(.4f, .4f, .7f, 1);
     }
 }

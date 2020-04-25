@@ -40,6 +40,11 @@ public class TileGroup : MonoBehaviour
         {
             _height = i / _tileWidth;
             _tiles[i].Initialize(new Vector2(i- _height * _tileWidth, _height), _tileDistance);
+
+            if (i < _tiles.Length / 2)
+                _tiles[i]._TileTeam = TeamType.Red;
+            else
+                _tiles[i]._TileTeam = TeamType.Blue;
         }
 
 
