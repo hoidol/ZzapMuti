@@ -99,7 +99,7 @@ public class Tile : MonoBehaviour
 
         hasUnit = true;
 
-        _unitIndex = UnitManager.Instance.CreateUnitWithUnitIdx(_unitIdx, _teamTy);
+        _unitIndex = UnitManager.Instance.CreateUnitWithUnitIdx(_unitIdx,this, _teamTy);
         _unitIndex.transform.position = this.transform.position;
         _unitIndex._tile = this;
 

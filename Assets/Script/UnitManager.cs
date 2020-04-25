@@ -37,11 +37,15 @@ public class UnitManager : MonoBehaviour
     }
     public void StartGame()
     {
+        Debug.Log("StartGame()");
         _curTurnTeamType = Random.Range(0, 2) == 0 ? TeamType.Red : TeamType.Blue;
     }
 
     public void StartBattle()
     {
+
+        Debug.Log("StartBattle()");
+
         for (int i = 0; i < _curUnitsOnTile.Count; i++)
         {
             if (!_curUnitsOnTile[i].gameObject.activeSelf)
@@ -98,11 +102,12 @@ public class UnitManager : MonoBehaviour
     {
     }
 
-    public Unit CreateUnitWithUnitIdx(string _uIdx,TeamType _tType)
+    public Unit CreateUnitWithUnitIdx(string _uIdx,Tile _t,TeamType _tType)
     {
         //        ....
         Unit _unit = BringAbleToUseUnit(_uIdx);
         _unit.InitUnit(_tType);
+        _unit.SetTile(_t);
         _curUnitsOnTile.Add(_unit);
 
         switch (_tType)
@@ -117,10 +122,10 @@ public class UnitManager : MonoBehaviour
         return _unit;         
     }
 
-    public Unit CombineUnit(Unit _tUnit, Unit _mUnit) // 유닛 병합
+    public Unit CombineUnit(Unit _tUnit, Unit _mUnit,Tile _t) // 유닛 병합
     {
         int _nextLv = _tUnit._unitData.ReinforceLv + _mUnit._unitData.ReinforceLv;
-        return CreateUnitWithUnitIdx(GetNextLvUnit(_tUnit._unitData.UnitName, _nextLv).UnitIdx, _tUnit._teamType);
+        return CreateUnitWithUnitIdx(GetNextLvUnit(_tUnit._unitData.UnitName, _nextLv).UnitIdx, _t,_tUnit._teamType);
     }
 
 
@@ -183,10 +188,10 @@ public class UnitManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
 
-            for (int i = 0; i < AstarPath.active.graphs.Length; i++)
-            {
-                Debug.Log("AstarPath.active.graphs : " + AstarPath.active.graphs[i].graphIndex);
-            }
+            //for (int i = 0; i < AstarPath.active.graphs.Length; i++)
+            //{
+            //    Debug.Log("AstarPath.active.graphs : " + AstarPath.active.graphs[i].graphIndex);
+            //}
 
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
                 _curUnitsOnTile[i].InitUnit(TeamType.Red);

@@ -12,7 +12,6 @@ public class Unit : MonoBehaviour
     public Transform _tr;
     public TeamType _teamType;
     public Tile _tile;
-    public AStarPathTile _aStartTile;
 
     [HideInInspector] public StateManager _stateMgr;
     [HideInInspector] public AnimManager _animMgr;
@@ -23,15 +22,12 @@ public class Unit : MonoBehaviour
 
     public Damage _normalDamage;
     public Damage _skillDamage;
-    
+
     public void InitUnit(TeamType _tType)
     {
         _tr = transform;
         _unitData = DataManager.Instance.GetUnitDataWithUnitIdx(_unitIdx);
-
-        //_teamType = _tType;
-        _tr.position = _tile.transform.position;
-        _aStartTile.TakeTile(this,true);
+        _teamType = _tType;
 
         _stateMgr = GetComponentInChildren<StateManager>();
         _animMgr = GetComponentInChildren<AnimManager>();
@@ -59,7 +55,13 @@ public class Unit : MonoBehaviour
 
         _skillDamage.DamagePower = _unitData.SkillDamage;
         _skillDamage.Unit = this;
+    }
 
+    public void SetTile(Tile _t)
+    {
+        _tile = _t;
+
+        _tr.position = _tile.transform.position;
     }
 
     public void StartBattle()
@@ -76,6 +78,7 @@ public class Unit : MonoBehaviour
     public bool _needToMove;
     public void CheckMoveAndAttack()
     {
+        Debug.Log("Unit CheckMoveAndAttack()");
         //각자 알아서 찾고 이동해
         Unit _targetUnit = UnitManager.Instance.SearchEnemyUnit(this);
         if (_targetUnit == null)
@@ -151,10 +154,6 @@ public class Unit : MonoBehaviour
 
     public void Function(AStarPathTile _aPTile)
     {
-        _aStartTile.TakeTile(null,false);
-        _nextTile = _aPTile;
-        _aStartTile = _aPTile;
-        _aStartTile.TakeTile(this, true);
 
         if (!AstarPath.active.isScanning)
             AstarPath.active.Scan();
@@ -167,35 +166,35 @@ public class Unit : MonoBehaviour
         //실제 거리가 가까우면
         _list.Clear();
 
-        AStarPathTile _tile = GetTile((int)_aStartTile._vec2.x + 1, (int)_aStartTile._vec2.y);
-        if(_tile!= null)
-            _list.Add(_tile);
-        _tile = GetTile((int)_aStartTile._vec2.x - 1, (int)_aStartTile._vec2.y);
-        if (_tile != null)
-            _list.Add(_tile);
-         _tile = GetTile((int)_aStartTile._vec2.x, (int)_aStartTile._vec2.y + 1);
-        if (_tile != null)
-            _list.Add(_tile);
-         _tile = GetTile((int)_aStartTile._vec2.x, (int)_aStartTile._vec2.y - 1);
-        if (_tile != null)
-            _list.Add(_tile);
+        //AStarPathTile _tile = GetTile((int)_aStartTile._vec2.x + 1, (int)_aStartTile._vec2.y);
+        //if(_tile!= null)
+        //    _list.Add(_tile);
+        //_tile = GetTile((int)_aStartTile._vec2.x - 1, (int)_aStartTile._vec2.y);
+        //if (_tile != null)
+        //    _list.Add(_tile);
+        // _tile = GetTile((int)_aStartTile._vec2.x, (int)_aStartTile._vec2.y + 1);
+        //if (_tile != null)
+        //    _list.Add(_tile);
+        // _tile = GetTile((int)_aStartTile._vec2.x, (int)_aStartTile._vec2.y - 1);
+        //if (_tile != null)
+        //    _list.Add(_tile);
 
-        for(int i =0;i< _list.Count; i++)
-        {
-            if (_list[i]._ownUnit == null)
-                continue;
+        //for(int i =0;i< _list.Count; i++)
+        //{
+        //    if (_list[i]._ownUnit == null)
+        //        continue;
 
-            if (_list[i]._ownUnit._teamType != _teamType)
-                return true;
-        }
+        //    if (_list[i]._ownUnit._teamType != _teamType)
+        //        return true;
+        //}
 
         return false;
     }
     AStarPathTile _nextTile;
     public void MoveToTile()
     {
-        if(_aStartTile != null)
-            StartCoroutine(ProcessMoving(_nextTile._tile));
+        //if(_aStartTile != null)
+        //    StartCoroutine(ProcessMoving(_nextTile._tile));
     }
 
     IEnumerator ProcessMoving(Tile _t)

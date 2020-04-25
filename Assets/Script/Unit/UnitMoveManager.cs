@@ -79,36 +79,36 @@ public class UnitMoveManager : MonoBehaviour
             }
             AStarPathTile _nextAStarTile = null;
 
-            switch (GetMoveDirection(_shortestDis.Path.vectorPath[0]))
-            {
-                case MoveDirection.Up:
-                    _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x, (int)_curUnit._aStartTile._vec2.y + 1);
-                    break;
-                case MoveDirection.Down:
-                    _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x, (int)_curUnit._aStartTile._vec2.y - 1);
-                    break;
-                case MoveDirection.Left:
-                    _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x + 1, (int)_curUnit._aStartTile._vec2.y);
-                    break;
-                case MoveDirection.Right:
-                    _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x - 1, (int)_curUnit._aStartTile._vec2.y);
-                    break;
-                case MoveDirection.UpLeft:
-                    _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x + 1, (int)_curUnit._aStartTile._vec2.y + 1);
-                    break;
-                case MoveDirection.UpRight:
-                    _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x - 1, (int)_curUnit._aStartTile._vec2.y + 1);
-                    break;
-                case MoveDirection.DownLeft:
-                    _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x + 1, (int)_curUnit._aStartTile._vec2.y - 1);
-                    break;
-                case MoveDirection.DownRight:
-                    _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x - 1, (int)_curUnit._aStartTile._vec2.y - 1);
-                    break;
-                case MoveDirection.Stop:
-                    _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x, (int)_curUnit._aStartTile._vec2.y);
-                    break;
-            }
+            //switch (GetMoveDirection(_shortestDis.Path.vectorPath[0]))
+            //{
+            //    case MoveDirection.Up:
+            //        _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x, (int)_curUnit._aStartTile._vec2.y + 1);
+            //        break;
+            //    case MoveDirection.Down:
+            //        _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x, (int)_curUnit._aStartTile._vec2.y - 1);
+            //        break;
+            //    case MoveDirection.Left:
+            //        _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x + 1, (int)_curUnit._aStartTile._vec2.y);
+            //        break;
+            //    case MoveDirection.Right:
+            //        _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x - 1, (int)_curUnit._aStartTile._vec2.y);
+            //        break;
+            //    case MoveDirection.UpLeft:
+            //        _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x + 1, (int)_curUnit._aStartTile._vec2.y + 1);
+            //        break;
+            //    case MoveDirection.UpRight:
+            //        _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x - 1, (int)_curUnit._aStartTile._vec2.y + 1);
+            //        break;
+            //    case MoveDirection.DownLeft:
+            //        _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x + 1, (int)_curUnit._aStartTile._vec2.y - 1);
+            //        break;
+            //    case MoveDirection.DownRight:
+            //        _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x - 1, (int)_curUnit._aStartTile._vec2.y - 1);
+            //        break;
+            //    case MoveDirection.Stop:
+            //        _nextAStarTile = GetTile((int)_curUnit._aStartTile._vec2.x, (int)_curUnit._aStartTile._vec2.y);
+            //        break;
+            //}
             //_curUnit.MoveToTile(_nextAStarTile._tile);
         }
     }
