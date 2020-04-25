@@ -21,6 +21,7 @@ public class Player
     public float _Hp
     {
         get { return _hp; }
+        set { _hp = value; }
     }
 
     [SerializeField] private PlayerDeckManager _deckManager=new PlayerDeckManager();

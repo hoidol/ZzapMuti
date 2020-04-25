@@ -9,8 +9,13 @@ public class UnitCardUI : MonoBehaviour
 
     public event System.Action CreateEvent;
 
-    public void SetUnitData(DeckData _deckDa)
+    private EnumInfo.TeamType _spawnTeam;
+
+    public void SetUnitData(DeckData _deckDa,EnumInfo.TeamType _team)
     {
+        Debug.Log(">>>");
+        _spawnTeam = _team;
+
         _deckData = _deckDa;
         
         _unitIdxText.text = _deckDa._unit.UnitName;
@@ -18,7 +23,7 @@ public class UnitCardUI : MonoBehaviour
 
     public void CreateUnit()
     {
-        TileManager._Instance.CreateUnit(_deckData._unit.UnitIdx,PlayerTurnManager._Instance._CreateUnitPlayer);
+        TileManager._Instance.CreateUnit(_deckData._unit.UnitIdx, _spawnTeam);
         CreateEvent?.Invoke();
     }
 }

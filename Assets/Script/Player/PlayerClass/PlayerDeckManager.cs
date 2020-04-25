@@ -15,6 +15,10 @@ public class PlayerDeckManager
     [SerializeField] private string[] _deckKind;
 
     [SerializeField] private DeckData[] _allDeck;
+    public DeckData[] _Deck
+    {
+        get { return _allDeck; }
+    }
 
     public void SetAllDeck()
     {
