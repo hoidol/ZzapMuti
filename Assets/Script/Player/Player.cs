@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+[System.Serializable]
+public class Player
 {
     [SerializeField] TeamType _teamType;
     public TeamType _TeamType
@@ -22,12 +23,19 @@ public class Player : MonoBehaviour
         get { return _hp; }
     }
 
+    [SerializeField] private PlayerDeckManager _deckManager=new PlayerDeckManager();
+    public PlayerDeckManager _DeckManager
+    {
+        get { return _deckManager; }
+    }
 
     public void Init(TeamType _teamTy)
     {
         _teamType = _teamTy;
         _maxHp = 50;
         _hp = _maxHp;
+
+        _deckManager.SetAllDeck();
     }
 }
 public enum TeamType
