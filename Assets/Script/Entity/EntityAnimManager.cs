@@ -6,13 +6,13 @@ public class EntityAnimManager : MonoBehaviour
 {
     public Entity entity;
 
-    public Transform _tr;
+    public Transform tr;
     EntityAnim entityAnim;
     
     public void InitEntityAnimMgr(Entity _e)
     {
         entity = _e;
-        _tr = transform;
+        tr = transform;
         entityAnim = GetComponentInChildren<EntityAnim>();
     }
 

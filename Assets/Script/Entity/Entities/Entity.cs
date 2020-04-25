@@ -5,41 +5,54 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     public string Idx;
-    public Transform _tr;
-    public Unit _ownUnit;
-    public EntityAnimManager _animMgr;
-    public EntityBehaviourManager _behaviourMgr;
-    public EntityMoveManager _moveMgr;
+    public EntityData entityData;
+    public Transform tr;
+    public Unit ownUnit;
+    public EntityAnimManager animMgr;
+    public EntityBehaviourManager behaviourMgr;
+    public EntityMoveManager moveMgr;
     public void InitEntity()
     {
-        _tr = transform;
+        tr = transform;
+        
+        entityData = DataManager.Instance.GetEntityDataWithIdx(Idx);
+        animMgr = GetComponentInChildren<EntityAnimManager>();
+        behaviourMgr = GetComponentInChildren<EntityBehaviourManager>();
+        moveMgr = GetComponentInChildren<EntityMoveManager>();
 
-        _animMgr = GetComponentInChildren<EntityAnimManager>();
-        _behaviourMgr = GetComponentInChildren<EntityBehaviourManager>();
-        _moveMgr = GetComponentInChildren<EntityMoveManager>();
-
-        _animMgr.InitEntityAnimMgr(this);
-        _behaviourMgr.InitEntityBehaviourMgr(this);
-        _moveMgr.InitEntityMoveMgr(this);
+        animMgr.InitEntityAnimMgr(this);
+        behaviourMgr.InitEntityBehaviourMgr(this);
+        moveMgr.InitEntityMoveMgr(this);
     }
 
 
     public void CallEntity(Unit _u, Unit _tUnit)
     {
-        _ownUnit = _u;
+        ownUnit = _u;
 
-        _animMgr.CallEntity(_tUnit);
-        _behaviourMgr.CallEntity(_tUnit);
-        _moveMgr.CallEntity(_tUnit);
+        animMgr.CallEntity(_tUnit);
+        behaviourMgr.CallEntity(_tUnit);
+        moveMgr.CallEntity(_tUnit);
 
     }
 
     public void CallEntity(Unit _u, Vector2 _v)
     {
-        _ownUnit = _u;
+        ownUnit = _u;
 
-        _animMgr.CallEntity(_v);
-        _behaviourMgr.CallEntity(_v);
-        _moveMgr.CallEntity(_v);
+        animMgr.CallEntity(_v);
+        behaviourMgr.CallEntity(_v);
+        moveMgr.CallEntity(_v);
+    }
+
+    IEnumerator ProcessDuration()
+    {
+        yield return new WaitForSeconds(entityData.Duration);
+        DestroyEntity();
+    }
+
+    public void DestroyEntity()
+    {
+        gameObject.SetActive(false);
     }
 }

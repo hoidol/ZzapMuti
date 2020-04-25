@@ -43,8 +43,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: DownEffect
+    uniqueID: 812345705
+    locked: 0
   - name: Unit
     uniqueID: 3075581647
+    locked: 0
+  - name: Entity
+    uniqueID: 2811913933
+    locked: 0
+  - name: UpEffect
+    uniqueID: 2617000531
     locked: 0
   - name: UI
     uniqueID: 4017370537

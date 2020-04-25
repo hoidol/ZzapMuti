@@ -20,9 +20,9 @@ public class LookAtEntityAnim : EntityAnim
         while (true)
         {
             yield return null;
-            Vector2 dir = _tUnit._tr.position - entity._tr.position;
+            Vector2 dir = _tUnit._tr.position - entity.tr.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            entity._animMgr._tr.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            entity.animMgr.tr.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
 
@@ -31,9 +31,9 @@ public class LookAtEntityAnim : EntityAnim
         while (true)
         {
             yield return null;
-            Vector2 dir = _v - (Vector2)entity._tr.position;
+            Vector2 dir = _v - (Vector2)entity.tr.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            entity._animMgr._tr.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            entity.animMgr.tr.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
 
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EntityBehaviour : MonoBehaviour
 {
-    Entity entity;
+    public Entity entity;
     public virtual void InitEntityBehaviour(Entity _e)
     {
         entity = _e;
