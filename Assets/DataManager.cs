@@ -38,5 +38,16 @@ public class DataManager : MonoBehaviour
         return null;
     }
 
+    public UnitData GetUnitDataWithUnitName(string _uName)
+    {
+        for (int i = 0; i < _unitDataContainer.UnitData.Length; i++)
+        {
+            if (_unitDataContainer.UnitData[i].UnitName.Equals(_uName))
+            {
+                return _unitDataContainer.UnitData[i];
+            }
+        }
+        return null;
+    }
 }
 

@@ -6,6 +6,7 @@ public class UnitData
     public int ReinforceLv;
     public string UnitName;
     public string Class;
+    public int MaxReinforce;
     public float Hp;
     public float Defence;
     public float MagicResistance;

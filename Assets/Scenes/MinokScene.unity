@@ -382,51 +382,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49cd3aa0ef47ac41ae8762a62fa748f, type: 3}
---- !u!1 &165384208
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 165384209}
-  - component: {fileID: 165384210}
-  m_Layer: 0
-  m_Name: Blue Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &165384209
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165384208}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1216021538}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &165384210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165384208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b85eb786ad6569f40864e2165fe711ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _teamType: 0
-  _maxHp: 0
 --- !u!114 &168693876 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8299506034752579947, guid: c49cd3aa0ef47ac41ae8762a62fa748f,
@@ -2042,51 +1997,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 269994055}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &858607558
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 858607559}
-  - component: {fileID: 858607560}
-  m_Layer: 0
-  m_Name: Red Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &858607559
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858607558}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1216021538}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &858607560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858607558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b85eb786ad6569f40864e2165fe711ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _teamType: 0
-  _maxHp: 0
 --- !u!1001 &871635692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2453,6 +2363,78 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 779149407}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1027259427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1027259429}
+  - component: {fileID: 1027259428}
+  m_Layer: 0
+  m_Name: GameProgress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1027259428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027259427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce59846c8b9a84448ecaa8321cd2f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _redPlayer:
+    _teamType: 0
+    _maxHp: 50
+    _deckManager:
+      _deckKind:
+      - DealWarrior
+      - TankWarrior
+      - Archer
+      - TrapWizard
+      - FireWizard
+      - Assassin
+      - HealSupporter
+      - AttackBuffSupporter
+      _allDeck: []
+  _bluePlayer:
+    _teamType: 0
+    _maxHp: 50
+    _deckManager:
+      _deckKind:
+      - AttackBuffSupporter
+      - Assassin
+      - FireWizard
+      - DealWarrior
+      - TrapWizard
+      - HealSupporter
+      - TankWarrior
+      - Archer
+      _allDeck: []
+--- !u!4 &1027259429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027259427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.3318, y: 2.0543048, z: -5.6028786}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1216021538}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1052780476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2925,7 +2907,7 @@ Transform:
   m_Children:
   - {fileID: 1146666665}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1216021536
 GameObject:
@@ -2956,8 +2938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7edadb244cb54d489fa18bc52775b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redPlayer: {fileID: 858607560}
-  bluePlayer: {fileID: 165384210}
 --- !u!4 &1216021538
 Transform:
   m_ObjectHideFlags: 0
@@ -2965,14 +2945,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216021536}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 200.5213, y: 516.6253, z: -362.25}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 208.8531, y: 514.571, z: -356.64713}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 858607559}
-  - {fileID: 165384209}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Children: []
+  m_Father: {fileID: 1027259429}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1229190168 stripped
 MonoBehaviour:
@@ -3528,6 +3506,8 @@ MonoBehaviour:
   _units:
   - {fileID: 2957442778476429463, guid: 4dfaadba29e76574d8a32f3bafa100ff, type: 3}
   _curUnitsOnTile: []
+  _curRedUnitsOnTile: []
+  _curBlueUnitsOnTile: []
 --- !u!4 &1460243834
 Transform:
   m_ObjectHideFlags: 0
