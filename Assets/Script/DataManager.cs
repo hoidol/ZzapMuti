@@ -6,7 +6,8 @@ public class DataManager : MonoBehaviour
 {
     static DataManager _instance;
     public UnitDataContainer _unitDataContainer;
-
+    public EntityDataContainer _entityDataContainer;
+   
     public static DataManager Instance
     {
         get
@@ -24,6 +25,10 @@ public class DataManager : MonoBehaviour
 
         string _unitDataJStr = Resources.Load<TextAsset>("Json/UnitData").ToString();
         _unitDataContainer = JsonUtility.FromJson<UnitDataContainer>(_unitDataJStr);
+
+
+        string _eDataJStr = Resources.Load<TextAsset>("Json/EntityData").ToString();
+        _entityDataContainer = JsonUtility.FromJson<EntityDataContainer>(_eDataJStr);
     }
 
     public UnitData GetUnitDataWithUnitIdx(string _uIdx)
@@ -45,6 +50,18 @@ public class DataManager : MonoBehaviour
             if (_unitDataContainer.UnitData[i].UnitName.Equals(_uName))
             {
                 return _unitDataContainer.UnitData[i];
+            }
+        }
+        return null;
+    }
+
+    public EntityData GetEntityDataWithIdx(string _idx)
+    {
+        for(int i = 0; i < _entityDataContainer.EntityData.Length; i++)
+        {
+            if (_entityDataContainer.EntityData[i].Idx.Equals(_idx))
+            {
+                return _entityDataContainer.EntityData[i];
             }
         }
         return null;
