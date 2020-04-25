@@ -9,6 +9,7 @@ public class EntityBehaviourManager : MonoBehaviour
     public void InitEntityBehaviourMgr(Entity _e)
     {
         entity = _e;
+        behaviour.InitEntityBehaviour(_e);
     }
 
     public void CallEntity(Unit _tUnit)

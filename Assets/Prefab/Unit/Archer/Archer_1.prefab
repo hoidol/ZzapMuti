@@ -610,7 +610,8 @@ MonoBehaviour:
   _nonTarget: 0
   _unit: {fileID: 0}
   CallEntityIdx: Archer_1_Arrow
-  SpawnTr: {fileID: 0}
+  ShootTr: {fileID: 957356295394503302}
+  TargetTr: {fileID: 0}
 --- !u!1 &1999357465581060519
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,7 +660,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nonTarget: 0
   _unit: {fileID: 0}
-  _nextBehaviours: []
+  _nextBehaviours:
+  - {fileID: 1057645708118053684}
+  - {fileID: 6595679659296451610}
 --- !u!1 &2613148759891758453
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +722,7 @@ GameObject:
   - component: {fileID: 2613148760319389891}
   - component: {fileID: 957356294800913199}
   - component: {fileID: 957356294472790490}
+  - component: {fileID: 704643499}
   m_Layer: 0
   m_Name: Archer_1
   m_TagString: Unit
@@ -840,6 +844,27 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!50 &704643499
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2613148760319389890}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2613148760754035286
 GameObject:
   m_ObjectHideFlags: 0

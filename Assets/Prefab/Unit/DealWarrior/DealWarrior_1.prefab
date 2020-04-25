@@ -113,7 +113,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1219385649
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 5524432590045150944, guid: aa45b394823e9d1448d4e567c0756872,
     type: 3}
@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c097a2264b0f1f94eb8252f799197c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unitMove: {fileID: 0}
 --- !u!1 &477049412
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +766,7 @@ GameObject:
   - component: {fileID: 1161806222}
   m_Layer: 0
   m_Name: DealWarrior_1
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -806,12 +807,15 @@ MonoBehaviour:
     ReinforceLv: 0
     UnitName: 
     Class: 
+    MaxReinforce: 0
     Hp: 0
     Defence: 0
     MagicResistance: 0
+    DamageType: 
     Damage: 0
     AttackSpeed: 0
     AttackDistance: 0
+    SkillDamageType: 
     SkillDamage: 0
     DodgeRate: 0
     RecoverRate: 0
@@ -822,16 +826,17 @@ MonoBehaviour:
   _tr: {fileID: 0}
   _teamType: 1
   _tile: {fileID: 0}
-  _aStartTile: {fileID: 0}
   _stateMgr: {fileID: 0}
   _animMgr: {fileID: 0}
   _behaviourMgr: {fileID: 0}
   _moveMgr: {fileID: 0}
   _seeker: {fileID: 0}
   _normalDamage:
+    Unit: {fileID: 0}
     Type: 0
     DamagePower: 0
   _skillDamage:
+    Unit: {fileID: 0}
     Type: 1
     DamagePower: 0
   _ableToAttack: 0

@@ -14,6 +14,7 @@ public class EntityAnimManager : MonoBehaviour
         entity = _e;
         tr = transform;
         entityAnim = GetComponentInChildren<EntityAnim>();
+        entityAnim.InitEntityAnim(_e);
     }
 
     public void CallEntity(Unit _tUnit)

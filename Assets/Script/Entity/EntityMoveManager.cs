@@ -11,6 +11,7 @@ public class EntityMoveManager : MonoBehaviour
     {
         entity = _e;
         move = GetComponentInChildren<EntityMove>();
+        move.InitEntityMove(_e);
     }
 
     public void CallEntity(Unit _tUnit)

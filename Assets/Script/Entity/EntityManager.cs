@@ -16,17 +16,19 @@ public class EntityManager : MonoBehaviour
             Instance = this;
     }
 
-    public void CallEntity(string _idx, Unit _cUnit, Unit _tUnit)
+    public void CallEntity(string _idx, Unit _cUnit, Vector2 _sPos,Unit _tUnit)
     {
         Entity _e = TryToGetEntity(_idx);
+        _e.tr.position = _sPos;
         _e.gameObject.SetActive(true);
         _e.CallEntity(_cUnit, _tUnit);
     }
 
 
-    public void CallEntity(string _idx, Unit _cUnit, Vector2 _vec2)
+    public void CallEntity(string _idx, Unit _cUnit, Vector2 _sPos, Vector2 _vec2)
     {
         Entity _e = TryToGetEntity(_idx);
+        _e.tr.position = _sPos;
         _e.gameObject.SetActive(true);
         _e.CallEntity(_cUnit, _vec2);
     }

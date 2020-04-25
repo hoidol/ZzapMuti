@@ -34,6 +34,7 @@ public class Entity : MonoBehaviour
         behaviourMgr.CallEntity(_tUnit);
         moveMgr.CallEntity(_tUnit);
 
+        StartCoroutine(ProcessDuration());
     }
 
     public void CallEntity(Unit _u, Vector2 _v)
@@ -43,6 +44,7 @@ public class Entity : MonoBehaviour
         animMgr.CallEntity(_v);
         behaviourMgr.CallEntity(_v);
         moveMgr.CallEntity(_v);
+        StartCoroutine(ProcessDuration()); 
     }
 
     IEnumerator ProcessDuration()

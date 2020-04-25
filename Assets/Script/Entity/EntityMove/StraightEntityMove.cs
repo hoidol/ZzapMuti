@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class StraightEntityMove : EntityMove
 {
-    public override void InitEntityMove(Entity _e)
-    {
-
-    }
 
     public override void CallEntity(Unit _tUnit)
     {
+        if (_tUnit._tr == null)
+            Debug.Log(" if(_tUnit._tr == null)");
+        else if (entity.tr == null)
+            Debug.Log(" if(_tUnit._tr == null)");
 
         StartCoroutine(ProcessMove((_tUnit._tr.position - entity.tr.position).normalized));
     }
