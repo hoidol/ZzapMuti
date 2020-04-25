@@ -27,7 +27,6 @@ public class PlayerDeckManager
 
             _allDeckCount += _dataTemp[i].MaxReinforce;
         }
-        Debug.Log(_allDeckCount);
         _allDeck = new DeckData[_allDeckCount];
 
         int _choiceDeckIndex = 0;

@@ -10,6 +10,8 @@ public class GameProgress : MonoBehaviour
     [Header("Blue Player")]
     [SerializeField] private Player _bluePlayer;
 
+    [SerializeField] private PlayerDrawManager _playerDrawManager;
+
     private int _round=0;
 
     public void Start()
@@ -23,7 +25,7 @@ public class GameProgress : MonoBehaviour
         _bluePlayer.Init(TeamType.Blue);
     }
 
-    public void SetUnit()
+    public void SetDrawDeck()
     {
 
     }

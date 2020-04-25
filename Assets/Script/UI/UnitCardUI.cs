@@ -1,28 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UnitCardUI : MonoBehaviour
 {
     [SerializeField] private Text _unitIdxText;
 
-    private UnitData _unitData;
+    private DeckData _deckData;
 
-    public void Start()
+    public event System.Action CreateEvent;
+
+    public void SetUnitData(DeckData _deckDa)
     {
-        SetUnitData(DataManager.Instance._unitDataContainer.UnitData[9]);
-    }
-
-    public void SetUnitData(UnitData _unitDa)
-    {
-        _unitData = _unitDa;
-
-        _unitIdxText.text = _unitData.UnitIdx;
+        _deckData = _deckDa;
+        
+        _unitIdxText.text = _deckDa._unit.UnitName;
     }
 
     public void CreateUnit()
     {
-        TileManager._Instance.CreateUnit(_unitData.UnitIdx,PlayerTurnManager._Instance._CreateUnitPlayer);
+        TileManager._Instance.CreateUnit(_deckData._unit.UnitIdx,PlayerTurnManager._Instance._CreateUnitPlayer);
+        CreateEvent?.Invoke();
     }
 }
