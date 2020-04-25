@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class GameProgress : MonoBehaviour
@@ -31,6 +29,8 @@ public class GameProgress : MonoBehaviour
     {
         _redPlayer.Init(EnumInfo.TeamType.Red);
         _bluePlayer.Init(EnumInfo.TeamType.Blue);
+
+        SetPlayerLifeUI();
     }
 
     public void DrawRedPlayer()
@@ -64,13 +64,31 @@ public class GameProgress : MonoBehaviour
         {
             _redPlayer._Hp -= _discountLife;
         }
+        SetPlayerLifeUI();
 
-        _redPlayerLifeText.text = _redPlayer._Hp.ToString();
-        _bluePlayerLifeText.text = _bluePlayer._Hp.ToString();
+        if (_redPlayer._Hp<=0)
+        {
+            EndGame(EnumInfo.TeamType.Blue);
+        }
+        else if (_bluePlayer._Hp <= 0)
+        {
+            EndGame(EnumInfo.TeamType.Red);
+        }
+        else
+        {
+            DrawRedPlayer();
+        }
     }
 
-    public void EndGame()
+    public void SetPlayerLifeUI()
     {
+        _redPlayerLifeText.text = string.Format("Red Life [{0}]", _redPlayer._Hp.ToString());
+        _bluePlayerLifeText.text = string.Format("Blue Life [{0}]", _bluePlayer._Hp.ToString());
+    }
 
+    public void EndGame(EnumInfo.TeamType _winTeam)
+    {
+        Debug.Log("|||||||||||||||||||End Game|||||||||||||||||||\nWin player is "
+            + _winTeam.ToString()+"player!");
     }
 }
