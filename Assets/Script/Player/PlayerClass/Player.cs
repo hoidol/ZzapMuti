@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class Player
 {
-    [SerializeField] TeamType _teamType;
-    public TeamType _TeamType
+    [SerializeField] EnumInfo.TeamType _teamType;
+    public EnumInfo.TeamType _TeamType
     {
         get { return _teamType; }
     }
@@ -29,7 +29,7 @@ public class Player
         get { return _deckManager; }
     }
 
-    public void Init(TeamType _teamTy)
+    public void Init(EnumInfo.TeamType _teamTy)
     {
         _teamType = _teamTy;
         _maxHp = 50;
@@ -37,9 +37,4 @@ public class Player
 
         _deckManager.SetAllDeck();
     }
-}
-public enum TeamType
-{
-    Red,
-    Blue
 }

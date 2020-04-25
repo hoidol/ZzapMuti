@@ -569,6 +569,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitDataContainer:
     UnitData: []
+  _entityDataContainer:
+    EntityData: []
 --- !u!4 &351557288
 Transform:
   m_ObjectHideFlags: 0
@@ -1039,7 +1041,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 295, y: -810}
+  m_AnchoredPosition: {x: 365, y: 375}
   m_SizeDelta: {x: 321.9, y: 216.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &522747128
@@ -1085,8 +1087,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1216021537}
-        m_MethodName: ComplateCreateUnit
+      - m_Target: {fileID: 1027259428}
+        m_MethodName: StartBattle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2420,6 +2422,7 @@ MonoBehaviour:
       - TankWarrior
       - Archer
       _allDeck: []
+  _playerDrawManager: {fileID: 0}
 --- !u!4 &1027259429
 Transform:
   m_ObjectHideFlags: 0
@@ -5025,7 +5028,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AddTrun
+  m_Text: StartBattle
 --- !u!222 &2074604517
 CanvasRenderer:
   m_ObjectHideFlags: 0

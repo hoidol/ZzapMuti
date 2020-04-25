@@ -21,8 +21,8 @@ public class GameProgress : MonoBehaviour
 
     public void Init()
     {
-        _redPlayer.Init(TeamType.Red);
-        _bluePlayer.Init(TeamType.Blue);
+        _redPlayer.Init(EnumInfo.TeamType.Red);
+        _bluePlayer.Init(EnumInfo.TeamType.Blue);
     }
 
     public void SetDrawDeck()
@@ -32,10 +32,10 @@ public class GameProgress : MonoBehaviour
 
     public void StartBattle()
     {
-
+        UnitManager.Instance.StartBattle();
     }
 
-    public void EndBattle()
+    public void EndBattle(EnumInfo.TeamType _winTeam,int _discountLife)
     {
 
     }

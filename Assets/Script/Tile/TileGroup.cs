@@ -42,9 +42,9 @@ public class TileGroup : MonoBehaviour
             _tiles[i].Initialize(new Vector2(i- _height * _tileWidth, _height), _tileDistance);
 
             if (i < _tiles.Length / 2)
-                _tiles[i]._TileTeam = TeamType.Red;
+                _tiles[i]._TileTeam = EnumInfo.TeamType.Red;
             else
-                _tiles[i]._TileTeam = TeamType.Blue;
+                _tiles[i]._TileTeam = EnumInfo.TeamType.Blue;
         }
 
 
@@ -58,11 +58,11 @@ public class TileGroup : MonoBehaviour
         return _tiles[_index];
     }
 
-    public Tile GetCreateAbleTile(TeamType _teamTy)
+    public Tile GetCreateAbleTile(EnumInfo.TeamType _teamTy)
     {
         Tile tileTemp=null;
 
-        if (_teamTy == TeamType.Red)
+        if (_teamTy == EnumInfo.TeamType.Red)
         {
             for (int i = 0; i < _tileHeight / 2; i++)
             {
@@ -74,7 +74,7 @@ public class TileGroup : MonoBehaviour
                 }
             }
         }
-        else if (_teamTy == TeamType.Blue)
+        else if (_teamTy == EnumInfo.TeamType.Blue)
         {
             for (int i = _tileHeight-1; i >= _tileHeight / 2; i--)
             {

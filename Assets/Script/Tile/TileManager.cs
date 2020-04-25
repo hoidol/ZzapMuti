@@ -33,7 +33,7 @@ public class TileManager : MonoBehaviour
         return _tileGroup._Tiles[_index];
     }
 
-    public void CreateUnit(string _unitIdx,TeamType _teamTy)
+    public void CreateUnit(string _unitIdx, EnumInfo.TeamType _teamTy)
     {
         _tileGroup.GetCreateAbleTile(_teamTy).SetUnit(_unitIdx, _teamTy);
     }

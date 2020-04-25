@@ -13,8 +13,8 @@ public class PlayerTurnManager : MonoBehaviour
         get { return _instance; }
     }
 
-    private TeamType _createUnitPlayer;
-    public TeamType _CreateUnitPlayer
+    private EnumInfo.TeamType _createUnitPlayer;
+    public EnumInfo.TeamType _CreateUnitPlayer
     {
         get { return _createUnitPlayer; }
     }

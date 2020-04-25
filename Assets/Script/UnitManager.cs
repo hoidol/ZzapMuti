@@ -22,7 +22,7 @@ public class UnitManager : MonoBehaviour
     public List<Unit> _curRedUnitsOnTile = new List<Unit>();
     public List<Unit> _curBlueUnitsOnTile = new List<Unit>();
 
-    TeamType _curTurnTeamType;
+    EnumInfo.TeamType _curTurnTeamType;
     private void Awake()
     {
         if (_instance == null)
@@ -38,7 +38,7 @@ public class UnitManager : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("StartGame()");
-        _curTurnTeamType = Random.Range(0, 2) == 0 ? TeamType.Red : TeamType.Blue;
+        _curTurnTeamType = Random.Range(0, 2) == 0 ? EnumInfo.TeamType.Red : EnumInfo.TeamType.Blue;
     }
 
     public void StartBattle()
@@ -102,7 +102,7 @@ public class UnitManager : MonoBehaviour
     {
     }
 
-    public Unit CreateUnitWithUnitIdx(string _uIdx,Tile _t,TeamType _tType)
+    public Unit CreateUnitWithUnitIdx(string _uIdx,Tile _t, EnumInfo.TeamType _tType)
     {
         //        ....
         Unit _unit = BringAbleToUseUnit(_uIdx);
@@ -112,10 +112,10 @@ public class UnitManager : MonoBehaviour
 
         switch (_tType)
         {
-            case TeamType.Red:
+            case EnumInfo.TeamType.Red:
                 _curRedUnitsOnTile.Add(_unit);
                 break;
-            case TeamType.Blue:
+            case EnumInfo.TeamType.Blue:
                 _curBlueUnitsOnTile.Add(_unit);
                 break;
         }
@@ -131,7 +131,7 @@ public class UnitManager : MonoBehaviour
 
     public void RemoveUnit(Unit _u) // 캐릭터 병합 시 
     {
-        if (_u._teamType == TeamType.Red)
+        if (_u._teamType == EnumInfo.TeamType.Red)
             _curRedUnitsOnTile.Remove(_u);
         else
             _curBlueUnitsOnTile.Remove(_u);
@@ -194,7 +194,7 @@ public class UnitManager : MonoBehaviour
             //}
 
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
-                _curUnitsOnTile[i].InitUnit(TeamType.Red);
+                _curUnitsOnTile[i].InitUnit(EnumInfo.TeamType.Red);
         }
         else if (Input.GetKeyDown(KeyCode.B))
         {

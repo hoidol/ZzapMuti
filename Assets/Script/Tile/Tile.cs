@@ -48,8 +48,8 @@ public class Tile : MonoBehaviour
         get { return _tileIndexType; }
     }
 
-    [SerializeField] private TeamType _tileTeam;
-    public TeamType _TileTeam
+    [SerializeField] private EnumInfo.TeamType _tileTeam;
+    public EnumInfo.TeamType _TileTeam
     {
         get { return _tileTeam; }
         set { _tileTeam = value;
@@ -93,7 +93,7 @@ public class Tile : MonoBehaviour
         _tileIndexType = TileIndexType.Unit;
     }
 
-    public void SetUnit(string _unitIdx, TeamType _teamTy)
+    public void SetUnit(string _unitIdx, EnumInfo.TeamType _teamTy)
     {
         UnitData _uniData= DataManager.Instance.GetUnitDataWithUnitIdx(_unitIdx);
 
@@ -110,7 +110,7 @@ public class Tile : MonoBehaviour
 
     public void SetTileTeamColor()
     {
-        if (_TileTeam == TeamType.Red)
+        if (_TileTeam == EnumInfo.TeamType.Red)
             _tileSpriteRenderer.color = new Color(.7f, .4f, .4f, 1);
         else
             _tileSpriteRenderer.color = new Color(.4f, .4f, .7f, 1);
