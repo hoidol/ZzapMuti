@@ -84,6 +84,7 @@ public class Unit : MonoBehaviour
         if (_targetUnit == null)
             return;
 
+        Debug.Log("Vector2.SqrMagnitude(_tr.position - _targetUnit._tr.position) : " + Vector2.SqrMagnitude(_tr.position - _targetUnit._tr.position));
         if (_unitData.AttackDistance >= Vector2.SqrMagnitude(_tr.position - _targetUnit._tr.position)) // 공격 가능 상태
         {
             _ableToAttack = true;

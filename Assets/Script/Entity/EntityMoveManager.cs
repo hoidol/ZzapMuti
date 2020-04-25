@@ -5,7 +5,7 @@ using UnityEngine;
 public class EntityMoveManager : MonoBehaviour
 {
     Entity entity;
-    EntityMove move;
+    [SerializeField] EntityMove move;
     
     public void InitEntityMoveMgr(Entity _e)
     {

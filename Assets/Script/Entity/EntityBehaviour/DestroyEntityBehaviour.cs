@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyEntityBehaviour : MonoBehaviour
+public class DestroyEntityBehaviour : EntityBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void DoBehaviour(Unit _tUnit)
     {
-        
+        entity.DestroyEntity();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void DoBehaviour(Vector2 _v)
     {
-        
+        entity.DestroyEntity();
     }
+
 }

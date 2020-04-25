@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class EntityMove : MonoBehaviour
 {
-    Entity entity;
-    public void InitEntityMove(Entity _e)
+    public Entity entity;
+    public virtual void InitEntityMove(Entity _e)
     {
         entity = _e;
     }
 
-    public void CallEntity(Unit _tUnit)
+    public virtual void CallEntity(Unit _tUnit)
     {
 
     }
 
-    public void CallEntity(Vector2 _pos)
+    public virtual void CallEntity(Vector2 _pos)
     {
 
     }
