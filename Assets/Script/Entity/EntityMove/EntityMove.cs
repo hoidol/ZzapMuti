@@ -8,7 +8,6 @@ public class EntityMove : MonoBehaviour
     public void InitEntityMove(Entity _e)
     {
         entity = _e;
-        _move = GetComponentInChildren<EntityMove>();
     }
 
     public void CallEntity(Unit _tUnit)
