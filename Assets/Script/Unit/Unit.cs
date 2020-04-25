@@ -50,6 +50,7 @@ public class Unit : MonoBehaviour
         else
             _normalDamage.Type = DamageType.Magic;
         _normalDamage.DamagePower = _unitData.Damage;
+        _normalDamage.Unit = this;
 
         if (_unitData.SkillDamageType.Equals("Physic"))
             _skillDamage.Type = DamageType.Physic;
@@ -57,6 +58,7 @@ public class Unit : MonoBehaviour
             _skillDamage.Type = DamageType.Magic;
 
         _skillDamage.DamagePower = _unitData.SkillDamage;
+        _skillDamage.Unit = this;
 
     }
 
