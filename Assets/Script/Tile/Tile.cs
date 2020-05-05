@@ -76,6 +76,8 @@ public class Tile : MonoBehaviour
         _tileSpriteRenderer.color = Color.white;
         _tileIndexType = TileIndexType.Nothing;
         SetTileTeamColor();
+
+        hasUnit = false;
     }
 
     public void SetUnit(Unit _unit)
@@ -91,6 +93,7 @@ public class Tile : MonoBehaviour
             _tileSpriteRenderer.color = Color.black;
 
         _tileIndexType = TileIndexType.Unit;
+        hasUnit = true;
     }
 
     public void SetUnit(string _unitIdx, EnumInfo.TeamType _teamTy)

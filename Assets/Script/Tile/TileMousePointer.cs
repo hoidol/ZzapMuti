@@ -55,9 +55,23 @@ public class TileMousePointer : MonoBehaviour
                     }
                     else if(_nowSelectTile._TileIndexType == TileIndexType.Unit && _tileTemp._TileIndexType == TileIndexType.Unit)
                     {
-                        if(_nowSelectTile._UnitIndex._unitIdx==_tileTemp._UnitIndex._unitIdx)
+                        if (_nowSelectTile._UnitIndex._unitIdx == _tileTemp._UnitIndex._unitIdx)
                         {
                             //강화
+                            Debug.Log("강화 Call");
+                            Unit unitTemp = UnitManager.Instance.CombineUnit(_nowSelectTile._UnitIndex, _tileTemp._UnitIndex, _tileTemp);
+
+                            if (unitTemp != null)
+                            {
+                                _nowSelectTile._UnitIndex.gameObject.transform.position += Vector3.right * 50;
+                                _tileTemp._UnitIndex.gameObject.transform.position += Vector3.right * 50;
+
+                                UnitManager.Instance.RemoveUnit(_nowSelectTile._UnitIndex);
+                                UnitManager.Instance.RemoveUnit(_tileTemp._UnitIndex);
+
+                                _nowSelectTile.SetNothing();
+                                _tileTemp.SetUnit(unitTemp);
+                            }
                         }
                     }
                 }

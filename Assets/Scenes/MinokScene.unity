@@ -3877,6 +3877,7 @@ MonoBehaviour:
   - {fileID: 1962303048949257918, guid: 2893b6f601a5f8e49adfa7ca1dac6cf2, type: 3}
   - {fileID: 1624611000973396456, guid: d4cbb992881cc66479330b5d5747df49, type: 3}
   - {fileID: 8812447855604524240, guid: d9629bb87c1f33043a079912235b12fa, type: 3}
+  - {fileID: 2613148760319389891, guid: 2d0c69ac5945cea4ab69424afa37fd29, type: 3}
   _curUnitsOnTile: []
   _curRedUnitsOnTile: []
   _curBlueUnitsOnTile: []

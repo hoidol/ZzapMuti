@@ -29,7 +29,6 @@ public class PlayerDrawManager : MonoBehaviour
         }
 
         _drawFunc = _drawCall;
-        Debug.Log("SetPlayeDRaw");
     }
 
     public void ReDraw()
