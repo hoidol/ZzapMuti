@@ -30,7 +30,7 @@ public class UnitManager : MonoBehaviour
 
     }
 
-    
+
     public void InitUnitMgr()
     {
         _curUnitsOnTile.Clear();
@@ -69,10 +69,10 @@ public class UnitManager : MonoBehaviour
 
             yield return null;
         }
-    }    
+    }
 
     //이건 근거리고
-              
+
     //원거리 유닛은 이걸로 가져올 필요가 없지
 
     //타겟 적 유닛 
@@ -81,7 +81,7 @@ public class UnitManager : MonoBehaviour
         // 탐색
         float _minDis = float.MaxValue;
         Unit _targetUnit = null;
-        for(int i =0;i< _curUnitsOnTile.Count; i++)
+        for (int i = 0; i < _curUnitsOnTile.Count; i++)
         {
             if (!_curUnitsOnTile[i].gameObject.activeSelf)
                 continue;
@@ -102,12 +102,13 @@ public class UnitManager : MonoBehaviour
     {
     }
 
-    public Unit CreateUnitWithUnitIdx(string _uIdx,Tile _t, EnumInfo.TeamType _tType)
+    public Unit CreateUnitWithUnitIdx(string _uIdx, Tile _t, EnumInfo.TeamType _tType)
     {
         //        ....
         Unit _unit = BringAbleToUseUnit(_uIdx);
         _unit.InitUnit(_tType);
         _unit.SetTile(_t);
+
         _curUnitsOnTile.Add(_unit);
 
         switch (_tType)
@@ -119,14 +120,26 @@ public class UnitManager : MonoBehaviour
                 _curBlueUnitsOnTile.Add(_unit);
                 break;
         }
-        return _unit;         
+
+        return _unit;
     }
+
+
+    public void UnitMoveToTile(Unit _u, Tile _t)
+    {
+        _u.SetTile(_t);        
+    }
+
+
+
+
 
     public Unit CombineUnit(Unit _tUnit, Unit _mUnit,Tile _t) // 유닛 병합
     {
         int _nextLv = _tUnit._unitData.ReinforceLv + _mUnit._unitData.ReinforceLv;
         return CreateUnitWithUnitIdx(GetNextLvUnit(_tUnit._unitData.UnitName, _nextLv).UnitIdx, _t,_tUnit._teamType);
     }
+
 
 
     public void RemoveUnit(Unit _u) // 캐릭터 병합 시 
@@ -138,6 +151,9 @@ public class UnitManager : MonoBehaviour
 
         _curUnitsOnTile.Remove(_u);
     }
+
+
+
     Unit BringAbleToUseUnit(string _uIdx)
     {
         for(int i =0;i< _poolingUnits.Count; i++)
@@ -149,6 +165,8 @@ public class UnitManager : MonoBehaviour
         }
         return CreateUnit(_uIdx);
     }
+
+
 
     Unit CreateUnit(string _uIdx)
     {

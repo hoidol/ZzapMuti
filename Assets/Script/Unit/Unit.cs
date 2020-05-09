@@ -60,7 +60,6 @@ public class Unit : MonoBehaviour
     public void SetTile(Tile _t)
     {
         _tile = _t;
-
         _tr.position = _tile.transform.position;
     }
 
