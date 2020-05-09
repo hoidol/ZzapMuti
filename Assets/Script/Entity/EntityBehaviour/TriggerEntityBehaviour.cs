@@ -28,7 +28,7 @@ public class TriggerEntityBehaviour : EntityBehaviour
     {
         if (collision.CompareTag("Unit"))
         {
-            Debug.Log("TriggerEntityBehaviour OnTrigger Enter Tag : Unit");
+
             Unit _targetUnit = collision.GetComponent<Unit>();
             switch (_triggerTarget)
             {

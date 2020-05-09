@@ -15,4 +15,13 @@ public class EnumInfo
         Blue
     }
 
+    public enum State
+    {
+        Null,
+        Fire,
+        Provoke,
+        AttakSpeed,
+        MoveSpeed,
+        Ice
+    }
 }
