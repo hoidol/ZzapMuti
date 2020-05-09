@@ -216,7 +216,7 @@ MonoBehaviour:
   _nonTarget: 0
   _unit: {fileID: 0}
   CallEntityIdx: Archer_1_Arrow
-  ShootTr: {fileID: 0}
+  ShootTr: {fileID: 957356295394503302}
   TargetTr: {fileID: 0}
 --- !u!1 &1999357465581060519
 GameObject:

@@ -69,6 +69,7 @@ public class Unit : MonoBehaviour
         _animMgr.StartBattle();
         _behaviourMgr.StartBattle();
         _moveMgr.StartBattle();
+        _tr.position = _tile.transform.position;
     }
 
 
@@ -119,23 +120,8 @@ public class Unit : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void FinishBattle()
     {
-
         _stateMgr.FinishBattle();
         _animMgr.FinishBattle();
         _behaviourMgr.FinishBattle();
