@@ -21,7 +21,13 @@ public class Player
     public float _Hp
     {
         get { return _hp; }
-        set { _hp = value; }
+        set {
+            _hp = value;
+            if (_hp < 0)
+                _hp = 0;
+            else if (_hp > _maxHp)
+                _hp = _maxHp;
+        }
     }
 
     [SerializeField] private PlayerDeckManager _deckManager=new PlayerDeckManager();
