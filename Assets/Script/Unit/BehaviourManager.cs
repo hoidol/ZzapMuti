@@ -79,13 +79,12 @@ public class BehaviourManager : MonoBehaviour
             if (_unit._stateMgr._curMana >= _unit._unitData.MaxMana)
             {
                 _ableToCallNormalBehaviour = false;
+                _unit._stateMgr._curMana = 0;
                 StartCoroutine(CoolTime());
-
                 _skillBehaviour.DoBehaviour(_u);
                 _usedSkill = true;
             }
         }
-
 
         if (_normalBehaviour != null)
         {

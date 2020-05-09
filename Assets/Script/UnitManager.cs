@@ -114,9 +114,38 @@ public class UnitManager : MonoBehaviour
         //블루 팀, 레드팀 전멸 확인
 
         //... 작업
-        //라이프 깎을 때 고려될 수 있는 부분 : 유닛의 개수 + 유닛의 강화된 수  
+        //라이프 깎을 때 고려될 수 있는 부분 : 유닛의 개수 + 유닛의 강화된 수 
 
-        //GameProgress.Instance.EndBattle(EnumInfo.TeamType.Red,6
+        int _redTeam = 0;
+        int _blueTeam = 0;
+
+        for(int i = 0; i < _curUnitsOnTile.Count; i++)
+        {
+            if (_curUnitsOnTile[i].gameObject.activeSelf)
+            {
+                switch (_curUnitsOnTile[i]._teamType)
+                {
+                    case EnumInfo.TeamType.Red:
+                        _redTeam++;
+                        break;
+
+                    case EnumInfo.TeamType.Blue:
+                        _blueTeam++;
+                        break;
+                }
+            }
+        }
+
+
+        if(_redTeam <= 0)
+        {
+            GameProgress.Instance.EndBattle(EnumInfo.TeamType.Red, 1);
+        }
+        else if(_blueTeam <= 0)
+        {
+            GameProgress.Instance.EndBattle(EnumInfo.TeamType.Blue, 1);
+        }
+
         StopAllCoroutines();
         FinishBattle();
     }

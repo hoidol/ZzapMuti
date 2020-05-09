@@ -6,7 +6,7 @@ public class UnitBehaviour : MonoBehaviour
 {
     public bool _nonTarget;
 
-    public Unit _unit;
+    [HideInInspector] public Unit _unit;
     
     public virtual void InitUnitBehaviour(Unit _u)
     {

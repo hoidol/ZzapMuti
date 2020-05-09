@@ -29,6 +29,11 @@
       "Idx": "HealSupporter_1_Magic",
       "Duration": 5,
       "MoveSpeed": 7
+    },
+    {
+      "Idx": "Archer_1_Skill",
+      "Duration": 5,
+      "MoveSpeed": 10
     }
   ]
 

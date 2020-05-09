@@ -144,6 +144,7 @@ public class Unit : MonoBehaviour
         _ableToAttack = false;
 
         gameObject.SetActive(false);
+        UnitManager.Instance.CheckBattleResult();
     }
 
 
