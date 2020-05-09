@@ -23,18 +23,14 @@ public class Tile : MonoBehaviour
         get { return _tilePosIndex; }
     }
 
-    public void Initialize(Vector2 _tilePosIdx, float _distance)
-    {
-        _tilePosIndex = _tilePosIdx;
-
-        transform.localPosition = _tilePosIdx * _distance;
-    }
 
     private Unit _unitIndex;
     public Unit _UnitIndex
     {
         get { return _unitIndex; }
     }
+
+    private Unit _beforeBattleUnitIndex;
 
     private Unit _reservationUnit;
     public Unit _ReservationUnit
@@ -61,13 +57,15 @@ public class Tile : MonoBehaviour
 
     public void Awake()
     {
-        Init();
-    }
-
-    public void Init()
-    {
-        if(_tileIndexType==TileIndexType.Obstacle)
+        if (_tileIndexType == TileIndexType.Obstacle)
             _tileSpriteRenderer.color = Color.red;
+    }
+    
+    public void Initialize(Vector2 _tilePosIdx, float _distance)
+    {
+        _tilePosIndex = _tilePosIdx;
+
+        transform.localPosition = _tilePosIdx * _distance;
     }
 
     public void SetNothing()
@@ -91,17 +89,19 @@ public class Tile : MonoBehaviour
 
         _tileIndexType = TileIndexType.Unit;
         hasUnit = true;
+
+        _unit.SetTile(this);
     }
 
     public void SetUnit(string _unitIdx, EnumInfo.TeamType _teamTy)
     {
-        UnitData _uniData= DataManager.Instance.GetUnitDataWithUnitIdx(_unitIdx);
+        //UnitData _uniData= DataManager.Instance.GetUnitDataWithUnitIdx(_unitIdx);
 
         hasUnit = true;
 
         _unitIndex = UnitManager.Instance.CreateUnitWithUnitIdx(_unitIdx,this, _teamTy);
-        _unitIndex.transform.position = this.transform.position;
-        _unitIndex._tile = this;
+        
+        _unitIndex.SetTile(this);
 
         _tileSpriteRenderer.color = Color.black;
 
@@ -114,5 +114,21 @@ public class Tile : MonoBehaviour
             _tileSpriteRenderer.color = new Color(.7f, .4f, .4f, 1);
         else
             _tileSpriteRenderer.color = new Color(.4f, .4f, .7f, 1);
+    }
+
+    public void SetDataBeforeBattle()
+    {
+        _beforeBattleUnitIndex = _unitIndex;
+    }
+
+    public void RestoreDataBeforeBattle()
+    {
+        _unitIndex = _beforeBattleUnitIndex;
+        _beforeBattleUnitIndex = null;
+
+        if (_unitIndex == null)
+            return;
+       
+        SetUnit(_unitIndex);
     }
 }

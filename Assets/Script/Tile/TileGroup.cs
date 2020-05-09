@@ -89,4 +89,153 @@ public class TileGroup : MonoBehaviour
 
         return null;
     }
+
+    
+    //어쌔신이 이동 가능한 타일 가져오기
+    /// <summary>
+    /// [레드팀 기준으로]
+    /// 왼쪽->오른쪽 $$
+    /// 맨 안쪽->중간
+    /// </summary>
+    public Tile GetMoveAbleTile_ToRight_ToCenter(EnumInfo.TeamType _searchTeam)
+    {
+        Tile tileTemp = null;
+
+        if (_searchTeam == EnumInfo.TeamType.Red)
+        {
+            for (int i = 0; i < _tileHeight / 2; i++)
+            {
+                for (int j = 0; j < _tileWidth; j++)
+                {
+                    tileTemp = GetTile(j, i);
+                    if (!tileTemp.hasUnit)
+                        return tileTemp;
+                }
+            }
+        }
+        else if (_searchTeam == EnumInfo.TeamType.Blue)
+        {
+            for (int i = _tileHeight - 1; i >= _tileHeight / 2; i--)
+            {
+                for (int j = 0; j < _tileWidth; j++)
+                {
+                    tileTemp = GetTile(j, i);
+                    if (!tileTemp.hasUnit)
+                        return tileTemp;
+                }
+            }
+        }
+
+        return null;
+    }
+    
+    /// <summary>
+    /// [레드팀 기준으로]
+    /// 오른쪽->왼쪽 $$
+    /// 맨 안쪽->중간
+    /// </summary>
+    public Tile GetMoveAbleTile_ToLeft_ToCenter(EnumInfo.TeamType _searchTeam)
+    {
+        Tile tileTemp = null;
+
+        if (_searchTeam == EnumInfo.TeamType.Red)
+        {
+            for (int i = 0; i < _tileHeight / 2; i++)
+            {
+                for (int j = _tileWidth - 1; j >= 0; j--)
+                {
+                    tileTemp = GetTile(j, i);
+                    if (!tileTemp.hasUnit)
+                        return tileTemp;
+                }
+            }
+        }
+        else if (_searchTeam == EnumInfo.TeamType.Blue)
+        {
+            for (int i = _tileHeight - 1; i >= _tileHeight / 2; i--)
+            {
+                for (int j = _tileWidth - 1; j >= 0; j--)
+                {
+                    tileTemp = GetTile(j, i);
+                    if (!tileTemp.hasUnit)
+                        return tileTemp;
+                }
+            }
+        }
+
+        return null;
+    }
+    /// <summary>
+    /// [레드팀 기준으로]
+    /// 왼쪽->오른쪽 $$
+    /// 중간->안쪽
+    /// </summary>
+    public Tile GetMoveAbleTile_ToRight_ToBack(EnumInfo.TeamType _searchTeam)
+    {
+        Tile tileTemp = null;
+
+        if (_searchTeam == EnumInfo.TeamType.Red)
+        {
+            for (int i = (_tileHeight / 2)-1; i >= 0 ; i--)
+            {
+                for (int j = 0; j < _tileWidth; j++)
+                {
+                    tileTemp = GetTile(j, i);
+                    if (!tileTemp.hasUnit)
+                        return tileTemp;
+                }
+            }
+        }
+        else if (_searchTeam == EnumInfo.TeamType.Blue)
+        {
+            for (int i = _tileHeight / 2; i <=_tileHeight-1 ; i++)
+            {
+                for (int j = 0; j < _tileWidth; j++)
+                {
+                    tileTemp = GetTile(j, i);
+                    if (!tileTemp.hasUnit)
+                        return tileTemp;
+                }
+            }
+        }
+
+        return null;
+    }
+    /// <summary>
+    /// [레드팀 기준으로]
+    /// 오른쪽->왼쪽 $$
+    /// 중간->안쪽
+    /// </summary>
+    public Tile GetMoveAbleTile_ToLeft_ToBack(EnumInfo.TeamType _searchTeam)
+    {
+        Tile tileTemp = null;
+
+        if (_searchTeam == EnumInfo.TeamType.Red)
+        {
+            for (int i = (_tileHeight / 2) - 1; i >= 0; i--)
+            {
+                for (int j = _tileWidth - 1; j >= 0; j--)
+                {
+                    tileTemp = GetTile(j, i);
+                    if (!tileTemp.hasUnit)
+                        return tileTemp;
+                }
+            }
+        }
+        else if (_searchTeam == EnumInfo.TeamType.Blue)
+        {
+            for (int i = _tileHeight / 2; i <= _tileHeight - 1; i++)
+            {
+                for (int j = _tileWidth - 1; j >= 0; j--)
+                {
+                    tileTemp = GetTile(j, i);
+                    if (!tileTemp.hasUnit)
+                        return tileTemp;
+                }
+            }
+        }
+
+        return null;
+    }
+
 }

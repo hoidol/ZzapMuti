@@ -66,4 +66,34 @@ public class TileManager : MonoBehaviour
 
         return null;
     }
+
+    public void StartBattle()
+    {
+        for(int i=0;i< _tileGroup._Tiles.Length;i++)
+        {
+            _tileGroup._Tiles[i].SetDataBeforeBattle();
+        }
+    }
+
+    public void EndBattle()
+    {
+        for (int i = 0; i < _tileGroup._Tiles.Length; i++)
+        {
+            _tileGroup._Tiles[i].RestoreDataBeforeBattle();
+        }
+    }
+
+    public Tile GetAssasinMoveTile(EnumInfo.TeamType _searchTeam,bool _startLeft,bool _startBack)
+    {
+        if(_startLeft&&_startBack)
+            return _tileGroup.GetMoveAbleTile_ToRight_ToCenter(_searchTeam);
+        else if (!_startLeft && _startBack)
+            return _tileGroup.GetMoveAbleTile_ToLeft_ToCenter(_searchTeam);
+        else if (!_startLeft && !_startBack)
+            return _tileGroup.GetMoveAbleTile_ToLeft_ToBack(_searchTeam);
+        else if (_startLeft && !_startBack)
+            return _tileGroup.GetMoveAbleTile_ToRight_ToBack(_searchTeam);
+
+        return null;
+    }
 }

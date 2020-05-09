@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class UnitCardUI : MonoBehaviour
 {
     [SerializeField] private Text _unitIdxText;
+    [SerializeField] private Text _maxReinforceText;
 
     private DeckData _deckData;
 
@@ -13,12 +14,12 @@ public class UnitCardUI : MonoBehaviour
 
     public void SetUnitData(DeckData _deckDa,EnumInfo.TeamType _team)
     {
-        Debug.Log(">>>");
         _spawnTeam = _team;
 
         _deckData = _deckDa;
         
         _unitIdxText.text = _deckDa._unit.UnitName;
+        _maxReinforceText.text =string.Format("최대 강화 [{0}]", _deckDa._unit.MaxReinforce);
     }
 
     public void CreateUnit()
