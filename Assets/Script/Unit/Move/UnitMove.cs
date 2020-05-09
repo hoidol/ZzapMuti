@@ -7,6 +7,8 @@ public class UnitMove : MonoBehaviour
     Unit _curUnit;
     Unit _targetUnit;
 
+
+
     public void InitUnitMove(Unit _u)
     {
         _curUnit = _u;
@@ -41,6 +43,9 @@ public class UnitMove : MonoBehaviour
     }
 
 
-
+    public virtual void FinishBattle()
+    {
+        StopAllCoroutines();
+    }
 
 }

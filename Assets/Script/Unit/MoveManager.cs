@@ -33,7 +33,7 @@ public class MoveManager : MonoBehaviour
 
     public void FinishBattle()
     {
-
+        _unitMove.FinishBattle();
     }
 
 

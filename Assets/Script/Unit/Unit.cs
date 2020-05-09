@@ -126,6 +126,8 @@ public class Unit : MonoBehaviour
         _animMgr.FinishBattle();
         _behaviourMgr.FinishBattle();
         _moveMgr.FinishBattle();
+
+        _tr.position = _tile.transform.position;
     }
 
 
