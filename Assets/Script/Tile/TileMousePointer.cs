@@ -40,8 +40,13 @@ public class TileMousePointer : MonoBehaviour
                 //새롭게 지정된 타일
                 Tile _tileTemp = _nowClickObject.collider.GetComponent<Tile>();
 
+               
+
                 if (_tileTemp != null)
                 {
+                    if (_tileTemp == _nowSelectTile)
+                        return;
+
                     //유닛 이동
                     if (_nowSelectTile._TileIndexType==TileIndexType.Unit&& _tileTemp._TileIndexType == TileIndexType.Nothing)
                     {
