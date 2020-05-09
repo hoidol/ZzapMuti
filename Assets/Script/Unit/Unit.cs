@@ -46,7 +46,7 @@ public class Unit : MonoBehaviour
         else
             _normalDamage.Type = DamageType.Magic;
         _normalDamage.DamagePower = _unitData.Damage;
-        _normalDamage.Unit = this;
+        _normalDamage.ResourceUnit = this;
 
         if (_unitData.SkillDamageType.Equals("Physic"))
             _skillDamage.Type = DamageType.Physic;
@@ -54,7 +54,7 @@ public class Unit : MonoBehaviour
             _skillDamage.Type = DamageType.Magic;
 
         _skillDamage.DamagePower = _unitData.SkillDamage;
-        _skillDamage.Unit = this;
+        _skillDamage.ResourceUnit = this;
     }
 
     public void SetTile(Tile _t)
@@ -69,6 +69,7 @@ public class Unit : MonoBehaviour
         _animMgr.StartBattle();
         _behaviourMgr.StartBattle();
         _moveMgr.StartBattle();
+        _tr.position = _tile.transform.position;
     }
 
 
@@ -77,33 +78,50 @@ public class Unit : MonoBehaviour
     public bool _needToMove;
     public void CheckMoveAndAttack()
     {
-
         //각자 알아서 찾고 이동해
+
+
+        ProvokeState _pState = (ProvokeState)_stateMgr.GetState(EnumInfo.State.Provoke);
+
+        if (_pState._curProvokeStateInfo._resourceUnit != null)
+        {
+            if (_pState._curProvokeStateInfo._resourceUnit._stateMgr._isLiving)
+            {
+                ProcessMoveAndAttack(_pState._curProvokeStateInfo._resourceUnit);
+                return;
+            }                
+        }
+
         Unit _targetUnit = UnitManager.Instance.SearchEnemyUnit(this);
         if (_targetUnit == null)
             return;
+        ProcessMoveAndAttack(_targetUnit);
 
-        if (_unitData.AttackDistance >= Vector2.Distance(_tr.position ,_targetUnit._tr.position) ) // 공격 가능 상태
+
+    }
+
+
+    void ProcessMoveAndAttack(Unit _tUnit)
+    {
+        if (_unitData.AttackDistance >= Vector2.Distance(_tr.position, _tUnit._tr.position)) // 공격 가능 상태
         {
-
-            Debug.Log("_unitData.AttackDistance  : " + _unitData.AttackDistance);
-            Debug.Log("Vector2.SqrMagnitude(_tr.position - _targetUnit._tr.position)  : " + Vector2.SqrMagnitude(_tr.position - _targetUnit._tr.position));
             _ableToAttack = true;
             _needToMove = false;
-            _behaviourMgr.DoBehaviour(_targetUnit);
+            _behaviourMgr.DoBehaviour(_tUnit);
         }
         else
         {
             _ableToAttack = false;
             _needToMove = true;
-            _moveMgr.MoveToUnit(_targetUnit);
+            _moveMgr.MoveToUnit(_tUnit);
         }
-
     }
+
+
+
 
     public void FinishBattle()
     {
-
         _stateMgr.FinishBattle();
         _animMgr.FinishBattle();
         _behaviourMgr.FinishBattle();

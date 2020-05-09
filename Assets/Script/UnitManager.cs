@@ -29,8 +29,6 @@ public class UnitManager : MonoBehaviour
             _instance = this;
 
     }
-
-
     public void InitUnitMgr()
     {
         _curUnitsOnTile.Clear();
@@ -104,7 +102,9 @@ public class UnitManager : MonoBehaviour
 
     public void FinishBattle()
     {
-
+        StopAllCoroutines();
+        for (int i = 0; i < _curUnitsOnTile.Count; i++)
+            _curUnitsOnTile[i].FinishBattle();
     }
 
     
@@ -116,7 +116,8 @@ public class UnitManager : MonoBehaviour
         //... 작업
         //라이프 깎을 때 고려될 수 있는 부분 : 유닛의 개수 + 유닛의 강화된 수  
 
-        //GameProgress.Instance.EndBattle(EnumInfo.TeamType.Red,6)
+        //GameProgress.Instance.EndBattle(EnumInfo.TeamType.Red,6
+        StopAllCoroutines();
         FinishBattle();
     }
 
@@ -166,6 +167,7 @@ public class UnitManager : MonoBehaviour
         else
             _curBlueUnitsOnTile.Remove(_u);
 
+        _u.gameObject.SetActive(false);
         _curUnitsOnTile.Remove(_u);
     }
 

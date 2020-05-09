@@ -22,7 +22,8 @@
       "CriticalRate": 0,
       "CriticalDamage": 0,
       "MaxMana": 0,
-      "ManaChargeAmount": 0
+      "ManaChargeAmount": 0,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TankWarrior_1",
@@ -31,7 +32,7 @@
       "Class": "Warrior",
       "LifeAttack": 1,
       "MaxReinforce": 8,
-      "Detail": "탱커 전사 \n스킬 :",
+      "Detail": "탱커 전사 \n스킬 : 도발 범위 : 1.5 + 쉴드(체력 비례 : 30%)",
       "Hp": 40,
       "Defence": 1,
       "MagicResistance": 0,
@@ -46,7 +47,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TankWarrior_2",
@@ -70,7 +72,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TankWarrior_3",
@@ -94,7 +97,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TankWarrior_4",
@@ -118,7 +122,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TankWarrior_5",
@@ -142,7 +147,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TankWarrior_6",
@@ -166,7 +172,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TankWarrior_7",
@@ -190,7 +197,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TankWarrior_8",
@@ -199,7 +207,7 @@
       "Class": "Warrior",
       "LifeAttack": 8,
       "MaxReinforce": 8,
-      "Detail": "탱커 전사",
+      "Detail": "탱커 전사\n스킬 : 도발 2+ 쉴드(체력 비례 : 100%)",
       "Hp": 180,
       "Defence": 4.5,
       "MagicResistance": 0,
@@ -214,7 +222,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "DealWarrior_1",
@@ -223,7 +232,7 @@
       "Class": "Warrior",
       "LifeAttack": 1,
       "MaxReinforce": 8,
-      "Detail": "딜 전사\n스킬 :",
+      "Detail": "딜 전사\n스킬 : 강타",
       "Hp": 30,
       "Defence": 0.7,
       "MagicResistance": 0,
@@ -238,7 +247,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "DealWarrior_2",
@@ -262,7 +272,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "DealWarrior_3",
@@ -271,7 +282,7 @@
       "Class": "Warrior",
       "LifeAttack": 3,
       "MaxReinforce": 8,
-      "Detail": "딜 전사",
+      "Detail": "딜 전사 \n스킬 : 강타 + 스플레쉬 범위 1",
       "Hp": 60,
       "Defence": 1.5,
       "MagicResistance": 0,
@@ -286,7 +297,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "DealWarrior_4",
@@ -310,7 +322,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "DealWarrior_5",
@@ -334,7 +347,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "DealWarrior_6",
@@ -358,7 +372,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "DealWarrior_7",
@@ -382,7 +397,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "DealWarrior_8",
@@ -391,7 +407,7 @@
       "Class": "Warrior",
       "LifeAttack": 8,
       "MaxReinforce": 8,
-      "Detail": "딜 전사",
+      "Detail": "딜 전사 강타 + 스플레쉬 범위 2",
       "Hp": 135,
       "Defence": 3.5,
       "MagicResistance": 0,
@@ -406,7 +422,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Archer_1",
@@ -430,7 +447,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Archer_2",
@@ -454,7 +472,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Archer_3",
@@ -478,7 +497,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Archer_4",
@@ -502,7 +522,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Archer_5",
@@ -526,7 +547,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Archer_6",
@@ -550,7 +572,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Archer_7",
@@ -574,7 +597,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Archer_8",
@@ -598,7 +622,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TrapWizard_1",
@@ -607,7 +632,7 @@
       "Class": "Wizard",
       "LifeAttack": 1,
       "MaxReinforce": 5,
-      "Detail": "속박 마법사",
+      "Detail": "스킬 : 속박 마법사 1초",
       "Hp": 39,
       "Defence": 0.5,
       "MagicResistance": 0,
@@ -622,7 +647,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 120,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TrapWizard_2",
@@ -631,7 +657,7 @@
       "Class": "Wizard",
       "LifeAttack": 2,
       "MaxReinforce": 5,
-      "Detail": "속박 마법사",
+      "Detail": "속박 마법사 1.5초",
       "Hp": 48,
       "Defence": 0.5,
       "MagicResistance": 0,
@@ -645,8 +671,9 @@
       "RecoverRate": 0,
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
-      "MaxMana": 120,
-      "ManaChargeAmount": 10
+      "MaxMana": 115,
+      "ManaChargeAmount": 12,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TrapWizard_3",
@@ -655,7 +682,7 @@
       "Class": "Wizard",
       "LifeAttack": 3,
       "MaxReinforce": 5,
-      "Detail": "속박 마법사",
+      "Detail": "속박 마법사 2초",
       "Hp": 57,
       "Defence": 0.5,
       "MagicResistance": 0,
@@ -669,8 +696,9 @@
       "RecoverRate": 0,
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
-      "MaxMana": 120,
-      "ManaChargeAmount": 10
+      "MaxMana": 110,
+      "ManaChargeAmount": 14,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TrapWizard_4",
@@ -679,7 +707,7 @@
       "Class": "Wizard",
       "LifeAttack": 4,
       "MaxReinforce": 5,
-      "Detail": "속박 마법사",
+      "Detail": "속박 마법사 2.5초",
       "Hp": 66,
       "Defence": 0.5,
       "MagicResistance": 0,
@@ -693,8 +721,9 @@
       "RecoverRate": 0,
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
-      "MaxMana": 120,
-      "ManaChargeAmount": 10
+      "MaxMana": 105,
+      "ManaChargeAmount": 16,
+      "InitMana": 0
     },
     {
       "UnitIdx": "TrapWizard_5",
@@ -703,7 +732,7 @@
       "Class": "Wizard",
       "LifeAttack": 5,
       "MaxReinforce": 5,
-      "Detail": "속박 마법사",
+      "Detail": "속박 마법사 3초",
       "Hp": 75,
       "Defence": 0.5,
       "MagicResistance": 0,
@@ -717,8 +746,9 @@
       "RecoverRate": 0,
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
-      "MaxMana": 120,
-      "ManaChargeAmount": 10
+      "MaxMana": 100,
+      "ManaChargeAmount": 18,
+      "InitMana": 0
     },
     {
       "UnitIdx": "FireWizard_1",
@@ -727,7 +757,7 @@
       "Class": "Wizard",
       "LifeAttack": 1,
       "MaxReinforce": 5,
-      "Detail": "범위 마법사",
+      "Detail": "범위 마법사\n스킬 : 타겟 스플레쉬 범위 : 1",
       "Hp": 39,
       "Defence": 0.5,
       "MagicResistance": 0,
@@ -742,7 +772,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 120,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "FireWizard_2",
@@ -766,7 +797,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 120,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "FireWizard_3",
@@ -790,7 +822,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 120,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "FireWizard_4",
@@ -814,7 +847,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 120,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "FireWizard_5",
@@ -823,7 +857,7 @@
       "Class": "Wizard",
       "LifeAttack": 5,
       "MaxReinforce": 5,
-      "Detail": "범위 마법사",
+      "Detail": "범위 마법사 \n스킬 : 타겟 스플레쉬 범위 : 2.5",
       "Hp": 75,
       "Defence": 0.5,
       "MagicResistance": 0,
@@ -838,7 +872,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 120,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Assassin_1",
@@ -847,7 +882,7 @@
       "Class": "Assassin",
       "LifeAttack": 1,
       "MaxReinforce": 8,
-      "Detail": "어쌔신",
+      "Detail": "어쌔신 - 암살.\n스킬 : 2초 공속(50%), 회피(50%) 올리는 거",
       "Hp": 26,
       "Defence": 0.7,
       "MagicResistance": 0,
@@ -862,7 +897,8 @@
       "CriticalRate": 15,
       "CriticalDamage": 2,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Assassin_2",
@@ -886,7 +922,8 @@
       "CriticalRate": 15.3,
       "CriticalDamage": 2.2,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Assassin_3",
@@ -910,7 +947,8 @@
       "CriticalRate": 15.6,
       "CriticalDamage": 2.4,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Assassin_4",
@@ -934,7 +972,8 @@
       "CriticalRate": 15.9,
       "CriticalDamage": 2.6,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Assassin_5",
@@ -958,7 +997,8 @@
       "CriticalRate": 16.2,
       "CriticalDamage": 2.8,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Assassin_6",
@@ -982,7 +1022,8 @@
       "CriticalRate": 16.5,
       "CriticalDamage": 3,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Assassin_7",
@@ -1006,7 +1047,8 @@
       "CriticalRate": 16.8,
       "CriticalDamage": 3.2,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "Assassin_8",
@@ -1015,7 +1057,7 @@
       "Class": "Assassin",
       "LifeAttack": 8,
       "MaxReinforce": 8,
-      "Detail": "어쌔신",
+      "Detail": "어쌔신 - 암살.\n스킬 : 6초 공속(100%), 회피(100%)",
       "Hp": 75,
       "Defence": 2.1,
       "MagicResistance": 0,
@@ -1030,7 +1072,8 @@
       "CriticalRate": 17.1,
       "CriticalDamage": 3.4,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "HealSupporter_1",
@@ -1039,7 +1082,7 @@
       "Class": "Supporter",
       "LifeAttack": 1,
       "MaxReinforce": 5,
-      "Detail": "힐러",
+      "Detail": "힐러 \n스킬:지정 힐 타겟 1 힐량 - 최대 체력 15\n타겟 지정 방식 : (현재체력/최대체력) 가장 낮은 유닛",
       "Hp": 39,
       "Defence": 0.45,
       "MagicResistance": 0,
@@ -1054,7 +1097,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "HealSupporter_2",
@@ -1078,7 +1122,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 98,
-      "ManaChargeAmount": 12
+      "ManaChargeAmount": 12,
+      "InitMana": 0
     },
     {
       "UnitIdx": "HealSupporter_3",
@@ -1087,7 +1132,7 @@
       "Class": "Supporter",
       "LifeAttack": 3,
       "MaxReinforce": 5,
-      "Detail": "힐러",
+      "Detail": "힐러 타겟 :2 힐량 - 최대 체력 - 20%",
       "Hp": 57,
       "Defence": 0.45,
       "MagicResistance": 0,
@@ -1102,7 +1147,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 96,
-      "ManaChargeAmount": 14
+      "ManaChargeAmount": 14,
+      "InitMana": 0
     },
     {
       "UnitIdx": "HealSupporter_4",
@@ -1126,7 +1172,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 94,
-      "ManaChargeAmount": 16
+      "ManaChargeAmount": 16,
+      "InitMana": 0
     },
     {
       "UnitIdx": "HealSupporter_5",
@@ -1135,7 +1182,7 @@
       "Class": "Supporter",
       "LifeAttack": 5,
       "MaxReinforce": 5,
-      "Detail": "힐러",
+      "Detail": "힐러 \n스킬 지정 힐 : 타겟 3 힐량 - 최대 체력 30%",
       "Hp": 75,
       "Defence": 0.45,
       "MagicResistance": 0,
@@ -1150,7 +1197,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 92,
-      "ManaChargeAmount": 18
+      "ManaChargeAmount": 18,
+      "InitMana": 0
     },
     {
       "UnitIdx": "AttackBuffSupporter_1",
@@ -1159,7 +1207,7 @@
       "Class": "Supporter",
       "LifeAttack": 1,
       "MaxReinforce": 5,
-      "Detail": "공버퍼",
+      "Detail": "공격력 버프\n스킬 : 랜덤 타겟 1명 , 2초간 공 35%",
       "Hp": 39,
       "Defence": 0.45,
       "MagicResistance": 0,
@@ -1174,7 +1222,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 100,
-      "ManaChargeAmount": 10
+      "ManaChargeAmount": 10,
+      "InitMana": 0
     },
     {
       "UnitIdx": "AttackBuffSupporter_2",
@@ -1198,7 +1247,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 98,
-      "ManaChargeAmount": 12
+      "ManaChargeAmount": 12,
+      "InitMana": 0
     },
     {
       "UnitIdx": "AttackBuffSupporter_3",
@@ -1222,7 +1272,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 96,
-      "ManaChargeAmount": 14
+      "ManaChargeAmount": 14,
+      "InitMana": 0
     },
     {
       "UnitIdx": "AttackBuffSupporter_4",
@@ -1246,7 +1297,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 94,
-      "ManaChargeAmount": 16
+      "ManaChargeAmount": 16,
+      "InitMana": 0
     },
     {
       "UnitIdx": "AttackBuffSupporter_5",
@@ -1255,7 +1307,7 @@
       "Class": "Supporter",
       "LifeAttack": 5,
       "MaxReinforce": 5,
-      "Detail": "공버퍼",
+      "Detail": "공버퍼 랜덤 타겟 3명 4초간 공 60%, 공속 40%",
       "Hp": 75,
       "Defence": 0.45,
       "MagicResistance": 0,
@@ -1270,7 +1322,8 @@
       "CriticalRate": 5,
       "CriticalDamage": 1.1,
       "MaxMana": 92,
-      "ManaChargeAmount": 18
+      "ManaChargeAmount": 18,
+      "InitMana": 0
     }
   ]
 }

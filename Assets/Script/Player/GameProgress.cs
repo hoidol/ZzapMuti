@@ -69,13 +69,12 @@ public class GameProgress : MonoBehaviour
     public IEnumerator TestRoutine()
     {
         yield return new WaitForSeconds(5);
-        //EndBattle(EnumInfo.TeamType.Red, 1);
+        EndBattle(EnumInfo.TeamType.Red, 1);
     }
 
     public void EndBattle(EnumInfo.TeamType _winTeam,int _discountLife)
     {
-        //UnitManager.Instance.StopAllCoroutines();
-
+        UnitManager.Instance.FinishBattle();
         TileManager._Instance.EndBattle();
 
         if (_winTeam==EnumInfo.TeamType.Red)

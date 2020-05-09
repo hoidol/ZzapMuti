@@ -23,6 +23,7 @@ public class UnitData
     public float CriticalDamage;
     public float MaxMana;
     public float ManaChargeAmount;
+    public float InitMana;
 }
 
 

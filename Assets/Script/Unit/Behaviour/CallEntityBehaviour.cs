@@ -13,13 +13,12 @@ public class CallEntityBehaviour : UnitBehaviour
 
     public override void DoBehaviour()
     {
-        Debug.Log("DoBehaviour() CallEntityIdx : " + CallEntityIdx); 
         EntityManager.Instance.CallEntity(CallEntityIdx, _unit, ShootTr.position, TargetTr.position);
     }
 
     public override void DoBehaviour(Unit _tUnit)
     {
-        Debug.Log("DoBehaviour(Unit) CallEntityIdx : " + CallEntityIdx);
+
         EntityManager.Instance.CallEntity(CallEntityIdx, _unit, ShootTr.position, _tUnit);
     }
 }
