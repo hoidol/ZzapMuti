@@ -63,14 +63,14 @@ public class GameProgress : MonoBehaviour
         startBattleButton.gameObject.SetActive(false);
         UnitManager.Instance.StartBattle();
 
-        //StartCoroutine(TestRoutine());
+        StartCoroutine(TestRoutine());
     }
 
-    //public IEnumerator TestRoutine()
-    //{
-    //    yield return new WaitForSeconds(5);
-    //    EndBattle(EnumInfo.TeamType.Red, 1);
-    //}
+    public IEnumerator TestRoutine()
+    {
+        yield return new WaitForSeconds(5);
+        //EndBattle(EnumInfo.TeamType.Red, 1);
+    }
 
     public void EndBattle(EnumInfo.TeamType _winTeam,int _discountLife)
     {

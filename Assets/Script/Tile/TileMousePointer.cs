@@ -59,13 +59,11 @@ public class TileMousePointer : MonoBehaviour
                         {
                             //강화
                             Debug.Log("강화 Call");
+
                             Unit unitTemp = UnitManager.Instance.CombineUnit(_nowSelectTile._UnitIndex, _tileTemp._UnitIndex, _tileTemp);
 
                             if (unitTemp != null)
                             {
-                                _nowSelectTile._UnitIndex.gameObject.transform.position += Vector3.right * 50;
-                                _tileTemp._UnitIndex.gameObject.transform.position += Vector3.right * 50;
-
                                 UnitManager.Instance.RemoveUnit(_nowSelectTile._UnitIndex);
                                 UnitManager.Instance.RemoveUnit(_tileTemp._UnitIndex);
 
