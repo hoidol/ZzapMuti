@@ -37,6 +37,7 @@ public class TileMousePointer : MonoBehaviour
             _pointerSpriteRenderer.sprite = null;
             if (GetCastedTile(out _nowClickObject))
             {
+                //새롭게 지정된 타일
                 Tile _tileTemp = _nowClickObject.collider.GetComponent<Tile>();
 
                 if (_tileTemp != null)
@@ -44,14 +45,13 @@ public class TileMousePointer : MonoBehaviour
                     //유닛 이동
                     if (_nowSelectTile._TileIndexType==TileIndexType.Unit&& _tileTemp._TileIndexType == TileIndexType.Nothing)
                     {
-                        Debug.Log(_tileTemp._TilePosIndex);
-
                         if (_nowSelectTile._TileTeam != _tileTemp._TileTeam)
                             return;
 
+                        UnitManager.Instance.UnitMoveToTile(_nowSelectTile._UnitIndex, _tileTemp);
+
                         _tileTemp.SetUnit(_nowSelectTile._UnitIndex);
                         _nowSelectTile.SetNothing();
-
                     }
                     else if(_nowSelectTile._TileIndexType == TileIndexType.Unit && _tileTemp._TileIndexType == TileIndexType.Unit)
                     {

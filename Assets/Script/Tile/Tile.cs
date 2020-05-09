@@ -83,9 +83,6 @@ public class Tile : MonoBehaviour
     public void SetUnit(Unit _unit)
     {
         _unitIndex = _unit;    
- 
-        _unitIndex._tile = this;
-        _unitIndex.transform.position = this.transform.position;
 
         if (_unit == null)
             _tileSpriteRenderer.color = Color.white;
