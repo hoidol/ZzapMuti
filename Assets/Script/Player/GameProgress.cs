@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class GameProgress : MonoBehaviour
 {
+    public static GameProgress Instance;
+
     [Header("Red Player")]
     [SerializeField] private Player _redPlayer;
 
@@ -19,6 +21,11 @@ public class GameProgress : MonoBehaviour
 
     private int _round=0;
 
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
     public void Start()
     {
         Init();

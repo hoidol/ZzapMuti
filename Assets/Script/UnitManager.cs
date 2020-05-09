@@ -45,6 +45,10 @@ public class UnitManager : MonoBehaviour
     {
 
         Debug.Log("StartBattle()");
+        // 어쌔신이 어느 타일로 이동되야되는지 
+        
+       // 레드팀 처리 따로, 블루팀 처리 따로
+
 
         for (int i = 0; i < _curUnitsOnTile.Count; i++)
         {
@@ -100,7 +104,23 @@ public class UnitManager : MonoBehaviour
 
     public void FinishBattle()
     {
+
     }
+
+    
+
+    public void CheckBattleResult()
+    {
+        //블루 팀, 레드팀 전멸 확인
+
+        //... 작업
+        //라이프 깎을 때 고려될 수 있는 부분 : 유닛의 개수 + 유닛의 강화된 수  
+
+        //GameProgress.Instance.EndBattle(EnumInfo.TeamType.Red,6)
+        FinishBattle();
+    }
+
+
 
     public Unit CreateUnitWithUnitIdx(string _uIdx, Tile _t, EnumInfo.TeamType _tType)
     {
@@ -129,9 +149,6 @@ public class UnitManager : MonoBehaviour
     {
         _u.SetTile(_t);        
     }
-
-
-
 
 
     public Unit CombineUnit(Unit _tUnit, Unit _mUnit,Tile _t) // 유닛 병합
