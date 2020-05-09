@@ -36,7 +36,7 @@ public class UnitMove : MonoBehaviour
                 continue;
 
             
-            _curUnit._tr.position = Vector2.MoveTowards(_curUnit._tr.position, _targetUnit._tr.position, Time.deltaTime * 2);
+            _curUnit._tr.position = Vector2.MoveTowards(_curUnit._tr.position, _targetUnit._tr.position, Time.deltaTime * 1);
         }
     }
 

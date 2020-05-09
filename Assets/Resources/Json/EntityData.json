@@ -1,12 +1,35 @@
-{"EntityData":[
-  {
-    "Idx": 0,
-    "Duration": 0,
-    "MoveSpeed": 0
-  },
-  {
-    "Idx": "Archer_1_Arrow",
-    "Duration": 5,
-    "MoveSpeed": 5
-  }
-]}
+{
+  "EntityData": [
+    {
+      "Idx": 0,
+      "Duration": 0,
+      "MoveSpeed": 0
+    },
+    {
+      "Idx": "Archer_1_Arrow",
+      "Duration": 5,
+      "MoveSpeed": 10
+    },
+    {
+      "Idx": "AttackBuffSupporter_1_Magic",
+      "Duration": 5,
+      "MoveSpeed": 7
+    },
+    {
+      "Idx": "FireWizard_1_Magic",
+      "Duration": 5,
+      "MoveSpeed": 7
+    },
+    {
+      "Idx": "TrapWizard_1_Magic",
+      "Duration": 5,
+      "MoveSpeed": 7
+    },
+    {
+      "Idx": "HealSupporter_1_Magic",
+      "Duration": 5,
+      "MoveSpeed": 7
+    }
+  ]
+
+}

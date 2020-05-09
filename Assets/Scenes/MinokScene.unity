@@ -5018,6 +5018,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2374943747037428950, guid: 11ac47ec1f6d5994ea81dd19f92b0f6b,
+        type: 3}
+      propertyPath: _entities.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374943747037428950, guid: 11ac47ec1f6d5994ea81dd19f92b0f6b,
+        type: 3}
+      propertyPath: _entities.Array.data[1]
+      value: 
+      objectReference: {fileID: 8242023352436001617, guid: 8bd6a10c74b5eba41a50db68274cff64,
+        type: 3}
+    - target: {fileID: 2374943747037428950, guid: 11ac47ec1f6d5994ea81dd19f92b0f6b,
+        type: 3}
+      propertyPath: _entities.Array.data[2]
+      value: 
+      objectReference: {fileID: 2947038251465998933, guid: ae7342ce653fd8f4fb65b5e381e6f6be,
+        type: 3}
+    - target: {fileID: 2374943747037428950, guid: 11ac47ec1f6d5994ea81dd19f92b0f6b,
+        type: 3}
+      propertyPath: _entities.Array.data[3]
+      value: 
+      objectReference: {fileID: 638190613415767138, guid: 67b64766ea6a68d47b2cb54a5ce905fe,
+        type: 3}
+    - target: {fileID: 2374943747037428950, guid: 11ac47ec1f6d5994ea81dd19f92b0f6b,
+        type: 3}
+      propertyPath: _entities.Array.data[4]
+      value: 
+      objectReference: {fileID: 6018283526586738286, guid: 466ed9b790baf3549b8e561d4c1c2e46,
+        type: 3}
     - target: {fileID: 2374943747037428951, guid: 11ac47ec1f6d5994ea81dd19f92b0f6b,
         type: 3}
       propertyPath: m_Name

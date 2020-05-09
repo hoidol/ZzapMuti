@@ -84,10 +84,11 @@ public class Unit : MonoBehaviour
         if (_targetUnit == null)
             return;
 
-         if (_unitData.AttackDistance >= Vector2.SqrMagnitude(_tr.position - _targetUnit._tr.position)) // 공격 가능 상태
+        if (_unitData.AttackDistance >= Vector2.Distance(_tr.position ,_targetUnit._tr.position) ) // 공격 가능 상태
         {
-            Debug.Log("Vector2.SqrMagnitude(_tr.position - _targetUnit._tr.position) : " + Vector2.SqrMagnitude(_tr.position - _targetUnit._tr.position));
 
+            Debug.Log("_unitData.AttackDistance  : " + _unitData.AttackDistance);
+            Debug.Log("Vector2.SqrMagnitude(_tr.position - _targetUnit._tr.position)  : " + Vector2.SqrMagnitude(_tr.position - _targetUnit._tr.position));
             _ableToAttack = true;
             _needToMove = false;
             _behaviourMgr.DoBehaviour(_targetUnit);
