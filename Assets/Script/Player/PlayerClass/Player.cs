@@ -39,7 +39,7 @@ public class Player
     public void Init(EnumInfo.TeamType _teamTy)
     {
         _teamType = _teamTy;
-        _maxHp = 50;
+        _maxHp = 5;
         _hp = _maxHp;
 
         _deckManager.SetAllDeck();

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GameProgress : MonoBehaviour
 {
@@ -57,13 +58,27 @@ public class GameProgress : MonoBehaviour
 
     public void StartBattle()
     {
+        TileManager._Instance.StartBattle();
+
         startBattleButton.gameObject.SetActive(false);
         UnitManager.Instance.StartBattle();
+
+        //StartCoroutine(TestRoutine());
     }
+
+    //public IEnumerator TestRoutine()
+    //{
+    //    yield return new WaitForSeconds(5);
+    //    EndBattle(EnumInfo.TeamType.Red, 1);
+    //}
 
     public void EndBattle(EnumInfo.TeamType _winTeam,int _discountLife)
     {
-        if(_winTeam==EnumInfo.TeamType.Red)
+        //UnitManager.Instance.StopAllCoroutines();
+
+        TileManager._Instance.EndBattle();
+
+        if (_winTeam==EnumInfo.TeamType.Red)
         {
             _bluePlayer._Hp -= _discountLife;
         }
@@ -90,6 +105,7 @@ public class GameProgress : MonoBehaviour
     public void SetPlayerLifeUI()
     {
         _redPlayerLifeText.text = string.Format("Red Life [{0}]", _redPlayer._Hp.ToString());
+        Debug.Log(string.Format("Red Life [{0}]", _redPlayer._Hp.ToString()));
         _bluePlayerLifeText.text = string.Format("Blue Life [{0}]", _bluePlayer._Hp.ToString());
     }
 
