@@ -36,6 +36,7 @@ public class Tile : MonoBehaviour
     public Unit _ReservationUnit
     {
         get { return _reservationUnit; }
+        set { _reservationUnit = value; }
     }
 
     [SerializeField] private TileIndexType _tileIndexType;

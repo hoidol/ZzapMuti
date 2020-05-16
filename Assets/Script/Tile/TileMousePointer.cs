@@ -16,14 +16,12 @@ public class TileMousePointer : MonoBehaviour
             if (GetCastedTile(out _nowClickObject))
             {
                 Tile _tileTemp = _nowClickObject.collider.GetComponent<Tile>();
+
                 if (_tileTemp != null)
                 {
                     _nowSelectTile = _tileTemp;
 
-                    if (_nowSelectTile._TileIndexType == TileIndexType.Unit)
-                    {
-                        _pointerSpriteRenderer.sprite = _nowSelectTile._UnitIndex.GetComponentInChildren<SpriteRenderer>().sprite;
-                    }
+                    SetUnitSprite(_tileTemp);
                 }
             }
         }
@@ -35,48 +33,19 @@ public class TileMousePointer : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _pointerSpriteRenderer.sprite = null;
+
             if (GetCastedTile(out _nowClickObject))
             {
-                //새롭게 지정된 타일
                 Tile _tileTemp = _nowClickObject.collider.GetComponent<Tile>();
-
-               
 
                 if (_tileTemp != null)
                 {
                     if (_tileTemp == _nowSelectTile)
                         return;
 
-                    //유닛 이동
-                    if (_nowSelectTile._TileIndexType==TileIndexType.Unit&& _tileTemp._TileIndexType == TileIndexType.Nothing)
-                    {
-                        if (_nowSelectTile._TileTeam != _tileTemp._TileTeam)
-                            return;
+                    CheckMoveUnit(_nowSelectTile, _tileTemp);
 
-                        UnitManager.Instance.UnitMoveToTile(_nowSelectTile._UnitIndex, _tileTemp);
-
-                        _tileTemp.SetUnit(_nowSelectTile._UnitIndex);
-                        _nowSelectTile.SetNothing();
-                    }
-                    else if(_nowSelectTile._TileIndexType == TileIndexType.Unit && _tileTemp._TileIndexType == TileIndexType.Unit)
-                    {
-                        if (_nowSelectTile._UnitIndex._unitIdx == _tileTemp._UnitIndex._unitIdx)
-                        {
-                            //강화
-                            Debug.Log("강화 Call");
-
-                            Unit unitTemp = UnitManager.Instance.CombineUnit(_nowSelectTile._UnitIndex, _tileTemp._UnitIndex, _tileTemp);
-
-                            if (unitTemp != null)
-                            {
-                                UnitManager.Instance.RemoveUnit(_nowSelectTile._UnitIndex);
-                                UnitManager.Instance.RemoveUnit(_tileTemp._UnitIndex);
-
-                                _nowSelectTile.SetNothing();
-                                _tileTemp.SetUnit(unitTemp);
-                            }
-                        }
-                    }
+                    CheckReinforceUnit(_nowSelectTile, _tileTemp);
                 }
             }
         }
@@ -88,19 +57,68 @@ public class TileMousePointer : MonoBehaviour
         _pointerSpriteRenderer.transform.position = new Vector3(_pointerSpriteRenderer.transform.position.x, _pointerSpriteRenderer.transform.position.y, 0);
     }
 
-    public void SetUnitSprite()
+    public void SetUnitSprite(Tile _downTile)
     {
-
+        if (_downTile._TileIndexType == TileIndexType.Unit)
+        {
+            _pointerSpriteRenderer.sprite = _downTile._UnitIndex.GetComponentInChildren<SpriteRenderer>().sprite;
+        }
     }
 
-    public void MoveUnit()
+    public void CheckMoveUnit(Tile _downTile, Tile _upTile)
     {
+        if (_downTile == null || _upTile == null)
+            return;
 
+        if (_downTile._TileTeam != _upTile._TileTeam)
+            return;
+
+        if (_downTile._TileIndexType != TileIndexType.Unit || _upTile._TileIndexType != TileIndexType.Nothing)
+            return;
+
+        MoveUnit(_downTile, _upTile);
     }
 
-    public void ReinforceUnit()
+    public void MoveUnit(Tile _downTile, Tile _upTile)
     {
+        UnitManager.Instance.UnitMoveToTile(_downTile._UnitIndex, _upTile);
 
+        _upTile.SetUnit(_nowSelectTile._UnitIndex);
+        _downTile.SetNothing();
+    }
+
+    public void CheckReinforceUnit(Tile _downTile, Tile _upTile)
+    {
+        if (_downTile == null || _upTile == null)
+            return;
+
+        if (_downTile._TileTeam != _upTile._TileTeam)
+            return;
+
+        if (_downTile._TileIndexType != TileIndexType.Unit || _upTile._TileIndexType != TileIndexType.Unit)
+            return;
+
+        if (_downTile._UnitIndex._unitIdx == _upTile._UnitIndex._unitIdx)
+        {
+            ReinforceUnit(_downTile, _upTile);
+        }
+    }
+
+    public void ReinforceUnit(Tile _downTile, Tile _upTile)
+    {
+        //강화
+        Debug.Log("강화 Call");
+
+        Unit unitTemp = UnitManager.Instance.CombineUnit(_downTile._UnitIndex, _upTile._UnitIndex, _upTile);
+
+        if (unitTemp != null)
+        {
+            UnitManager.Instance.RemoveUnit(_downTile._UnitIndex);
+            UnitManager.Instance.RemoveUnit(_upTile._UnitIndex);
+
+            _nowSelectTile.SetNothing();
+            _upTile.SetUnit(unitTemp);
+        }
     }
 
     public bool GetCastedTile(out RaycastHit2D _outHitObject)
