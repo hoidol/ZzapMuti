@@ -17,6 +17,14 @@ public class Player
         get { return _maxHp; }
     }
 
+    [SerializeField] private string _name;
+    public string _Name
+    {
+        get { return _name; }
+    }
+
+    public event System.Action ChangeHpEvent;
+
     private float _hp;
     public float _Hp
     {
@@ -27,6 +35,8 @@ public class Player
                 _hp = 0;
             else if (_hp > _maxHp)
                 _hp = _maxHp;
+
+            ChangeHpEvent?.Invoke();
         }
     }
 

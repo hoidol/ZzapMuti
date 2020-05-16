@@ -12,13 +12,18 @@ public class GameProgress : MonoBehaviour
     [Header("Blue Player")]
     [SerializeField] private Player _bluePlayer;
 
+    [Header("DrawManager")]
     [SerializeField] private PlayerDrawManager _playerDrawManager;
 
-    [Header("UI (나중에 UI Class 생성예정)")]
+    [Header("UI")]
     [SerializeField] private Button startBattleButton;
 
-    [SerializeField] private Text _redPlayerLifeText;
-    [SerializeField] private Text _bluePlayerLifeText;
+    [SerializeField] private PlayerInfoUI _redPlayerInfoUI;
+    [SerializeField] private PlayerInfoUI _bluePlayerInfoUI;
+
+    [SerializeField] private Text _roundText;
+
+    [SerializeField] private GameEndUI _gameEndUI;
 
     private int _round=0;
 
@@ -38,7 +43,12 @@ public class GameProgress : MonoBehaviour
         _redPlayer.Init(EnumInfo.TeamType.Red);
         _bluePlayer.Init(EnumInfo.TeamType.Blue);
 
-        SetPlayerLifeUI();
+        _redPlayerInfoUI.SetPlayer(_redPlayer);
+        _bluePlayerInfoUI.SetPlayer(_bluePlayer);
+
+        _round = 1;
+
+        SetRoundUI();
     }
 
     public void DrawRedPlayer()
@@ -63,17 +73,20 @@ public class GameProgress : MonoBehaviour
         startBattleButton.gameObject.SetActive(false);
         UnitManager.Instance.StartBattle();
 
-        //StartCoroutine(TestRoutine());
+        StartCoroutine(TestRoutine());
     }
 
-    //public IEnumerator TestRoutine()
-    //{
-    //    yield return new WaitForSeconds(5);
-    //    EndBattle(EnumInfo.TeamType.Red, 1);
-    //}
+    public IEnumerator TestRoutine()
+    {
+        yield return new WaitForSeconds(5);
+        EndBattle(EnumInfo.TeamType.Red, 1);
+    }
 
     public void EndBattle(EnumInfo.TeamType _winTeam,int _discountLife)
     {
+        _round++;
+
+        UnitManager.Instance.FinishBattle();
         TileManager._Instance.EndBattle();
 
         if (_winTeam==EnumInfo.TeamType.Red)
@@ -84,7 +97,7 @@ public class GameProgress : MonoBehaviour
         {
             _redPlayer._Hp -= _discountLife;
         }
-        SetPlayerLifeUI();
+        SetRoundUI();
 
         if (_redPlayer._Hp<=0)
         {
@@ -100,16 +113,14 @@ public class GameProgress : MonoBehaviour
         }
     }
 
-    public void SetPlayerLifeUI()
+    public void SetRoundUI ()
     {
-        _redPlayerLifeText.text = string.Format("Red Life [{0}]", _redPlayer._Hp.ToString());
-        Debug.Log(string.Format("Red Life [{0}]", _redPlayer._Hp.ToString()));
-        _bluePlayerLifeText.text = string.Format("Blue Life [{0}]", _bluePlayer._Hp.ToString());
+        _roundText.text = string.Format("Round {0}", _round);
     }
 
     public void EndGame(EnumInfo.TeamType _winTeam)
     {
-        Debug.Log("|||||||||||||||||||End Game|||||||||||||||||||\nWin player is "
-            + _winTeam.ToString()+"player!");
+        _gameEndUI.gameObject.SetActive(true);
+        _gameEndUI.Initialize(_winTeam);
     }
 }
