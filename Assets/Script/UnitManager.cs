@@ -51,19 +51,30 @@ public class UnitManager : MonoBehaviour
         
        // 레드팀 처리 따로, 블루팀 처리 따로
 
-
         for (int i = 0; i < _curUnitsOnTile.Count; i++)
         {
             if (!_curUnitsOnTile[i].gameObject.activeSelf)
                 continue;
             _curUnitsOnTile[i].StartBattle();
         }
+
+
         StartCoroutine(ProcessUnit());
     }
 
 
     IEnumerator ProcessUnit()
     {
+        yield return new WaitForSeconds(0.75f);
+
+        for (int i = 0; i < _curUnitsOnTile.Count; i++)
+        {
+            if (!_curUnitsOnTile[i].gameObject.activeSelf)
+                continue;
+            _curUnitsOnTile[i].SetPosition();
+        }
+
+        yield return new WaitForSeconds(1f);
         while (true)
         {
             for (int i = 0; i < _curUnitsOnTile.Count; i++)

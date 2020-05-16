@@ -8,7 +8,8 @@ public class GetUnitOnTileBehaviour : UnitBehaviour
     public EnumInfo.TargetTeam _targetTeam;
     public UnitBehaviour _nextBehaviour;
     public bool _includeSelf;
-
+    public int _count;
+    List<Unit> _alrealyGetUnitList = new List<Unit>();
     public override void InitUnitBehaviour(Unit _u)
     {
         base.InitUnitBehaviour(_u);
@@ -18,16 +19,23 @@ public class GetUnitOnTileBehaviour : UnitBehaviour
 
     public override void DoBehaviour()
     {
-        switch (_getUnitType)
+        for(int i =0;i< _count; i++)
         {
-            case EnumInfo.GetUnitType.Random:
-                Unit _tUnit = GetUnitRandom();
+            switch (_getUnitType)
+            {
+                case EnumInfo.GetUnitType.Random:
+                    SetAliveUnit();
+                    Unit _tUnit = GetUnitRandom();
 
-                if (_tUnit == null)
-                    return;
-                _nextBehaviour.DoBehaviour(_tUnit);
-                break;
+                    if (_tUnit == null)
+                        return;
+
+                    _alrealyGetUnitList.Add(_tUnit);
+                    _nextBehaviour.DoBehaviour(_tUnit);
+                    break;
+            }
         }
+       
     }
 
     public override void DoBehaviour(Unit _tUnit)
@@ -44,11 +52,40 @@ public class GetUnitOnTileBehaviour : UnitBehaviour
         }
     }
 
-   
+    List<Unit> _curAliveUnitsOnTile = new List<Unit>();
+    List<Unit> _curAliveRedUnitsOnTile = new List<Unit>();
+    List<Unit> _curAliveBlueUnitsOnTile = new List<Unit>();
 
+    void SetAliveUnit()
+    {
+        for(int i =0;i< UnitManager.Instance._curAliveUnitsOnTile.Count; i++)
+        {
+            bool _overlap = false;
+            for(int j =0;j< _alrealyGetUnitList.Count; j++)
+            {
+                if (UnitManager.Instance._curAliveUnitsOnTile[i]._tr.Equals(_alrealyGetUnitList[j]._tr))
+                {
+                    _overlap = true;
+                    break;
+                }
+            }
+            if (_overlap)
+                continue;
 
+            switch (UnitManager.Instance._curAliveUnitsOnTile[i]._teamType)
+            {
+                case EnumInfo.TeamType.Red:
+                    _curAliveRedUnitsOnTile.Add(UnitManager.Instance._curAliveUnitsOnTile[i]);
+                    break;
 
+                case EnumInfo.TeamType.Blue:
+                    _curAliveBlueUnitsOnTile.Add(UnitManager.Instance._curAliveUnitsOnTile[i]);
+                    break;
+            }
 
+            _curAliveUnitsOnTile.Add(UnitManager.Instance._curAliveUnitsOnTile[i]);
+        }
+    }
 
     Unit GetUnitRandom()
     {        
@@ -58,19 +95,19 @@ public class GetUnitOnTileBehaviour : UnitBehaviour
 
                 if (!_includeSelf)
                 {
-                    if (UnitManager.Instance._curAliveUnitsOnTile.Count <= 1)
+                    if (_curAliveUnitsOnTile.Count <= 1)
                         return null;
 
-                    Unit _tUnit = UnitManager.Instance._curAliveUnitsOnTile[Random.Range(0, UnitManager.Instance._curAliveUnitsOnTile.Count)];
+                    Unit _tUnit = _curAliveUnitsOnTile[Random.Range(0, _curAliveUnitsOnTile.Count)];
                     while (_tUnit._tr.Equals(_unit._tr))
                     {
-                        _tUnit = UnitManager.Instance._curAliveUnitsOnTile[Random.Range(0, UnitManager.Instance._curAliveUnitsOnTile.Count)];
+                        _tUnit = _curAliveUnitsOnTile[Random.Range(0, _curAliveUnitsOnTile.Count)];
                     }
                     return _tUnit;
                 }
                 else
                 {
-                    return UnitManager.Instance._curAliveUnitsOnTile[Random.Range(0, UnitManager.Instance._curAliveUnitsOnTile.Count)];
+                    return _curAliveUnitsOnTile[Random.Range(0,_curAliveUnitsOnTile.Count)];
                    
                 }
 
@@ -81,47 +118,47 @@ public class GetUnitOnTileBehaviour : UnitBehaviour
                 {
                     if (!_includeSelf)
                     {
-                        if (UnitManager.Instance._curAliveRedUnitsOnTile.Count <= 1)
+                        if (_curAliveRedUnitsOnTile.Count <= 1)
                             return null;
 
-                        Unit _tUnit = UnitManager.Instance._curAliveRedUnitsOnTile[Random.Range(0, UnitManager.Instance._curAliveRedUnitsOnTile.Count)];
+                        Unit _tUnit = _curAliveRedUnitsOnTile[Random.Range(0, _curAliveRedUnitsOnTile.Count)];
                         while (_tUnit._tr.Equals(_unit._tr))
-                            _tUnit = UnitManager.Instance._curAliveRedUnitsOnTile[Random.Range(0, UnitManager.Instance._curAliveRedUnitsOnTile.Count)];
+                            _tUnit = _curAliveRedUnitsOnTile[Random.Range(0, _curAliveRedUnitsOnTile.Count)];
 
                         return _tUnit;
 
                     }
-                    return UnitManager.Instance._curAliveRedUnitsOnTile[Random.Range(0, UnitManager.Instance._curAliveRedUnitsOnTile.Count)];
+                    return _curAliveRedUnitsOnTile[Random.Range(0,_curAliveRedUnitsOnTile.Count)];
                 }
                 else
                 {
                     if (!_includeSelf)
                     {
-                        if (UnitManager.Instance._curAliveBlueUnitsOnTile.Count <= 1)
+                        if (_curAliveBlueUnitsOnTile.Count <= 1)
                             return null;
 
-                        Unit _tUnit = UnitManager.Instance._curAliveBlueUnitsOnTile[Random.Range(0, UnitManager.Instance._curAliveBlueUnitsOnTile.Count)];
+                        Unit _tUnit = _curAliveBlueUnitsOnTile[Random.Range(0, _curAliveBlueUnitsOnTile.Count)];
                         while (_tUnit._tr.Equals(_unit._tr))
-                            _tUnit = UnitManager.Instance._curAliveBlueUnitsOnTile[Random.Range(0, UnitManager.Instance._curAliveBlueUnitsOnTile.Count)];
+                            _tUnit = _curAliveBlueUnitsOnTile[Random.Range(0, _curAliveBlueUnitsOnTile.Count)];
 
                         return _tUnit;
                     }
-                    return UnitManager.Instance._curAliveBlueUnitsOnTile[Random.Range(0, UnitManager.Instance._curAliveBlueUnitsOnTile.Count)];
+                    return _curAliveBlueUnitsOnTile[Random.Range(0, _curAliveBlueUnitsOnTile.Count)];
                 }
 
             case EnumInfo.TargetTeam.OppositeTeam:
 
                 if (_unit._teamType.Equals(EnumInfo.TeamType.Red))
                 {
-                    if (UnitManager.Instance._curAliveBlueUnitsOnTile.Count <= 0)
+                    if (_curAliveBlueUnitsOnTile.Count <= 0)
                         return null;
-                    return UnitManager.Instance._curAliveBlueUnitsOnTile[Random.Range(0, UnitManager.Instance._curAliveBlueUnitsOnTile.Count)];
+                    return _curAliveBlueUnitsOnTile[Random.Range(0, _curAliveBlueUnitsOnTile.Count)];
                 }
                 else
                 {
-                    if (UnitManager.Instance._curAliveRedUnitsOnTile.Count <= 0)
+                    if (_curAliveRedUnitsOnTile.Count <= 0)
                         return null;
-                    return UnitManager.Instance._curAliveRedUnitsOnTile[Random.Range(0, UnitManager.Instance._curAliveRedUnitsOnTile.Count)];
+                    return _curAliveRedUnitsOnTile[Random.Range(0, _curAliveRedUnitsOnTile.Count)];
                 }
         }
         return null;

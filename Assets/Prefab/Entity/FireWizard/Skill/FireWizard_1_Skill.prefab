@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
   _nextBehaviourWithTriggerTarget:
-    TriggerTarget: 2
+    TargetTeam: 2
     nextBehaviour: {fileID: 8185019380948929530}
   _radius: 1
   _pointTr: {fileID: 1744649934830905190}
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
-  behaviour: {fileID: 0}
+  behaviour: {fileID: 7131487710348448094}
 --- !u!1 &9174588737430101442
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,10 +559,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9174588737430101443}
-  - component: {fileID: 9174588737430101440}
   - component: {fileID: 7131487710348448094}
   m_Layer: 0
-  m_Name: Trigger
+  m_Name: Arrive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -583,22 +582,6 @@ Transform:
   m_Father: {fileID: 9174588736715506326}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &9174588737430101440
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174588737430101442}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!114 &7131487710348448094
 MonoBehaviour:
   m_ObjectHideFlags: 0

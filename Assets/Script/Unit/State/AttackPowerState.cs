@@ -34,27 +34,16 @@ public class AttackPowerState : State
 
     void CheckAttackPower()
     {
-        _curMultiAttackPower = 1;
+        _curMultiAttackPower = 0;
         for (int i = 0; i < _attackPowerChangeStateInfoList.Count; i++)
         {
             _curMultiAttackPower *= _attackPowerChangeStateInfoList[i]._multiAttackPower;
         }
 
-        //if (_unitData.DamageType.Equals("Physic"))
-        //    _normalDamage.Type = DamageType.Physic;
-        //else
-        //    _normalDamage.Type = DamageType.Magic;
-        //_normalDamage.DamagePower = _unitData.Damage;
-        //_normalDamage.ResourceUnit = this;
-
-        //if (_unitData.SkillDamageType.Equals("Physic"))
-        //    _skillDamage.Type = DamageType.Physic;
-        //else
-        //    _skillDamage.Type = DamageType.Magic;
-
-        //_unit._normalDamage.DamagePower = _unitData.Damage;
-
-
+        _unit._normalDamage.DamagePower = _unit._unitData.Damage + (_unit._unitData.Damage * _curMultiAttackPower);
+        _unit._skillDamage.DamagePower = _unit._unitData.SkillDamage + (_unit._unitData.SkillDamage * _curMultiAttackPower);
+        
+    
     }
 
     public float GetAttackPower()

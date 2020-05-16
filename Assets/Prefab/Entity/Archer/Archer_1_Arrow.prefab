@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
-  behaviour: {fileID: 2032380733}
+  behaviour: {fileID: 9150332065503196096}
 --- !u!1 &1064441717612558621
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,10 +293,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1064441717612558620}
-  - component: {fileID: 1064441717612558623}
-  - component: {fileID: 2032380733}
+  - component: {fileID: 9150332065503196096}
   m_Layer: 0
-  m_Name: Trigger
+  m_Name: Arrive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,23 +316,7 @@ Transform:
   m_Father: {fileID: 1064441716910548553}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1064441717612558623
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064441717612558621}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
---- !u!114 &2032380733
+--- !u!114 &9150332065503196096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -342,12 +325,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1064441717612558621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f5ab1934050dd2479ce33156fb86415, type: 3}
+  m_Script: {fileID: 11500000, guid: bc3346f8171423f4995520668ff3cf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
   _nextBehaviour: {fileID: 1220112807}
-  _triggerTarget: 2
 --- !u!1 &1064441718000918336
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,9 +420,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1064441718141194172}
-  - component: {fileID: 1064441717761282595}
+  - component: {fileID: 8715721972532234445}
   m_Layer: 0
-  m_Name: StraightMove
+  m_Name: HomingMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -460,7 +442,7 @@ Transform:
   m_Father: {fileID: 1064441716861220796}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1064441717761282595
+--- !u!114 &8715721972532234445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -469,7 +451,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1064441718141194173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c7265dee570a54b88db2ad0d6fa995, type: 3}
+  m_Script: {fileID: 11500000, guid: 14b46f5ca05b7ed459c0afedc1cbf016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}

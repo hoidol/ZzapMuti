@@ -563,4 +563,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
   _nextBehaviour: {fileID: 7219694165507871815}
-  _triggerTarget: 2
+  TargetTeam: 2

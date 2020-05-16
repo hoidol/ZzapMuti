@@ -54,10 +54,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6018283525831132734}
-  - component: {fileID: 6018283525831132733}
-  - component: {fileID: 6719534339291649055}
+  - component: {fileID: 4992032752631655419}
   m_Layer: 0
-  m_Name: Trigger
+  m_Name: Arrive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,23 +77,7 @@ Transform:
   m_Father: {fileID: 6018283526458726763}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &6018283525831132733
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6018283525831132735}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
---- !u!114 &6719534339291649055
+--- !u!114 &4992032752631655419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,12 +86,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6018283525831132735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f5ab1934050dd2479ce33156fb86415, type: 3}
+  m_Script: {fileID: 11500000, guid: bc3346f8171423f4995520668ff3cf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
   _nextBehaviour: {fileID: 6719534340073475717}
-  _triggerTarget: 2
 --- !u!1 &6018283526458726756
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
-  behaviour: {fileID: 6719534339291649055}
+  behaviour: {fileID: 4992032752631655419}
 --- !u!1 &6018283526543739039
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,9 +293,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6018283527417540766}
-  - component: {fileID: 6018283527863512321}
+  - component: {fileID: 7492486074926313717}
   m_Layer: 0
-  m_Name: StraightMove
+  m_Name: HomingMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +315,7 @@ Transform:
   m_Father: {fileID: 6018283526543739038}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6018283527863512321
+--- !u!114 &7492486074926313717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -342,7 +324,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6018283527417540767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c7265dee570a54b88db2ad0d6fa995, type: 3}
+  m_Script: {fileID: 11500000, guid: 14b46f5ca05b7ed459c0afedc1cbf016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}

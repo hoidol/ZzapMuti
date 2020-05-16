@@ -273,9 +273,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2947038250433877157}
-  - component: {fileID: 2947038250058156346}
+  - component: {fileID: 4895213602081641955}
   m_Layer: 0
-  m_Name: StraightMove
+  m_Name: HomingMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -295,7 +295,7 @@ Transform:
   m_Father: {fileID: 2947038251446086821}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2947038250058156346
+--- !u!114 &4895213602081641955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2947038250433877156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c7265dee570a54b88db2ad0d6fa995, type: 3}
+  m_Script: {fileID: 11500000, guid: 14b46f5ca05b7ed459c0afedc1cbf016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
@@ -317,10 +317,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2947038251012530693}
-  - component: {fileID: 2947038251012530694}
-  - component: {fileID: 2747287816467886116}
+  - component: {fileID: 5700072550677018037}
   m_Layer: 0
-  m_Name: Trigger
+  m_Name: Arrive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,23 +340,7 @@ Transform:
   m_Father: {fileID: 2947038251396857168}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &2947038251012530694
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2947038251012530692}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
---- !u!114 &2747287816467886116
+--- !u!114 &5700072550677018037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,12 +349,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2947038251012530692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f5ab1934050dd2479ce33156fb86415, type: 3}
+  m_Script: {fileID: 11500000, guid: bc3346f8171423f4995520668ff3cf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
   _nextBehaviour: {fileID: 2747287816760814270}
-  _triggerTarget: 2
 --- !u!1 &2947038251396857183
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
-  behaviour: {fileID: 2747287816467886116}
+  behaviour: {fileID: 5700072550677018037}
 --- !u!1 &2947038251446086820
 GameObject:
   m_ObjectHideFlags: 0

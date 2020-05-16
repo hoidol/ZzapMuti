@@ -21,6 +21,12 @@ public class MoveManager : MonoBehaviour
     {
         _unitMove.StartBattle();
     }
+
+    public void SetPosition()
+    {
+
+        _unitMove.SetPosition();
+    }
     public void MoveToUnit(Unit _targetUnit)
     {
         _unitMove.MoveToUnit(_targetUnit);

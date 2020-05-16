@@ -74,7 +74,7 @@ public class GameProgress : MonoBehaviour
         startBattleButton.gameObject.SetActive(false);
         UnitManager.Instance.StartBattle();
 
-        StartCoroutine(TestRoutine());
+     //   StartCoroutine(TestRoutine());
     }
 
     public IEnumerator TestRoutine()

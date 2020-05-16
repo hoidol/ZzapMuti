@@ -7,7 +7,8 @@ public class BehaviourManager : MonoBehaviour
     public Unit _unit;
     public UnitBehaviour _normalBehaviour; 
     public UnitBehaviour _skillBehaviour;
-    
+
+    AttackSpeedState _attackSpeedState;
     public void InitBehaviourMgr(Unit _u)
     {
         _unit = _u;
@@ -15,12 +16,13 @@ public class BehaviourManager : MonoBehaviour
             _normalBehaviour.InitUnitBehaviour(_unit);
         if (_skillBehaviour)
             _skillBehaviour.InitUnitBehaviour(_unit);
+
+        _attackSpeedState = (AttackSpeedState)_unit._stateMgr.GetState(EnumInfo.State.AttakSpeed);
     }
 
     public void StartBattle()
     {
         _ableToCallNormalBehaviour = false;
-
 
         if (_normalBehaviour)
             _normalBehaviour.StartBattle();
@@ -109,7 +111,7 @@ public class BehaviourManager : MonoBehaviour
     bool _ableToCallNormalBehaviour = false;
     IEnumerator CoolTime()
     {
-        yield return new WaitForSeconds(_unit._unitData.AttackSpeed);
+        yield return new WaitForSeconds(_unit._unitData.AttackSpeed * _attackSpeedState.GetAttackSpeed());
         _ableToCallNormalBehaviour = true;
     }
 
