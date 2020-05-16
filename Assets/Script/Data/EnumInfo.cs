@@ -1,7 +1,7 @@
 ﻿
 public class EnumInfo 
 {
-    public enum TriggerTarget
+    public enum TargetTeam
     {
         Null,
         SameTeam,
@@ -22,6 +22,13 @@ public class EnumInfo
         Provoke,
         AttakSpeed,
         MoveSpeed,
+        AttackPower,
         Ice
+    }
+
+    public enum GetUnitType
+    {
+        Null,
+        Random
     }
 }

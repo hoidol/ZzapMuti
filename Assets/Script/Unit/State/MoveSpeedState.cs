@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveSpeedState : State
 {
-    List<MoveSpeedStateInfo> _moveSpeedStateInfoList = new List<MoveSpeedStateInfo>();
+    List<ChangeMoveSpeedChangeState> _moveSpeedChangeStateInfoList = new List<ChangeMoveSpeedChangeState>();
     [SerializeField] float _curMultiMoveSpeed;
 
     public override void InitState(Unit _u)
@@ -14,7 +14,7 @@ public class MoveSpeedState : State
     }
     public override void StartBattle()
     {
-        _moveSpeedStateInfoList.Clear();
+        _moveSpeedChangeStateInfoList.Clear();
     }
 
     public override void ChangeState(ChangeState _cS)
@@ -24,15 +24,10 @@ public class MoveSpeedState : State
 
     IEnumerator ProcessChangeState(ChangeMoveSpeedChangeState _cMSCState)
     {
-        MoveSpeedStateInfo _info = new MoveSpeedStateInfo();
-
-        _info._duration = _cMSCState._duration;
-        _info._multiMoveSpeed = _cMSCState._multiMoveSpeed;
-
-        _moveSpeedStateInfoList.Add(_info);
+        _moveSpeedChangeStateInfoList.Add(_cMSCState);
         CheckMultiMoveSpeed();
         yield return new WaitForSeconds(_cMSCState._duration);
-        _moveSpeedStateInfoList.Remove(_info);
+        _moveSpeedChangeStateInfoList.Remove(_cMSCState);
         CheckMultiMoveSpeed();
     }
 
@@ -40,9 +35,9 @@ public class MoveSpeedState : State
     void CheckMultiMoveSpeed()
     {
         _curMultiMoveSpeed = 1;
-        for(int i =0;i< _moveSpeedStateInfoList.Count; i++)
+        for(int i =0;i< _moveSpeedChangeStateInfoList.Count; i++)
         {
-            _curMultiMoveSpeed *= _moveSpeedStateInfoList[i]._multiMoveSpeed;
+            _curMultiMoveSpeed *= _moveSpeedChangeStateInfoList[i]._multiMoveSpeed;
         }
     }
 
@@ -50,10 +45,4 @@ public class MoveSpeedState : State
     {
         return _curMultiMoveSpeed;
     }
-}
-
-public class MoveSpeedStateInfo
-{
-    public float _duration;
-    public float _multiMoveSpeed;
 }

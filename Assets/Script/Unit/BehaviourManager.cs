@@ -21,6 +21,13 @@ public class BehaviourManager : MonoBehaviour
     {
         _ableToCallNormalBehaviour = false;
 
+
+        if (_normalBehaviour)
+            _normalBehaviour.StartBattle();
+
+        if (_skillBehaviour)
+            _skillBehaviour.StartBattle();
+
         StartCoroutine(CoolTime());
         StartCoroutine(ProcessNonTargetBehaviour());
     }
@@ -33,16 +40,17 @@ public class BehaviourManager : MonoBehaviour
             bool _usedSkill = false;
             if(_skillBehaviour != null)
             {
-                if (_unit._stateMgr._curMana >= _unit._unitData.MaxMana)
+                if (_skillBehaviour._nonTarget)
                 {
-                    if (_skillBehaviour._nonTarget)
+                    if (_unit._stateMgr._curMana >= _unit._unitData.MaxMana)
                     {
+                       
                         _ableToCallNormalBehaviour = false;
                         StartCoroutine(CoolTime());
 
-                        _skillBehaviour.DoBehaviour();
-                        _usedSkill = true;
+                        _skillBehaviour.DoBehaviour();                        
                     }
+                    _usedSkill = true;
                 }
             }
            

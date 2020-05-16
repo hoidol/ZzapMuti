@@ -3944,6 +3944,9 @@ MonoBehaviour:
   _curUnitsOnTile: []
   _curRedUnitsOnTile: []
   _curBlueUnitsOnTile: []
+  _curAliveUnitsOnTile: []
+  _curAliveRedUnitsOnTile: []
+  _curAliveBlueUnitsOnTile: []
 --- !u!4 &1460243834
 Transform:
   m_ObjectHideFlags: 0

@@ -22,6 +22,10 @@ public class UnitManager : MonoBehaviour
     public List<Unit> _curRedUnitsOnTile = new List<Unit>();
     public List<Unit> _curBlueUnitsOnTile = new List<Unit>();
 
+    public List<Unit> _curAliveUnitsOnTile = new List<Unit>();
+    public List<Unit> _curAliveRedUnitsOnTile = new List<Unit>();
+    public List<Unit> _curAliveBlueUnitsOnTile = new List<Unit>();
+
     EnumInfo.TeamType _curTurnTeamType;
     private void Awake()
     {
@@ -107,43 +111,44 @@ public class UnitManager : MonoBehaviour
             _curUnitsOnTile[i].FinishBattle();
     }
 
-    
-
-    public void CheckBattleResult()
+    public void CheckBattleResult() //유닛이 죽을 때마다 호출됨
     {
         //블루 팀, 레드팀 전멸 확인
 
         //... 작업
         //라이프 깎을 때 고려될 수 있는 부분 : 유닛의 개수 + 유닛의 강화된 수 
 
-        int _redTeam = 0;
-        int _blueTeam = 0;
+        _curAliveUnitsOnTile.Clear();
+        _curAliveRedUnitsOnTile.Clear();
+        _curAliveBlueUnitsOnTile.Clear();
 
-        for(int i = 0; i < _curUnitsOnTile.Count; i++)
+        for (int i = 0; i < _curUnitsOnTile.Count; i++)
         {
-            if (_curUnitsOnTile[i].gameObject.activeSelf)
+            if (_curUnitsOnTile[i]._stateMgr._isLiving)
             {
+                _curAliveUnitsOnTile.Add(_curUnitsOnTile[i]);
+
                 switch (_curUnitsOnTile[i]._teamType)
                 {
                     case EnumInfo.TeamType.Red:
-                        _redTeam++;
+                        _curAliveRedUnitsOnTile.Add(_curUnitsOnTile[i]);
                         break;
 
                     case EnumInfo.TeamType.Blue:
-                        _blueTeam++;
+                        _curAliveBlueUnitsOnTile.Add(_curUnitsOnTile[i]);
                         break;
                 }
             }
         }
 
 
-        if(_redTeam <= 0)
-        {
-            GameProgress.Instance.EndBattle(EnumInfo.TeamType.Red, 1);
-        }
-        else if(_blueTeam <= 0)
+        if(_curAliveRedUnitsOnTile.Count <= 0)
         {
             GameProgress.Instance.EndBattle(EnumInfo.TeamType.Blue, 1);
+        }
+        else if(_curAliveBlueUnitsOnTile.Count <= 0)
+        {
+            GameProgress.Instance.EndBattle(EnumInfo.TeamType.Red, 1);
         }
 
         StopAllCoroutines();

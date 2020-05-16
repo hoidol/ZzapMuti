@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerEntityBehaviour : EntityBehaviour
 {
     public EntityBehaviour _nextBehaviour;
-    public EnumInfo.TriggerTarget _triggerTarget;
+    public EnumInfo.TargetTeam TargetTeam;
 
     public override void InitEntityBehaviour(Entity _e)
     {
@@ -30,18 +30,18 @@ public class TriggerEntityBehaviour : EntityBehaviour
         {
 
             Unit _targetUnit = collision.GetComponent<Unit>();
-            switch (_triggerTarget)
+            switch (TargetTeam)
             {
-                case EnumInfo.TriggerTarget.SameTeam:
+                case EnumInfo.TargetTeam.SameTeam:
                     if(entity.ownUnit._teamType == _targetUnit._teamType)
                         _nextBehaviour.DoBehaviour(_targetUnit);
                     
                     break;
-                case EnumInfo.TriggerTarget.OppositeTeam:
+                case EnumInfo.TargetTeam.OppositeTeam:
                     if (entity.ownUnit._teamType != _targetUnit._teamType)
                         _nextBehaviour.DoBehaviour(_targetUnit);
                     break;
-                case EnumInfo.TriggerTarget.Both:
+                case EnumInfo.TargetTeam.Both:
                     _nextBehaviour.DoBehaviour(_targetUnit);
                     break;
             }

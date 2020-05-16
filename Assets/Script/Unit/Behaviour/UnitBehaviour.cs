@@ -12,7 +12,11 @@ public class UnitBehaviour : MonoBehaviour
     {
         _unit = _u;
     }
+    
+    public virtual void StartBattle()
+    {
 
+    }
     public virtual void DoBehaviour()
     {
 
