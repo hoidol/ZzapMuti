@@ -37,6 +37,11 @@ public class MoveManager : MonoBehaviour
         _unitMove.StopMove();
     }
 
+    public void RestorePosition()
+    {
+        _unitMove.RestorePosition();
+    }
+
     public void FinishBattle()
     {
         _unitMove.FinishBattle();

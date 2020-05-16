@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AssassinMove : UnitMove
 {
+    Tile _reservedTile;
     public override void StartBattle()
     {
 
@@ -13,14 +14,18 @@ public class AssassinMove : UnitMove
     {
         if (_unit._teamType.Equals(EnumInfo.TeamType.Red))
         {
-            Tile _t = TileManager._Instance.GetAssasinMoveTile(EnumInfo.TeamType.Blue, false, true);
-            _unit._tr.position = _t.transform.position;
+            _reservedTile = TileManager._Instance.GetAssasinMoveTile(EnumInfo.TeamType.Blue, false, true);
         }
         else
         {
-            _unit._tr.position = TileManager._Instance.GetAssasinMoveTile(EnumInfo.TeamType.Red, false, true).transform.position;
+            _reservedTile = TileManager._Instance.GetAssasinMoveTile(EnumInfo.TeamType.Red, false, true);
         }
-        //
+
+        if (_reservedTile)
+        {
+            _reservedTile._ReservationUnit = _unit;
+            _unit._tr.position = _reservedTile.transform.position;
+        }
 
         StartCoroutine(ProcessMove());
     }
@@ -44,8 +49,15 @@ public class AssassinMove : UnitMove
         }
     }
 
+    public override void RestorePosition()
+    {
+        if (_reservedTile)
+        {
+            _reservedTile._ReservationUnit = null;;
+        }
+    }
 
-    public virtual void FinishBattle()
+    public override void FinishBattle()
     {
         StopAllCoroutines();
     }

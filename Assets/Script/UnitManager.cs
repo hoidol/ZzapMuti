@@ -152,18 +152,23 @@ public class UnitManager : MonoBehaviour
             }
         }
 
-
-        if(_curAliveRedUnitsOnTile.Count <= 0)
+        if (_curAliveRedUnitsOnTile.Count <= 0)
         {
+            for (int i = 0; i < _curUnitsOnTile.Count; i++)
+                _curUnitsOnTile[i].RestorePosition();
             GameProgress.Instance.EndBattle(EnumInfo.TeamType.Blue, 1);
+            StopAllCoroutines();
+            FinishBattle();
         }
         else if(_curAliveBlueUnitsOnTile.Count <= 0)
         {
+            for (int i = 0; i < _curUnitsOnTile.Count; i++)
+                _curUnitsOnTile[i].RestorePosition();
             GameProgress.Instance.EndBattle(EnumInfo.TeamType.Red, 1);
+            StopAllCoroutines();
+            FinishBattle();
         }
 
-        StopAllCoroutines();
-        FinishBattle();
     }
 
 

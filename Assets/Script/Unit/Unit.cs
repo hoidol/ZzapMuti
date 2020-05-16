@@ -121,7 +121,10 @@ public class Unit : MonoBehaviour
     }
 
 
-
+    public void RestorePosition()
+    {
+        _moveMgr.RestorePosition();
+    }
 
     public void FinishBattle()
     {
