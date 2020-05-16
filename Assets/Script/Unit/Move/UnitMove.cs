@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class UnitMove : MonoBehaviour
 {
-    Unit _curUnit;
-    Unit _targetUnit;
+    protected Unit _unit;
+    protected Unit _targetUnit;
 
 
 
     public void InitUnitMove(Unit _u)
     {
-        _curUnit = _u;
+        _unit = _u;
     }
     public virtual void StartBattle()
+    {
+        
+    }
+
+    public virtual void SetPosition()
     {
         StartCoroutine(ProcessMove());
     }
@@ -34,11 +39,11 @@ public class UnitMove : MonoBehaviour
         {
             yield return null;
 
-            if (!_curUnit._needToMove)
+            if (!_unit._needToMove)
                 continue;
 
-            
-            _curUnit._tr.position = Vector2.MoveTowards(_curUnit._tr.position, _targetUnit._tr.position, Time.deltaTime * 1);
+
+            _unit._tr.position = Vector2.MoveTowards(_unit._tr.position, _targetUnit._tr.position, Time.deltaTime * 1);
         }
     }
 

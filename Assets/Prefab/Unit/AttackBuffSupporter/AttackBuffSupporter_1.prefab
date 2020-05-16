@@ -98,6 +98,7 @@ MonoBehaviour:
   _targetTeam: 1
   _nextBehaviour: {fileID: 5736333184214590267}
   _includeSelf: 0
+  _count: 0
 --- !u!1 &1482752228020238079
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +475,7 @@ MonoBehaviour:
   _resourceUnit: {fileID: 0}
   _changeState: 0
   _duration: 3
-  _multiAttackSpeed: 20
+  _multiAttackSpeed: 0.2
 --- !u!1 &3439340169183908755
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,8 +837,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourceUnit: {fileID: 0}
   _changeState: 0
-  _multiAttackPower: 0.35
   _duration: 3
+  _multiAttackPower: 0.35
 --- !u!1 &7043945335451499028
 GameObject:
   m_ObjectHideFlags: 0

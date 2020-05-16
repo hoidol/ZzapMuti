@@ -72,7 +72,10 @@ public class Unit : MonoBehaviour
         _tr.position = _tile.transform.position;
     }
 
-
+    public void SetPosition()
+    {
+        _moveMgr.SetPosition();
+    }
 
     public bool _ableToAttack;
     public bool _needToMove;
@@ -128,6 +131,7 @@ public class Unit : MonoBehaviour
         _moveMgr.FinishBattle();
 
         _tr.position = _tile.transform.position;
+        gameObject.SetActive(true);
     }
 
 

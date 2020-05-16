@@ -8,6 +8,7 @@ public class AttackSpeedState : State
     [SerializeField] float _curMultiAttackSpeed;
     public override void StartBattle()
     {
+        _curMultiAttackSpeed = 1;
         _attackSpeedStateInfoList.Clear();
     }
 
