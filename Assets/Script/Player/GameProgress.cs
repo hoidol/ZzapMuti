@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameProgress : MonoBehaviour
 {
@@ -122,5 +123,10 @@ public class GameProgress : MonoBehaviour
     {
         _gameEndUI.gameObject.SetActive(true);
         _gameEndUI.Initialize(_winTeam);
+    }
+
+    public void ReGame()
+    {
+        SceneManager.LoadScene("MinokScene");
     }
 }

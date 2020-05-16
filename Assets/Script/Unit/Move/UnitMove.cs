@@ -48,6 +48,10 @@ public class UnitMove : MonoBehaviour
     }
 
 
+    public virtual void RestorePosition()
+    {
+
+    }
     public virtual void FinishBattle()
     {
         StopAllCoroutines();
