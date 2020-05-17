@@ -30,6 +30,7 @@ public class BehaviourManager : MonoBehaviour
         if (_skillBehaviour)
             _skillBehaviour.StartBattle();
 
+        StopAllCoroutines();
         StartCoroutine(CoolTime());
         StartCoroutine(ProcessNonTargetBehaviour());
     }
@@ -40,23 +41,23 @@ public class BehaviourManager : MonoBehaviour
         while (true)
         {
             bool _usedSkill = false;
-            if(_skillBehaviour != null)
+            if(_skillBehaviour)
             {
                 if (_skillBehaviour._nonTarget)
                 {
                     if (_unit._stateMgr._curMana >= _unit._unitData.MaxMana)
                     {
-                       
+                        Debug.Log("NonTarget 스킬 호출!@!");
                         _ableToCallNormalBehaviour = false;
+                        _unit._stateMgr._curMana = 0;
                         StartCoroutine(CoolTime());
-
                         _skillBehaviour.DoBehaviour();                        
                     }
                     _usedSkill = true;
                 }
             }
            
-            if(_normalBehaviour != null)
+            if(_normalBehaviour)
             {
 
                 if (!_usedSkill)
@@ -84,26 +85,36 @@ public class BehaviourManager : MonoBehaviour
     public void DoBehaviour(Unit _u)
     {
         bool _usedSkill = false;
-        if (_skillBehaviour != null)
+
+        if (_skillBehaviour)
         {
-            if (_unit._stateMgr._curMana >= _unit._unitData.MaxMana)
+            if (!_skillBehaviour._nonTarget)
             {
-                _ableToCallNormalBehaviour = false;
-                _unit._stateMgr._curMana = 0;
-                StartCoroutine(CoolTime());
-                _skillBehaviour.DoBehaviour(_u);
-                _usedSkill = true;
+                if (_unit._stateMgr._curMana >= _unit._unitData.MaxMana)
+                {
+                    
+                    _ableToCallNormalBehaviour = false;
+                    _unit._stateMgr._curMana = 0;
+                    StartCoroutine(CoolTime());
+                    _skillBehaviour.DoBehaviour(_u);
+                    _usedSkill = true;
+                }
             }
+            
         }
 
-        if (_normalBehaviour != null)
+        if (_normalBehaviour )
         {
-            if (!_usedSkill && _ableToCallNormalBehaviour)
+            if (!_normalBehaviour._nonTarget)
             {
-                _normalBehaviour.DoBehaviour(_u);
-                _ableToCallNormalBehaviour = false;
-                StartCoroutine(CoolTime());
+                if (!_usedSkill && _ableToCallNormalBehaviour)
+                {
+                    _normalBehaviour.DoBehaviour(_u);
+                    _ableToCallNormalBehaviour = false;
+                    StartCoroutine(CoolTime());
+                }
             }
+           
         }
             
     }

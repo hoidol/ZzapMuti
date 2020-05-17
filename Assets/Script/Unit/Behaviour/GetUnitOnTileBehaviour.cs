@@ -16,7 +16,11 @@ public class GetUnitOnTileBehaviour : UnitBehaviour
         if (_nextBehaviour)
             _nextBehaviour.InitUnitBehaviour(_u);
     }
-
+    public override void StartBattle()
+    {
+        if (_nextBehaviour)
+            _nextBehaviour.StartBattle();
+    }
     public override void DoBehaviour()
     {
         for(int i =0;i< _count; i++)

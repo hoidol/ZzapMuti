@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HealLowestHp : UnitBehaviour
 {
-    List<Unit> _sameTeamUnitList = new List<Unit>();
+   [SerializeField]  List<Unit> _sameTeamUnitList = new List<Unit>();
     public float _healRate;
     public int _healCount;
-    List<Unit> _healedUnitList = new List<Unit>();
+    [SerializeField]  List<Unit> _healedUnitList = new List<Unit>();
     public override void InitUnitBehaviour(Unit _u)
     {
         base.InitUnitBehaviour(_u);
@@ -26,19 +26,20 @@ public class HealLowestHp : UnitBehaviour
     {
         // 가장 체력이 낮은 유닛 찾기
         _healedUnitList.Clear();
-
+        Debug.Log("HealLowestHp 호출!");
         for(int i =0;i< _healCount; i++)
         {
-           Unit _tUnit = SearLowestHpUnit();
+           Unit _tUnit = SearchLowestHpUnit();
             if (_tUnit == null)
                 return;
-
+            _healedUnitList.Add(_tUnit);
             //힐 이펙트
+            Debug.Log("힐주자 " + _tUnit.name + " _tUnit._unitData.Hp * _healRate : " + _tUnit._unitData.Hp * _healRate); 
             _tUnit._stateMgr.HealHp(_tUnit._unitData.Hp * _healRate);
         }
     }
 
-    Unit SearLowestHpUnit()
+    Unit SearchLowestHpUnit()
     {
         float _lowestRate = float.MaxValue;
         Unit _u = null;

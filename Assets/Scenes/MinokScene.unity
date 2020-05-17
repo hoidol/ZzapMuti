@@ -4508,6 +4508,7 @@ MonoBehaviour:
   _curAliveUnitsOnTile: []
   _curAliveRedUnitsOnTile: []
   _curAliveBlueUnitsOnTile: []
+  _playingBattle: 0
 --- !u!4 &1460243834
 Transform:
   m_ObjectHideFlags: 0
@@ -5396,7 +5397,7 @@ PrefabInstance:
     - target: {fileID: 2374943747037428950, guid: 11ac47ec1f6d5994ea81dd19f92b0f6b,
         type: 3}
       propertyPath: _entities.Array.size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2374943747037428950, guid: 11ac47ec1f6d5994ea81dd19f92b0f6b,
         type: 3}
@@ -5427,6 +5428,18 @@ PrefabInstance:
       propertyPath: _entities.Array.data[5]
       value: 
       objectReference: {fileID: 7706830551425580204, guid: 27f1e0c116f9dcc41a2c661271168b35,
+        type: 3}
+    - target: {fileID: 2374943747037428950, guid: 11ac47ec1f6d5994ea81dd19f92b0f6b,
+        type: 3}
+      propertyPath: _entities.Array.data[6]
+      value: 
+      objectReference: {fileID: 9174588736709311891, guid: 9a2f864ddcbb645458070f3f41e44e57,
+        type: 3}
+    - target: {fileID: 2374943747037428950, guid: 11ac47ec1f6d5994ea81dd19f92b0f6b,
+        type: 3}
+      propertyPath: _entities.Array.data[7]
+      value: 
+      objectReference: {fileID: 3690818096841675437, guid: f3a1f82015767c5448e45d706a8cee66,
         type: 3}
     - target: {fileID: 2374943747037428951, guid: 11ac47ec1f6d5994ea81dd19f92b0f6b,
         type: 3}

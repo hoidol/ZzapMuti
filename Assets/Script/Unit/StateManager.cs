@@ -18,14 +18,19 @@ public class StateManager : MonoBehaviour
     public Image _shieldBar;
 
     public State[] _states;
-    
+
+
+    DodgeRateState _dodgeRateState;
     public void InitStateMgr(Unit _u)
     {
         _unit = _u;
         _curHp = _unit._unitData.Hp;
-        _curMana = 0;
+        _curMana = _unit._unitData.InitMana;
         _hpBar.fillAmount = 1;
-        _manaBar.fillAmount = 0;
+        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
+        _shieldBar.fillAmount = 0;
+
+
         _isLiving = true;
         _states = GetComponentsInChildren<State>();
 
@@ -33,15 +38,16 @@ public class StateManager : MonoBehaviour
             _states[i].InitState(_u);
 
         _unitInfoText.text = "Lv." + _unit._unitData.ReinforceLv + " " + _unit._unitData.UnitName;
+        _dodgeRateState = (DodgeRateState)GetState(EnumInfo.State.DodgeRate);
     }
 
     public void StartBattle()
     {
         _curHp = _unit._unitData.Hp;
         _isLiving = true;
-        _curMana = 0;
+        _curMana = _unit._unitData.InitMana;
         _hpBar.fillAmount = 1;
-        _manaBar.fillAmount = _unit._unitData.InitMana;
+        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
         _shieldBar.fillAmount = 0;
 
         for (int i = 0; i < _states.Length; i++)
@@ -50,12 +56,26 @@ public class StateManager : MonoBehaviour
 
     public void TakeDamage(Damage _d)
     {
+        if (!UnitManager.Instance._playingBattle)
+            return;
+
+        if (!_d.unableToDodge)
+        {
+            if (Random.Range(0, 100) < _unit._unitData.DodgeRate * _dodgeRateState.GetDodgeRate())// 1 ~ 100까지 수
+            {
+                // 회피
+
+
+                return;
+            }
+        }
+        
         float _realDamage = 0;
-        if(_d.Type == DamageType.Physic)
+        if(_d.Type == EnumInfo.DamageType.Physic)
         {
             _realDamage = _d.DamagePower - _unit._unitData.Defence;
         }
-        else if (_d.Type == DamageType.Magic)
+        else if (_d.Type == EnumInfo.DamageType.Magic)
         {
             _realDamage = _d.DamagePower - _unit._unitData.MagicResistance;
 
@@ -82,6 +102,7 @@ public class StateManager : MonoBehaviour
 
     public void ChangeState(ChangeState _cS)
     {
+        Debug.Log(_cS);
         GetState(_cS._changeState).ChangeState(_cS);
     }
 

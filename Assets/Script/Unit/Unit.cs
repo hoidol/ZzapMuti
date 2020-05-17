@@ -42,16 +42,16 @@ public class Unit : MonoBehaviour
 
 
         if (_unitData.DamageType.Equals("Physic"))
-            _normalDamage.Type = DamageType.Physic;
+            _normalDamage.Type = EnumInfo.DamageType.Physic;
         else
-            _normalDamage.Type = DamageType.Magic;
+            _normalDamage.Type = EnumInfo.DamageType.Magic;
         _normalDamage.DamagePower = _unitData.Damage;
         _normalDamage.ResourceUnit = this;
 
         if (_unitData.SkillDamageType.Equals("Physic"))
-            _skillDamage.Type = DamageType.Physic;
+            _skillDamage.Type = EnumInfo.DamageType.Physic;
         else
-            _skillDamage.Type = DamageType.Magic;
+            _skillDamage.Type = EnumInfo.DamageType.Magic;
 
         _skillDamage.DamagePower = _unitData.SkillDamage;
         _skillDamage.ResourceUnit = this;
