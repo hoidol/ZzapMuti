@@ -93,7 +93,7 @@ MonoBehaviour:
   _nextBehaviourWithTriggerTarget:
     TargetTeam: 2
     nextBehaviour: {fileID: 8185019380948929530}
-  _radius: 1
+  _radius: 2.5
   _pointTr: {fileID: 1744649934830905190}
 --- !u!1 &8185019379856725370
 GameObject:
