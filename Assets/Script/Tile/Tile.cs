@@ -101,7 +101,8 @@ public class Tile : MonoBehaviour
         hasUnit = true;
 
         _unitIndex = UnitManager.Instance.CreateUnitWithUnitIdx(_unitIdx,this, _teamTy);
-        
+        _unitIndex.gameObject.SetActive(true);
+
         _unitIndex.SetTile(this);
 
         _tileSpriteRenderer.color = Color.black;
