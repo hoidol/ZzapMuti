@@ -277,6 +277,7 @@ MonoBehaviour:
   _unit: {fileID: 0}
   _normalBehaviour: {fileID: 4680315000369235213}
   _skillBehaviour: {fileID: 1475550392502662588}
+  _ableToCallNormalBehaviour: 0
 --- !u!1 &4343240809824586700
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +577,7 @@ MonoBehaviour:
   _nextBehaviourWithTriggerTarget:
     TargetTeam: 2
     nextBehaviour: {fileID: 3285874516637442417}
-  _radius: 1
+  _radius: 1.5
   _pointTr: {fileID: 0}
 --- !u!1 &5906045789768189612
 GameObject:

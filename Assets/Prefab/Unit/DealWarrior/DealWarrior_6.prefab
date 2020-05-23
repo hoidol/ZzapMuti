@@ -883,6 +883,7 @@ MonoBehaviour:
   _unit: {fileID: 0}
   _normalBehaviour: {fileID: 1269504263323934863}
   _skillBehaviour: {fileID: 4978671764243189822}
+  _ableToCallNormalBehaviour: 0
 --- !u!1 &7954272038442187119
 GameObject:
   m_ObjectHideFlags: 0
