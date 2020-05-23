@@ -86,7 +86,7 @@ public class UnitManager : MonoBehaviour
                 _curUnitsOnTile[i].CheckMoveAndAttack();
             }
 
-            yield return null;
+            yield return new WaitForSeconds(0.2f);
         }
     }
 

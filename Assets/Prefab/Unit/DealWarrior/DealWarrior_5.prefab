@@ -1,0 +1,1516 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+--- !u!1 &631736177
+=======
+--- !u!1 &14114470215665658
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  - component: {fileID: 631736178}
+  - component: {fileID: 631736179}
+  m_Layer: 0
+  m_Name: Bow
+=======
+  - component: {fileID: 4624017998804780110}
+  - component: {fileID: 8985132458284272643}
+  m_Layer: 0
+  m_Name: Self
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+--- !u!4 &631736178
+=======
+--- !u!4 &4624017998804780110
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_GameObject: {fileID: 631736177}
+  m_LocalRotation: {x: -0, y: -0, z: 0.92426825, w: 0.38174355}
+  m_LocalPosition: {x: 0.355, y: -0.009, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 957356295253710945}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135.117}
+--- !u!212 &631736179
+SpriteRenderer:
+=======
+  m_GameObject: {fileID: 14114470215665658}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3924509948984975629}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8985132458284272643
+MonoBehaviour:
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_GameObject: {fileID: 631736177}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1219385649
+  m_SortingLayer: 2
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 7a26e480af78a0f4dbdc526290c0ad68, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.34, y: 0.34}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &440840235680234221
+=======
+  m_GameObject: {fileID: 14114470215665658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5496e9e60b23d0441984bf15c3b53fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nonTarget: 0
+  _unit: {fileID: 0}
+  _nextBehaviour: {fileID: 3610468354191471114}
+--- !u!1 &172120660180449192
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  - component: {fileID: 3434497493562493079}
+  - component: {fileID: 8846349508078022054}
+  m_Layer: 0
+  m_Name: Charge
+=======
+  - component: {fileID: 495007556633586851}
+  - component: {fileID: 1343584439201217126}
+  m_Layer: 0
+  m_Name: ApplySkillDamage
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+--- !u!4 &3434497493562493079
+=======
+--- !u!4 &495007556633586851
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_GameObject: {fileID: 440840235680234221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3220508622590079858}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8846349508078022054
+=======
+  m_GameObject: {fileID: 172120660180449192}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5319301625078597888}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1343584439201217126
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_GameObject: {fileID: 440840235680234221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20900ec4c59b4d40b6496e4b5ea8ead, type: 3}
+=======
+  m_GameObject: {fileID: 172120660180449192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459ec38c86ac221489ec56041d1dc0c8, type: 3}
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nonTarget: 0
+  _unit: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+--- !u!1 &881931819220351440
+=======
+--- !u!1 &250742639667269851
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  - component: {fileID: 8914358588765765267}
+  - component: {fileID: 2129101395409620136}
+  m_Layer: 0
+  m_Name: Self
+  m_TagString: Untagged
+=======
+  - component: {fileID: 250742639667269849}
+  - component: {fileID: 250742639667269850}
+  - component: {fileID: 3057983264077124406}
+  - component: {fileID: 3057983264556274115}
+  - component: {fileID: 3057983264067052291}
+  m_Layer: 0
+  m_Name: DealWarrior_5
+  m_TagString: Unit
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+--- !u!4 &8914358588765765267
+=======
+--- !u!4 &250742639667269849
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_GameObject: {fileID: 881931819220351440}
+=======
+  m_GameObject: {fileID: 250742639667269851}
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1178.113, y: 372.4773, z: -1741.3636}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_Children: []
+  m_Father: {fileID: 3220508622590079858}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2129101395409620136
+MonoBehaviour:
+=======
+  m_Children:
+  - {fileID: 250742639977459051}
+  - {fileID: 3057983263830288482}
+  - {fileID: 6547039078487182136}
+  - {fileID: 5642703449649609012}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &250742639667269850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250742639667269851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347e911a5ea583042ae01dda513abf5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unitIdx: DealWarrior_5
+  _unitData:
+    UnitIdx: 
+    ReinforceLv: 0
+    UnitName: 
+    Class: 
+    LifeAttack: 0
+    MaxReinforce: 0
+    Hp: 0
+    Defence: 0
+    MagicResistance: 0
+    DamageType: 
+    Damage: 0
+    AttackSpeed: 0
+    AttackDistance: 0
+    SkillDamageType: 
+    SkillDamage: 0
+    DodgeRate: 0
+    RecoverRate: 0
+    CriticalRate: 0
+    CriticalDamage: 0
+    MaxMana: 0
+    ManaChargeAmount: 0
+    InitMana: 0
+  _tr: {fileID: 0}
+  _teamType: 1
+  _tile: {fileID: 0}
+  _stateMgr: {fileID: 0}
+  _animMgr: {fileID: 0}
+  _behaviourMgr: {fileID: 0}
+  _moveMgr: {fileID: 0}
+  _seeker: {fileID: 0}
+  _normalDamage:
+    ResourceUnit: {fileID: 0}
+    Type: 0
+    unableToDodge: 0
+    DamagePower: 0
+  _skillDamage:
+    ResourceUnit: {fileID: 0}
+    Type: 1
+    unableToDodge: 0
+    DamagePower: 0
+  _ableToAttack: 0
+  _needToMove: 0
+--- !u!58 &3057983264077124406
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250742639667269851}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.26
+--- !u!114 &3057983264556274115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250742639667269851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!50 &3057983264067052291
+Rigidbody2D:
+  serializedVersion: 4
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_GameObject: {fileID: 881931819220351440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5496e9e60b23d0441984bf15c3b53fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nonTarget: 0
+  _unit: {fileID: 0}
+  _nextBehaviour: {fileID: 8846349508078022054}
+--- !u!1 &957356294309360952
+=======
+  m_GameObject: {fileID: 250742639667269851}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!1 &250742639977459052
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  - component: {fileID: 957356294309360953}
+  - component: {fileID: 957356294309360954}
+  m_Layer: 0
+  m_Name: Move
+=======
+  - component: {fileID: 250742639977459051}
+  - component: {fileID: 250742639977459050}
+  m_Layer: 0
+  m_Name: Behaviour
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+--- !u!4 &957356294309360953
+=======
+--- !u!4 &250742639977459051
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_GameObject: {fileID: 957356294309360952}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 957356295064520827}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &957356294309360954
+=======
+  m_GameObject: {fileID: 250742639977459052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3924509948984975629}
+  - {fileID: 3674570147407649399}
+  m_Father: {fileID: 250742639667269849}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &250742639977459050
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_GameObject: {fileID: 957356294309360952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7682d25c910dc243b1dd0c4f355cd3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &957356295064520826
+=======
+  m_GameObject: {fileID: 250742639977459052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a120c543bd8344ea06fb15573ae938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unit: {fileID: 0}
+  _normalBehaviour: {fileID: 9209661304779480602}
+  _skillBehaviour: {fileID: 3118372038053818027}
+--- !u!1 &3057983263617747612
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3057983263617747615}
+  - component: {fileID: 3057983263617747614}
+  m_Layer: 0
+  m_Name: ApplyDamage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3057983263617747615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057983263617747612}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3924509948984975629}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3057983263617747614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057983263617747612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f63d06b1b500c42934868c9c8ead2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  _unitMove: {fileID: 0}
+--- !u!1 &957356295253710944
+=======
+  _nonTarget: 0
+  _unit: {fileID: 0}
+--- !u!1 &3057983263830288483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3057983263830288482}
+  - component: {fileID: 3057983263830288509}
+  m_Layer: 0
+  m_Name: MoveMgr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3057983263830288482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057983263830288483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3057983264719672608}
+  m_Father: {fileID: 250742639667269849}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3057983263830288509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057983263830288483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c097a2264b0f1f94eb8252f799197c45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unitMove: {fileID: 0}
+--- !u!1 &3057983264719672609
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3057983264719672608}
+  - component: {fileID: 3057983264719672611}
+  m_Layer: 0
+  m_Name: Move
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3057983264719672608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057983264719672609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_Children:
+  - {fileID: 631736178}
+  m_Father: {fileID: 2613148760754035287}
+=======
+  m_Children: []
+  m_Father: {fileID: 3057983263830288482}
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3057983264719672611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057983264719672609}
+  m_Enabled: 1
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1219385649
+  m_SortingLayer: 2
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 995b626e80f0ec54fb13f24269b682dc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &957356295394503301
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7682d25c910dc243b1dd0c4f355cd3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3639435168462014679
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7812405533792015421}
+  - component: {fileID: 6251800517693017576}
+  m_Layer: 0
+  m_Name: Charge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7812405533792015421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639435168462014679}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3674570147407649399}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6251800517693017576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639435168462014679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20900ec4c59b4d40b6496e4b5ea8ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nonTarget: 0
+  _unit: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  CallEntityIdx: Archer_1_Arrow
+  ShootTr: {fileID: 957356295394503302}
+  TargetTr: {fileID: 0}
+--- !u!1 &1999357465581060519
+=======
+--- !u!1 &4361227080961335742
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3924509948984975629}
+  - component: {fileID: 9209661304779480602}
+  m_Layer: 0
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_Name: Normal
+=======
+  m_Name: NormalBehaviour
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3924509948984975629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361227080961335742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3057983263617747615}
+  - {fileID: 4624017998804780110}
+  - {fileID: 3174751605370049765}
+  m_Father: {fileID: 250742639977459051}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9209661304779480602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361227080961335742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb40e0eba2f55fd4cb3b54de97debfaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nonTarget: 0
+  _unit: {fileID: 0}
+  _nextBehaviours:
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  - {fileID: 1057645708118053684}
+  - {fileID: 6595679659296451610}
+--- !u!1 &2613148759891758453
+=======
+  - {fileID: 3057983263617747614}
+  - {fileID: 8985132458284272643}
+--- !u!1 &4633785981434546722
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3174751605370049765}
+  - component: {fileID: 3610468354191471114}
+  m_Layer: 0
+  m_Name: Charge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3174751605370049765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4633785981434546722}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_Children:
+  - {fileID: 1247423328734658836}
+  - {fileID: 3220508622590079858}
+  m_Father: {fileID: 2613148760319389888}
+  m_RootOrder: 1
+=======
+  m_Children: []
+  m_Father: {fileID: 3924509948984975629}
+  m_RootOrder: 2
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3610468354191471114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4633785981434546722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20900ec4c59b4d40b6496e4b5ea8ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nonTarget: 0
+  _unit: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  _normalBehaviour: {fileID: 6410416400371105283}
+  _skillBehaviour: {fileID: 377392140297660645}
+--- !u!1 &2613148760319389890
+=======
+--- !u!1 &5642703449649609013
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  - component: {fileID: 2613148760319389888}
+  - component: {fileID: 2613148760319389891}
+  - component: {fileID: 957356294800913199}
+  - component: {fileID: 957356294472790490}
+  - component: {fileID: 704643499}
+=======
+  - component: {fileID: 5642703449649609012}
+  - component: {fileID: 5642703449649609015}
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_Layer: 0
+  m_Name: Anim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5642703449649609012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642703449649609013}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5642703450113023765}
+  m_Father: {fileID: 250742639667269849}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5642703449649609015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642703449649609013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a76107315b59b46a909959b8916e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  _unitIdx: Archer_2
+  _unitData:
+    UnitIdx: 
+    ReinforceLv: 0
+    UnitName: 
+    Class: 
+    LifeAttack: 0
+    MaxReinforce: 0
+    Hp: 0
+    Defence: 0
+    MagicResistance: 0
+    DamageType: 
+    Damage: 0
+    AttackSpeed: 0
+    AttackDistance: 0
+    SkillDamageType: 
+    SkillDamage: 0
+    DodgeRate: 0
+    RecoverRate: 0
+    CriticalRate: 0
+    CriticalDamage: 0
+    MaxMana: 0
+    ManaChargeAmount: 0
+    InitMana: 0
+  _tr: {fileID: 0}
+  _teamType: 1
+  _tile: {fileID: 0}
+  _stateMgr: {fileID: 0}
+  _animMgr: {fileID: 0}
+  _behaviourMgr: {fileID: 0}
+  _moveMgr: {fileID: 0}
+  _seeker: {fileID: 0}
+  _normalDamage:
+    ResourceUnit: {fileID: 0}
+    Type: 0
+    unableToDodge: 0
+    DamagePower: 0
+  _skillDamage:
+    ResourceUnit: {fileID: 0}
+    Type: 1
+    unableToDodge: 0
+    DamagePower: 0
+  _ableToAttack: 0
+  _needToMove: 0
+--- !u!58 &957356294800913199
+CircleCollider2D:
+=======
+  _tr: {fileID: 0}
+  _anim: {fileID: 0}
+--- !u!1 &5642703450113023754
+GameObject:
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5642703450113023765}
+  - component: {fileID: 5642703450113023764}
+  m_Layer: 0
+  m_Name: Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5642703450113023765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642703450113023754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5642703451032800766}
+  m_Father: {fileID: 5642703449649609012}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5642703450113023764
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642703450113023754}
+  m_Enabled: 1
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!50 &704643499
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2613148760319389890}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!1 &2613148760754035286
+=======
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1219385649
+  m_SortingLayer: 2
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 995b626e80f0ec54fb13f24269b682dc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &5642703451032800767
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5642703451032800766}
+  - component: {fileID: 5642703451032800761}
+  m_Layer: 0
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5642703451032800766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642703451032800767}
+  m_LocalRotation: {x: -0, y: -0, z: 0.49195907, w: 0.8706184}
+  m_LocalPosition: {x: 0.339, y: -0.207, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5642703450113023765}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 58.939003}
+--- !u!212 &5642703451032800761
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642703451032800767}
+  m_Enabled: 1
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a76107315b59b46a909959b8916e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tr: {fileID: 0}
+  _anim: {fileID: 0}
+--- !u!1 &2813396134412314595
+=======
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1219385649
+  m_SortingLayer: 2
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 0fee934fe76707242b686ba71f9422e6, type: 3}
+  m_Color: {r: 0.98518205, g: 1, b: 0.6556604, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.34, y: 0.34}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &7381770503814979349
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  - component: {fileID: 7427238665626723415}
+  - component: {fileID: 6595679659296451610}
+=======
+  - component: {fileID: 626695225970568812}
+  - component: {fileID: 4216250366601733257}
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_Layer: 0
+  m_Name: Self
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+--- !u!4 &7427238665626723415
+=======
+--- !u!4 &626695225970568812
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_GameObject: {fileID: 2813396134412314595}
+=======
+  m_GameObject: {fileID: 7381770503814979349}
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_Father: {fileID: 1247423328734658836}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6595679659296451610
+=======
+  m_Father: {fileID: 3674570147407649399}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4216250366601733257
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_GameObject: {fileID: 2813396134412314595}
+=======
+  m_GameObject: {fileID: 7381770503814979349}
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5496e9e60b23d0441984bf15c3b53fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nonTarget: 0
+  _unit: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  _nextBehaviour: {fileID: 1523307661093802515}
+--- !u!1 &5744951825074739801
+=======
+  _nextBehaviour: {fileID: 6251800517693017576}
+--- !u!1 &7983447009470799291
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  - component: {fileID: 5922573954976141121}
+  - component: {fileID: 1776810134823695161}
+  m_Layer: 0
+  m_Name: CallEntity
+=======
+  - component: {fileID: 3674570147407649399}
+  - component: {fileID: 3118372038053818027}
+  m_Layer: 0
+  m_Name: SkillBehaviour
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+--- !u!4 &5922573954976141121
+=======
+--- !u!4 &3674570147407649399
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_GameObject: {fileID: 5744951825074739801}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3220508622590079858}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776810134823695161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5744951825074739801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5fe0c11ef06a94cab58c32749a5d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nonTarget: 0
+  _unit: {fileID: 0}
+  CallEntityIdx: Archer_1_Skill
+  ShootTr: {fileID: 5922573954976141121}
+  TargetTr: {fileID: 0}
+--- !u!1 &6752228492882892281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3220508622590079858}
+  - component: {fileID: 377392140297660645}
+  m_Layer: 0
+  m_Name: Skill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3220508622590079858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6752228492882892281}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5922573954976141121}
+  - {fileID: 8914358588765765267}
+  - {fileID: 3434497493562493079}
+  m_Father: {fileID: 2613148759891758450}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &377392140297660645
+=======
+  m_GameObject: {fileID: 7983447009470799291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5319301625078597888}
+  - {fileID: 626695225970568812}
+  - {fileID: 7812405533792015421}
+  m_Father: {fileID: 250742639977459051}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3118372038053818027
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  m_GameObject: {fileID: 6752228492882892281}
+=======
+  m_GameObject: {fileID: 7983447009470799291}
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb40e0eba2f55fd4cb3b54de97debfaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nonTarget: 0
+  _unit: {fileID: 0}
+  _nextBehaviours:
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+  - {fileID: 1776810134823695161}
+  - {fileID: 2129101395409620136}
+--- !u!1 &7455592795536419387
+=======
+  - {fileID: 4199706875829515118}
+  - {fileID: 4216250366601733257}
+--- !u!1 &8157882893835233611
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5319301625078597888}
+  - component: {fileID: 4199706875829515118}
+  m_Layer: 0
+  m_Name: OverlapCircle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5319301625078597888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157882893835233611}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 495007556633586851}
+  m_Father: {fileID: 3674570147407649399}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4199706875829515118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157882893835233611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a464764dae97b54aa235e2ad2f74ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nonTarget: 0
+  _unit: {fileID: 0}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+--- !u!1001 &6340246937687901663
+=======
+  _nextBehaviourWithTriggerTarget:
+    TargetTeam: 2
+    nextBehaviour: {fileID: 1343584439201217126}
+  _radius: 1.5
+  _pointTr: {fileID: 0}
+--- !u!1001 &2982809390329120268
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+    m_TransformParent: {fileID: 2613148760319389888}
+=======
+    m_TransformParent: {fileID: 250742639667269849}
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+    m_Modifications:
+    - target: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340332312387390773, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+        type: 3}
+      propertyPath: m_Name
+      value: State
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b4c2f21ad5403ed4c994f1b3e5901e11, type: 3}
+<<<<<<< HEAD:Assets/Prefab/Unit/Archer/Archer_2.prefab
+--- !u!4 &2613148760950524139 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+    type: 3}
+  m_PrefabInstance: {fileID: 6340246937687901663}
+=======
+--- !u!4 &6547039078487182136 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8340332312387390772, guid: b4c2f21ad5403ed4c994f1b3e5901e11,
+    type: 3}
+  m_PrefabInstance: {fileID: 2982809390329120268}
+>>>>>>> origin/상태이상작업:Assets/Prefab/Unit/DealWarrior/DealWarrior_5.prefab
+  m_PrefabAsset: {fileID: 0}
