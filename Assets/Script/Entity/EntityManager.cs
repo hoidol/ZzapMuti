@@ -57,6 +57,7 @@ public class EntityManager : MonoBehaviour
             if (_entities[i].Idx.Equals(_idx))
             {
                 Entity _e = Instantiate(_entities[i]);
+                _entityList.Add(_e);
                 _e.InitEntity();
                 return _e;
             }

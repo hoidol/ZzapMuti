@@ -34,6 +34,16 @@
       "Idx": "Archer_1_Skill",
       "Duration": 5,
       "MoveSpeed": 10
+    },
+    {
+      "Idx": "FireWizard_1_Skill",
+      "Duration": 5,
+      "MoveSpeed": 9
+    },
+    {
+      "Idx": "TrapWizard_1_Skill",
+      "Duration": 5,
+      "MoveSpeed": 9
     }
   ]
 

@@ -23,9 +23,15 @@ public class EnumInfo
         AttakSpeed,
         MoveSpeed,
         AttackPower,
-        Ice
+        Ice,
+        RepeatDamage,
+        DodgeRate
     }
-
+    public enum DamageType
+    {
+        Physic,
+        Magic
+    }
     public enum GetUnitType
     {
         Null,

@@ -10,7 +10,6 @@ public class ChangeFireState : ChangeState
     public override void InitChangeState(Unit _u)
     {
         base.InitChangeState(_u);
-        _damage.ResourceUnit = _u;
         _changeState = EnumInfo.State.Fire;
     }
 }

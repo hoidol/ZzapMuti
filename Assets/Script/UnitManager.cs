@@ -27,6 +27,8 @@ public class UnitManager : MonoBehaviour
     public List<Unit> _curAliveBlueUnitsOnTile = new List<Unit>();
 
     EnumInfo.TeamType _curTurnTeamType;
+
+    public bool _playingBattle;
     private void Awake()
     {
         if (_instance == null)
@@ -45,7 +47,7 @@ public class UnitManager : MonoBehaviour
 
     public void StartBattle()
     {
-
+        _playingBattle = true;
         Debug.Log("StartBattle()");
         // 어쌔신이 어느 타일로 이동되야되는지 
         
@@ -120,6 +122,8 @@ public class UnitManager : MonoBehaviour
         StopAllCoroutines();
         for (int i = 0; i < _curUnitsOnTile.Count; i++)
             _curUnitsOnTile[i].FinishBattle();
+
+        _playingBattle = false;
     }
 
     public void CheckBattleResult() //유닛이 죽을 때마다 호출됨
@@ -156,20 +160,28 @@ public class UnitManager : MonoBehaviour
         {
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
                 _curUnitsOnTile[i].RestorePosition();
-            GameProgress.Instance.EndBattle(EnumInfo.TeamType.Blue, 1);
+
             StopAllCoroutines();
-            FinishBattle();
+            StartCoroutine(ProcessResult(EnumInfo.TeamType.Red, 1));
         }
         else if(_curAliveBlueUnitsOnTile.Count <= 0)
         {
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
                 _curUnitsOnTile[i].RestorePosition();
-            GameProgress.Instance.EndBattle(EnumInfo.TeamType.Red, 1);
             StopAllCoroutines();
-            FinishBattle();
-        }
+            StartCoroutine(ProcessResult(EnumInfo.TeamType.Red, 1));
 
+        }
     }
+
+    IEnumerator ProcessResult(EnumInfo.TeamType _winTeam, int _loseLife)
+    {
+        yield return new WaitForSeconds(2f);
+        GameProgress.Instance.EndBattle(_winTeam, _loseLife);
+        FinishBattle();
+    }
+
+    
 
 
 

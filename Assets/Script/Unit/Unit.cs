@@ -42,16 +42,16 @@ public class Unit : MonoBehaviour
 
 
         if (_unitData.DamageType.Equals("Physic"))
-            _normalDamage.Type = DamageType.Physic;
+            _normalDamage.Type = EnumInfo.DamageType.Physic;
         else
-            _normalDamage.Type = DamageType.Magic;
+            _normalDamage.Type = EnumInfo.DamageType.Magic;
         _normalDamage.DamagePower = _unitData.Damage;
         _normalDamage.ResourceUnit = this;
 
         if (_unitData.SkillDamageType.Equals("Physic"))
-            _skillDamage.Type = DamageType.Physic;
+            _skillDamage.Type = EnumInfo.DamageType.Physic;
         else
-            _skillDamage.Type = DamageType.Magic;
+            _skillDamage.Type = EnumInfo.DamageType.Magic;
 
         _skillDamage.DamagePower = _unitData.SkillDamage;
         _skillDamage.ResourceUnit = this;
@@ -99,13 +99,12 @@ public class Unit : MonoBehaviour
         if (_targetUnit == null)
             return;
         ProcessMoveAndAttack(_targetUnit);
-
-
     }
 
 
     void ProcessMoveAndAttack(Unit _tUnit)
     {
+        _animMgr.UpdateDirection(_tUnit._tr.position - _tr.position);
         if (_unitData.AttackDistance >= Vector2.Distance(_tr.position, _tUnit._tr.position)) // 공격 가능 상태
         {
             _ableToAttack = true;

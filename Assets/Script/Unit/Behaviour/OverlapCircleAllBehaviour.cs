@@ -20,6 +20,11 @@ public class OverlapCircleAllBehaviour : UnitBehaviour
             _nextBehaviourWithTriggerTarget.nextBehaviour.InitUnitBehaviour(_u);
 
     }
+    public override void StartBattle()
+    {
+        if (_nextBehaviourWithTriggerTarget.nextBehaviour)
+            _nextBehaviourWithTriggerTarget.nextBehaviour.StartBattle();
+    }
     public override void DoBehaviour()
     {
         ProcessOerlapCircle( Physics2D.OverlapCircleAll(_pointTr.position, _radius));

@@ -12,6 +12,11 @@ public class WaitForSecBehaviour : UnitBehaviour
 
         _nextBehaviour.InitUnitBehaviour(_u);
     }
+    public override void StartBattle()
+    {
+        if (_nextBehaviour)
+            _nextBehaviour.StartBattle();
+    }
     public override void DoBehaviour()
     {
         StartCoroutine(ProcessWaitForSec());
