@@ -77,12 +77,6 @@ public class GameProgress : MonoBehaviour
      //   StartCoroutine(TestRoutine());
     }
 
-    public IEnumerator TestRoutine()
-    {
-        yield return new WaitForSeconds(5);
-        EndBattle(EnumInfo.TeamType.Red, 1);
-    }
-
     public void EndBattle(EnumInfo.TeamType _winTeam,int _discountLife)
     {
         _round++;
