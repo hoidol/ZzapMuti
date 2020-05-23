@@ -9,9 +9,13 @@ public class GameProgress : MonoBehaviour
 
     [Header("Red Player")]
     [SerializeField] private Player _redPlayer;
+    [SerializeField] private GameObject _redBlind;
 
     [Header("Blue Player")]
     [SerializeField] private Player _bluePlayer;
+    [SerializeField] private GameObject _blueBlind;
+
+    private EnumInfo.TeamType _drawTeam;
 
     [Header("DrawManager")]
     [SerializeField] private PlayerDrawManager _playerDrawManager;
@@ -25,6 +29,8 @@ public class GameProgress : MonoBehaviour
     [SerializeField] private Text _roundText;
 
     [SerializeField] private GameEndUI _gameEndUI;
+
+    [SerializeField] private GameObject _addTurnButton;
 
     private int _round=0;
 
@@ -54,17 +60,63 @@ public class GameProgress : MonoBehaviour
 
     public void DrawRedPlayer()
     {
-        _playerDrawManager.SetPlayerDraw(_redPlayer._DeckManager._Deck,EnumInfo.TeamType.Red,DrawBluePlayer);
+        _drawTeam = EnumInfo.TeamType.Red;
+
+        SetBlind(false, true);
+
+        _playerDrawManager.SetPlayerDraw(_redPlayer._DeckManager._Deck,EnumInfo.TeamType.Red, ActiveAddTurnButton);
     }
 
     public void DrawBluePlayer()
     {
-        _playerDrawManager.SetPlayerDraw(_bluePlayer._DeckManager._Deck, EnumInfo.TeamType.Blue, SetCanBattle);
+        _drawTeam = EnumInfo.TeamType.Blue;
+        
+        SetBlind(true, false);
+
+        _playerDrawManager.SetPlayerDraw(_bluePlayer._DeckManager._Deck, EnumInfo.TeamType.Blue, ActiveAddTurnButton);
+    }
+
+    public void SetPlayerInfoUI(bool _active)
+    {
+        _redPlayerInfoUI.gameObject.SetActive(_active);
+        _bluePlayerInfoUI.gameObject.SetActive(_active);
+    }
+
+    public void SetBlind(bool _red,bool _blue)
+    {
+        _redBlind.gameObject.SetActive(_red);
+        _blueBlind.gameObject.SetActive(_blue);
+    }
+
+    public void ActiveAddTurnButton()
+    {
+        _addTurnButton.gameObject.SetActive(true);
+    }
+
+    /// <summary>
+    /// AddTurn은 외부 버튼에서 호출
+    /// </summary>
+    public void AddTurn()
+    {
+        _addTurnButton.gameObject.SetActive(false);
+        switch (_drawTeam)
+        {
+            case EnumInfo.TeamType.Red:
+                DrawBluePlayer();
+                break;
+
+            case EnumInfo.TeamType.Blue:
+                SetCanBattle();
+                break;
+        }
     }
 
     public void SetCanBattle()
     {
         startBattleButton.gameObject.SetActive(true);
+
+        SetBlind(false, false);
+        SetPlayerInfoUI(false);
     }
 
     public void StartBattle()
@@ -80,6 +132,8 @@ public class GameProgress : MonoBehaviour
     public void EndBattle(EnumInfo.TeamType _winTeam,int _discountLife)
     {
         _round++;
+
+        SetPlayerInfoUI(true);
 
         UnitManager.Instance.FinishBattle();
         TileManager._Instance.EndBattle();
