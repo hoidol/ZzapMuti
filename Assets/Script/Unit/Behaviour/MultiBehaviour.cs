@@ -20,7 +20,7 @@ public class MultiBehaviour : UnitBehaviour
     }
     public override void DoBehaviour()
     {
-        Debug.Log("DoBehaviour () Multibehaviour 호출");
+
         for (int i = 0; i < _nextBehaviours.Length; i++)
             _nextBehaviours[i].DoBehaviour();
     }

@@ -26,6 +26,7 @@ public class StateManager : MonoBehaviour
         _unit = _u;
         _curHp = _unit._unitData.Hp;
         _curMana = _unit._unitData.InitMana;
+        _curShield = 0;
         _hpBar.fillAmount = 1;
         _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
         _shieldBar.fillAmount = 0;
@@ -43,9 +44,12 @@ public class StateManager : MonoBehaviour
 
     public void StartBattle()
     {
-        _curHp = _unit._unitData.Hp;
         _isLiving = true;
+
+        _curHp = _unit._unitData.Hp;
         _curMana = _unit._unitData.InitMana;
+        _curShield = 0;
+
         _hpBar.fillAmount = 1;
         _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
         _shieldBar.fillAmount = 0;
@@ -64,7 +68,7 @@ public class StateManager : MonoBehaviour
             if (Random.Range(0, 100) < _unit._unitData.DodgeRate * _dodgeRateState.GetDodgeRate())// 1 ~ 100까지 수
             {
                 // 회피
-
+                Debug.Log("회피!!");
 
                 return;
             }
@@ -72,20 +76,24 @@ public class StateManager : MonoBehaviour
         
         float _realDamage = 0;
         if(_d.Type == EnumInfo.DamageType.Physic)
-        {
             _realDamage = _d.DamagePower - _unit._unitData.Defence;
-        }
         else if (_d.Type == EnumInfo.DamageType.Magic)
-        {
-            _realDamage = _d.DamagePower - _unit._unitData.MagicResistance;
+            _realDamage = _d.DamagePower - (_d.DamagePower *(_unit._unitData.MagicResistance)*0.01f);
 
-        }
         if (_realDamage <= 0)
             _realDamage = 0;
 
-        _curHp -= _realDamage;
-
-
+        if(_curShield > 0)
+        {
+            _curShield -= _realDamage;
+            if (_curShield <= 0)
+            {
+                _curHp += _curShield;
+                _curShield = 0;
+            }
+        }
+        else
+            _curHp -= _realDamage;
         
         if(_curHp <=0)
         {
@@ -97,12 +105,13 @@ public class StateManager : MonoBehaviour
 
         ChargeMana();
         _hpBar.fillAmount = _curHp/ _unit._unitData.Hp;
+        _shieldBar.fillAmount = _curShield / _unit._unitData.Hp;
     }
 
 
     public void ChangeState(ChangeState _cS)
     {
-        Debug.Log(_cS);
+
         GetState(_cS._changeState).ChangeState(_cS);
     }
 
@@ -159,6 +168,18 @@ public class StateManager : MonoBehaviour
         _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
     }
 
+    public void ConsumeAllMana()
+    {
+        _curMana = 0;
+        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
+    }
+    public void ConsumeMana(float _m)
+    {
+        _curMana -= _m;
+        if (_curMana <= 0)
+            _curMana = 0;
+        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
+    }
     public void Die()
     {
         _hpBar.fillAmount = 0;

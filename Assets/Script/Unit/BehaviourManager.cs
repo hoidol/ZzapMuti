@@ -9,6 +9,7 @@ public class BehaviourManager : MonoBehaviour
     public UnitBehaviour _skillBehaviour;
 
     AttackSpeedState _attackSpeedState;
+    [SerializeField] bool _ableToCallNormalBehaviour = false;
     public void InitBehaviourMgr(Unit _u)
     {
         _unit = _u;
@@ -30,11 +31,9 @@ public class BehaviourManager : MonoBehaviour
         if (_skillBehaviour)
             _skillBehaviour.StartBattle();
 
-        StopAllCoroutines();
-        StartCoroutine(CoolTime());
+        Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
         StartCoroutine(ProcessNonTargetBehaviour());
     }
-
 
     IEnumerator ProcessNonTargetBehaviour()
     {
@@ -47,25 +46,24 @@ public class BehaviourManager : MonoBehaviour
                 {
                     if (_unit._stateMgr._curMana >= _unit._unitData.MaxMana)
                     {
-                        Debug.Log("NonTarget 스킬 호출!@!");
                         _ableToCallNormalBehaviour = false;
-                        _unit._stateMgr._curMana = 0;
-                        StartCoroutine(CoolTime());
-                        _skillBehaviour.DoBehaviour();                        
+                        _unit._stateMgr.ConsumeAllMana();
+                        _skillBehaviour.DoBehaviour();
+                        _usedSkill = true;
+
+                        Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
                     }
-                    _usedSkill = true;
                 }
             }
            
             if(_normalBehaviour)
             {
-
                 if (!_usedSkill)
                 {
                     if (_normalBehaviour._nonTarget && _ableToCallNormalBehaviour)
                     {
                         _ableToCallNormalBehaviour = false;
-                        StartCoroutine(CoolTime());
+                        Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
 
                         _normalBehaviour.DoBehaviour();
                     }
@@ -82,36 +80,40 @@ public class BehaviourManager : MonoBehaviour
 
     }
 
-    public void DoBehaviour(Unit _u)
+    public void DoBehaviour(Unit _tU)
     {
         bool _usedSkill = false;
-
         if (_skillBehaviour)
         {
             if (!_skillBehaviour._nonTarget)
             {
                 if (_unit._stateMgr._curMana >= _unit._unitData.MaxMana)
                 {
-                    
+
                     _ableToCallNormalBehaviour = false;
-                    _unit._stateMgr._curMana = 0;
-                    StartCoroutine(CoolTime());
-                    _skillBehaviour.DoBehaviour(_u);
+                    _unit._stateMgr.ConsumeAllMana();
+                    _skillBehaviour.DoBehaviour(_tU);
                     _usedSkill = true;
+                    Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1/_attackSpeedState.GetAttackSpeed());
+
                 }
-            }
-            
+            }            
         }
 
-        if (_normalBehaviour )
+        if (_normalBehaviour)
         {
             if (!_normalBehaviour._nonTarget)
             {
                 if (!_usedSkill && _ableToCallNormalBehaviour)
                 {
-                    _normalBehaviour.DoBehaviour(_u);
+                    if (_unit._unitIdx.Equals("Archer_1"))
+                        Debug.Log("DoBehaviour! 궁수 ");
+
+
                     _ableToCallNormalBehaviour = false;
-                    StartCoroutine(CoolTime());
+
+                    Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
+                    _normalBehaviour.DoBehaviour(_tU);
                 }
             }
            
@@ -119,14 +121,10 @@ public class BehaviourManager : MonoBehaviour
             
     }
 
-    bool _ableToCallNormalBehaviour = false;
-    IEnumerator CoolTime()
+    void ResetCoolTime()
     {
-        yield return new WaitForSeconds(_unit._unitData.AttackSpeed * _attackSpeedState.GetAttackSpeed());
         _ableToCallNormalBehaviour = true;
     }
-
-
 
 
     public void Die()

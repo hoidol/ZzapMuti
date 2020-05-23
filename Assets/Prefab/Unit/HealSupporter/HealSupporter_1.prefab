@@ -94,7 +94,7 @@ MonoBehaviour:
   _nonTarget: 1
   _unit: {fileID: 0}
   _sameTeamUnitList: []
-  _healRate: 0.3
+  _healRate: 0.15
   _healCount: 1
   _healedUnitList: []
 --- !u!1 &1962303047111961352
@@ -145,6 +145,7 @@ MonoBehaviour:
   _unit: {fileID: 0}
   _normalBehaviour: {fileID: 7593007813648868623}
   _skillBehaviour: {fileID: 972305869}
+  _ableToCallNormalBehaviour: 0
 --- !u!1 &1962303048949257919
 GameObject:
   m_ObjectHideFlags: 0

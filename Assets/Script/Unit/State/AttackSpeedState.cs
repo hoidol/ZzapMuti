@@ -22,7 +22,7 @@ public class AttackSpeedState : State
         AttackSpeedStateInfo _info = new AttackSpeedStateInfo();
 
         _info._duration = _cMSCState._duration;
-        _info._duration = _cMSCState._multiAttackSpeed;
+        _info._multiAttackSpeed = _cMSCState._multiAttackSpeed;
 
         _attackSpeedStateInfoList.Add(_info);
         CheckMultiAttackSpeed();
@@ -37,13 +37,13 @@ public class AttackSpeedState : State
         _curMultiAttackSpeed = 1;
         for (int i = 0; i < _attackSpeedStateInfoList.Count; i++)
         {
-            _curMultiAttackSpeed *= _attackSpeedStateInfoList[i]._multiAttackSpeed;
+            _curMultiAttackSpeed *= _attackSpeedStateInfoList[i]._multiAttackSpeed; //
         }
     }
 
-    public float GetAttackSpeed()
+    public float GetAttackSpeed() 
     {
-        return _curMultiAttackSpeed;
+        return _curMultiAttackSpeed; //원래 스피트 *  2 => 1/2  3=> 1/3  이면
     }
 }
 
