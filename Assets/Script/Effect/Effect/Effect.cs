@@ -5,11 +5,11 @@ using UnityEngine;
 public class Effect : MonoBehaviour
 {
     public string _effectIdx;
-    public Transform _tr;
+   [HideInInspector] public Transform _tr;
 
     public virtual void InitEffect()
     {
-
+        _tr = transform;
     }
 
     public virtual void PlayEffect()
