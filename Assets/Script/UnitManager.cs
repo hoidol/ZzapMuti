@@ -160,20 +160,28 @@ public class UnitManager : MonoBehaviour
         {
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
                 _curUnitsOnTile[i].RestorePosition();
-            GameProgress.Instance.EndBattle(EnumInfo.TeamType.Blue, 1);
+
             StopAllCoroutines();
-            FinishBattle();
+            StartCoroutine(ProcessResult(EnumInfo.TeamType.Red, 1));
         }
         else if(_curAliveBlueUnitsOnTile.Count <= 0)
         {
             for (int i = 0; i < _curUnitsOnTile.Count; i++)
                 _curUnitsOnTile[i].RestorePosition();
-            GameProgress.Instance.EndBattle(EnumInfo.TeamType.Red, 1);
             StopAllCoroutines();
-            FinishBattle();
-        }
+            StartCoroutine(ProcessResult(EnumInfo.TeamType.Red, 1));
 
+        }
     }
+
+    IEnumerator ProcessResult(EnumInfo.TeamType _winTeam, int _loseLife)
+    {
+        yield return new WaitForSeconds(2f);
+        GameProgress.Instance.EndBattle(_winTeam, _loseLife);
+        FinishBattle();
+    }
+
+    
 
 
 
