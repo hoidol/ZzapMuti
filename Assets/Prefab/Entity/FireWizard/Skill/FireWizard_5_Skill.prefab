@@ -92,8 +92,8 @@ MonoBehaviour:
   entity: {fileID: 0}
   _nextBehaviourWithTriggerTarget:
     TargetTeam: 2
-    nextBehaviour: {fileID: 5890891882963558094}
-  _radius: 1
+    nextBehaviour: {fileID: 1245663809968262932}
+  _radius: 2.5
   _pointTr: {fileID: 1744649934830905190}
 --- !u!1 &8185019379856725370
 GameObject:
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
   _nextBehaviours:
-  - {fileID: 4332011048855126194}
+  - {fileID: 0}
   - {fileID: 8185019380662422396}
 --- !u!1 &8185019380662422398
 GameObject:
@@ -197,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8185019380948929531}
-  - component: {fileID: 5890891882963558094}
+  - component: {fileID: 1245663809968262932}
   m_Layer: 0
   m_Name: ApplyDamage
   m_TagString: Untagged
@@ -219,7 +219,7 @@ Transform:
   m_Father: {fileID: 1744649934830905190}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5890891882963558094
+--- !u!114 &1245663809968262932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 9174588736709311888}
   - component: {fileID: 9174588736709311891}
   m_Layer: 0
-  m_Name: FireWizard_1_Skill
+  m_Name: FireWizard_5_Skill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
