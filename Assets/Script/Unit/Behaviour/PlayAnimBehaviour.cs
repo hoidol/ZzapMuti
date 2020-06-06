@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayAnimBehaviour : MonoBehaviour
+public class PlayAnimBehaviour : UnitBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string _animTrigger;
+
+    public override void DoBehaviour()
     {
-        
+        _unit._animMgr.PlayAnim(_animTrigger);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void DoBehaviour(Unit _tUnit)
     {
-        
+        _unit._animMgr.PlayAnim(_animTrigger);
     }
 }

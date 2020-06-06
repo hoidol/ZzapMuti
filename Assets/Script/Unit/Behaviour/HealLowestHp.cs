@@ -8,6 +8,8 @@ public class HealLowestHp : UnitBehaviour
     public float _healRate;
     public int _healCount;
     [SerializeField]  List<Unit> _healedUnitList = new List<Unit>();
+
+    public string _healEffectIdx;
     public override void InitUnitBehaviour(Unit _u)
     {
         base.InitUnitBehaviour(_u);
@@ -36,6 +38,7 @@ public class HealLowestHp : UnitBehaviour
             //힐 이펙트
             Debug.Log("힐주자 " + _tUnit.name + " _tUnit._unitData.Hp * _healRate : " + _tUnit._unitData.Hp * _healRate); 
             _tUnit._stateMgr.HealHp(_tUnit._unitData.Hp * _healRate);
+            EffectManager.Instance.PlayEffect(_healEffectIdx, _tUnit._tr.position);
         }
     }
 

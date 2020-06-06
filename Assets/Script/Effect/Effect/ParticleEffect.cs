@@ -2,17 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleEffect : MonoBehaviour
+public class ParticleEffect : Effect
 {
-    // Start is called before the first frame update
-    void Start()
+    ParticleSystem[] _particles;
+
+    public override void InitEffect()
     {
-        
+        base.InitEffect();
+        _particles = GetComponentsInChildren<ParticleSystem>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public override void PlayEffect()
     {
-        
+        float _maxDuration = 0;
+        for (int i = 0; i < _particles.Length; i++)
+        {
+            if(_maxDuration <= _particles[i].main.duration)
+            {
+                _maxDuration = _particles[i].main.duration;
+            }
+            _particles[i].Play();
+        }
+        StartCoroutine(ProcessEffect(_maxDuration));
+    }
+
+    IEnumerator ProcessEffect(float _sec)
+    {
+        yield return new WaitForSeconds(_sec);
+        gameObject.SetActive(false);
     }
 }

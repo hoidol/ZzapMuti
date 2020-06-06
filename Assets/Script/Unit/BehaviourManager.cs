@@ -50,7 +50,7 @@ public class BehaviourManager : MonoBehaviour
                         _unit._stateMgr.ConsumeAllMana();
                         _skillBehaviour.DoBehaviour();
                         _usedSkill = true;
-
+                        CancelInvoke("ResetCoolTime");
                         Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
                     }
                 }
@@ -63,6 +63,7 @@ public class BehaviourManager : MonoBehaviour
                     if (_normalBehaviour._nonTarget && _ableToCallNormalBehaviour)
                     {
                         _ableToCallNormalBehaviour = false;
+                        CancelInvoke("ResetCoolTime");
                         Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
 
                         _normalBehaviour.DoBehaviour();
@@ -94,6 +95,7 @@ public class BehaviourManager : MonoBehaviour
                     _unit._stateMgr.ConsumeAllMana();
                     _skillBehaviour.DoBehaviour(_tU);
                     _usedSkill = true;
+                    CancelInvoke("ResetCoolTime");
                     Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1/_attackSpeedState.GetAttackSpeed());
 
                 }
@@ -106,12 +108,8 @@ public class BehaviourManager : MonoBehaviour
             {
                 if (!_usedSkill && _ableToCallNormalBehaviour)
                 {
-                    if (_unit._unitIdx.Equals("Archer_1"))
-                        Debug.Log("DoBehaviour! 궁수 ");
-
-
                     _ableToCallNormalBehaviour = false;
-
+                    CancelInvoke("ResetCoolTime");
                     Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
                     _normalBehaviour.DoBehaviour(_tU);
                 }
