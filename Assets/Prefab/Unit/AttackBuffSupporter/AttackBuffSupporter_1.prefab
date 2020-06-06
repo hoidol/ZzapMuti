@@ -97,8 +97,8 @@ MonoBehaviour:
   _getUnitType: 1
   _targetTeam: 1
   _nextBehaviour: {fileID: 5736333184214590267}
-  _includeSelf: 0
-  _count: 0
+  _includeSelf: 1
+  _count: 1
 --- !u!1 &1041408661648456131
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +733,7 @@ MonoBehaviour:
   _unit: {fileID: 0}
   _normalBehaviour: {fileID: 318730946076994510}
   _skillBehaviour: {fileID: 1617527797}
+  _ableToCallNormalBehaviour: 0
 --- !u!1 &6287754008841024781
 GameObject:
   m_ObjectHideFlags: 0
