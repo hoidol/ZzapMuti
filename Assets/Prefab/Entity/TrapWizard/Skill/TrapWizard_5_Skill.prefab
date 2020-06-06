@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0bcbfc3261de848b89ede98f150241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Idx: TrapWizard_1_Skill
+  Idx: TrapWizard_5_Skill
   entityData:
     Idx: 
     Duration: 0
