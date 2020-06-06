@@ -282,9 +282,15 @@ MonoBehaviour:
   _getUnitType: 1
   _targetTeam: 1
   _nextBehaviour: {fileID: 5736333184214590267}
+<<<<<<< HEAD
   _includeSelf: 0
   _count: 0
 --- !u!1 &927099956098252940
+=======
+  _includeSelf: 1
+  _count: 3
+--- !u!1 &1041408661648456131
+>>>>>>> minok_gameprogress
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -623,8 +629,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourceUnit: {fileID: 0}
   _changeState: 0
-  _duration: 3
-  _multiAttackSpeed: 0.2
+  _duration: 7
+  _multiAttackSpeed: 0.8
 --- !u!1 &3439340169183908755
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,9 +999,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourceUnit: {fileID: 0}
   _changeState: 0
+<<<<<<< HEAD
   _duration: 3
   _multiAttackPower: 0.35
 --- !u!1 &6633859108998623818
+=======
+  _duration: 7
+  _multiAttackPower: 0.6
+--- !u!1 &7043945335451499028
+>>>>>>> minok_gameprogress
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
