@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Prefab/Entity/TrapWizard/Skill/TrapWizard_5_Skill.prefab.meta
-guid: 8d59d0f39654c434eb1bbd911e62f8f5
-PrefabImporter:
-=======
+<<<<<<< HEAD:Assets/Animation/Unit/Archer/Idle.anim.meta
 guid: 8e9382627efe5da46bb5168f31c5dc2f
 NativeFormatImporter:
->>>>>>> origin/상태이상작업:Assets/Animation/Unit/Archer/Idle.anim.meta
+=======
+guid: 8d59d0f39654c434eb1bbd911e62f8f5
+PrefabImporter:
+>>>>>>> minok_gameprogress:Assets/Prefab/Entity/TrapWizard/Skill/TrapWizard_5_Skill.prefab.meta
   externalObjects: {}
   mainObjectFileID: 0
   userData: 

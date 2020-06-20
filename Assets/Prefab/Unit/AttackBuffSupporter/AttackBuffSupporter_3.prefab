@@ -92,6 +92,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128569741}
   m_Enabled: 1
+<<<<<<< HEAD
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b49e2d0b3a8ca4044a61a0f838376a17, type: 2}
   m_CullingMode: 0
@@ -103,6 +104,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &479637997
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02dafa949f781b945bbde041bc236e11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nonTarget: 1
+  _unit: {fileID: 0}
+  _getUnitType: 1
+  _targetTeam: 1
+  _nextBehaviour: {fileID: 5736333184214590267}
+  _includeSelf: 1
+  _count: 2
+--- !u!1 &1041408661648456131
+>>>>>>> minok_gameprogress
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -577,8 +592,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourceUnit: {fileID: 0}
   _changeState: 0
-  _duration: 3
-  _multiAttackSpeed: 0.2
+  _duration: 5
+  _multiAttackSpeed: 0.4
 --- !u!1 &3439340169183908755
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,8 +962,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourceUnit: {fileID: 0}
   _changeState: 0
-  _duration: 3
-  _multiAttackPower: 0.35
+  _duration: 5
+  _multiAttackPower: 0.45
 --- !u!1 &7043945335451499028
 GameObject:
   m_ObjectHideFlags: 0

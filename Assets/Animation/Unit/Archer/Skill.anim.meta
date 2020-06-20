@@ -1,10 +1,20 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Animation/Unit/Archer/Skill.anim.meta
 <<<<<<< HEAD:Assets/Prefab/Entity/TrapWizard/Skill/TrapWizard_2_Skill.prefab.meta
-guid: 5929cc570f24a0d4daa4a00cba7db17a
+guid: 8d3227289847b9c4d85fbff58f62cf34
 PrefabImporter:
 =======
 guid: 65f73edfc34999347a40ed8dec6e6f2e
 NativeFormatImporter:
+>>>>>>> origin/상태이상작업:Assets/Animation/Unit/Archer/Skill.anim.meta
+=======
+<<<<<<< HEAD:Assets/Animation/Unit/Archer/Skill.anim.meta
+guid: 65f73edfc34999347a40ed8dec6e6f2e
+NativeFormatImporter:
+=======
+guid: 5929cc570f24a0d4daa4a00cba7db17a
+PrefabImporter:
+>>>>>>> minok_gameprogress:Assets/Prefab/Entity/TrapWizard/Skill/TrapWizard_2_Skill.prefab.meta
 >>>>>>> origin/상태이상작업:Assets/Animation/Unit/Archer/Skill.anim.meta
   externalObjects: {}
   mainObjectFileID: 0
