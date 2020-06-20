@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefab/Entity/TrapWizard/Skill/TrapWizard_4_Skill.prefab.meta
+guid: 3372f5ad48ae91e4c8a8156a918c7c35
+=======
 guid: 5bb107d1debb9da429dba1a38925bfa0
+>>>>>>> origin/상태이상작업:Assets/Prefab/Entity/TrapWizard/Skill/TrapWizard_3_Skill.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

@@ -23,8 +23,12 @@ public class GameProgress : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Button startBattleButton;
 
+    [Header("Player UI")]
     [SerializeField] private PlayerInfoUI _redPlayerInfoUI;
     [SerializeField] private PlayerInfoUI _bluePlayerInfoUI;
+
+    [Header("Timer")]
+    [SerializeField] private Timer _timer;
 
     [SerializeField] private Text _roundText;
 
@@ -126,6 +130,9 @@ public class GameProgress : MonoBehaviour
         startBattleButton.gameObject.SetActive(false);
         UnitManager.Instance.StartBattle();
 
+        _timer.gameObject.SetActive(true);
+        _timer.Play();
+
      //   StartCoroutine(TestRoutine());
     }
 
@@ -137,6 +144,9 @@ public class GameProgress : MonoBehaviour
 
         UnitManager.Instance.FinishBattle();
         TileManager._Instance.EndBattle();
+
+        _timer.Stop();
+        _timer.gameObject.SetActive(false);
 
         if (_winTeam==EnumInfo.TeamType.Red)
         {
