@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackSpeedState : State
 {
-    List<AttackSpeedStateInfo> _attackSpeedStateInfoList = new List<AttackSpeedStateInfo>();
+    [SerializeField] List<AttackSpeedStateInfo> _attackSpeedStateInfoList = new List<AttackSpeedStateInfo>();
     [SerializeField] float _curMultiAttackSpeed;
     public override void StartBattle()
     {

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class MoveSpeedState : State
 {
-    List<ChangeMoveSpeedChangeState> _moveSpeedChangeStateInfoList = new List<ChangeMoveSpeedChangeState>();
+    [SerializeField] List<ChangeMoveSpeedChangeState> _moveSpeedChangeStateInfoList = new List<ChangeMoveSpeedChangeState>();
     [SerializeField] float _curMultiMoveSpeed;
 
     public override void InitState(Unit _u)
     {
         base.InitState(_u);
         _state = EnumInfo.State.MoveSpeed;
+        _curMultiMoveSpeed = 1;
     }
     public override void StartBattle()
     {
@@ -19,6 +20,7 @@ public class MoveSpeedState : State
 
     public override void ChangeState(ChangeState _cS)
     {
+        Debug.Log("MoveSpeed! ChangeState");
         StartCoroutine(ProcessChangeState((ChangeMoveSpeedChangeState)_cS));
     }
 

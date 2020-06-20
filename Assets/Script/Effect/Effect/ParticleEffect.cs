@@ -15,6 +15,7 @@ public class ParticleEffect : Effect
 
     public override void PlayEffect()
     {
+        gameObject.SetActive(true);
         float _maxDuration = 0;
         for (int i = 0; i < _particles.Length; i++)
         {

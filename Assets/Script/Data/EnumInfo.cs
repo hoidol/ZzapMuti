@@ -12,7 +12,8 @@ public class EnumInfo
     public enum TeamType
     {
         Red,
-        Blue
+        Blue,
+        Draw
     }
 
     public enum State

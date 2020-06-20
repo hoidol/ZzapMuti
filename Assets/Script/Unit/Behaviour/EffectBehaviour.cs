@@ -11,7 +11,9 @@ public class EffectBehaviour : UnitBehaviour
     public override void InitUnitBehaviour(Unit _u)
     {
         base.InitUnitBehaviour(_u);
-        _effect.InitEffect();
+
+        if (_effect)
+            _effect.InitEffect();
     }
     public override void DoBehaviour()
     {

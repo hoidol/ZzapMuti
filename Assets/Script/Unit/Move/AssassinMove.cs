@@ -45,7 +45,7 @@ public class AssassinMove : UnitMove
                 continue;
 
 
-            _unit._tr.position = Vector2.MoveTowards(_unit._tr.position, _targetUnit._tr.position, Time.deltaTime * 1);
+            _unit._tr.position = Vector2.MoveTowards(_unit._tr.position, _targetUnit._tr.position, Time.deltaTime * _moveSpeedState.GetMoveSpeed());
         }
     }
 
