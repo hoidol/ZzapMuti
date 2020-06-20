@@ -7,11 +7,12 @@ public class UnitMove : MonoBehaviour
     protected Unit _unit;
     protected Unit _targetUnit;
 
-
+    protected MoveSpeedState _moveSpeedState;
 
     public void InitUnitMove(Unit _u)
     {
         _unit = _u;
+        _moveSpeedState = (MoveSpeedState)_unit._stateMgr.GetState(EnumInfo.State.MoveSpeed);
     }
     public virtual void StartBattle()
     {
@@ -43,7 +44,7 @@ public class UnitMove : MonoBehaviour
                 continue;
 
 
-            _unit._tr.position = Vector2.MoveTowards(_unit._tr.position, _targetUnit._tr.position, Time.deltaTime * 1);
+            _unit._tr.position = Vector2.MoveTowards(_unit._tr.position, _targetUnit._tr.position, Time.deltaTime * _moveSpeedState.GetMoveSpeed());
         }
     }
 

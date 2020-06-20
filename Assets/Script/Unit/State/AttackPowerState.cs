@@ -34,7 +34,7 @@ public class AttackPowerState : State
 
     void CheckAttackPower()
     {
-        _curMultiAttackPower = 0;
+        _curMultiAttackPower = 1;
         for (int i = 0; i < _attackPowerChangeStateInfoList.Count; i++)
         {
             _curMultiAttackPower *= _attackPowerChangeStateInfoList[i]._multiAttackPower;
