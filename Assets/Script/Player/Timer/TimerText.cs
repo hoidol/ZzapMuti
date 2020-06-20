@@ -17,11 +17,13 @@ public class TimerText : MonoBehaviour
     public void Start()
     {
         timer.AddSecondEvent += SetText;
+        timer.StopEvent += SetText;
     }
 
     public void OnDestroy()
     {
         timer.AddSecondEvent -= SetText;
+        timer.StopEvent -= SetText;
     }
 
     public void SetText()

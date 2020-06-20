@@ -20,8 +20,13 @@ public class Timer : MonoBehaviour
 
     private bool isPlay = false;
 
+    public event System.Action AddDetaTimeEvent;
     public event System.Action AddSecondEvent;
     public event System.Action AddMinuteEvent;
+
+    public event System.Action PlayEvent;
+    public event System.Action PauseEvent;
+    public event System.Action StopEvent;
 
     public void Awake()
     {
@@ -49,6 +54,8 @@ public class Timer : MonoBehaviour
     {
         TimerReset();
 
+        StopEvent?.Invoke();
+
         isPlay = false;
     }
 
@@ -61,7 +68,8 @@ public class Timer : MonoBehaviour
     public void AddTime()
     {
         deltaTime += Time.deltaTime;
-        
+        AddDetaTimeEvent?.Invoke();
+
         if (deltaTime >= 1)
         {
             second += 1;
@@ -81,5 +89,10 @@ public class Timer : MonoBehaviour
     public int GetTotalSecond()
     {
         return minute * 60 + second;
+    }
+
+    public float GetTotalSecond_DeltaTime()
+    {
+        return minute * 60 + second+deltaTime;
     }
 }
