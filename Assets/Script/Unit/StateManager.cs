@@ -21,6 +21,8 @@ public class StateManager : MonoBehaviour
 
 
     DodgeRateState _dodgeRateState;
+
+    float _penaltyDamage;
     public void InitStateMgr(Unit _u)
     {
         _unit = _u;
@@ -31,6 +33,7 @@ public class StateManager : MonoBehaviour
         _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
         _shieldBar.fillAmount = 0;
 
+        _penaltyDamage = _unit._unitData.Hp * 0.1f;
 
         _isLiving = true;
         _states = GetComponentsInChildren<State>();
@@ -104,10 +107,15 @@ public class StateManager : MonoBehaviour
         }
 
         ChargeMana();
-        _hpBar.fillAmount = _curHp/ _unit._unitData.Hp;
-        _shieldBar.fillAmount = _curShield / _unit._unitData.Hp;
+        UpdateBar();
     }
 
+    void UpdateBar()
+    {
+        _hpBar.fillAmount = _curHp / _unit._unitData.Hp;
+        _shieldBar.fillAmount = _curShield / _unit._unitData.Hp;
+        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
+    }
 
     public void ChangeState(ChangeState _cS)
     {
@@ -115,6 +123,28 @@ public class StateManager : MonoBehaviour
         GetState(_cS._changeState).ChangeState(_cS);
     }
 
+    public void Penalty()
+    {        
+        if (_curShield > 0)
+        {
+            _curShield -= _penaltyDamage;
+            if (_curShield <= 0)
+            {
+                _curHp += _curShield;
+                _curShield = 0;
+            }
+        }
+        else
+            _curHp -= _penaltyDamage;
+
+        if (_curHp <= 0)
+        {
+            _curHp = 0;
+            _isLiving = false;
+            _unit.Die();
+            return;
+        }
+    }
     public State GetState(EnumInfo.State _state)
     {
         for(int i =0;i< _states.Length; i++)
@@ -147,10 +177,7 @@ public class StateManager : MonoBehaviour
 
         _shieldBar.fillAmount = _s / _unit._unitData.Hp;
     }
-
-
-
-
+         
     public void FinishBattle()
     {
 
@@ -165,7 +192,6 @@ public class StateManager : MonoBehaviour
         if (_curMana >= _unit._unitData.MaxMana)
             _curMana = _unit._unitData.MaxMana;
 
-        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
     }
 
     public void ConsumeAllMana()

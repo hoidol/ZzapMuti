@@ -156,23 +156,83 @@ public class UnitManager : MonoBehaviour
             }
         }
 
+       
         if (_curAliveRedUnitsOnTile.Count <= 0)
         {
-            for (int i = 0; i < _curUnitsOnTile.Count; i++)
-                _curUnitsOnTile[i].RestorePosition();
-
             StopAllCoroutines();
-            StartCoroutine(ProcessResult(EnumInfo.TeamType.Red, 1));
+            StartCoroutine(ProcessCheckDraw(EnumInfo.TeamType.Blue));
         }
         else if(_curAliveBlueUnitsOnTile.Count <= 0)
         {
-            for (int i = 0; i < _curUnitsOnTile.Count; i++)
-                _curUnitsOnTile[i].RestorePosition();
             StopAllCoroutines();
-            StartCoroutine(ProcessResult(EnumInfo.TeamType.Red, 1));
+            StartCoroutine(ProcessCheckDraw(EnumInfo.TeamType.Red));
+        }
 
+    }
+
+
+
+
+    IEnumerator ProcessCheckDraw(EnumInfo.TeamType _winTeam)
+    {
+        for (int i = 0; i < _curUnitsOnTile.Count; i++)
+            _curUnitsOnTile[i].RestorePosition();
+
+        yield return new WaitForSeconds(0.5f);
+
+        _curAliveUnitsOnTile.Clear();
+        _curAliveRedUnitsOnTile.Clear();
+        _curAliveBlueUnitsOnTile.Clear();
+
+        for (int i = 0; i < _curUnitsOnTile.Count; i++)
+        {
+            if (_curUnitsOnTile[i]._stateMgr._isLiving)
+            {
+                _curAliveUnitsOnTile.Add(_curUnitsOnTile[i]);
+
+                switch (_curUnitsOnTile[i]._teamType)
+                {
+                    case EnumInfo.TeamType.Red:
+                        _curAliveRedUnitsOnTile.Add(_curUnitsOnTile[i]);
+                        break;
+
+                    case EnumInfo.TeamType.Blue:
+                        _curAliveBlueUnitsOnTile.Add(_curUnitsOnTile[i]);
+                        break;
+                }
+            }
+        }
+
+        switch (_winTeam)
+        {
+            case EnumInfo.TeamType.Blue:
+                if (_curAliveBlueUnitsOnTile.Count > 0)//블루 승
+                { 
+                    StartCoroutine(ProcessResult(EnumInfo.TeamType.Blue, _curAliveBlueUnitsOnTile.Count));
+                }
+                else
+                {
+                    StartCoroutine(ProcessResult(EnumInfo.TeamType.Draw,0));
+                }
+                yield break;
+
+            case EnumInfo.TeamType.Red:
+                if (_curAliveRedUnitsOnTile.Count > 0) //레드 승
+                {
+                    StartCoroutine(ProcessResult(EnumInfo.TeamType.Red, _curAliveRedUnitsOnTile.Count));
+                }
+                else
+                {
+                    StartCoroutine(ProcessResult(EnumInfo.TeamType.Draw, 0));
+                }
+                yield break;
         }
     }
+
+
+
+
+
 
     IEnumerator ProcessResult(EnumInfo.TeamType _winTeam, int _loseLife)
     {
@@ -183,7 +243,15 @@ public class UnitManager : MonoBehaviour
 
     
 
-
+    public void TimeOver()
+    {
+        for(int i =0;i< _curUnitsOnTile.Count; i++)
+        {
+            if (!_curUnitsOnTile[i].gameObject.activeSelf)
+                continue;
+            _curUnitsOnTile[i]._stateMgr.Penalty();
+        }
+    }
 
     public Unit CreateUnitWithUnitIdx(string _uIdx, Tile _t, EnumInfo.TeamType _tType)
     {
