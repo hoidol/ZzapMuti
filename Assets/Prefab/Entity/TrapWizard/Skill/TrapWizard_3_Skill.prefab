@@ -583,7 +583,7 @@ MonoBehaviour:
   _resourceUnit: {fileID: 0}
   _changeState: 0
   _duration: 3.5
-  _damage: 12
+  _damage: 7
 --- !u!1 &7988754476563781182
 GameObject:
   m_ObjectHideFlags: 0

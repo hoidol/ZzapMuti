@@ -21,6 +21,7 @@ public class MoveSpeedState : State
     public override void ChangeState(ChangeState _cS)
     {
         Debug.Log("MoveSpeed! ChangeState");
+        if(_unit.gameObject.activeSelf)
         StartCoroutine(ProcessChangeState((ChangeMoveSpeedChangeState)_cS));
     }
 

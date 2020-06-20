@@ -65,6 +65,7 @@ public class Unit : MonoBehaviour
 
     public void StartBattle()
     {
+        _targetUnit = null;
         _stateMgr.StartBattle();
         _animMgr.StartBattle();
         _behaviourMgr.StartBattle();
@@ -79,13 +80,11 @@ public class Unit : MonoBehaviour
 
     public bool _ableToAttack;
     public bool _needToMove;
+    Unit _targetUnit;
     public void CheckMoveAndAttack()
     {
         //각자 알아서 찾고 이동해
-
-
         ProvokeState _pState = (ProvokeState)_stateMgr.GetState(EnumInfo.State.Provoke);
-
         if (_pState._curProvokeStateInfo._resourceUnit != null)
         {
             if (_pState._curProvokeStateInfo._resourceUnit._stateMgr._isLiving)
@@ -95,7 +94,16 @@ public class Unit : MonoBehaviour
             }                
         }
 
-        Unit _targetUnit = UnitManager.Instance.SearchEnemyUnit(this);
+        if (_targetUnit != null) {
+            if (!_targetUnit.gameObject.activeSelf)
+                _targetUnit = UnitManager.Instance.SearchEnemyUnit(this);
+        }
+        else
+        {
+            _targetUnit = UnitManager.Instance.SearchEnemyUnit(this);
+        }
+        
+
         if (_targetUnit == null)
             return;
         ProcessMoveAndAttack(_targetUnit);

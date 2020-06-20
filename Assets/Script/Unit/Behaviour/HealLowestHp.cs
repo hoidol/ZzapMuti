@@ -48,6 +48,9 @@ public class HealLowestHp : UnitBehaviour
         Unit _u = null;
         for(int i =0;i< _sameTeamUnitList.Count; i++)
         {
+            if (!_sameTeamUnitList[i].gameObject.activeSelf)
+                continue;
+
             bool alreadyHealed = false;
             for(int j =0;j< _healedUnitList.Count; j++)
             {

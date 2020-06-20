@@ -18,6 +18,7 @@ public class RepeatDamageState : State
 
     public override void ChangeState(ChangeState _cS)
     {
+        if(_unit.gameObject.activeSelf)
         StartCoroutine(ProcessChangeState((ChangeRepeatDamageState)_cS));
     }
 

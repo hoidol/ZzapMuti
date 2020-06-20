@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourceUnit: {fileID: 0}
   _changeState: 0
-  _duration: 5.5
+  _duration: 6
   _multiMoveSpeed: 0
   _effect: 
 --- !u!1 &3690818096841675436
@@ -582,8 +582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourceUnit: {fileID: 0}
   _changeState: 0
-  _duration: 5.5
-  _damage: 34
+  _duration: 6
+  _damage: 19
 --- !u!1 &7988754476563781182
 GameObject:
   m_ObjectHideFlags: 0
