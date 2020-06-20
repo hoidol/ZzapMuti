@@ -192,6 +192,7 @@ public class StateManager : MonoBehaviour
         if (_curMana >= _unit._unitData.MaxMana)
             _curMana = _unit._unitData.MaxMana;
 
+        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
     }
 
     public void ConsumeAllMana()
