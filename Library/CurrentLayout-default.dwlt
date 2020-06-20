@@ -14,14 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 8
     y: 51
     width: 1904
     height: 981
+=======
+    x: 7.2000003
+    y: 50.4
+    width: 1521.6
+    height: 772.8
+>>>>>>> 상태이상작업
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 492}
+  m_MinSize: {x: 875, y: 471}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 0
 --- !u!114 &2
@@ -44,9 +51,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1904
     height: 981
   m_MinSize: {x: 875, y: 492}
+=======
+    width: 1522
+    height: 773
+  m_MinSize: {x: 875, y: 300}
+>>>>>>> 상태이상작업
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -65,7 +78,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1904
+=======
+    width: 1522
+>>>>>>> 상태이상작업
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -86,8 +103,13 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 961
     width: 1904
+=======
+    y: 753
+    width: 1522
+>>>>>>> 상태이상작업
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -111,12 +133,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1904
     height: 931
   m_MinSize: {x: 909, y: 442}
   m_MaxSize: {x: 22004, y: 14042}
   vertical: 0
   controlID: 89
+=======
+    width: 1522
+    height: 723
+  m_MinSize: {x: 910, y: 421}
+  m_MaxSize: {x: 22005, y: 14042}
+  vertical: 0
+  controlID: 119
+>>>>>>> 상태이상작업
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -136,12 +167,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 767
     height: 931
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
   controlID: 90
+=======
+    width: 608
+    height: 723
+  m_MinSize: {x: 201, y: 421}
+  m_MaxSize: {x: 4001, y: 8021}
+  vertical: 1
+  controlID: 181
+>>>>>>> 상태이상작업
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -159,8 +199,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 767
     height: 284
+=======
+    width: 608
+    height: 221
+>>>>>>> 상태이상작업
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
@@ -185,9 +230,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 284
     width: 767
     height: 647
+=======
+    y: 221
+    width: 608
+    height: 502
+>>>>>>> 상태이상작업
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
@@ -212,6 +263,7 @@ MonoBehaviour:
   - {fileID: 13}
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 767
     y: 0
     width: 795
@@ -220,6 +272,16 @@ MonoBehaviour:
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
   controlID: 134
+=======
+    x: 608
+    y: 0
+    width: 637
+    height: 723
+  m_MinSize: {x: 432, y: 392}
+  m_MaxSize: {x: 14002, y: 14042}
+  vertical: 1
+  controlID: 120
+>>>>>>> 상태이상작업
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -239,12 +301,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 795
     height: 475
   m_MinSize: {x: 432, y: 271}
   m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
   controlID: 27
+=======
+    width: 637
+    height: 445
+  m_MinSize: {x: 432, y: 271}
+  m_MaxSize: {x: 14002, y: 10021}
+  vertical: 0
+  controlID: 121
+>>>>>>> 상태이상작업
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -262,8 +333,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 251
     height: 475
+=======
+    width: 226
+    height: 445
+>>>>>>> 상태이상작업
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
@@ -286,10 +362,17 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 251
     y: 0
     width: 544
     height: 475
+=======
+    x: 226
+    y: 0
+    width: 411
+    height: 445
+>>>>>>> 상태이상작업
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 19}
@@ -307,23 +390,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: AnimationWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 475
     width: 795
     height: 456
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
+=======
+    y: 445
+    width: 637
+    height: 278
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 21}
+>>>>>>> 상태이상작업
   m_Panes:
   - {fileID: 20}
   - {fileID: 21}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -339,12 +431,21 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1562
     y: 0
     width: 342
     height: 931
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+    x: 1245
+    y: 0
+    width: 277
+    height: 723
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> 상태이상작업
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -373,10 +474,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 8
     y: 365
     width: 766
     height: 626
+=======
+    x: 7.2000003
+    y: 301.6
+    width: 607
+    height: 481
+>>>>>>> 상태이상작업
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -419,16 +527,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 766
       height: 605
     m_Scale: {x: 0.31510416, y: 0.31510416}
     m_Translation: {x: 383, y: 302.5}
+=======
+      width: 607
+      height: 460
+    m_Scale: {x: 0.29947916, y: 0.29947916}
+    m_Translation: {x: 303.5, y: 230}
+>>>>>>> 상태이상작업
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -1215.4711
       y: -960
       width: 2430.9421
@@ -436,6 +552,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 0.31510416
   m_LastWindowPixelSize: {x: 766, y: 626}
+=======
+      x: -1013.42615
+      y: -768
+      width: 2026.8523
+      height: 1536
+    m_MinimalGUI: 1
+  m_defaultScale: 0.29947916
+  m_LastWindowPixelSize: {x: 758.75, y: 601.25}
+>>>>>>> 상태이상작업
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000001000000000000
@@ -462,24 +587,37 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 8
     y: 81
     width: 766
     height: 263
+=======
+    x: 7.2000003
+    y: 80.8
+    width: 607
+    height: 200
+>>>>>>> 상태이상작업
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: 250a26b211470704692ebb0fd6edd9de
   m_Gizmos: 1
-  m_SceneIsLit: 1
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0.07296342}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0.07296342}
+=======
+    m_Target: {x: 2.3842561, y: 0.9795967, z: -0.96750635}
+    speed: 2
+    m_Value: {x: 2.3842561, y: 0.9795967, z: -0.96750635}
+>>>>>>> 상태이상작업
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -512,7 +650,7 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
         m_Target: 0
@@ -529,9 +667,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 5.7195787
     speed: 2
     m_Value: 5.7195787
+=======
+    m_Target: 10.53117
+    speed: 2
+    m_Value: 11.027403
+>>>>>>> 상태이상작업
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -577,14 +721,19 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 73.6
-    width: 701
-    height: 200
+    x: 7.2000003
+    y: 80.8
+    width: 810
+    height: 367
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
     m_KeySerializationHelper:
-    - {fileID: 476266514804718038, guid: 392f9f5997407c0458677d3114b29e3f, type: 2}
+    - {fileID: 8803946680341208787, guid: b49e2d0b3a8ca4044a61a0f838376a17, type: 2}
+    - {fileID: 5277236894894506665, guid: 0bebba2fc9dbfb04296b13b1797224b5, type: 2}
+    - {fileID: 2729876323549491126, guid: 7b499dc60bbe7ab4fb58dcc238e428e3, type: 2}
+    - {fileID: -5404368363158777067, guid: 6d213bf8ec481b24687b59c33c0dc188, type: 2}
+    - {fileID: -7562340157272767571, guid: 9c2d6ac6c92ac8b4a984ace1b84b72a3, type: 2}
+    - {fileID: -8850108864927454736, guid: b485d7b58a8158c4eac43d01e6a0b93d, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -602,11 +751,91 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 0.31157896
+      e01: 0
+      e02: 0
+      e03: -0.578949
+      e10: 0
+      e11: 0.31157896
+      e12: 0
+      e13: 47.86316
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.510989
+      e01: 0
+      e02: 0
+      e03: -10.549438
+      e10: 0
+      e11: 0.510989
+      e12: 0
+      e13: 113.15659
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.48947367
+      e01: 0
+      e02: 0
+      e03: -9.473663
+      e10: 0
+      e11: 0.48947367
+      e12: 0
+      e13: 107.710526
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.48947367
+      e01: 0
+      e02: 0
+      e03: -9.473663
+      e10: 0
+      e11: 0.48947367
+      e12: 0
+      e13: 119.94737
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1.1321822
+      e01: 0
+      e02: 0
+      e03: -207.05469
+      e10: 0
+      e11: 1.1321822
+      e12: 0
+      e13: 108.46941
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 392f9f5997407c0458677d3114b29e3f,
+  m_AnimatorController: {fileID: 9100000, guid: b485d7b58a8158c4eac43d01e6a0b93d,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 476266514804718038, guid: 392f9f5997407c0458677d3114b29e3f,
+  - m_Target: {fileID: -8850108864927454736, guid: b485d7b58a8158c4eac43d01e6a0b93d,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -641,17 +870,28 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 775
     y: 81
     width: 249
     height: 454
+=======
+    x: 615.2
+    y: 80.8
+    width: 224
+    height: 424
+>>>>>>> 상태이상작업
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
+<<<<<<< HEAD
       m_ExpandedIDs: 5c4effff
+=======
+      m_ExpandedIDs: 003ffdffb03ffdff5e40fdff8440fdffa040fdff2443fdff9443fdff9e43fdffe646fdff6a48fdff7448fdfff44bfdff424efdff4a4efdfffa4ffdff0050fdff9251fdff7069fdff7a69fdff8469fdff8e69fdffba69fdff0ab1fdff34b3fdff5eb5fdff84f7fdff42f8fdfff2f8fdfffaf8fdff00f9fdff0ef9fdffc2f9fdffcaf9fdffd0f9fdffdef9fdff92fafdff9afafdffa0fafdffaefafdff62fbfdff6afbfdff70fbfdff7efbfdffa0fbfdffa4fbfdff38fcfdff40fcfdff46fcfdffd8fdfdffa408feffc808feff3a28feffd432fefffa32feff0433feff0e33feffaa33feffd033feffda33feff7435feff9a35feffa435feffae35feff4a36feff7036feff7a36feff8436feff5247feff1448feff1a48feffaa48feffb448feff3275feff5a75feff6675feff6a75feff1a76feff4276feff4e76feff5276feff0277feff2a77feff3677feff3a77feffea77feff1278feff1e78feff2278feff3a7dfeffbe7dfeffe07dfeffec7dfeff1c7efeff128ffeff188ffeff7a97feff6cb3feff88b3feff1ab4feff1eb4feffe4b4feffa603ffff5608ffffe409fffff209ffff1c0affff220affffc60affffd40afffffe0affff040bffffa80bffffb60bffffe00bffffe60bffff8a0cffff980cffffc20cffffc80cffff6c0dffff7a0dffffa40dffffaa0dffff4e0effff5c0effff860effff8c0effff300fffff3e0fffff680fffff6e0fffff4213ffff7213ffffcc22ffffd622ffff9623ffffcc24ffffda24ffffdc24ffff0225ffff0825ffff0427ffff4627ffff7227ffff7a27ffff8a27ffff9e2dffff6cfbffff
+>>>>>>> 상태이상작업
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -696,13 +936,20 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1026
     y: 81
     width: 542
     height: 454
+=======
+    x: 841.60004
+    y: 80.8
+    width: 409
+    height: 424
+>>>>>>> 상태이상작업
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: GunFireYellow
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -714,20 +961,35 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
   - Assets
+=======
+    - Assets/Prefab/Unit/Archer
+  m_ViewMode: 1
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Assets/Prefab/Unit/Archer
+>>>>>>> 상태이상작업
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\user\Documents\ZzapMuti
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs: 98660100
     m_LastClickedID: 91800
     m_ExpandedIDs: 00000000986601009a6601009c6601009e660100a0660100a2660100a4660100a6660100a8660100aa660100ac660100ae660100b0660100b2660100b4660100b6660100b8660100ba66010000ca9a3b
+=======
+    scrollPos: {x: 0, y: 271.52972}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 000000006a4200006c4200006e42000070420000724200007442000076420000784200007a4200007c4200007e42000082420000f2420000f8420000004300008e480000284a00009c4a00000a4b000000ca9a3b
+>>>>>>> 상태이상작업
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -755,7 +1017,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 58}
     m_SelectedIDs: 1ea50000
     m_LastClickedID: 42270
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000986601009a6601009c6601009e660100a0660100a2660100a4660100a6660100a8660100aa660100ac660100ae660100b0660100b2660100b4660100b6660100b8660100ba660100
+=======
+    m_ExpandedIDs: 000000006a4200006c4200006e42000070420000724200007442000076420000784200007a4200007c4200007e4200008042000082420000
+>>>>>>> 상태이상작업
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -810,7 +1076,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 265
+  m_DirectoriesAreaWidth: 183
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -832,10 +1098,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 775
     y: 556
     width: 793
     height: 435
+=======
+    x: 818.4
+    y: 525.60004
+    width: 432
+    height: 257
+>>>>>>> 상태이상작업
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &21
 MonoBehaviour:
@@ -858,14 +1131,14 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 643.2
-    y: 533.60004
-    width: 615
-    height: 250
+    x: 615.2
+    y: 525.60004
+    width: 635
+    height: 257
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -212180
+  m_LastSelectedObjectID: -180304
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -887,10 +1160,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1570
     y: 81
     width: 341
     height: 910
+=======
+    x: 1252
+    y: 80.8
+    width: 275
+    height: 702
+>>>>>>> 상태이상작업
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
   m_ObjectsLockedBeforeSerialization: []

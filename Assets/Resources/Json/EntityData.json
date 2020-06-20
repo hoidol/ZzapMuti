@@ -44,6 +44,26 @@
       "Idx": "TrapWizard_1_Skill",
       "Duration": 5,
       "MoveSpeed": 9
+    },
+    {
+      "Idx": "TrapWizard_2_Skill",
+      "Duration": 5,
+      "MoveSpeed": 9
+    },
+    {
+      "Idx": "TrapWizard_3_Skill",
+      "Duration": 5,
+      "MoveSpeed": 9
+    },
+    {
+      "Idx": "TrapWizard_4_Skill",
+      "Duration": 5,
+      "MoveSpeed": 9
+    },
+    {
+      "Idx": "TrapWizard_5_Skill",
+      "Duration": 5,
+      "MoveSpeed": 9
     }
   ]
 
