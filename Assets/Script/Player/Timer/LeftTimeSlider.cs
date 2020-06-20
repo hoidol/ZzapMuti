@@ -33,7 +33,7 @@ public class LeftTimeSlider : MonoBehaviour
     {
         _timeSliider.value = 1 - (_timer.GetTotalSecond_DeltaTime() / _goalTime);
 
-        if (_timeSliider.value == 0)
+        if (_timeSliider.value <= 0)
         {
             GoalEvent?.Invoke();
             DisConnect();

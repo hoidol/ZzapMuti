@@ -37,8 +37,9 @@ public class TimeOverDamage : MonoBehaviour
 
     public void Damage()
     {
-        if (!isTimeOver)
-            return;
+        //if (!isTimeOver)
+          //  return;
 
+        UnitManager.Instance.TimeOver();
     }
 }
