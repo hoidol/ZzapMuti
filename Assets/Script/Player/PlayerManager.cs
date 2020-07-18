@@ -16,8 +16,9 @@ public class PlayerManager : MonoBehaviour
     public void InitPlayerMgr()
     {
         //내 덱과 상대방 덱 가져오기
-
-
+        
     }
+
+
 
 }
