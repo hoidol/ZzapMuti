@@ -1,6 +1,6 @@
 ﻿[System.Serializable]
 public class UserData
 {
-    string nickName;
-    string[] UnitInven;
+    public string nickName;
+    public string[] UnitInven;
 }

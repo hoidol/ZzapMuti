@@ -19,12 +19,12 @@ public class UnitManager : MonoBehaviour
 
     List<Unit> _poolingUnits = new List<Unit>();
     public List<Unit> _curUnitsOnTile = new List<Unit>(); //타일에 있는 유닛들
-    public List<Unit> _curRedUnitsOnTile = new List<Unit>();
-    public List<Unit> _curBlueUnitsOnTile = new List<Unit>();
+    public List<Unit> _curPlayerUnitsOnTile = new List<Unit>();
+    public List<Unit> _curOppositeUnitsOnTile = new List<Unit>();
 
     public List<Unit> _curAliveUnitsOnTile = new List<Unit>();
-    public List<Unit> _curAliveRedUnitsOnTile = new List<Unit>();
-    public List<Unit> _curAliveBlueUnitsOnTile = new List<Unit>();
+    public List<Unit> _curAlivePlayerUnitsOnTile = new List<Unit>();
+    public List<Unit> _curAliveOppositeUnitsOnTile = new List<Unit>();
 
     EnumInfo.TeamType _curTurnTeamType;
 
@@ -42,7 +42,7 @@ public class UnitManager : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("StartGame()");
-        _curTurnTeamType = Random.Range(0, 2) == 0 ? EnumInfo.TeamType.Red : EnumInfo.TeamType.Blue;
+        _curTurnTeamType = Random.Range(0, 2) == 0 ? EnumInfo.TeamType.Player : EnumInfo.TeamType.Opposite;
     }
 
     public void StartBattle()
@@ -134,8 +134,8 @@ public class UnitManager : MonoBehaviour
         //라이프 깎을 때 고려될 수 있는 부분 : 유닛의 개수 + 유닛의 강화된 수 
 
         _curAliveUnitsOnTile.Clear();
-        _curAliveRedUnitsOnTile.Clear();
-        _curAliveBlueUnitsOnTile.Clear();
+        _curAlivePlayerUnitsOnTile.Clear();
+        _curAliveOppositeUnitsOnTile.Clear();
 
         for (int i = 0; i < _curUnitsOnTile.Count; i++)
         {
@@ -145,27 +145,27 @@ public class UnitManager : MonoBehaviour
 
                 switch (_curUnitsOnTile[i]._teamType)
                 {
-                    case EnumInfo.TeamType.Red:
-                        _curAliveRedUnitsOnTile.Add(_curUnitsOnTile[i]);
+                    case EnumInfo.TeamType.Player:
+                        _curAlivePlayerUnitsOnTile.Add(_curUnitsOnTile[i]);
                         break;
 
-                    case EnumInfo.TeamType.Blue:
-                        _curAliveBlueUnitsOnTile.Add(_curUnitsOnTile[i]);
+                    case EnumInfo.TeamType.Opposite:
+                        _curAliveOppositeUnitsOnTile.Add(_curUnitsOnTile[i]);
                         break;
                 }
             }
         }
 
        
-        if (_curAliveRedUnitsOnTile.Count <= 0)
+        if (_curAlivePlayerUnitsOnTile.Count <= 0)
         {
             StopAllCoroutines();
-            StartCoroutine(ProcessCheckDraw(EnumInfo.TeamType.Blue));
+            StartCoroutine(ProcessCheckDraw(EnumInfo.TeamType.Opposite));
         }
-        else if(_curAliveBlueUnitsOnTile.Count <= 0)
+        else if(_curAliveOppositeUnitsOnTile.Count <= 0)
         {
             StopAllCoroutines();
-            StartCoroutine(ProcessCheckDraw(EnumInfo.TeamType.Red));
+            StartCoroutine(ProcessCheckDraw(EnumInfo.TeamType.Player));
         }
 
     }
@@ -181,8 +181,8 @@ public class UnitManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         _curAliveUnitsOnTile.Clear();
-        _curAliveRedUnitsOnTile.Clear();
-        _curAliveBlueUnitsOnTile.Clear();
+        _curAlivePlayerUnitsOnTile.Clear();
+        _curAliveOppositeUnitsOnTile.Clear();
 
         for (int i = 0; i < _curUnitsOnTile.Count; i++)
         {
@@ -192,12 +192,12 @@ public class UnitManager : MonoBehaviour
 
                 switch (_curUnitsOnTile[i]._teamType)
                 {
-                    case EnumInfo.TeamType.Red:
-                        _curAliveRedUnitsOnTile.Add(_curUnitsOnTile[i]);
+                    case EnumInfo.TeamType.Player:
+                        _curAlivePlayerUnitsOnTile.Add(_curUnitsOnTile[i]);
                         break;
 
-                    case EnumInfo.TeamType.Blue:
-                        _curAliveBlueUnitsOnTile.Add(_curUnitsOnTile[i]);
+                    case EnumInfo.TeamType.Opposite:
+                        _curAliveOppositeUnitsOnTile.Add(_curUnitsOnTile[i]);
                         break;
                 }
             }
@@ -205,10 +205,10 @@ public class UnitManager : MonoBehaviour
 
         switch (_winTeam)
         {
-            case EnumInfo.TeamType.Blue:
-                if (_curAliveBlueUnitsOnTile.Count > 0)//블루 승
+            case EnumInfo.TeamType.Player:
+                if (_curAlivePlayerUnitsOnTile.Count > 0)
                 { 
-                    StartCoroutine(ProcessResult(EnumInfo.TeamType.Blue, _curAliveBlueUnitsOnTile.Count));
+                    StartCoroutine(ProcessResult(EnumInfo.TeamType.Player, _curAlivePlayerUnitsOnTile.Count));
                 }
                 else
                 {
@@ -216,10 +216,10 @@ public class UnitManager : MonoBehaviour
                 }
                 yield break;
 
-            case EnumInfo.TeamType.Red:
-                if (_curAliveRedUnitsOnTile.Count > 0) //레드 승
+            case EnumInfo.TeamType.Opposite:
+                if (_curAliveOppositeUnitsOnTile.Count > 0) //레드 승
                 {
-                    StartCoroutine(ProcessResult(EnumInfo.TeamType.Red, _curAliveRedUnitsOnTile.Count));
+                    StartCoroutine(ProcessResult(EnumInfo.TeamType.Opposite, _curAliveOppositeUnitsOnTile.Count));
                 }
                 else
                 {
@@ -264,11 +264,11 @@ public class UnitManager : MonoBehaviour
 
         switch (_tType)
         {
-            case EnumInfo.TeamType.Red:
-                _curRedUnitsOnTile.Add(_unit);
+            case EnumInfo.TeamType.Player:
+                _curPlayerUnitsOnTile.Add(_unit);
                 break;
-            case EnumInfo.TeamType.Blue:
-                _curBlueUnitsOnTile.Add(_unit);
+            case EnumInfo.TeamType.Opposite:
+                _curOppositeUnitsOnTile.Add(_unit);
                 break;
         }
 
@@ -292,10 +292,10 @@ public class UnitManager : MonoBehaviour
 
     public void RemoveUnit(Unit _u) // 캐릭터 병합 시 
     {
-        if (_u._teamType == EnumInfo.TeamType.Red)
-            _curRedUnitsOnTile.Remove(_u);
+        if (_u._teamType == EnumInfo.TeamType.Player)
+            _curPlayerUnitsOnTile.Remove(_u);
         else
-            _curBlueUnitsOnTile.Remove(_u);
+            _curOppositeUnitsOnTile.Remove(_u);
 
         _u.gameObject.SetActive(false);
         _curUnitsOnTile.Remove(_u);
@@ -360,8 +360,8 @@ public class UnitManager : MonoBehaviour
             //    Debug.Log("AstarPath.active.graphs : " + AstarPath.active.graphs[i].graphIndex);
             //}
 
-            for (int i = 0; i < _curUnitsOnTile.Count; i++)
-                _curUnitsOnTile[i].InitUnit(EnumInfo.TeamType.Red);
+            //for (int i = 0; i < _curUnitsOnTile.Count; i++)
+            //    _curUnitsOnTile[i].InitUnit(EnumInfo.TeamType.Red);
         }
         else if (Input.GetKeyDown(KeyCode.B))
         {

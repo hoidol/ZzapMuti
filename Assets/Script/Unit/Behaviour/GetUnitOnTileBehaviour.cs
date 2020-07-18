@@ -78,11 +78,11 @@ public class GetUnitOnTileBehaviour : UnitBehaviour
 
             switch (UnitManager.Instance._curAliveUnitsOnTile[i]._teamType)
             {
-                case EnumInfo.TeamType.Red:
+                case EnumInfo.TeamType.Player:
                     _curAliveRedUnitsOnTile.Add(UnitManager.Instance._curAliveUnitsOnTile[i]);
                     break;
 
-                case EnumInfo.TeamType.Blue:
+                case EnumInfo.TeamType.Opposite:
                     _curAliveBlueUnitsOnTile.Add(UnitManager.Instance._curAliveUnitsOnTile[i]);
                     break;
             }
@@ -118,7 +118,7 @@ public class GetUnitOnTileBehaviour : UnitBehaviour
 
             case EnumInfo.TargetTeam.SameTeam:
 
-                if (_unit._teamType.Equals(EnumInfo.TeamType.Red))
+                if (_unit._teamType.Equals(EnumInfo.TeamType.Player))
                 {
                     if (!_includeSelf)
                     {
@@ -152,7 +152,7 @@ public class GetUnitOnTileBehaviour : UnitBehaviour
 
             case EnumInfo.TargetTeam.OppositeTeam:
 
-                if (_unit._teamType.Equals(EnumInfo.TeamType.Red))
+                if (_unit._teamType.Equals(EnumInfo.TeamType.Player))
                 {
                     if (_curAliveBlueUnitsOnTile.Count <= 0)
                         return null;

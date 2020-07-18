@@ -112,7 +112,7 @@ public class Tile : MonoBehaviour
 
     public void SetTileTeamColor()
     {
-        if (_TileTeam == EnumInfo.TeamType.Red)
+        if (_TileTeam == EnumInfo.TeamType.Player)
             _tileSpriteRenderer.color = new Color(.7f, .4f, .4f, 1);
         else
             _tileSpriteRenderer.color = new Color(.4f, .4f, .7f, 1);
