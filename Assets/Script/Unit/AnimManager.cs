@@ -13,7 +13,7 @@ public class AnimManager : MonoBehaviour
         _unit = _u;
         _anim = GetComponentInChildren<Animator>();
 
-        if (_unit._teamType.Equals(EnumInfo.TeamType.Red))
+        if (_unit._teamType.Equals(EnumInfo.TeamType.Player))
             UpdateDirection(Vector2.up);
         else
             UpdateDirection(-Vector2.up);
@@ -39,7 +39,7 @@ public class AnimManager : MonoBehaviour
     }
     public void FinishBattle()
     {
-        if (_unit._teamType.Equals(EnumInfo.TeamType.Red))
+        if (_unit._teamType.Equals(EnumInfo.TeamType.Player))
             UpdateDirection(Vector2.up);
         
         else

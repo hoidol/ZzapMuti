@@ -42,9 +42,9 @@ public class TileGroup : MonoBehaviour
             _tiles[i].Initialize(new Vector2(i- _height * _tileWidth, _height), _tileDistance);
 
             if (i < _tiles.Length / 2)
-                _tiles[i]._TileTeam = EnumInfo.TeamType.Red;
+                _tiles[i]._TileTeam = EnumInfo.TeamType.Player;
             else
-                _tiles[i]._TileTeam = EnumInfo.TeamType.Blue;
+                _tiles[i]._TileTeam = EnumInfo.TeamType.Opposite;
         }
 
 
@@ -62,7 +62,7 @@ public class TileGroup : MonoBehaviour
     {
         Tile tileTemp=null;
 
-        if (_teamTy == EnumInfo.TeamType.Red)
+        if (_teamTy == EnumInfo.TeamType.Player)
         {
             for (int i = 0; i < _tileHeight / 2; i++)
             {
@@ -74,7 +74,7 @@ public class TileGroup : MonoBehaviour
                 }
             }
         }
-        else if (_teamTy == EnumInfo.TeamType.Blue)
+        else if (_teamTy == EnumInfo.TeamType.Opposite)
         {
             for (int i = _tileHeight-1; i >= _tileHeight / 2; i--)
             {
@@ -101,7 +101,7 @@ public class TileGroup : MonoBehaviour
     {
         Tile tileTemp = null;
 
-        if (_searchTeam == EnumInfo.TeamType.Red)
+        if (_searchTeam == EnumInfo.TeamType.Player)
         {
             for (int i = 0; i < _tileHeight / 2; i++)
             {
@@ -113,7 +113,7 @@ public class TileGroup : MonoBehaviour
                 }
             }
         }
-        else if (_searchTeam == EnumInfo.TeamType.Blue)
+        else if (_searchTeam == EnumInfo.TeamType.Opposite)
         {
             for (int i = _tileHeight - 1; i >= _tileHeight / 2; i--)
             {
@@ -138,7 +138,7 @@ public class TileGroup : MonoBehaviour
     {
         Tile tileTemp = null;
 
-        if (_searchTeam == EnumInfo.TeamType.Red)
+        if (_searchTeam == EnumInfo.TeamType.Player)
         {
             for (int i = 0; i < _tileHeight / 2; i++)
             {
@@ -150,7 +150,7 @@ public class TileGroup : MonoBehaviour
                 }
             }
         }
-        else if (_searchTeam == EnumInfo.TeamType.Blue)
+        else if (_searchTeam == EnumInfo.TeamType.Opposite)
         {
             for (int i = _tileHeight - 1; i >= _tileHeight / 2; i--)
             {
@@ -174,7 +174,7 @@ public class TileGroup : MonoBehaviour
     {
         Tile tileTemp = null;
 
-        if (_searchTeam == EnumInfo.TeamType.Red)
+        if (_searchTeam == EnumInfo.TeamType.Player)
         {
             for (int i = (_tileHeight / 2)-1; i >= 0 ; i--)
             {
@@ -186,7 +186,7 @@ public class TileGroup : MonoBehaviour
                 }
             }
         }
-        else if (_searchTeam == EnumInfo.TeamType.Blue)
+        else if (_searchTeam == EnumInfo.TeamType.Opposite)
         {
             for (int i = _tileHeight / 2; i <=_tileHeight-1 ; i++)
             {
@@ -210,7 +210,7 @@ public class TileGroup : MonoBehaviour
     {
         Tile tileTemp = null;
 
-        if (_searchTeam == EnumInfo.TeamType.Red)
+        if (_searchTeam == EnumInfo.TeamType.Player)
         {
             for (int i = (_tileHeight / 2) - 1; i >= 0; i--)
             {
@@ -222,7 +222,7 @@ public class TileGroup : MonoBehaviour
                 }
             }
         }
-        else if (_searchTeam == EnumInfo.TeamType.Blue)
+        else if (_searchTeam == EnumInfo.TeamType.Opposite)
         {
             for (int i = _tileHeight / 2; i <= _tileHeight - 1; i++)
             {

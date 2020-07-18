@@ -12,13 +12,13 @@ public class AssassinMove : UnitMove
 
     public override void SetPosition()
     {
-        if (_unit._teamType.Equals(EnumInfo.TeamType.Red))
+        if (_unit._teamType.Equals(EnumInfo.TeamType.Player))
         {
-            _reservedTile = TileManager._Instance.GetAssasinMoveTile(EnumInfo.TeamType.Blue, false, true);
+            _reservedTile = TileManager._Instance.GetAssasinMoveTile(EnumInfo.TeamType.Opposite, false, true);
         }
         else
         {
-            _reservedTile = TileManager._Instance.GetAssasinMoveTile(EnumInfo.TeamType.Red, false, true);
+            _reservedTile = TileManager._Instance.GetAssasinMoveTile(EnumInfo.TeamType.Player, false, true);
         }
 
         if (_reservedTile)

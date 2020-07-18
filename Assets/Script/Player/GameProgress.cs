@@ -20,6 +20,12 @@ public class GameProgress : MonoBehaviour
     [Header("DrawManager")]
     [SerializeField] private PlayerDrawManager _playerDrawManager;
 
+    public PlayerDrawManager playerDrawMgr
+    {
+        get { return _playerDrawManager; }
+        set { _playerDrawManager = value; }
+    }
+
     [Header("UI")]
     [SerializeField] private Button startBattleButton;
 
@@ -51,8 +57,8 @@ public class GameProgress : MonoBehaviour
 
     public void Init()
     {
-        _redPlayer.Init(EnumInfo.TeamType.Red);
-        _bluePlayer.Init(EnumInfo.TeamType.Blue);
+        _redPlayer.Init(EnumInfo.TeamType.Player);
+        _bluePlayer.Init(EnumInfo.TeamType.Opposite);
 
         _redPlayerInfoUI.SetPlayer(_redPlayer);
         _bluePlayerInfoUI.SetPlayer(_bluePlayer);
@@ -64,20 +70,20 @@ public class GameProgress : MonoBehaviour
 
     public void DrawRedPlayer()
     {
-        _drawTeam = EnumInfo.TeamType.Red;
+        _drawTeam = EnumInfo.TeamType.Player;
 
         SetBlind(false, true);
 
-        _playerDrawManager.SetPlayerDraw(_redPlayer._DeckManager._Deck,EnumInfo.TeamType.Red, ActiveAddTurnButton);
+        _playerDrawManager.SetPlayerDraw(_redPlayer._DeckManager._Deck,EnumInfo.TeamType.Player, ActiveAddTurnButton);
     }
 
     public void DrawBluePlayer()
     {
-        _drawTeam = EnumInfo.TeamType.Blue;
+        _drawTeam = EnumInfo.TeamType.Opposite;
         
         SetBlind(true, false);
 
-        _playerDrawManager.SetPlayerDraw(_bluePlayer._DeckManager._Deck, EnumInfo.TeamType.Blue, ActiveAddTurnButton);
+        _playerDrawManager.SetPlayerDraw(_bluePlayer._DeckManager._Deck, EnumInfo.TeamType.Opposite, ActiveAddTurnButton);
     }
 
     public void SetPlayerInfoUI(bool _active)
@@ -105,11 +111,11 @@ public class GameProgress : MonoBehaviour
         _addTurnButton.gameObject.SetActive(false);
         switch (_drawTeam)
         {
-            case EnumInfo.TeamType.Red:
+            case EnumInfo.TeamType.Player:
                 DrawBluePlayer();
                 break;
 
-            case EnumInfo.TeamType.Blue:
+            case EnumInfo.TeamType.Opposite:
                 SetCanBattle();
                 break;
         }
@@ -148,7 +154,7 @@ public class GameProgress : MonoBehaviour
         _timer.Stop();
         _timer.gameObject.SetActive(false);
 
-        if (_winTeam==EnumInfo.TeamType.Red)
+        if (_winTeam==EnumInfo.TeamType.Player)
         {
             _bluePlayer._Hp -= _discountLife;
         }
@@ -160,11 +166,11 @@ public class GameProgress : MonoBehaviour
 
         if (_redPlayer._Hp<=0)
         {
-            EndGame(EnumInfo.TeamType.Blue);
+            EndGame(EnumInfo.TeamType.Opposite);
         }
         else if (_bluePlayer._Hp <= 0)
         {
-            EndGame(EnumInfo.TeamType.Red);
+            EndGame(EnumInfo.TeamType.Player);
         }
         else
         {
