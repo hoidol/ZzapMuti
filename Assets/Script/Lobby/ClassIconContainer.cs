@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class ClassIconContainer : MonoBehaviour
 {
-    public enum ClassType
-    {
-        Null,
-        Warrior,
-        Archer,
-        Wizard,
-        Assassin,
-        Supporter
-    }
     public static ClassIconContainer Instance;
 
     [SerializeField] private Sprite _warriorSprite;
