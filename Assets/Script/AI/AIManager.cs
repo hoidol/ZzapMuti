@@ -35,7 +35,6 @@ public class AIManager : MonoBehaviour
         int random2;
 
         string tmp;
-
         for (int i = 0; i < _opponentUnitDataDeckList.Count; ++i)
         {
             random1 = Random.Range(0, _opponentUnitDataDeckList.Count);
@@ -45,7 +44,14 @@ public class AIManager : MonoBehaviour
             _opponentUnitDataDeckList[random1] = _opponentUnitDataDeckList[random2];
             _opponentUnitDataDeckList[random2] = tmp;
         }
+
+        
     }
+
+    //고려해야 할 부분 : 1.  어떤 기준 유닛을 뽑을 지 2. 유닛을 어떤 기준으로 어디에 배치할지   
+    // 1. 어떤 기준 유닛을 뽑을지에 대해서
+    // 1)
+
 
     public void FinishTurn()
     {

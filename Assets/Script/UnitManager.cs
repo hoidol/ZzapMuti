@@ -14,7 +14,6 @@ public class UnitManager : MonoBehaviour
         }
     }
 
-
     public Unit[] _units; //생성용 Prefab
 
     List<Unit> _poolingUnits = new List<Unit>();
@@ -61,6 +60,7 @@ public class UnitManager : MonoBehaviour
         }
 
 
+        PlayerManager.Instance.StartBattle();
         StartCoroutine(ProcessUnit());
     }
 
@@ -122,7 +122,7 @@ public class UnitManager : MonoBehaviour
         StopAllCoroutines();
         for (int i = 0; i < _curUnitsOnTile.Count; i++)
             _curUnitsOnTile[i].FinishBattle();
-
+        
         _playingBattle = false;
     }
 
@@ -238,6 +238,7 @@ public class UnitManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         GameProgress.Instance.EndBattle(_winTeam, _loseLife);
+        PlayerManager.Instance.FinishBattle();
         FinishBattle();
     }
 
