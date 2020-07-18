@@ -38,4 +38,13 @@ public class EnumInfo
         Null,
         Random
     }
+    public enum ClassType
+    {
+        Null,
+        Warrior,
+        Archer,
+        Wizard,
+        Assassin,
+        Supporter
+    }
 }
