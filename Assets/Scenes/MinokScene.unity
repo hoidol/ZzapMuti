@@ -4517,6 +4517,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b1a2592dbccbd4e92b2afb27069441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData:
+    nickName: 
+    UnitInven: []
+  opponentData:
+    nickName: 
+    UnitInven: []
+  _battleRecorData:
+    Nick: 
+    UnitInven: []
+    UnitTrackingDataContainer:
+      UnitTrackingDatas: []
+  _unitTrackingDataList: []
+  _unitTrackList: []
 --- !u!114 &1229190168 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8299506034752579947, guid: c49cd3aa0ef47ac41ae8762a62fa748f,
@@ -5325,11 +5338,11 @@ MonoBehaviour:
   - {fileID: 8812447855604524240, guid: b882273c3f42bc04fae82e62461c3d9a, type: 3}
   - {fileID: 8812447855604524240, guid: bbc806f6415f5a440bab1934882e150c, type: 3}
   _curUnitsOnTile: []
-  _curRedUnitsOnTile: []
-  _curBlueUnitsOnTile: []
+  _curPlayerUnitsOnTile: []
+  _curOppositeUnitsOnTile: []
   _curAliveUnitsOnTile: []
-  _curAliveRedUnitsOnTile: []
-  _curAliveBlueUnitsOnTile: []
+  _curAlivePlayerUnitsOnTile: []
+  _curAliveOppositeUnitsOnTile: []
   _playingBattle: 0
 --- !u!4 &1460243834
 Transform:
@@ -6348,6 +6361,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 742832937}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1863850657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863850658}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1863850658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863850657}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.4186666, y: -2.8493671, z: -4.326172}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1874186333
 PrefabInstance:
   m_ObjectHideFlags: 0
