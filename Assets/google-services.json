@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "514895677442",
+    "firebase_url": "https://zzapmuti.firebaseio.com",
+    "project_id": "zzapmuti",
+    "storage_bucket": "zzapmuti.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514895677442:android:eccd15392228e2fec6ff1b",
+        "android_client_info": {
+          "package_name": "com.zzoo.zzapmuti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514895677442-isv2bqvra2e2tijlfdm1dnbmmgaubklr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYuiN4FpShG6UxvepYtIqRLP2i5sp_owk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514895677442-isv2bqvra2e2tijlfdm1dnbmmgaubklr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
