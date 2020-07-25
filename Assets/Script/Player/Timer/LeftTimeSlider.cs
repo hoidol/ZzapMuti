@@ -12,10 +12,11 @@ public class LeftTimeSlider : MonoBehaviour
 
     public event System.Action GoalEvent;
 
+    private bool isConnected = false;
+
     public void Start()
     {
-        _timer.AddDetaTimeEvent += Set;
-        _timer.StopEvent += ResetTimer;
+        Connect();
     }
 
     public void OnDestroy()
@@ -24,9 +25,23 @@ public class LeftTimeSlider : MonoBehaviour
         _timer.StopEvent -= ResetTimer;
     }
 
+    public void Connect()
+    {
+        isConnected = true;
+        _timer.AddDetaTimeEvent += Set;
+        _timer.StopEvent += ResetTimer;
+    }
+
     public void DisConnect()
     {
+
+        isConnected = false;
         _timer.AddDetaTimeEvent -= Set;
+    }
+
+    public void SetGoalTime(float _goalT)
+    {
+        _goalTime = _goalT;
     }
 
     public void Set()

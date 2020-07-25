@@ -12,7 +12,7 @@ public class PlayerDrawManager : MonoBehaviour
 
     private System.Action _drawFunc;
 
-    public void SetPlayerDraw(DeckData[] _playerDeck,EnumInfo.TeamType _drawTeam,System.Action _drawCall)
+    public void SetPlayerDraw(DeckData[] _playerDeck,EnumInfo.TeamType _drawTeam,System.Action _drawCall=null)
     {
         _nowPlayerDeck = _playerDeck;
 
@@ -23,7 +23,7 @@ public class PlayerDrawManager : MonoBehaviour
         _reDrawButton.gameObject.SetActive(true);
         for (int i=0;i< _unitCardUIs.Length;i++)
         {
-            _unitCardUIs[i].gameObject.SetActive(true);
+            _unitCardUIs[i].transform.parent.gameObject.SetActive(true);
             _unitCardUIs[i].SetUnitData(_canChoiceDecks[i], _drawTeam);
             _unitCardUIs[i].CreateEvent += SelectDeckCall;
         }
@@ -46,12 +46,12 @@ public class PlayerDrawManager : MonoBehaviour
         for (int i = 0; i < _unitCardUIs.Length; i++)
         {
             _unitCardUIs[i].CreateEvent -= SelectDeckCall;
-            _unitCardUIs[i].gameObject.SetActive(false);
+            _unitCardUIs[i].transform.parent.gameObject.SetActive(false);
         }
 
         _reDrawButton.gameObject.SetActive(false);
 
-        _drawFunc();
+        _drawFunc?.Invoke();
     }
 
     public DeckData[] GetRandomDeck(DeckData[] _playerDeck)

@@ -18,11 +18,20 @@ public class Timer : MonoBehaviour
         get { return minute; }
     }
 
+    private int goalSecond = -1;
+    public int GoalSecond
+    {
+        get { return goalSecond; }
+        set { goalSecond = value; }
+    }
+
     private bool isPlay = false;
 
     public event System.Action AddDetaTimeEvent;
     public event System.Action AddSecondEvent;
     public event System.Action AddMinuteEvent;
+
+    public event System.Action GoalSecondEvent;
 
     public event System.Action PlayEvent;
     public event System.Action PauseEvent;
@@ -38,6 +47,9 @@ public class Timer : MonoBehaviour
         deltaTime = 0;
         second = 0;
         minute = 0;
+
+        goalSecond = -1;
+        GoalSecondEvent = null;
     }
 
     public void Play()
@@ -63,6 +75,17 @@ public class Timer : MonoBehaviour
     {
         if (isPlay)
             AddTime();
+
+        if (goalSecond != -1)
+            if (IsGoal())
+                GoalSecondEvent?.Invoke();
+    }
+
+    public bool IsGoal()
+    {
+        if (GetTotalSecond() >= goalSecond)
+            return true;
+        else return false;
     }
 
     public void AddTime()

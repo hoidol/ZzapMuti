@@ -9,7 +9,7 @@ public class TimeOverDamage : MonoBehaviour
 
     private bool isTimeOver = false;
 
-    public void Start()
+    public void OnEnable()
     {
         _timerOverSlider.GoalEvent += TimeOver;
         _timer.StopEvent += ResetTime;
