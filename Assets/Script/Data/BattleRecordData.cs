@@ -27,11 +27,10 @@ public class UnitTrackingDataContainer
 [System.Serializable]
 public class UnitTrack
 {
-
     public float TileX;
     public float TileY;
     public string UnitIdx;
-    public int ReinforceLv;
+    //public int ReinforceLv;
 }
 
 [System.Serializable]

@@ -46,7 +46,7 @@ public class PlayerManager : MonoBehaviour
             _uT.TileX = UnitManager.Instance._curPlayerUnitsOnTile[i]._tile._TilePosIndex.x;
             _uT.TileY = UnitManager.Instance._curPlayerUnitsOnTile[i]._tile._TilePosIndex.y;
             _uT.UnitIdx = UnitManager.Instance._curPlayerUnitsOnTile[i]._unitIdx;
-            _uT.ReinforceLv = UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.ReinforceLv;
+            //_uT.ReinforceLv = UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.ReinforceLv;
             _unitTrackList.Add(_uT);
         }
 
