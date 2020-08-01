@@ -112,7 +112,9 @@ public class GameProgress : MonoBehaviour
         switch (_drawTeam)
         {
             case EnumInfo.TeamType.Player:
-                DrawBluePlayer();
+                AIManager.Instance.StartTurn(_round);
+                // DrawBluePlayer();
+                SetCanBattle();
                 break;
 
             case EnumInfo.TeamType.Opposite:

@@ -34,6 +34,7 @@ public class UnitData
     public int Feature_Distance;
     public int Feature_Range;
 
+    public string BestPosition;
 }
 
 

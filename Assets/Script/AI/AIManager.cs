@@ -6,7 +6,7 @@ public class AIManager : MonoBehaviour
 {
     public static AIManager Instance;
 
-    UserData _opponentData;
+    [SerializeField] UserData _opponentData;
     //List<UnitData> _opponentUnitDataList = new List<UnitData>();
     public List<UnitData> _opponentUnitDataDeckList = new List<UnitData>();
 
@@ -22,17 +22,20 @@ public class AIManager : MonoBehaviour
     public void InitAIMgr(UserData _oData)
     {
         _aiPlayTypes = GetComponentsInChildren<AIPlayType>();
-        for(int i =0;i< _aiPlayTypes.Length; i++)
-            _aiPlayTypes[i].InitAIPlayType();
+        _opponentData = _oData;
+      /*  for (int i =0;i< _aiPlayTypes.Length; i++)
+            _aiPlayTypes[i].InitAIPlayType();*/
 
        for (int i =0;i< _oData.UnitInven.Length; i++)
         {
-            UnitData _uData = DataManager.Instance.GetUnitDataWithUnitIdx(_oData.UnitInven[i]);
+            Debug.Log("_oData.UnitInven[i] : " + _oData.UnitInven[i]);
+            UnitData _uData = DataManager.Instance.GetUnitDataWithIdx(int.Parse(_oData.UnitInven[i]));
             //_opponentUnitDataList.Add(_uData);
             for(int j =0;j< _uData.MaxReinforce; j++)
                 _opponentUnitDataDeckList.Add(_uData);
         }
         _curAIPlayType = _aiPlayTypes[Random.Range(0, _aiPlayTypes.Length)];
+        _curAIPlayType.InitAIPlayType();
     }
 
 

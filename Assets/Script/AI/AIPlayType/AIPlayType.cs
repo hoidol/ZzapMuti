@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class AIPlayType : MonoBehaviour
 {
-    public EnumInfo.AIPlayType _aiPlayType;
+    [HideInInspector]public EnumInfo.AIPlayType _aiPlayType;
 
     [SerializeField] protected List<UnitData> _selectedUnitData = new List<UnitData>();
 
-    List<UnitFeatureInfo> _playerUnitFeatureInfo = new List<UnitFeatureInfo>();
-    List<UnitFeatureInfo> _aiUnitFeatureInfo = new List<UnitFeatureInfo>();
+    public List<UnitFeatureInfo> _playerUnitFeatureInfo = new List<UnitFeatureInfo>();
+    public List<UnitFeatureInfo> _aiUnitFeatureInfo = new List<UnitFeatureInfo>();
     public List<UnitFeatureInfo> _gapUnitFeatureInfo = new List<UnitFeatureInfo>();
 
     public virtual void InitAIPlayType()
@@ -27,8 +27,8 @@ public class AIPlayType : MonoBehaviour
             _aiUnitFeatureInfo.Add(_aUFInfo);
 
             UnitFeatureInfo _gUFInfo = new UnitFeatureInfo();
-            _aUFInfo.FeatureType = (EnumInfo.UnitFeatureType)i;
-            _aUFInfo.Value = 0;
+            _gUFInfo.FeatureType = (EnumInfo.UnitFeatureType)i;
+            _gUFInfo.Value = 0;
             _gapUnitFeatureInfo.Add(_gUFInfo);
         }
     }
@@ -58,9 +58,11 @@ public class AIPlayType : MonoBehaviour
         for(int i =0;i< AIManager.Instance._opponentUnitDataDeckList.Count; i++)
         {
             _selectedUnitData.Add(AIManager.Instance._opponentUnitDataDeckList[i]);
-            if (_selectedUnitData.Count > 3)
+            if (_selectedUnitData.Count >= 3)
                 break;
         }
+
+       
     }
 
     [SerializeField] protected int gap_Feature_PhysicDamage;
@@ -74,59 +76,7 @@ public class AIPlayType : MonoBehaviour
 
 
     public void AnalyzeSituation()
-    {
-        /*        int player_Feature_PhysicDamage = 0;
-                int player_Feature_MasicDamage = 0;
-                int player_Feature_PhysicDefence = 0;
-                int player_Feature_MagicResistance = 0;
-                int player_Feature_CC = 0;
-                int player_Feature_Buff = 0;
-                int player_Feature_Distance = 0;
-                int player_Feature_Range = 0;
-
-                for (int i = 0; i < UnitManager.Instance._curPlayerUnitsOnTile.Count; i++)
-                {
-                    player_Feature_PhysicDamage += UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_PhysicDamage;
-                    player_Feature_MasicDamage += UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_MasicDamage;
-                    player_Feature_PhysicDefence += UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_PhysicDefence;
-                    player_Feature_MagicResistance += UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_MagicResistance;
-                    player_Feature_CC += UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_CC;
-                    player_Feature_Buff += UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_Buff;
-                    player_Feature_Distance += UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_Distance;
-                    player_Feature_Range += UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_Range;
-                }
-
-                int ai_Feature_PhysicDamage = 0;
-                int ai_Feature_MasicDamage = 0;
-                int ai_Feature_PhysicDefence = 0;
-                int ai_Feature_MagicResistance = 0;
-                int ai_Feature_CC = 0;
-                int ai_Feature_Buff = 0;
-                int ai_Feature_Distance = 0;
-                int ai_Feature_Range = 0;
-
-                for (int i = 0; i < UnitManager.Instance._curOppositeUnitsOnTile.Count; i++)
-                {
-                    ai_Feature_PhysicDamage += UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_PhysicDamage;
-                    ai_Feature_MasicDamage += UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_MasicDamage;
-                    ai_Feature_PhysicDefence += UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_PhysicDefence;
-                    ai_Feature_MagicResistance += UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_MagicResistance;
-                    ai_Feature_CC += UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_CC;
-                    ai_Feature_Buff += UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_Buff;
-                    ai_Feature_Distance += UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_Distance;
-                    ai_Feature_Range += UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_Range;
-                }
-
-                gap_Feature_PhysicDamage = ai_Feature_PhysicDamage - player_Feature_PhysicDamage;
-                gap_Feature_MasicDamage = ai_Feature_MasicDamage - player_Feature_MasicDamage;
-                gap_Feature_PhysicDefence = ai_Feature_PhysicDefence - player_Feature_PhysicDefence;
-                gap_Feature_MagicResistance = ai_Feature_MagicResistance - player_Feature_MagicResistance;
-                gap_Feature_CC = ai_Feature_CC - player_Feature_CC;
-                gap_Feature_Buff = ai_Feature_Buff - player_Feature_Buff;
-                gap_Feature_Distance = ai_Feature_Distance - player_Feature_Distance;
-                gap_Feature_Range = ai_Feature_Range - player_Feature_Range;*/
-
-        //Feature_PhysicDamage	
+    {        
         InitFeatureInfo();
         for (int i = 0; i < UnitManager.Instance._curPlayerUnitsOnTile.Count; i++)
         {
@@ -196,7 +146,7 @@ public class AIPlayType : MonoBehaviour
             _gapUnitFeatureInfo[i].Value = 0;
     }
 
-    protected UnitData  SearchBestUnit(EnumInfo.UnitFeatureType _fType)
+    protected UnitData SearchBestUnit(EnumInfo.UnitFeatureType _fType)
     {
         int _bestIdx = -1;
         int _maxValue = int.MinValue;

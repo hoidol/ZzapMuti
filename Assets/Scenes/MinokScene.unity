@@ -500,6 +500,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _effects:
   - {fileID: 8694669898926310816, guid: 15e60ad4ae910fa4d82adcfce25ce620, type: 3}
+--- !u!1 &102726670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 102726671}
+  - component: {fileID: 102726672}
+  m_Layer: 0
+  m_Name: Buff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &102726671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102726670}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.4186666, y: -2.8493671, z: -4.326172}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 426491658}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &102726672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102726670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8f6aa2b3613c24a86fc18eafda692a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiPlayType: 4
+  _selectedUnitData: []
+  _gapUnitFeatureInfo: []
+  gap_Feature_PhysicDamage: 0
+  gap_Feature_MasicDamage: 0
+  gap_Feature_PhysicDefence: 0
+  gap_Feature_MagicResistance: 0
+  gap_Feature_CC: 0
+  gap_Feature_Buff: 0
+  gap_Feature_Distance: 0
+  gap_Feature_Range: 0
 --- !u!1 &162818270
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +645,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 871635692}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &175764439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 175764440}
+  - component: {fileID: 175764441}
+  m_Layer: 0
+  m_Name: Balance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &175764440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175764439}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 426491658}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &175764441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175764439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03f984aaa321f84f9f070216ba35acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiPlayType: 0
+  _selectedUnitData: []
+  _gapUnitFeatureInfo: []
+  gap_Feature_PhysicDamage: 0
+  gap_Feature_MasicDamage: 0
+  gap_Feature_PhysicDefence: 0
+  gap_Feature_MagicResistance: 0
+  gap_Feature_CC: 0
+  gap_Feature_Buff: 0
+  gap_Feature_Distance: 0
+  gap_Feature_Range: 0
 --- !u!1001 &252232965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1011,6 +1119,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49cd3aa0ef47ac41ae8762a62fa748f, type: 3}
+--- !u!1 &426491657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 426491658}
+  m_Layer: 0
+  m_Name: AIPlayType
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &426491658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426491657}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1403071631}
+  - {fileID: 175764440}
+  - {fileID: 1710139482}
+  - {fileID: 1551006037}
+  - {fileID: 102726671}
+  - {fileID: 1420444278}
+  m_Father: {fileID: 1006649364}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &428815509
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,6 +3518,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7570f889c26ddcb429b53eae4ff9d775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _opponentData:
+    nickName: 
+    UnitInven: []
+  _opponentUnitDataDeckList: []
+  _aiPlayTypes: []
+  _curAIPlayType: {fileID: 0}
 --- !u!4 &1006649364
 Transform:
   m_ObjectHideFlags: 0
@@ -3384,7 +3534,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 426491658}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4970,6 +5121,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1534708921}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1403071630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1403071631}
+  - component: {fileID: 1403071632}
+  m_Layer: 0
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1403071631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403071630}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 426491658}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1403071632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403071630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b37154f7329f448b59fcdb5e636977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiPlayType: 1
+  _selectedUnitData: []
+  _gapUnitFeatureInfo: []
+  gap_Feature_PhysicDamage: 0
+  gap_Feature_MasicDamage: 0
+  gap_Feature_PhysicDefence: 0
+  gap_Feature_MagicResistance: 0
+  gap_Feature_CC: 0
+  gap_Feature_Buff: 0
+  gap_Feature_Distance: 0
+  gap_Feature_Range: 0
 --- !u!114 &1403845190 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8299506034752579947, guid: c49cd3aa0ef47ac41ae8762a62fa748f,
@@ -5186,6 +5391,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417978822}
   m_CullTransparentMesh: 0
+--- !u!1 &1420444277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1420444278}
+  - component: {fileID: 1420444279}
+  m_Layer: 0
+  m_Name: Reinforce
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1420444278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420444277}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.4186666, y: -2.8493671, z: -4.326172}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 426491658}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1420444279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420444277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2aa0e43f4aaf8e4d967aaa02411c08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiPlayType: 5
+  _selectedUnitData: []
+  _gapUnitFeatureInfo: []
+  gap_Feature_PhysicDamage: 0
+  gap_Feature_MasicDamage: 0
+  gap_Feature_PhysicDefence: 0
+  gap_Feature_MagicResistance: 0
+  gap_Feature_CC: 0
+  gap_Feature_Buff: 0
+  gap_Feature_Distance: 0
+  gap_Feature_Range: 0
 --- !u!1001 &1421257074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5688,6 +5947,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49cd3aa0ef47ac41ae8762a62fa748f, type: 3}
+--- !u!1 &1551006036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1551006037}
+  - component: {fileID: 1551006038}
+  m_Layer: 0
+  m_Name: CC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1551006037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551006036}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.4186666, y: -2.8493671, z: -4.326172}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 426491658}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1551006038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551006036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e782aa7b7d66c1c44949e6875b6db13d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiPlayType: 3
+  _selectedUnitData: []
+  _gapUnitFeatureInfo: []
+  gap_Feature_PhysicDamage: 0
+  gap_Feature_MasicDamage: 0
+  gap_Feature_PhysicDefence: 0
+  gap_Feature_MagicResistance: 0
+  gap_Feature_CC: 0
+  gap_Feature_Buff: 0
+  gap_Feature_Distance: 0
+  gap_Feature_Range: 0
 --- !u!1001 &1601154413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6018,6 +6331,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49cd3aa0ef47ac41ae8762a62fa748f, type: 3}
+--- !u!1 &1710139481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1710139482}
+  - component: {fileID: 1710139483}
+  m_Layer: 0
+  m_Name: Defence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1710139482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710139481}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.4186666, y: -2.8493671, z: -4.326172}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 426491658}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1710139483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710139481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd577f18956c164198af4338fc6ec81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiPlayType: 2
+  _selectedUnitData: []
+  _gapUnitFeatureInfo: []
+  gap_Feature_PhysicDamage: 0
+  gap_Feature_MasicDamage: 0
+  gap_Feature_PhysicDefence: 0
+  gap_Feature_MagicResistance: 0
+  gap_Feature_CC: 0
+  gap_Feature_Buff: 0
+  gap_Feature_Distance: 0
+  gap_Feature_Range: 0
 --- !u!1 &1734400257
 GameObject:
   m_ObjectHideFlags: 0
