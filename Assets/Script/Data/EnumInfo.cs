@@ -47,4 +47,27 @@ public class EnumInfo
         Assassin,
         Supporter
     }
+
+    public enum AIPlayType //AI Play 성향
+    {
+        Balance,
+        Attack,
+        Defence,
+        CC,
+        Buff,
+        Reinforce
+    }
+
+    public const int UnitFeatureTypeCount =8;
+    public enum UnitFeatureType
+    {
+        Feature_PhysicDamage,
+        Feature_MasicDamage,
+        Feature_PhysicDefence,
+        Feature_MagicResistance,
+        Feature_CC,
+        Feature_Buff,
+        Feature_Distance,
+        Feature_Range
+    }
 }

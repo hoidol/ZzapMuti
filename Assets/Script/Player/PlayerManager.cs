@@ -26,7 +26,7 @@ public class PlayerManager : MonoBehaviour
         _battleRecorData.Nick = _pData.nickName;
         _battleRecorData.UnitInven = _pData.UnitInven;
 
-        AIManager.Instance.SetOpponentData(_oData);
+        AIManager.Instance.InitAIMgr(_oData);
     }
 
 
