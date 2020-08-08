@@ -7,8 +7,8 @@ using Firebase.Unity.Editor;
 
 public class GameAuthControl : MonoBehaviour
 {
-    private GameAuthControl instance;
-    public GameAuthControl Instance
+    private static GameAuthControl instance;
+    public static GameAuthControl Instance
     {
         get { return instance; }
     }
@@ -20,6 +20,12 @@ public class GameAuthControl : MonoBehaviour
     }
 
     private FirebaseUser user;
+    public FirebaseUser User
+    {
+        get { return user; }
+    }
+
+    public event System.Action<bool> LoginAnonymousEvent;
 
     public void Awake()
     {
@@ -42,17 +48,20 @@ public class GameAuthControl : MonoBehaviour
         auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
     }
 
-    public void CreateUser(string _email,string _password)
+    public bool CreateUser(string _email,string _password)
     {
+        bool isSucces = false;
         auth.CreateUserWithEmailAndPasswordAsync(_email, _password).ContinueWith(task => {
             if (task.IsCanceled)
             {
                 Debug.LogError("CreateUserWithEmailAndPasswordAsync was canceled.");
+                isSucces = false;
                 return;
             }
             if (task.IsFaulted)
             {
                 Debug.LogError("CreateUserWithEmailAndPasswordAsync encountered an error: " + task.Exception);
+                isSucces = false;
                 return;
             }
 
@@ -61,7 +70,10 @@ public class GameAuthControl : MonoBehaviour
             Debug.LogFormat("Firebase user created successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
 
+            isSucces = true;
         });
+
+        return isSucces;
     }
 
     public void ChangeDisplayName(string _name)
@@ -74,23 +86,59 @@ public class GameAuthControl : MonoBehaviour
     }
     
 
-    public void Login(string _email, string _password)
+    public bool Login(string _email, string _password)
     {
+        bool isSucces=false;
+
         auth.SignInWithEmailAndPasswordAsync(_email, _password).ContinueWith(task => {
             if (task.IsCanceled)
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");
+                isSucces = false;
                 return;
             }
             if (task.IsFaulted)
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
+                isSucces = false;
                 return;
             }
 
             Firebase.Auth.FirebaseUser newUser = task.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
+            isSucces = true;
         });
+        return isSucces;
+    }
+
+    public bool LoginAnonymous()
+    {
+        bool isSucces = false;
+        auth.SignInAnonymouslyAsync().ContinueWith(task => {
+            if (task.IsCanceled)
+            {
+                Debug.LogError("SignInAnonymouslyAsync was canceled.");
+                isSucces = false;
+                return;
+            }
+            if (task.IsFaulted)
+            {
+                Debug.LogError("SignInAnonymouslyAsync encountered an error: " + task.Exception);
+                isSucces = false;
+                return;
+            }
+
+            isSucces = true;
+            Firebase.Auth.FirebaseUser newUser = task.Result;
+            user = task.Result;
+
+            Debug.LogFormat("User signed in successfully: {0} ({1})",
+                newUser.DisplayName, newUser.UserId);
+        });
+
+        LoginAnonymousEvent.Invoke(isSucces);
+
+        return isSucces;
     }
 }

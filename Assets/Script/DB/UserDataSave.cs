@@ -31,14 +31,13 @@ public class UserDataSave : MonoBehaviour
         _databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
-    private void SaveUserData(string _nickname,string[] _unitInven)
+    public void SaveUserData(string _nickname,string[] _unitInven)
     {
         UserData user = new UserData() { nickName= _nickname, UnitInven=_unitInven};
         string json = JsonUtility.ToJson(user);
 
-        Task saveTask = 
-            _databaseReference.Child("PlayerData").
-            Child("dHOSUJyXDWnHVLCqCgBr").SetRawJsonValueAsync(json);
+        Task saveTask = _databaseReference.Child("PlayerData").
+            Child(GameAuthControl.Instance.User.UserId).SetRawJsonValueAsync(json);
 
         if (!saveTask.IsFaulted)
         {
