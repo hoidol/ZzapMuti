@@ -58,6 +58,15 @@ public class EnumInfo
         Reinforce
     }
 
+    public enum AILevel
+    {
+        Low,
+        MiddleLow,
+        Middle,
+        MIddleHight,
+        Hight
+    }
+
     public const int UnitFeatureTypeCount =8;
     public enum UnitFeatureType
     {

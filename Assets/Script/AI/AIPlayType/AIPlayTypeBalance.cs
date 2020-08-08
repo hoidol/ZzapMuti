@@ -27,7 +27,7 @@ public class AIPlayTypeBalance : AIPlayType
 
 
         // 상황 분석
-        _gapUnitFeatureInfo.Sort(delegate (UnitFeatureInfo a, UnitFeatureInfo b)
+        _gapUnitFeatureInfo.Sort(delegate (UnitFeatureInfo a, UnitFeatureInfo b) //가장 부족한 부분 찾는거잖아
         {
             if (a.Value > b.Value)
                 return -1;

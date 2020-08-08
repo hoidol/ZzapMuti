@@ -75,7 +75,7 @@ public class AIPlayType : MonoBehaviour
     [SerializeField] protected int gap_Feature_Range;
 
 
-    public void AnalyzeSituation()
+    public virtual void AnalyzeSituation()
     {        
         InitFeatureInfo();
         for (int i = 0; i < UnitManager.Instance._curPlayerUnitsOnTile.Count; i++)
@@ -132,7 +132,7 @@ public class AIPlayType : MonoBehaviour
     {
         for(int i =0;i< _gapUnitFeatureInfo.Count; i++)
         {
-            _gapUnitFeatureInfo[i].Value = _aiUnitFeatureInfo[i].Value - _playerUnitFeatureInfo[i].Value;
+            _gapUnitFeatureInfo[i].Value = Mathf.Abs( _aiUnitFeatureInfo[i].Value - _playerUnitFeatureInfo[i].Value);
         }
     }
 
@@ -162,6 +162,11 @@ public class AIPlayType : MonoBehaviour
         return _selectedUnitData[_bestIdx];
     }
 
+    protected UnitData RandomPickUnit()
+    {
+        return _selectedUnitData[Random.Range(0, _selectedUnitData.Count)];
+    }
+
     int GetFeatureVale(EnumInfo.UnitFeatureType _fType, UnitData _uD)
     {
         switch (_fType)
@@ -184,6 +189,18 @@ public class AIPlayType : MonoBehaviour
                 return _uD.Feature_Range;
         }
         return 0;
+    }
+
+    void Rainforce(UnitData _u = null) {
+
+        for(int i =0;i< UnitManager.Instance._curOppositeUnitsOnTile.Count; i++)
+        {
+            //UnitManager.Instance.CombineUnit() //유닛, 유닛, 타일
+
+            if (UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Idx.Equals(_u.Idx)){
+
+            }
+        }
     }
 }
 

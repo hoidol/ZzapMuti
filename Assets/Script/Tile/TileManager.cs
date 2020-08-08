@@ -107,7 +107,7 @@ public class TileManager : MonoBehaviour
             {
                 if (_tileGroup._Tiles[i]._TilePosIndex.y >= 4)
                 {
-                    Debug.Log("_aiTileList : ");
+
                     _aiTileList.Add(_tileGroup._Tiles[i]);
                 }
             }

@@ -545,6 +545,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aiPlayType: 4
   _selectedUnitData: []
+  _playerUnitFeatureInfo: []
+  _aiUnitFeatureInfo: []
   _gapUnitFeatureInfo: []
   gap_Feature_PhysicDamage: 0
   gap_Feature_MasicDamage: 0
@@ -690,6 +692,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aiPlayType: 0
   _selectedUnitData: []
+  _playerUnitFeatureInfo: []
+  _aiUnitFeatureInfo: []
   _gapUnitFeatureInfo: []
   gap_Feature_PhysicDamage: 0
   gap_Feature_MasicDamage: 0
@@ -3962,6 +3966,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tileGroup: {fileID: 1067936721}
+  _aiTileList: []
+  _ableTileList: []
 --- !u!114 &1067936721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5137,7 +5143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1403071631
 Transform:
   m_ObjectHideFlags: 0
@@ -5166,6 +5172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aiPlayType: 1
   _selectedUnitData: []
+  _playerUnitFeatureInfo: []
+  _aiUnitFeatureInfo: []
   _gapUnitFeatureInfo: []
   gap_Feature_PhysicDamage: 0
   gap_Feature_MasicDamage: 0
@@ -5436,6 +5444,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aiPlayType: 5
   _selectedUnitData: []
+  _playerUnitFeatureInfo: []
+  _aiUnitFeatureInfo: []
   _gapUnitFeatureInfo: []
   gap_Feature_PhysicDamage: 0
   gap_Feature_MasicDamage: 0
@@ -5992,6 +6002,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aiPlayType: 3
   _selectedUnitData: []
+  _playerUnitFeatureInfo: []
+  _aiUnitFeatureInfo: []
   _gapUnitFeatureInfo: []
   gap_Feature_PhysicDamage: 0
   gap_Feature_MasicDamage: 0
@@ -6376,6 +6388,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aiPlayType: 2
   _selectedUnitData: []
+  _playerUnitFeatureInfo: []
+  _aiUnitFeatureInfo: []
   _gapUnitFeatureInfo: []
   gap_Feature_PhysicDamage: 0
   gap_Feature_MasicDamage: 0

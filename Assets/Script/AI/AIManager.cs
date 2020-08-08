@@ -28,7 +28,7 @@ public class AIManager : MonoBehaviour
 
        for (int i =0;i< _oData.UnitInven.Length; i++)
         {
-            Debug.Log("_oData.UnitInven[i] : " + _oData.UnitInven[i]);
+
             UnitData _uData = DataManager.Instance.GetUnitDataWithIdx(int.Parse(_oData.UnitInven[i]));
             //_opponentUnitDataList.Add(_uData);
             for(int j =0;j< _uData.MaxReinforce; j++)

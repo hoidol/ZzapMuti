@@ -33,6 +33,7 @@ public class UnitData
     public int Feature_Buff;
     public int Feature_Distance;
     public int Feature_Range;
+    public int Feature_MoveSpeed;
 
     public string BestPosition;
 }
