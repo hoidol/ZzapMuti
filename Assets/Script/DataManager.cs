@@ -7,7 +7,9 @@ public class DataManager : MonoBehaviour
     static DataManager _instance;
     public UnitDataContainer _unitDataContainer;
     public EntityDataContainer _entityDataContainer;
-   
+    public SynergyDataContainer _synergyDataContainer;
+    public CharacterInfoDataContainer _characterInfoDataContainer;
+
     public static DataManager Instance
     {
         get
@@ -29,6 +31,12 @@ public class DataManager : MonoBehaviour
 
         string _eDataJStr = Resources.Load<TextAsset>("Json/EntityData").ToString();
         _entityDataContainer = JsonUtility.FromJson<EntityDataContainer>(_eDataJStr);
+
+        string _sDataJStr = Resources.Load<TextAsset>("Json/SynergyData").ToString();
+        _synergyDataContainer = JsonUtility.FromJson<SynergyDataContainer>(_sDataJStr);
+
+        string _sIDataJStr = Resources.Load<TextAsset>("Json/CharacterInfoData").ToString();
+        _characterInfoDataContainer = JsonUtility.FromJson<CharacterInfoDataContainer>(_sIDataJStr);
     }
 
     public UnitData GetUnitDataWithUnitIdx(string _uIdx)
@@ -73,6 +81,30 @@ public class DataManager : MonoBehaviour
             if (_entityDataContainer.EntityData[i].Idx.Equals(_idx))
             {
                 return _entityDataContainer.EntityData[i];
+            }
+        }
+        return null;
+    }
+
+    public SynergyData GetSynergyDataWithCharacterAndNum(string _c,int _n)
+    {
+        for(int i =0;i< _synergyDataContainer.SynergyData.Length; i++)
+        {
+            if(_c.Equals(_synergyDataContainer.SynergyData[i].Character) && _synergyDataContainer.SynergyData[i].NumberOfUnit == _n)
+            {
+                return _synergyDataContainer.SynergyData[i];
+            }
+        }
+        return null;
+    }
+
+    public CharacterInfoData GetCharacterInfoDataWithCharacter(string _c)
+    {
+        for(int i = 0; i < _characterInfoDataContainer.CharacterInfoData.Length; i++)
+        {
+            if (_characterInfoDataContainer.CharacterInfoData[i].Character.Equals(_c))
+            {
+                return _characterInfoDataContainer.CharacterInfoData[i];
             }
         }
         return null;

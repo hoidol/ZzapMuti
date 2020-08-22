@@ -1,0 +1,29 @@
+{
+"SynergyInfoData":
+  [
+    {
+      "Idx": 0,
+      "Character": 0
+    },
+    {
+      "Idx": 1,
+      "Character": "Brave"
+    },
+    {
+      "Idx": 2,
+      "Character": "Careful"
+    },
+    {
+      "Idx": 3,
+      "Character": "Hasty"
+    },
+    {
+      "Idx": 4,
+      "Character": "Upright"
+    },
+    {
+      "Idx": 5,
+      "Character": "Wise"
+    }
+  ]
+}

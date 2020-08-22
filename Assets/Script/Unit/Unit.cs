@@ -23,6 +23,7 @@ public class Unit : MonoBehaviour
     public Damage _normalDamage;
     public Damage _skillDamage;
 
+    public List< CharacterInfoData> _characterInfoDataList= new List<CharacterInfoData>();
     public void InitUnit(EnumInfo.TeamType _tType)
     {
         _tr = transform;
@@ -55,6 +56,16 @@ public class Unit : MonoBehaviour
 
         _skillDamage.DamagePower = _unitData.SkillDamage;
         _skillDamage.ResourceUnit = this;
+
+        if (!_unitData.Character.Equals("0"))
+        {
+            string[] _chars = _unitData.Character.Split('/');
+            for (int i = 0; i < _chars.Length; i++)
+            {
+                _characterInfoDataList.Add(DataManager.Instance.GetCharacterInfoDataWithCharacter(_chars[i]));
+            }
+        }
+       
     }
 
     public void SetTile(Tile _t)

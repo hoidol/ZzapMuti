@@ -33,7 +33,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": 0
+      "Feature_MoveSpeed": 0,
+      "BestPosition": 0,
+      "Character": 0
     },
     {
       "Idx": 1,
@@ -60,7 +62,7 @@
       "MaxMana": 150,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 2,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -68,7 +70,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": "Brave/Careful"
     },
     {
       "Idx": 1,
@@ -95,7 +99,7 @@
       "MaxMana": 150,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 3,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -103,7 +107,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": "Brave/Careful"
     },
     {
       "Idx": 1,
@@ -130,7 +136,7 @@
       "MaxMana": 150,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 4,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -138,7 +144,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": "Brave/Careful"
     },
     {
       "Idx": 1,
@@ -165,7 +173,7 @@
       "MaxMana": 150,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 6,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -173,7 +181,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": "Brave/Careful"
     },
     {
       "Idx": 1,
@@ -200,7 +210,7 @@
       "MaxMana": 150,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 8,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -208,7 +218,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": "Brave/Careful"
     },
     {
       "Idx": 1,
@@ -235,7 +247,7 @@
       "MaxMana": 150,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 11,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -243,7 +255,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": "Brave/Careful"
     },
     {
       "Idx": 1,
@@ -270,7 +284,7 @@
       "MaxMana": 150,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 15,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -278,7 +292,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": "Brave/Careful"
     },
     {
       "Idx": 1,
@@ -305,7 +321,7 @@
       "MaxMana": 150,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 18,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -313,7 +329,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": "Brave/Careful"
     },
     {
       "Idx": 2,
@@ -340,7 +358,7 @@
       "MaxMana": 100,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 5,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -348,7 +366,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": 0
     },
     {
       "Idx": 2,
@@ -375,7 +395,7 @@
       "MaxMana": 100,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 8,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -383,7 +403,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": 0
     },
     {
       "Idx": 2,
@@ -410,7 +432,7 @@
       "MaxMana": 100,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 11,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -418,7 +440,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": 0
     },
     {
       "Idx": 2,
@@ -445,7 +469,7 @@
       "MaxMana": 100,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 15,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -453,7 +477,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": 0
     },
     {
       "Idx": 2,
@@ -480,7 +506,7 @@
       "MaxMana": 100,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 19,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -488,7 +514,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": 0
     },
     {
       "Idx": 2,
@@ -515,7 +543,7 @@
       "MaxMana": 100,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 23,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -523,7 +551,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": 0
     },
     {
       "Idx": 2,
@@ -550,7 +580,7 @@
       "MaxMana": 100,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 27,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -558,7 +588,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": 0
     },
     {
       "Idx": 2,
@@ -585,7 +617,7 @@
       "MaxMana": 100,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 30,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -593,7 +625,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight",
+      "Character": 0
     },
     {
       "Idx": 3,
@@ -620,7 +654,7 @@
       "MaxMana": 80,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 5,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -628,7 +662,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 3,
@@ -655,7 +691,7 @@
       "MaxMana": 80,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 8,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -663,7 +699,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 3,
@@ -690,7 +728,7 @@
       "MaxMana": 80,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 11,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -698,7 +736,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 3,
@@ -725,7 +765,7 @@
       "MaxMana": 80,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 15,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -733,7 +773,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 3,
@@ -760,7 +802,7 @@
       "MaxMana": 80,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 19,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -768,7 +810,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 3,
@@ -795,7 +839,7 @@
       "MaxMana": 80,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 23,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -803,7 +847,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 3,
@@ -830,7 +876,7 @@
       "MaxMana": 80,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 27,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -838,7 +884,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 3,
@@ -865,7 +913,7 @@
       "MaxMana": 80,
       "ManaChargeAmount": 10,
       "InitMana": 0,
-      "Feature_PhysicDamage": 0,
+      "Feature_PhysicDamage": 30,
       "Feature_MasicDamage": 0,
       "Feature_PhysicDefence": 0,
       "Feature_MagicResistance": 0,
@@ -873,7 +921,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 4,
@@ -908,7 +958,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 4,
@@ -943,7 +995,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 4,
@@ -978,7 +1032,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 4,
@@ -1013,7 +1069,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 4,
@@ -1048,7 +1106,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 5,
@@ -1083,7 +1143,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 5,
@@ -1118,7 +1180,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 5,
@@ -1153,7 +1217,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 5,
@@ -1188,7 +1254,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 5,
@@ -1223,7 +1291,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 6,
@@ -1258,7 +1328,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopRight",
+      "Character": 0
     },
     {
       "Idx": 6,
@@ -1293,7 +1365,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopRight",
+      "Character": 0
     },
     {
       "Idx": 6,
@@ -1328,7 +1402,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopRight",
+      "Character": 0
     },
     {
       "Idx": 6,
@@ -1363,7 +1439,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopRight",
+      "Character": 0
     },
     {
       "Idx": 6,
@@ -1398,7 +1476,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopRight",
+      "Character": 0
     },
     {
       "Idx": 6,
@@ -1433,7 +1513,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopRight",
+      "Character": 0
     },
     {
       "Idx": 6,
@@ -1468,7 +1550,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopRight",
+      "Character": 0
     },
     {
       "Idx": 6,
@@ -1503,7 +1587,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopRight",
+      "Character": 0
     },
     {
       "Idx": 7,
@@ -1538,7 +1624,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 7,
@@ -1573,7 +1661,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 7,
@@ -1608,7 +1698,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 7,
@@ -1643,7 +1735,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 7,
@@ -1678,7 +1772,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "TopLeft/TopCenter/TopRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight",
+      "Character": 0
     },
     {
       "Idx": 8,
@@ -1713,7 +1809,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 8,
@@ -1748,7 +1846,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 8,
@@ -1783,7 +1883,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 8,
@@ -1818,7 +1920,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     },
     {
       "Idx": 8,
@@ -1853,7 +1957,9 @@
       "Feature_Buff": 0,
       "Feature_Distance": 0,
       "Feature_Range": 0,
-      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
+      "Feature_MoveSpeed": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
+      "Character": 0
     }
   ]
 }
