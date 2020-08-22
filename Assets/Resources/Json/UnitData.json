@@ -32,7 +32,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": 0
     },
     {
       "Idx": 1,
@@ -66,7 +67,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 1,
@@ -100,7 +102,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 1,
@@ -134,7 +137,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 1,
@@ -168,7 +172,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 1,
@@ -202,7 +207,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 1,
@@ -236,7 +242,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 1,
@@ -270,7 +277,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 1,
@@ -304,7 +312,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 2,
@@ -338,7 +347,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 2,
@@ -372,7 +382,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 2,
@@ -406,7 +417,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 2,
@@ -440,7 +452,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 2,
@@ -474,7 +487,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 2,
@@ -508,7 +522,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 2,
@@ -542,7 +557,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 2,
@@ -576,7 +592,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "BottomLeft/BottomCenter/BottomRight"
     },
     {
       "Idx": 3,
@@ -610,7 +627,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 3,
@@ -644,7 +662,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 3,
@@ -678,7 +697,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 3,
@@ -712,7 +732,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 3,
@@ -746,7 +767,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 3,
@@ -780,7 +802,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 3,
@@ -814,7 +837,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 3,
@@ -848,7 +872,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 4,
@@ -882,7 +907,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 4,
@@ -916,7 +942,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 4,
@@ -950,7 +977,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 4,
@@ -984,7 +1012,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 4,
@@ -1018,7 +1047,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 5,
@@ -1052,7 +1082,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 5,
@@ -1086,7 +1117,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 5,
@@ -1120,7 +1152,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 5,
@@ -1154,7 +1187,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 5,
@@ -1188,7 +1222,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 6,
@@ -1222,7 +1257,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopRight"
     },
     {
       "Idx": 6,
@@ -1256,7 +1292,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopRight"
     },
     {
       "Idx": 6,
@@ -1290,7 +1327,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopRight"
     },
     {
       "Idx": 6,
@@ -1324,7 +1362,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopRight"
     },
     {
       "Idx": 6,
@@ -1358,7 +1397,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopRight"
     },
     {
       "Idx": 6,
@@ -1392,7 +1432,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopRight"
     },
     {
       "Idx": 6,
@@ -1426,7 +1467,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopRight"
     },
     {
       "Idx": 6,
@@ -1460,7 +1502,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopRight"
     },
     {
       "Idx": 7,
@@ -1494,7 +1537,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 7,
@@ -1528,7 +1572,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 7,
@@ -1562,7 +1607,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 7,
@@ -1596,7 +1642,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 7,
@@ -1630,7 +1677,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "TopLeft/TopCenter/TopRight"
     },
     {
       "Idx": 8,
@@ -1664,7 +1712,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 8,
@@ -1698,7 +1747,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 8,
@@ -1732,7 +1782,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 8,
@@ -1766,7 +1817,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     },
     {
       "Idx": 8,
@@ -1800,7 +1852,8 @@
       "Feature_CC": 0,
       "Feature_Buff": 0,
       "Feature_Distance": 0,
-      "Feature_Range": 0
+      "Feature_Range": 0,
+      "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight"
     }
   ]
 }

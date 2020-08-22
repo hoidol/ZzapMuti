@@ -17,8 +17,6 @@ public class GameProgress : MonoBehaviour
 
     private EnumInfo.TeamType _drawTeam;
 
-    private System.Action endDrawFunc;
-
     [Header("DrawManager")]
     [SerializeField] private PlayerDrawManager _playerDrawManager;
 
@@ -29,7 +27,7 @@ public class GameProgress : MonoBehaviour
     }
 
     [Header("UI")]
-    [SerializeField] private Button endPlayerDrawButton;
+    [SerializeField] private Button startBattleButton;
 
     [Header("Player UI")]
     [SerializeField] private PlayerInfoUI _redPlayerInfoUI;
@@ -37,10 +35,7 @@ public class GameProgress : MonoBehaviour
 
     [Header("Timer")]
     [SerializeField] private Timer _timer;
-    [SerializeField] private LeftTimeSlider _leftTimeSlider;
-    [SerializeField] private TimeOverDamage _timeOverDamage;
 
-    [Header("OtherInfo")]
     [SerializeField] private Text _roundText;
 
     [SerializeField] private GameEndUI _gameEndUI;
@@ -57,7 +52,7 @@ public class GameProgress : MonoBehaviour
     public void Start()
     {
         Init();
-        DrawPlayer();
+        DrawRedPlayer();
     }
 
     public void Init()
@@ -73,82 +68,22 @@ public class GameProgress : MonoBehaviour
         SetRoundUI();
     }
 
-    public void DrawPlayer()
+    public void DrawRedPlayer()
     {
-        endPlayerDrawButton.gameObject.SetActive(true);
         _drawTeam = EnumInfo.TeamType.Player;
 
         SetBlind(false, true);
 
-        _playerDrawManager.SetPlayerDraw(_redPlayer._DeckManager._Deck,EnumInfo.TeamType.Player);
-
-        endDrawFunc = DrawOpposite;
-        DrawRoutine(30, EndDraw);
+        _playerDrawManager.SetPlayerDraw(_redPlayer._DeckManager._Deck,EnumInfo.TeamType.Player, ActiveAddTurnButton);
     }
 
-    public void DrawRoutine(int _second, System.Action _endCallback)
+    public void DrawBluePlayer()
     {
-        _leftTimeSlider.ResetTimer();
-        _leftTimeSlider.SetGoalTime(_second);
-        _leftTimeSlider.Connect();
-
-        _timeOverDamage.enabled = false;
-
-        _timer.gameObject.SetActive(true);
-        _timer.TimerReset();
-        _timer.GoalSecond = _second;
-
-        _timer.GoalSecondEvent += _endCallback;
-        
-        _timer.Play();
-
-    }
-
-    public void DrawOpposite()
-    {
-        endPlayerDrawButton.gameObject.SetActive(false);
         _drawTeam = EnumInfo.TeamType.Opposite;
         
         SetBlind(true, false);
-        
-        endDrawFunc = StartBattle;
-        DrawRoutine(30, EndDraw);
-    }
 
-    /// <summary>
-    /// 외부 버튼에서 호출하거나 시간이 지나면 호출
-    /// </summary>
-    public void EndDraw()
-    {
-        _playerDrawManager.gameObject.SetActive(false);
-        _timer.gameObject.SetActive(false);
-        endDrawFunc?.Invoke();
-    }
-
-    public void SetBattleTimer()
-    {
-        _leftTimeSlider.ResetTimer();
-        _leftTimeSlider.SetGoalTime(40);
-        _leftTimeSlider.Connect();
-
-        _timer.gameObject.SetActive(true);
-        _timer.TimerReset();
-
-        _timeOverDamage.enabled = true;
-        _timer.Play();
-    }
-
-    public void StartBattle()
-    {
-        SetBlind(false, false);
-        
-        SetPlayerInfoUI(false);
-
-        TileManager._Instance.StartBattle();
-        
-        UnitManager.Instance.StartBattle();
-        
-        SetBattleTimer();
+        _playerDrawManager.SetPlayerDraw(_bluePlayer._DeckManager._Deck, EnumInfo.TeamType.Opposite, ActiveAddTurnButton);
     }
 
     public void SetPlayerInfoUI(bool _active)
@@ -157,10 +92,56 @@ public class GameProgress : MonoBehaviour
         _bluePlayerInfoUI.gameObject.SetActive(_active);
     }
 
-    public void SetBlind(bool _red, bool _blue)
+    public void SetBlind(bool _red,bool _blue)
     {
         _redBlind.gameObject.SetActive(_red);
         _blueBlind.gameObject.SetActive(_blue);
+    }
+
+    public void ActiveAddTurnButton()
+    {
+        _addTurnButton.gameObject.SetActive(true);
+    }
+
+    /// <summary>
+    /// AddTurn은 외부 버튼에서 호출
+    /// </summary>
+    public void AddTurn()
+    {
+        _addTurnButton.gameObject.SetActive(false);
+        switch (_drawTeam)
+        {
+            case EnumInfo.TeamType.Player:
+                AIManager.Instance.StartTurn(_round);
+                // DrawBluePlayer();
+                SetCanBattle();
+                break;
+
+            case EnumInfo.TeamType.Opposite:
+                SetCanBattle();
+                break;
+        }
+    }
+
+    public void SetCanBattle()
+    {
+        startBattleButton.gameObject.SetActive(true);
+
+        SetBlind(false, false);
+        SetPlayerInfoUI(false);
+    }
+
+    public void StartBattle()
+    {
+        TileManager._Instance.StartBattle();
+
+        startBattleButton.gameObject.SetActive(false);
+        UnitManager.Instance.StartBattle();
+
+        _timer.gameObject.SetActive(true);
+        _timer.Play();
+
+     //   StartCoroutine(TestRoutine());
     }
 
     public void EndBattle(EnumInfo.TeamType _winTeam,int _discountLife)
@@ -195,7 +176,7 @@ public class GameProgress : MonoBehaviour
         }
         else
         {
-            DrawPlayer();
+            DrawRedPlayer();
         }
     }
 
