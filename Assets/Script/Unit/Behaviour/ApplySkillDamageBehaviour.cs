@@ -11,7 +11,7 @@ public class ApplySkillDamageBehaviour : UnitBehaviour
     public override void DoBehaviour(Unit _tUnit)
     {
         Debug.Log("ApplyDamageBehaviour - DoBehaviour(_tUnit)");
-        _tUnit._stateMgr.TakeDamage(_unit._skillDamage);
+        _tUnit._stateMgr.TakeDamage(_unit._unitStatData._skillDamage);
     }
 
 }

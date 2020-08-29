@@ -109,5 +109,19 @@ public class DataManager : MonoBehaviour
         }
         return null;
     }
+
+
+    public List<SynergyData> GetSynergyDataList(string _s)
+    {
+        List<SynergyData> _list = new List<SynergyData>();
+        for (int i = 0; i < _synergyDataContainer.SynergyData.Length; i++)
+        {
+            if (_s.Equals(_synergyDataContainer.SynergyData[i].Character))
+            {
+                _list.Add(_synergyDataContainer.SynergyData[i]);
+            }
+        }
+        return _list;
+    }
 }
 

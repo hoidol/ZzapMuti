@@ -368,7 +368,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "BottomLeft/BottomCenter/BottomRight",
-      "Character": 0
+      "Character": "Brave/Upright"
     },
     {
       "Idx": 2,
@@ -405,7 +405,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "BottomLeft/BottomCenter/BottomRight",
-      "Character": 0
+      "Character": "Brave/Upright"
     },
     {
       "Idx": 2,
@@ -442,7 +442,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "BottomLeft/BottomCenter/BottomRight",
-      "Character": 0
+      "Character": "Brave/Upright"
     },
     {
       "Idx": 2,
@@ -479,7 +479,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "BottomLeft/BottomCenter/BottomRight",
-      "Character": 0
+      "Character": "Brave/Upright"
     },
     {
       "Idx": 2,
@@ -516,7 +516,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "BottomLeft/BottomCenter/BottomRight",
-      "Character": 0
+      "Character": "Brave/Upright"
     },
     {
       "Idx": 2,
@@ -553,7 +553,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "BottomLeft/BottomCenter/BottomRight",
-      "Character": 0
+      "Character": "Brave/Upright"
     },
     {
       "Idx": 2,
@@ -590,7 +590,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "BottomLeft/BottomCenter/BottomRight",
-      "Character": 0
+      "Character": "Brave/Upright"
     },
     {
       "Idx": 2,
@@ -627,7 +627,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "BottomLeft/BottomCenter/BottomRight",
-      "Character": 0
+      "Character": "Brave/Upright"
     },
     {
       "Idx": 3,
@@ -664,7 +664,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Careful/Hasty"
     },
     {
       "Idx": 3,
@@ -701,7 +701,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Careful/Hasty"
     },
     {
       "Idx": 3,
@@ -738,7 +738,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Careful/Hasty"
     },
     {
       "Idx": 3,
@@ -775,7 +775,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Careful/Hasty"
     },
     {
       "Idx": 3,
@@ -812,7 +812,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Careful/Hasty"
     },
     {
       "Idx": 3,
@@ -849,7 +849,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Careful/Hasty"
     },
     {
       "Idx": 3,
@@ -886,7 +886,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Careful/Hasty"
     },
     {
       "Idx": 3,
@@ -923,7 +923,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Careful/Hasty"
     },
     {
       "Idx": 4,
@@ -960,7 +960,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise/Careful"
     },
     {
       "Idx": 4,
@@ -997,7 +997,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise/Careful"
     },
     {
       "Idx": 4,
@@ -1034,7 +1034,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise/Careful"
     },
     {
       "Idx": 4,
@@ -1071,7 +1071,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise/Careful"
     },
     {
       "Idx": 4,
@@ -1108,7 +1108,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise/Careful"
     },
     {
       "Idx": 5,
@@ -1145,7 +1145,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 5,
@@ -1182,7 +1182,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 5,
@@ -1219,7 +1219,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 5,
@@ -1256,7 +1256,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 5,
@@ -1293,7 +1293,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 6,
@@ -1367,7 +1367,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopRight",
-      "Character": 0
+      "Character": "Hasty/Careful"
     },
     {
       "Idx": 6,
@@ -1404,7 +1404,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopRight",
-      "Character": 0
+      "Character": "Hasty/Careful"
     },
     {
       "Idx": 6,
@@ -1441,7 +1441,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopRight",
-      "Character": 0
+      "Character": "Hasty/Careful"
     },
     {
       "Idx": 6,
@@ -1478,7 +1478,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopRight",
-      "Character": 0
+      "Character": "Hasty/Careful"
     },
     {
       "Idx": 6,
@@ -1515,7 +1515,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopRight",
-      "Character": 0
+      "Character": "Hasty/Careful"
     },
     {
       "Idx": 6,
@@ -1552,7 +1552,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopRight",
-      "Character": 0
+      "Character": "Hasty/Careful"
     },
     {
       "Idx": 6,
@@ -1589,7 +1589,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopRight",
-      "Character": 0
+      "Character": "Hasty/Careful"
     },
     {
       "Idx": 7,
@@ -1626,7 +1626,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 7,
@@ -1663,7 +1663,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 7,
@@ -1700,7 +1700,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 7,
@@ -1737,7 +1737,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 7,
@@ -1774,7 +1774,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "TopLeft/TopCenter/TopRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 8,
@@ -1811,7 +1811,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 8,
@@ -1848,7 +1848,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 8,
@@ -1885,7 +1885,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 8,
@@ -1922,7 +1922,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise"
     },
     {
       "Idx": 8,
@@ -1959,7 +1959,7 @@
       "Feature_Range": 0,
       "Feature_MoveSpeed": 0,
       "BestPosition": "MiddleLeft/MiddleCenter/MiddleRight",
-      "Character": 0
+      "Character": "Wise"
     }
   ]
 }

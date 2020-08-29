@@ -19,11 +19,9 @@ public class Unit : MonoBehaviour
     [HideInInspector] public MoveManager _moveMgr;
 
     public Seeker _seeker;
-
-    public Damage _normalDamage;
-    public Damage _skillDamage;
-
-    public List< CharacterInfoData> _characterInfoDataList= new List<CharacterInfoData>();
+    
+    public UnitStatData _unitStatData;
+    public List<CharacterInfoData> _characterInfoDataList= new List<CharacterInfoData>();
     public void InitUnit(EnumInfo.TeamType _tType)
     {
         _tr = transform;
@@ -41,29 +39,13 @@ public class Unit : MonoBehaviour
         _behaviourMgr.InitBehaviourMgr(this);
         _moveMgr.InitMoveMgr(this);
 
-
-        if (_unitData.DamageType.Equals("Physic"))
-            _normalDamage.Type = EnumInfo.DamageType.Physic;
-        else
-            _normalDamage.Type = EnumInfo.DamageType.Magic;
-        _normalDamage.DamagePower = _unitData.Damage;
-        _normalDamage.ResourceUnit = this;
-
-        if (_unitData.SkillDamageType.Equals("Physic"))
-            _skillDamage.Type = EnumInfo.DamageType.Physic;
-        else
-            _skillDamage.Type = EnumInfo.DamageType.Magic;
-
-        _skillDamage.DamagePower = _unitData.SkillDamage;
-        _skillDamage.ResourceUnit = this;
+        _unitStatData.InitUnitStatData(this);
 
         if (!_unitData.Character.Equals("0"))
         {
             string[] _chars = _unitData.Character.Split('/');
             for (int i = 0; i < _chars.Length; i++)
-            {
                 _characterInfoDataList.Add(DataManager.Instance.GetCharacterInfoDataWithCharacter(_chars[i]));
-            }
         }
        
     }
@@ -77,11 +59,14 @@ public class Unit : MonoBehaviour
     public void StartBattle()
     {
         _targetUnit = null;
+        _unitStatData.InitUnitStatData(this);
+
         _stateMgr.StartBattle();
         _animMgr.StartBattle();
         _behaviourMgr.StartBattle();
         _moveMgr.StartBattle();
         _tr.position = _tile.transform.position;
+
     }
 
     public void SetPosition()

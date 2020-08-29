@@ -279,6 +279,8 @@ public class UnitManager : MonoBehaviour
                 break;
         }
 
+        SynergyManager.Instance.CheckSynergy();
+
         return _unit;
     }
 
