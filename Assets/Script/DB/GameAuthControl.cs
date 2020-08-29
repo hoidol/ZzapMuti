@@ -38,7 +38,7 @@ public class GameAuthControl : MonoBehaviour
 
     public void OnDestroy()
     {
-        auth.SignOut();
+        //auth.SignOut();
     }
 
     // Handle initialization of the necessary firebase modules:
@@ -135,9 +135,9 @@ public class GameAuthControl : MonoBehaviour
 
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
+            LoginAnonymousEvent?.Invoke(isSucces);
         });
 
-        LoginAnonymousEvent.Invoke(isSucces);
 
         return isSucces;
     }

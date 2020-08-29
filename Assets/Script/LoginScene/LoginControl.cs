@@ -16,40 +16,34 @@ public class LoginControl : MonoBehaviour
             SceneManager.LoadScene("Lobby");
         }
     }
-
+    
     public void Login()
     {
-        if(GameAuthControl.Instance.Login(_emailInputField.text, _passwordInputField.text))
-        {
-            SceneManager.LoadScene("Lobby");
-        }
+        GameAuthControl.Instance.LoginAnonymousEvent += CallLoginsn;
+        StartCoroutine(LoginRoutine());
     }
 
-    public void Logisn()
-    {
-        GameAuthControl.Instance.LoginAnonymousEvent += CallLoginsn;
-        GameAuthControl.Instance.LoginAnonymous();
-    }
+    private bool isLogined = false;
 
     public void CallLoginsn(bool _isSussces)
     {
-        if(_isSussces)
-        {
-            ToLobby();
-            Debug.Log("ASDFASDFE");
-        }
+        Debug.Log("CAll Login");
+        isLogined = true;
+    }
+
+
+    public IEnumerator LoginRoutine()
+    {
+        GameAuthControl.Instance.LoginAnonymous();
+
+        yield return new WaitWhile(() => { return !isLogined; });
+        UserDataSave.Instance.LoadUserData();
+        yield return new WaitWhile(() => { return !UserDataSave.Instance.IsInit; });
+
         GameAuthControl.Instance.LoginAnonymousEvent -= CallLoginsn;
-    }
-
-    public void ToLobby()
-    {
         SceneManager.LoadScene("Lobby");
-    }
 
-    public void Save()
-    {
-
-        UserDataSave.Instance.SaveUserData("S", new string[8] { "4", "4", "4", "4", "4", "4", "4", "4" });
     }
+    
 
 }

@@ -16,6 +16,18 @@ public class UserDataSave : MonoBehaviour
 
     private DatabaseReference _databaseReference;
 
+    private UserData data;
+    public UserData Data
+    {
+        get { return data; }
+    }
+
+    private bool isInit = false;
+    public bool IsInit
+    {
+        get { return isInit; }
+    }
+
     public void Awake()
     {
         instance = this;
@@ -29,12 +41,31 @@ public class UserDataSave : MonoBehaviour
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://zzapmuti.firebaseio.com/");
 
         _databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
+
+        //LoadUserData();
+
     }
 
-    public void SaveUserData(string _nickname,string[] _unitInven)
+    public void SetNickName(string _nickName)
     {
-        UserData user = new UserData() { nickName= _nickname, UnitInven=_unitInven};
-        string json = JsonUtility.ToJson(user);
+        data.nickName = _nickName;
+        SaveUserData(data);
+    }
+
+    public void SetUnitSlot(string[] _unitInven)
+    {
+        data.UnitInven = _unitInven;
+        SaveUserData(data);
+    }
+    public void SetUnitInven(string[] _unitInven)
+    {
+        data.UnitInven = _unitInven;
+        SaveUserData(data);
+    }
+
+    public void SaveUserData(UserData _userData)
+    {
+        string json = JsonUtility.ToJson(_userData);
 
         Task saveTask = _databaseReference.Child("PlayerData").
             Child(GameAuthControl.Instance.User.UserId).SetRawJsonValueAsync(json);
@@ -49,10 +80,10 @@ public class UserDataSave : MonoBehaviour
         }
     }
 
-    public void GetUserData()
+    public void LoadUserData()
     {
         _databaseReference
-       .Child("PlayerData").Child("dHOSUJyXDWnHVLCqCgBr")
+       .Child("PlayerData").Child(GameAuthControl.Instance.User.UserId)
        .GetValueAsync().ContinueWith(task =>
        {
            if (task.IsFaulted)
@@ -66,20 +97,32 @@ public class UserDataSave : MonoBehaviour
                Debug.Log("로드 성공");
                DataSnapshot snapshot = task.Result;
 
-               //Debug.Log(snapshot.GetRawJsonValue());
-               JsonToUserData(snapshot.GetRawJsonValue());
+               Debug.Log(snapshot.GetRawJsonValue());
+
+               if (snapshot == null || snapshot.Value == null)
+               {
+                   UserDataSave.Instance.data = new UserData();
+                   Debug.Log("New Data");
+                   Debug.Log(UserDataSave.Instance.data.nickName);
+               }
+               else
+               {
+                   UserDataSave.Instance.data = JsonToUserData(snapshot.GetRawJsonValue());
+
+                   Debug.Log("Load Data");
+               }
+               isInit = true;
                // Do something with snapshot...
            }
        });
     }
 
-    private void JsonToUserData(string _jsonData)
+    private UserData JsonToUserData(string _jsonData)
     {
         UserData data;
 
         data = JsonUtility.FromJson<UserData>(_jsonData);
 
-        Debug.Log(data.nickName);
-        Debug.Log(data.UnitInven);
+        return data;
     }
 }
