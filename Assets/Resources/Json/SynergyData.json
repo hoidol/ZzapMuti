@@ -1,0 +1,24 @@
+{
+  "SynergyData": [
+  {
+    "Idx": 0,
+    "Character": 0,
+    "NumberOfUnit": 0
+  },
+  {
+    "Idx": 1,
+    "Character": "Brave",
+    "NumberOfUnit": 2
+  },
+  {
+    "Idx": 2,
+    "Character": "Brave",
+    "NumberOfUnit": 4
+  },
+  {
+    "Idx": 3,
+    "Character": "Brave",
+    "NumberOfUnit": 6
+  }
+]
+}

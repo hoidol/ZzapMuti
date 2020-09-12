@@ -33,7 +33,7 @@ public class EnumInfo
         Physic,
         Magic
     }
-    public enum GetUnitType
+    public enum SelectUnitType
     {
         Null,
         Random
@@ -78,5 +78,16 @@ public class EnumInfo
         Feature_Buff,
         Feature_Distance,
         Feature_Range
+    }
+
+    public enum RangeExpression
+    {
+        Same, // 같은지확인
+        Less, // 미만
+        OrLess, // 이하
+        OrMore, // 이상
+        Over, //초과
+        Default
+
     }
 }

@@ -49,9 +49,9 @@ public class UnitManager : MonoBehaviour
         _playingBattle = true;
         Debug.Log("StartBattle()");
         // 어쌔신이 어느 타일로 이동되야되는지 
-        
-       // 레드팀 처리 따로, 블루팀 처리 따로
 
+        // 레드팀 처리 따로, 블루팀 처리 따로
+        CheckAbleUnit();
         for (int i = 0; i < _curUnitsOnTile.Count; i++)
         {
             if (!_curUnitsOnTile[i].gameObject.activeSelf)
@@ -126,13 +126,9 @@ public class UnitManager : MonoBehaviour
         _playingBattle = false;
     }
 
-    public void CheckBattleResult() //유닛이 죽을 때마다 호출됨
+
+    void CheckAbleUnit()
     {
-        //블루 팀, 레드팀 전멸 확인
-
-        //... 작업
-        //라이프 깎을 때 고려될 수 있는 부분 : 유닛의 개수 + 유닛의 강화된 수 
-
         _curAliveUnitsOnTile.Clear();
         _curAlivePlayerUnitsOnTile.Clear();
         _curAliveOppositeUnitsOnTile.Clear();
@@ -155,8 +151,18 @@ public class UnitManager : MonoBehaviour
                 }
             }
         }
+    }
+    public void CheckBattleResult() //유닛이 죽을 때마다 호출됨
+    {
+        //블루 팀, 레드팀 전멸 확인
 
-       
+        //... 작업
+        //라이프 깎을 때 고려될 수 있는 부분 : 유닛의 개수 + 유닛의 강화된 수 
+
+
+        CheckAbleUnit();
+
+
         if (_curAlivePlayerUnitsOnTile.Count <= 0)
         {
             StopAllCoroutines();
@@ -273,6 +279,8 @@ public class UnitManager : MonoBehaviour
                 break;
         }
 
+        SynergyManager.Instance.CheckSynergy();
+
         return _unit;
     }
 
@@ -351,7 +359,7 @@ public class UnitManager : MonoBehaviour
         return null;
     }
 
-    private void Update()
+   /* private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -373,6 +381,18 @@ public class UnitManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.S))
         {
             AstarPath.active.Scan();
+        }
+    }*/
+
+    public List<Unit> GetAliveUnitList(EnumInfo.TeamType _team)
+    {
+        if (_team.Equals(EnumInfo.TeamType.Player))
+        {
+            return _curAlivePlayerUnitsOnTile;
+        }
+        else
+        {
+            return _curAliveOppositeUnitsOnTile;
         }
     }
 

@@ -40,8 +40,8 @@ public class AttackPowerState : State
             _curMultiAttackPower *= _attackPowerChangeStateInfoList[i]._multiAttackPower;
         }
 
-        _unit._normalDamage.DamagePower = _unit._unitData.Damage + (_unit._unitData.Damage * _curMultiAttackPower);
-        _unit._skillDamage.DamagePower = _unit._unitData.SkillDamage + (_unit._unitData.SkillDamage * _curMultiAttackPower);
+        _unit._unitStatData._normalDamage.DamagePower = _unit._unitData.Damage + (_unit._unitData.Damage * _curMultiAttackPower);
+        _unit._unitStatData._skillDamage.DamagePower = _unit._unitData.SkillDamage + (_unit._unitData.SkillDamage * _curMultiAttackPower);
         
     
     }
