@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
@@ -28,7 +26,7 @@ public class UserDataSave : MonoBehaviour
         get { return isInit; }
     }
 
-    public void Awake()
+    private void Awake()
     {
         instance = this;
         DontDestroyOnLoad(this.gameObject);
@@ -36,14 +34,11 @@ public class UserDataSave : MonoBehaviour
         Init();   
     }
 
-    public void Init()
+    private void Init()
     {
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://zzapmuti.firebaseio.com/");
 
         _databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
-
-        //LoadUserData();
-
     }
 
     public void SetNickName(string _nickName)
@@ -52,18 +47,36 @@ public class UserDataSave : MonoBehaviour
         SaveUserData(data);
     }
 
-    public void SetUnitSlot(string[] _unitInven)
+    ///<Summary>플레이 할 유닛의 슬롯을 수정 후 저장</Summary>
+    public void SetUnitSlot(string[] _unitSlot)
     {
-        data.UnitInven = _unitInven;
+        data.unitSlot = _unitSlot;
         SaveUserData(data);
     }
+
+    ///<Summary>가지고 있는 유닛을 수정 후 저장</Summary>
     public void SetUnitInven(string[] _unitInven)
     {
         data.UnitInven = _unitInven;
         SaveUserData(data);
     }
 
-    public void SaveUserData(UserData _userData)
+    ///<Summary>1:1승리 횟수 및 플레이 횟수 증가</Summary>
+    public void AddOneToOneWin()
+    {
+        ++data.oneToOneGamePlayCount;
+        ++data.oneToOneWinCount;
+        SaveUserData(data);
+    }
+
+    ///<Summary>1:1패배 횟수 및 플레이 횟수 증가</Summary>
+    public void AddOneToOneLose()
+    {
+        ++data.oneToOneGamePlayCount;
+        ++data.oneToOneLoseCount;
+        SaveUserData(data);
+    }
+    private void SaveUserData(UserData _userData)
     {
         string json = JsonUtility.ToJson(_userData);
 

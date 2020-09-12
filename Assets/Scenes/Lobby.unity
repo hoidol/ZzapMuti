@@ -2706,6 +2706,10 @@ MonoBehaviour:
     UnitData: []
   _entityDataContainer:
     EntityData: []
+  _synergyDataContainer:
+    SynergyData: []
+  _characterInfoDataContainer:
+    CharacterInfoData: []
 --- !u!4 &1022445967
 Transform:
   m_ObjectHideFlags: 0
