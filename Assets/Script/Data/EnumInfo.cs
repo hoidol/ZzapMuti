@@ -90,4 +90,30 @@ public class EnumInfo
         Default
 
     }
+
+    public enum UnitStat
+    {
+        Hp,
+        Defence,
+        MagicResistance,
+        Damage,
+        SkillDamage,
+        AttackSpeed,
+        AttackDistance,
+        DodgeRate,
+        RecoverRate,
+        CriticalRate,
+        CriticalDamage,
+        MaxMana,
+        ManaChargeAmount,
+        InitMana
+    }
+
+    public enum Arithmetic
+    {
+        Add,
+        Multi,
+        Subtraction,
+        Division
+    }
 }

@@ -15,7 +15,7 @@ public class Brave : Synergy
         switch (_synergyCount)
         {
             case 2:
-                
+               
                 break;
             case 4:
                 
