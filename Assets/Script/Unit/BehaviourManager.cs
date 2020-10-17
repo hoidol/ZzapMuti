@@ -31,7 +31,7 @@ public class BehaviourManager : MonoBehaviour
         if (_skillBehaviour)
             _skillBehaviour.StartBattle();
 
-        Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
+        Invoke("ResetCoolTime", _unit.unitRealData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
         StartCoroutine(ProcessNonTargetBehaviour());
     }
 
@@ -44,14 +44,14 @@ public class BehaviourManager : MonoBehaviour
             {
                 if (_skillBehaviour._nonTarget)
                 {
-                    if (_unit._stateMgr._curMana >= _unit._unitData.MaxMana)
+                    if (_unit._stateMgr._curMana >= _unit.unitRealData.MaxMana)
                     {
                         _ableToCallNormalBehaviour = false;
                         _unit._stateMgr.ConsumeAllMana();
                         _skillBehaviour.DoBehaviour();
                         _usedSkill = true;
                         CancelInvoke("ResetCoolTime");
-                        Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
+                        Invoke("ResetCoolTime", _unit.unitRealData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
                     }
                 }
             }
@@ -64,7 +64,7 @@ public class BehaviourManager : MonoBehaviour
                     {
                         _ableToCallNormalBehaviour = false;
                         CancelInvoke("ResetCoolTime");
-                        Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
+                        Invoke("ResetCoolTime", _unit.unitRealData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
 
                         _normalBehaviour.DoBehaviour();
                     }
@@ -88,7 +88,7 @@ public class BehaviourManager : MonoBehaviour
         {
             if (!_skillBehaviour._nonTarget)
             {
-                if (_unit._stateMgr._curMana >= _unit._unitData.MaxMana)
+                if (_unit._stateMgr._curMana >= _unit.unitRealData.MaxMana)
                 {
 
                     _ableToCallNormalBehaviour = false;
@@ -96,7 +96,7 @@ public class BehaviourManager : MonoBehaviour
                     _skillBehaviour.DoBehaviour(_tU);
                     _usedSkill = true;
                     CancelInvoke("ResetCoolTime");
-                    Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1/_attackSpeedState.GetAttackSpeed());
+                    Invoke("ResetCoolTime", _unit.unitRealData.AttackSpeed * 1/_attackSpeedState.GetAttackSpeed());
 
                 }
             }            
@@ -110,7 +110,7 @@ public class BehaviourManager : MonoBehaviour
                 {
                     _ableToCallNormalBehaviour = false;
                     CancelInvoke("ResetCoolTime");
-                    Invoke("ResetCoolTime", _unit._unitData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
+                    Invoke("ResetCoolTime", _unit.unitRealData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
                     _normalBehaviour.DoBehaviour(_tU);
                 }
             }

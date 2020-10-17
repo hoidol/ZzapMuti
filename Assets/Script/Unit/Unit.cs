@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-using Pathfinding;
 using System;
 
 public class Unit : MonoBehaviour
@@ -13,34 +11,35 @@ public class Unit : MonoBehaviour
     public EnumInfo.TeamType _teamType;
     public Tile _tile;
 
+    public UnitRealData unitRealData;
+
     [HideInInspector] public StateManager _stateMgr;
     [HideInInspector] public AnimManager _animMgr;
     [HideInInspector] public BehaviourManager _behaviourMgr;
     [HideInInspector] public MoveManager _moveMgr;
 
-    public Seeker _seeker;
-    
-    public UnitStatData _unitStatData;
+    // 초기 스텟 유닛 테이터
+    // 실제 사용 용 유닛 데이터
+
+ 
     public List<CharacterInfoData> _characterInfoDataList= new List<CharacterInfoData>();
     public void InitUnit(EnumInfo.TeamType _tType)
     {
         _tr = transform;
         _unitData = DataManager.Instance.GetUnitDataWithUnitIdx(_unitIdx);
+        unitRealData.InitUnitRealData(this);
         _teamType = _tType;
 
         _stateMgr = GetComponentInChildren<StateManager>();
         _animMgr = GetComponentInChildren<AnimManager>();
         _behaviourMgr = GetComponentInChildren<BehaviourManager>();
         _moveMgr = GetComponentInChildren<MoveManager>();
-        _seeker = GetComponentInChildren<Seeker>();
 
         _stateMgr.InitStateMgr(this);
         _animMgr.InitAnimMgr(this);
         _behaviourMgr.InitBehaviourMgr(this);
         _moveMgr.InitMoveMgr(this);
-
-        _unitStatData.InitUnitStatData(this);
-
+        
         if (!_unitData.Character.Equals("0"))
         {
             string[] _chars = _unitData.Character.Split('/');
@@ -59,15 +58,19 @@ public class Unit : MonoBehaviour
     public void StartBattle()
     {
         _targetUnit = null;
-        _unitStatData.InitUnitStatData(this);
+      
+        unitRealData.StartBattle();
 
         _stateMgr.StartBattle();
         _animMgr.StartBattle();
         _behaviourMgr.StartBattle();
         _moveMgr.StartBattle();
+
+
         _tr.position = _tile.transform.position;
 
     }
+
 
     public void SetPosition()
     {
@@ -109,7 +112,7 @@ public class Unit : MonoBehaviour
     void ProcessMoveAndAttack(Unit _tUnit)
     {
         _animMgr.UpdateDirection(_tUnit._tr.position - _tr.position);
-        if (_unitData.AttackDistance >= Vector2.Distance(_tr.position, _tUnit._tr.position)) // 공격 가능 상태
+        if (unitRealData.AttackDistance >= Vector2.Distance(_tr.position, _tUnit._tr.position)) // 공격 가능 상태
         {
             _ableToAttack = true;
             _needToMove = false;
@@ -138,6 +141,8 @@ public class Unit : MonoBehaviour
 
         _tr.position = _tile.transform.position;
         gameObject.SetActive(true);
+
+        unitRealData.InitUnitRealData(this);
     }
 
 

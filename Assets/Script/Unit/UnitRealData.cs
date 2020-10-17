@@ -1,21 +1,15 @@
 ﻿
 using System.Collections.Generic;
-
+using UnityEngine;
 [System.Serializable]
-public class UnitStatData //시너지 등등의 영향으로 바뀌는 캐릭터의 능력값
+public class UnitRealData //시너지 등등의 영향으로 바뀌는 캐릭터의 능력값
 {
     public Unit _curUnit;
 
     public float Hp;
     public float Defence;
     public float MagicResistance;
-
-    public string DamageType;
-    public float Damage;
-
-    public string SkillDamageType;
-    public float SkillDamage;
-
+    
     public float AttackSpeed;
     public float AttackDistance;
 
@@ -28,13 +22,13 @@ public class UnitStatData //시너지 등등의 영향으로 바뀌는 캐릭터
     public float InitMana;
 
 
-    public Damage _normalDamage;
-    public Damage _skillDamage;
+    public Damage normalDamage;
+    public Damage skillDamage;
 
     public string Character;
 
 
-    public void InitUnitStatData(Unit _u)
+    public void InitUnitRealData(Unit _u)
     {
         _curUnit = _u;
         Hp = _u._unitData.Hp;
@@ -57,32 +51,35 @@ public class UnitStatData //시너지 등등의 영향으로 바뀌는 캐릭터
         InitMana = _u._unitData.InitMana;
 
         if (_u._unitData.DamageType.Equals("Physic"))
-            _normalDamage.Type = EnumInfo.DamageType.Physic;
+            normalDamage.Type = EnumInfo.DamageType.Physic;
         else
-            _normalDamage.Type = EnumInfo.DamageType.Magic;
-        _normalDamage.DamagePower = _u._unitData.Damage;
-        _normalDamage.ResourceUnit = _u;
+            normalDamage.Type = EnumInfo.DamageType.Magic;
+        normalDamage.DamagePower = _u._unitData.Damage;
+        normalDamage.ResourceUnit = _u;
 
         if (_u._unitData.SkillDamageType.Equals("Physic"))
-            _skillDamage.Type = EnumInfo.DamageType.Physic;
+            skillDamage.Type = EnumInfo.DamageType.Physic;
         else
-            _skillDamage.Type = EnumInfo.DamageType.Magic;
+            skillDamage.Type = EnumInfo.DamageType.Magic;
 
-        _skillDamage.DamagePower = _u._unitData.SkillDamage;
-        _skillDamage.ResourceUnit = _u;
+        skillDamage.DamagePower = _u._unitData.SkillDamage;
+        skillDamage.ResourceUnit = _u;
+        unitStageChange.Clear();
     }
 
-    List<UnitStatChangeInfo> unitStageChange = new List<UnitStatChangeInfo>();
+    public List<UnitStatChangeInfo> unitStageChange = new List<UnitStatChangeInfo>();
     public void ApplyUnitStatSynergyChange(UnitStatChangeInfo _uStat)
     {
+        Debug.Log("ApplyUnitStatSynergyChange : " + _uStat.UnitStat + " Value : " + _uStat.Value);
         unitStageChange.Add(_uStat);
-
     }
 
     public void StartBattle()
     {
+        Debug.Log("UnitRealData StartBattle()");
         for(int i =0;i< unitStageChange.Count; i++)
         {
+            Debug.Log("UnitRealData StartBattle() for unitStageChange " + i+ "unitStageChange[i].UnitStat " + unitStageChange[i].UnitStat + " Value : " + unitStageChange[i].Value);
             switch (unitStageChange[i].UnitStat)
             {
                 case EnumInfo.UnitStat.AttackDistance:
@@ -92,16 +89,17 @@ public class UnitStatData //시너지 등등의 영향으로 바뀌는 캐릭터
                     Hp = CaluteArlthmethic(Hp, unitStageChange[i]);
                     break;
                 case EnumInfo.UnitStat.Defence:
+                    
                     Defence = CaluteArlthmethic(Defence, unitStageChange[i]);
                     break;
                 case EnumInfo.UnitStat.MagicResistance:
                     MagicResistance = CaluteArlthmethic(MagicResistance, unitStageChange[i]);
                     break;
                 case EnumInfo.UnitStat.Damage:
-                    Damage = CaluteArlthmethic(Damage, unitStageChange[i]);
+                    normalDamage.DamagePower = CaluteArlthmethic(normalDamage.DamagePower, unitStageChange[i]);
                     break;
                 case EnumInfo.UnitStat.SkillDamage:
-                    SkillDamage = CaluteArlthmethic(SkillDamage, unitStageChange[i]);
+                    skillDamage.DamagePower = CaluteArlthmethic(skillDamage.DamagePower, unitStageChange[i]);
                     break;
                 case EnumInfo.UnitStat.AttackSpeed:
                     AttackSpeed = CaluteArlthmethic(AttackSpeed, unitStageChange[i]);
@@ -153,7 +151,7 @@ public class UnitStatData //시너지 등등의 영향으로 바뀌는 캐릭터
         return _sV;
     }
 }
-
+[System.Serializable]
 public class UnitStatChangeInfo{
     public EnumInfo.UnitStat UnitStat;
     public EnumInfo.Arithmetic Arithmetic;

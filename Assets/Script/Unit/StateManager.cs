@@ -26,14 +26,14 @@ public class StateManager : MonoBehaviour
     public void InitStateMgr(Unit _u)
     {
         _unit = _u;
-        _curHp = _unit._unitData.Hp;
-        _curMana = _unit._unitData.InitMana;
+        _curHp = _unit.unitRealData.Hp;
+        _curMana = _unit.unitRealData.InitMana;
         _curShield = 0;
         _hpBar.fillAmount = 1;
-        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
+        _manaBar.fillAmount = _curMana / _unit.unitRealData.MaxMana;
         _shieldBar.fillAmount = 0;
 
-        _penaltyDamage = _unit._unitData.Hp * 0.1f;
+        _penaltyDamage = _unit.unitRealData.Hp * 0.1f;
 
         _isLiving = true;
         _states = GetComponentsInChildren<State>();
@@ -49,12 +49,12 @@ public class StateManager : MonoBehaviour
     {
         _isLiving = true;
 
-        _curHp = _unit._unitData.Hp;
-        _curMana = _unit._unitData.InitMana;
+        _curHp = _unit.unitRealData.Hp;
+        _curMana = _unit.unitRealData.InitMana;
         _curShield = 0;
 
         _hpBar.fillAmount = 1;
-        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
+        _manaBar.fillAmount = _curMana / _unit.unitRealData.MaxMana;
         _shieldBar.fillAmount = 0;
 
         for (int i = 0; i < _states.Length; i++)
@@ -68,7 +68,7 @@ public class StateManager : MonoBehaviour
 
         if (!_d.unableToDodge)
         {
-            if (Random.Range(0, 100) < _unit._unitData.DodgeRate * _dodgeRateState.GetDodgeRate())// 1 ~ 100까지 수
+            if (Random.Range(0, 100) < _unit.unitRealData.DodgeRate * _dodgeRateState.GetDodgeRate())// 1 ~ 100까지 수
             {
                 // 회피
                 Debug.Log("회피!!");
@@ -79,9 +79,9 @@ public class StateManager : MonoBehaviour
         
         float _realDamage = 0;
         if(_d.Type == EnumInfo.DamageType.Physic)
-            _realDamage = _d.DamagePower - _unit._unitData.Defence;
+            _realDamage = _d.DamagePower - _unit.unitRealData.Defence;
         else if (_d.Type == EnumInfo.DamageType.Magic)
-            _realDamage = _d.DamagePower - (_d.DamagePower *(_unit._unitData.MagicResistance)*0.01f);
+            _realDamage = _d.DamagePower - (_d.DamagePower *(_unit.unitRealData.MagicResistance)*0.01f);
 
         if (_realDamage <= 0)
             _realDamage = 0;
@@ -112,9 +112,9 @@ public class StateManager : MonoBehaviour
 
     void UpdateBar()
     {
-        _hpBar.fillAmount = _curHp / _unit._unitData.Hp;
-        _shieldBar.fillAmount = _curShield / _unit._unitData.Hp;
-        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
+        _hpBar.fillAmount = _curHp / _unit.unitRealData.Hp;
+        _shieldBar.fillAmount = _curShield / _unit.unitRealData.Hp;
+        _manaBar.fillAmount = _curMana / _unit.unitRealData.MaxMana;
     }
 
     public void ChangeState(ChangeState _cS)
@@ -163,49 +163,49 @@ public class StateManager : MonoBehaviour
     {
         _curHp += _h;
 
-        if (_curHp > _unit._unitData.Hp)
-            _curHp = _unit._unitData.Hp;
+        if (_curHp > _unit.unitRealData.Hp)
+            _curHp = _unit.unitRealData.Hp;
 
-        _hpBar.fillAmount = _curHp / _unit._unitData.Hp;
+        _hpBar.fillAmount = _curHp / _unit.unitRealData.Hp;
     }
 
     public void ChargeShield(float _s)
     {
         _curShield += _s;
-        if (_curShield > _unit._unitData.Hp)
-            _curShield = _unit._unitData.Hp;
+        if (_curShield > _unit.unitRealData.Hp)
+            _curShield = _unit.unitRealData.Hp;
 
-        _shieldBar.fillAmount = _s / _unit._unitData.Hp;
+        _shieldBar.fillAmount = _s / _unit.unitRealData.Hp;
     }
          
     public void FinishBattle()
     {
 
-        _curHp = _unit._unitData.Hp;
+        _curHp = _unit.unitRealData.Hp;
         _curMana = 0;
         _hpBar.fillAmount = 1;
         _manaBar.fillAmount = 0;
     }
     public void ChargeMana()
     {
-        _curMana += _unit._unitData.ManaChargeAmount;
-        if (_curMana >= _unit._unitData.MaxMana)
-            _curMana = _unit._unitData.MaxMana;
+        _curMana += _unit.unitRealData.ManaChargeAmount;
+        if (_curMana >= _unit.unitRealData.MaxMana)
+            _curMana = _unit.unitRealData.MaxMana;
 
-        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
+        _manaBar.fillAmount = _curMana / _unit.unitRealData.MaxMana;
     }
 
     public void ConsumeAllMana()
     {
         _curMana = 0;
-        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
+        _manaBar.fillAmount = _curMana / _unit.unitRealData.MaxMana;
     }
     public void ConsumeMana(float _m)
     {
         _curMana -= _m;
         if (_curMana <= 0)
             _curMana = 0;
-        _manaBar.fillAmount = _curMana / _unit._unitData.MaxMana;
+        _manaBar.fillAmount = _curMana / _unit.unitRealData.MaxMana;
     }
     public void Die()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackPowerState : State
 {
     List<ChangeAttackPowerState> _attackPowerChangeStateInfoList = new List<ChangeAttackPowerState>();
-    [SerializeField] float _curMultiAttackPower;
+    [SerializeField] float curMultiAttackPower;
 
     public override void InitState(Unit _u)
     {
@@ -34,20 +34,20 @@ public class AttackPowerState : State
 
     void CheckAttackPower()
     {
-        _curMultiAttackPower = 1;
+        curMultiAttackPower = 1;
         for (int i = 0; i < _attackPowerChangeStateInfoList.Count; i++)
         {
-            _curMultiAttackPower *= _attackPowerChangeStateInfoList[i]._multiAttackPower;
+            curMultiAttackPower *= _attackPowerChangeStateInfoList[i]._multiAttackPower;
         }
 
-        _unit._unitStatData._normalDamage.DamagePower = _unit._unitData.Damage + (_unit._unitData.Damage * _curMultiAttackPower);
-        _unit._unitStatData._skillDamage.DamagePower = _unit._unitData.SkillDamage + (_unit._unitData.SkillDamage * _curMultiAttackPower);
+        _unit.unitRealData.normalDamage.DamagePower = _unit.unitRealData.normalDamage.DamagePower + (_unit.unitRealData.normalDamage.DamagePower * curMultiAttackPower);
+        _unit.unitRealData.skillDamage.DamagePower = _unit.unitRealData.skillDamage.DamagePower + (_unit.unitRealData.skillDamage.DamagePower * curMultiAttackPower);
         
     
     }
 
     public float GetAttackPower()
     {
-        return _curMultiAttackPower;
+        return curMultiAttackPower;
     }
 }

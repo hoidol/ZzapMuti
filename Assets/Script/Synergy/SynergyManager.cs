@@ -23,6 +23,7 @@ public class SynergyManager : MonoBehaviour
             Instance = this;
         }
         _synergyPanel.SetActive(false);
+        InitSynergyMgr();
     }
 
     public void InitSynergyMgr()
@@ -41,7 +42,7 @@ public class SynergyManager : MonoBehaviour
         for (int  i=0;i< UnitManager.Instance._curPlayerUnitsOnTile.Count; i++)
         {
             bool overlap = false;
-            for(int j =0;j< _checkUnitNameList.Count; j++)
+            for(int j =0;j< _checkUnitNameList.Count; j++) //같은 유닛은 한번만 시너지 체크함
             {
                 if (_checkUnitNameList[j].Equals(UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.UnitName))
                 {
@@ -56,10 +57,12 @@ public class SynergyManager : MonoBehaviour
             {
                 Debug.Log("UnitManager.Instance._curPlayerUnitsOnTile[i]._characterInfoDataList : " + UnitManager.Instance._curPlayerUnitsOnTile[i]._characterInfoDataList[j].Character);
                 CharacterCount _charCount = GetPlayerCharacterCount(UnitManager.Instance._curPlayerUnitsOnTile[i]._characterInfoDataList[j].Character);
+                _charCount.UnitList.Add(UnitManager.Instance._curPlayerUnitsOnTile[i]);
                 _charCount.NumberOfUnit++;
             }
             _checkUnitNameList.Add(UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.UnitName);
         }
+
         _checkUnitNameList.Clear();
         for (int i = 0; i < UnitManager.Instance._curOppositeUnitsOnTile.Count; i++)
         {
@@ -83,17 +86,10 @@ public class SynergyManager : MonoBehaviour
             _checkUnitNameList.Add(UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.UnitName);
         }
 
-        CheckPlayerSynergy();
-        CheckOppositeSynergy();
         ShowPlayerSynergy();
     }
 
 
-    void CheckPlayerSynergy()
-    {
-        for (int i = 0; i < _playCharacterCountList.Count; i++)
-            _playCharacterCountList[i].SynergyData = GetSynergyData(_playCharacterCountList[i].CharacterInfoData.Character, _playCharacterCountList[i].NumberOfUnit);
-    }
 
     void ShowPlayerSynergy()
     {
@@ -122,12 +118,6 @@ public class SynergyManager : MonoBehaviour
             _synergyInfoPanelList[i]._rectTr.SetSiblingIndex(i);
     }
 
-    void CheckOppositeSynergy()
-    {
-        
-        for (int i = 0; i < _oppositeCharacterCountList.Count; i++)
-            _oppositeCharacterCountList[i].SynergyData = GetSynergyData(_oppositeCharacterCountList[i].CharacterInfoData.Character, _oppositeCharacterCountList[i].NumberOfUnit);
-    }
     void ShowOppositeSynergy()
     {
         _synergyPanel.SetActive(false);
@@ -194,43 +184,33 @@ public class SynergyManager : MonoBehaviour
     public void StartBattle()
     {
         //적용시켜야돼        
-        for(int i =0;i< _playCharacterCountList.Count; i++)
+        Debug.Log("SynergyMgr - StartBattle()");
+        for (int i = 0; i < _playCharacterCountList.Count; i++)
         {
-            if (_playCharacterCountList[i].SynergyData == null)
+            Synergy _s = GetSynergy(_playCharacterCountList[i].CharacterInfoData, _playCharacterCountList[i].NumberOfUnit);
+
+            Debug.Log("SynergyMgr - StartBattle() 1");
+            if (_s == null)
                 continue;
 
-            for (int j = 0; j < UnitManager.Instance._curPlayerUnitsOnTile.Count; j++)
+            Debug.Log("SynergyMgr - StartBattle() 2");
+            for (int j = 0; j < _playCharacterCountList[i].UnitList.Count; j++)
             {
-                for(int k=0; k< UnitManager.Instance._curPlayerUnitsOnTile[j]._characterInfoDataList.Count; k++)
-                {
-                   if(UnitManager.Instance._curPlayerUnitsOnTile[j]._characterInfoDataList[k].Equals(_playCharacterCountList[i].SynergyData.Character))
-                    {
-                        Synergy _s = GetSynergy(_playCharacterCountList[i].SynergyData.Character, _playCharacterCountList[i].SynergyData.NumberOfUnit);
-                        _s.ApplySynergy(UnitManager.Instance._curPlayerUnitsOnTile[j]);
-                        continue;
-                    }
-                }
-            }
+                Debug.Log("SynergyMgr - 적용할 수 있음!!@!@");
+                _s.ApplySynergy(_playCharacterCountList[i].UnitList[j]);
+            }            
         }
 
         for(int i=0;i< _oppositeCharacterCountList.Count; i++)
         {
-             if (_oppositeCharacterCountList[i].SynergyData == null)
+            Synergy _s = GetSynergy(_oppositeCharacterCountList[i].CharacterInfoData, _playCharacterCountList[i].NumberOfUnit);
+            if (_s == null)
                 continue;
-
-            for (int j = 0; j < UnitManager.Instance._curPlayerUnitsOnTile.Count; j++)
+            for (int j = 0; j < _oppositeCharacterCountList[i].UnitList.Count; j++)
             {
-                for (int k = 0; k < UnitManager.Instance._curPlayerUnitsOnTile[j]._characterInfoDataList.Count; k++)
-                {
-                    if (UnitManager.Instance._curPlayerUnitsOnTile[j]._characterInfoDataList[k].Equals(_oppositeCharacterCountList[i].SynergyData.Character))
-                    {
-                        Synergy _s = GetSynergy(_oppositeCharacterCountList[i].SynergyData.Character, _oppositeCharacterCountList[i].SynergyData.NumberOfUnit);
-                        _s.ApplySynergy(UnitManager.Instance._curPlayerUnitsOnTile[j]);
-                        continue;
-                    }
-                }
-
-            }
+                Debug.Log("SynergyMgr - 적용할 수 있음!!@!@");
+                _s.ApplySynergy(_oppositeCharacterCountList[i].UnitList[j]);
+            }           
         }
 
     }
@@ -271,16 +251,41 @@ public class SynergyManager : MonoBehaviour
         return _s;
     }
 
-    Synergy GetSynergy(string _sIdx, int _c)
+    Synergy GetSynergy(CharacterInfoData _cInfo, int _uNum)
     {
-        for(int i=0;i< _synergies.Length; i++)
+        int _curTargetNum = -1;
+        int _targetIdx = -1;
+        Debug.Log("SynergyMgr GetSynergy " + _cInfo.Character + " _uNum : " +_uNum);
+        for (int i=0;i< _synergies.Length; i++)
         {
-            if(_synergies[i]._synergyIdx.Equals(_sIdx) && _synergies[i]._synergyCount.Equals(_c))
+            Debug.Log("SynergyMgr _synergies[i] " + _synergies[i]._synergyIdx);
+            if (_synergies[i]._synergyIdx.Equals(_cInfo.Character))
             {
-                return _synergies[i];
+                if (_uNum >= _synergies[i]._synergyCount && _synergies[i]._synergyCount > _curTargetNum)
+                {
+                    Debug.Log("SynergyMgr GetSynergy if (_uNum >= _synergies[i]._synergyCount && _synergies[i]._synergyCount > _curTargetNum) ");
+                    _curTargetNum = _uNum;
+                    _targetIdx = i;
+                }
             }
         }
+
+        if (_targetIdx != -1)
+            return _synergies[_targetIdx];
+
         return null;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            Time.timeScale = 5;
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            Time.timeScale = 1;
+        }
     }
 }
 
@@ -288,6 +293,6 @@ public class SynergyManager : MonoBehaviour
 public class CharacterCount
 {
     public CharacterInfoData CharacterInfoData;
-    public SynergyData SynergyData;
+    public List<Unit> UnitList = new List<Unit>();
     public int NumberOfUnit;
 }

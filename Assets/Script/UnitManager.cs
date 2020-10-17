@@ -52,6 +52,8 @@ public class UnitManager : MonoBehaviour
 
         // 레드팀 처리 따로, 블루팀 처리 따로
         CheckAbleUnit();
+        PlayerManager.Instance.StartBattle();
+        SynergyManager.Instance.StartBattle();
         for (int i = 0; i < _curUnitsOnTile.Count; i++)
         {
             if (!_curUnitsOnTile[i].gameObject.activeSelf)
@@ -59,8 +61,6 @@ public class UnitManager : MonoBehaviour
             _curUnitsOnTile[i].StartBattle();
         }
 
-
-        PlayerManager.Instance.StartBattle();
         StartCoroutine(ProcessUnit());
     }
 

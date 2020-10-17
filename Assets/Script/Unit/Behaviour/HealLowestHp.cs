@@ -36,8 +36,8 @@ public class HealLowestHp : UnitBehaviour
                 return;
             _healedUnitList.Add(_tUnit);
             //힐 이펙트
-            Debug.Log("힐주자 " + _tUnit.name + " _tUnit._unitData.Hp * _healRate : " + _tUnit._unitData.Hp * _healRate); 
-            _tUnit._stateMgr.HealHp(_tUnit._unitData.Hp * _healRate);
+            Debug.Log("힐주자 " + _tUnit.name + " _tUnit._unitData.Hp * _healRate : " + _tUnit.unitRealData.Hp * _healRate); 
+            _tUnit._stateMgr.HealHp(_tUnit.unitRealData.Hp * _healRate);
             EffectManager.Instance.PlayEffect(_healEffectIdx, _tUnit._tr.position);
         }
     }
@@ -63,7 +63,7 @@ public class HealLowestHp : UnitBehaviour
             if (alreadyHealed)
                 continue;
 
-            float _tempRate = _sameTeamUnitList[i]._stateMgr._curHp/_sameTeamUnitList[i]._unitData.Hp;
+            float _tempRate = _sameTeamUnitList[i]._stateMgr._curHp/_sameTeamUnitList[i].unitRealData.Hp;
             if(_lowestRate > _tempRate)
             {
                 _lowestRate = _tempRate;
