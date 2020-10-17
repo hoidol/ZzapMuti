@@ -1,6 +1,14 @@
 ﻿
 public class EnumInfo 
 {
+    public enum LobbyPageType
+    {
+        SHOP,
+        DECK,
+        MULTIE,
+        STAGE
+    }
+
     public enum TargetTeam
     {
         Null,

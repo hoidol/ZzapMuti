@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Lobby
 {
-    public class LobbyUnitSlot : MonoBehaviour
+    public class LobbyUnitSlot : MonoBehaviour, IPointerDownHandler
     {
         [Header("Slot")]
         [SerializeField] private LobbyUnitInfoUI[] _lobbySlotUI;
@@ -58,6 +59,11 @@ namespace Lobby
 
             _slotList[_index] = _selectingUnitData.Idx.ToString();
             _lobbySlotUI[_index].SetUI(_selectingUnitData);
+        }
+        
+        public void OnPointerDown(PointerEventData pointerEventData)
+        {
+            
         }
     }
 }
