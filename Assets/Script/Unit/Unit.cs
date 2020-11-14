@@ -144,10 +144,7 @@ public class Unit : MonoBehaviour
 
         unitRealData.InitUnitRealData(this);
     }
-
-
-
-
+         
     public void Die()
     {
         _stateMgr.Die();
