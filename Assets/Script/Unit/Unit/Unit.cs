@@ -20,8 +20,10 @@ public class Unit : MonoBehaviour
 
     // 초기 스텟 유닛 테이터
     // 실제 사용 용 유닛 데이터
-    ProvokeState provokeState;
-
+    public ProvokeState provokeState;
+    public Unit _targetUnit;
+    public bool _ableToAttack;
+    public bool _needToMove;
 
     public List<CharacterInfoData> _characterInfoDataList= new List<CharacterInfoData>();
     public virtual void InitUnit()
@@ -94,10 +96,7 @@ public class Unit : MonoBehaviour
     {
         _behaviourMgr.StartBehaviour();
     }
-
-  
-
-
+      
     public virtual void RestorePosition()
     {
         _moveMgr.RestorePosition();
@@ -130,103 +129,18 @@ public class Unit : MonoBehaviour
         UnitManager.Instance.CheckBattleResult();
     }
 
-
-
-
-
-    public void CheckAttackOrMove(Action _pCallback)
+    public virtual IEnumerator ProcessBehaviour()
     {
-        _unitMgrCallback = _pCallback;
+        yield return null;
+    }
 
-        if (CheckAbleToAttack())//싸울 수 있으면
-        {
-            _needToMove = false;
-            _unitMgrCallback.Invoke();
+    public bool CheckAbleToUseSkill()
+    {
+        if (_stateMgr._curMana >= unitRealData.MaxMana){
+            return true;
         }
-        else
-        {
-            _needToMove = true;
-            TryToMove();
-        }
-
-    }
-
-    public delegate void PathCallBack(AStarPathTile a);
-    Action _unitMgrCallback;
-    public void TryToMove()
-    {
-        _moveMgr.GetNextTile(Function);
-    }
-
-    public void Function(AStarPathTile _aPTile)
-    {
-
-        if (!AstarPath.active.isScanning)
-            AstarPath.active.Scan();
-        _unitMgrCallback.Invoke();
-    }
-
-    List<AStarPathTile> _list = new List<AStarPathTile>();
-    bool CheckAbleToAttack()
-    {
-        //실제 거리가 가까우면
-        _list.Clear();
-
-        //AStarPathTile _tile = GetTile((int)_aStartTile._vec2.x + 1, (int)_aStartTile._vec2.y);
-        //if(_tile!= null)
-        //    _list.Add(_tile);
-        //_tile = GetTile((int)_aStartTile._vec2.x - 1, (int)_aStartTile._vec2.y);
-        //if (_tile != null)
-        //    _list.Add(_tile);
-        // _tile = GetTile((int)_aStartTile._vec2.x, (int)_aStartTile._vec2.y + 1);
-        //if (_tile != null)
-        //    _list.Add(_tile);
-        // _tile = GetTile((int)_aStartTile._vec2.x, (int)_aStartTile._vec2.y - 1);
-        //if (_tile != null)
-        //    _list.Add(_tile);
-
-        //for(int i =0;i< _list.Count; i++)
-        //{
-        //    if (_list[i]._ownUnit == null)
-        //        continue;
-
-        //    if (_list[i]._ownUnit._teamType != _teamType)
-        //        return true;
-        //}
-
         return false;
     }
-    AStarPathTile _nextTile;
-    public void MoveToTile()
-    {
-        //if(_aStartTile != null)
-        //    StartCoroutine(ProcessMoving(_nextTile._tile));
-    }
-
-    IEnumerator ProcessMoving(Tile _t)
-    {
-        if (!_needToMove)
-            yield break;
-
-        while (true)
-        {
-            _tr.position = Vector2.MoveTowards(_tr.position, _nextTile.transform.position, Time.deltaTime * 60);
-            yield return null;
-        }
-    }
-
-
-
-
-    public AStarPathTile GetTile(int _xIdx, int _yIdx)
-    {
-        int _index = _xIdx + _yIdx * 5;
-        if (_index >= UnitMoveManager.Instance._aStarPathTiles.Length || _index < 0)
-            return null;
-        else
-            return UnitMoveManager.Instance._aStarPathTiles[_index];
-    }
-
 }
 
 

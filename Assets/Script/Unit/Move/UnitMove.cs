@@ -43,7 +43,6 @@ public class UnitMove : MonoBehaviour
             if (!_unit._needToMove)
                 continue;
 
-
             _unit._tr.position = Vector2.MoveTowards(_unit._tr.position, _targetUnit._tr.position, Time.deltaTime * _moveSpeedState.GetMoveSpeed());
         }
     }

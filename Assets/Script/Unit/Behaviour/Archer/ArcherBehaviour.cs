@@ -23,5 +23,16 @@ public class ArcherBehaviour : UnitBehaviour
 
     }
 
+    public override void DoBehaviour()
+    {
+
+    }
+    public override void DoBehaviour(Unit _tUnit)
+    {
+
+    }
+
+
+
 
 }

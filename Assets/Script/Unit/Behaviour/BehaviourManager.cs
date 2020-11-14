@@ -26,8 +26,8 @@ public class BehaviourManager : MonoBehaviour
         _ableToCallNormalBehaviour = false;
         curUnitBehaivour.StartBattle();
         
-        Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / unit.unitRealData.AttackSpeed);
-        StartCoroutine(ProcessNonTargetBehaviour());
+        //Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / unit.unitRealData.AttackSpeed);
+        //StartCoroutine(ProcessNonTargetBehaviour());
     }
 
     public void StartBehaviour()
