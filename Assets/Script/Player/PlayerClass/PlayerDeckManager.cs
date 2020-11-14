@@ -27,7 +27,7 @@ public class PlayerDeckManager
         int _allDeckCount=0;
         for(int i=0;i<_dataTemp.Length;i++)
         {
-            _dataTemp[i] = DataManager.Instance.GetUnitDataWithUnitName(_deckKind[i]);
+            _dataTemp[i] = DataManager.Instance.GetUnitDataWithUnitName(_deckKind[i],1);
 
             _allDeckCount += _dataTemp[i].MaxReinforce;
         }

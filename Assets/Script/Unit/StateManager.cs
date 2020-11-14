@@ -63,6 +63,9 @@ public class StateManager : MonoBehaviour
 
     public void TakeDamage(Damage _d)
     {
+        if (_d == null)
+            return;
+
         if (!UnitManager.Instance._playingBattle)
             return;
 
@@ -119,6 +122,8 @@ public class StateManager : MonoBehaviour
 
     public void ChangeState(ChangeState _cS)
     {
+        if (_cS == null)
+            return;
 
         GetState(_cS._changeState).ChangeState(_cS);
     }

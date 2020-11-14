@@ -17,7 +17,7 @@ public class AIPlayTypeBuff : AIPlayType
         if (_r <= 1)
         {
             UnitData _uData = _selectedUnitData[Random.Range(0, _selectedUnitData.Count)];
-            UnitManager.Instance.CreateUnitWithUnitIdx(_uData.UnitIdx, TileManager._Instance.GetAIUnitTile(_uData), EnumInfo.TeamType.Opposite);
+            UnitManager.Instance.CreateUnit(_uData.UnitName,1, TileManager._Instance.GetAIUnitTile(_uData), EnumInfo.TeamType.Opposite);
             return;
         }
 
@@ -40,13 +40,13 @@ public class AIPlayTypeBuff : AIPlayType
             if (_gapUnitFeatureInfo[i].Value >= 10) // 능력 차이가 많이 나면 성향 보다는 상황에 맞게 선택해!
             {
                 _uD = SearchBestUnit(_gapUnitFeatureInfo[0].FeatureType);
-                UnitManager.Instance.CreateUnitWithUnitIdx(_uD.UnitIdx, TileManager._Instance.GetAIUnitTile(_uD), EnumInfo.TeamType.Opposite);
+                UnitManager.Instance.CreateUnit(_uD.UnitName,1, TileManager._Instance.GetAIUnitTile(_uD), EnumInfo.TeamType.Opposite);
                 return;
             }
         }
 
         _uD = SearchBestUnit(EnumInfo.UnitFeatureType.Feature_Buff);
-        UnitManager.Instance.CreateUnitWithUnitIdx(_uD.UnitIdx, TileManager._Instance.GetAIUnitTile(_uD), EnumInfo.TeamType.Opposite);
+        UnitManager.Instance.CreateUnit(_uD.UnitName,1, TileManager._Instance.GetAIUnitTile(_uD), EnumInfo.TeamType.Opposite);
 
     }
 }

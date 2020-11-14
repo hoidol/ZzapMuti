@@ -41,7 +41,7 @@ public class DataManager : MonoBehaviour
 
     public UnitData GetUnitDataWithUnitIdx(string _uIdx)
     {
-        for(int i = 0; i < _unitDataContainer.UnitData.Length; i++)
+        for (int i = 0; i < _unitDataContainer.UnitData.Length; i++)
         {
             if (_unitDataContainer.UnitData[i].UnitIdx.Equals(_uIdx))
             {
@@ -62,11 +62,23 @@ public class DataManager : MonoBehaviour
         return null;
     }
 
-    public UnitData GetUnitDataWithUnitName(string _uName)
+  /*  public UnitData GetUnitDataWithUnitName(string _uName)
     {
         for (int i = 0; i < _unitDataContainer.UnitData.Length; i++)
         {
             if (_unitDataContainer.UnitData[i].UnitName.Equals(_uName))
+            {
+                return _unitDataContainer.UnitData[i];
+            }
+        }
+        return null;
+    }*/
+
+    public UnitData GetUnitDataWithUnitName(string _uName,int _lv)
+    {
+        for (int i = 0; i < _unitDataContainer.UnitData.Length; i++)
+        {
+            if (_unitDataContainer.UnitData[i].UnitName.Equals(_uName) && _unitDataContainer.UnitData[i].ReinforceLv == _lv)
             {
                 return _unitDataContainer.UnitData[i];
             }

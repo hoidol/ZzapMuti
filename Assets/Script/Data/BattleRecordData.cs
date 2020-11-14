@@ -29,8 +29,8 @@ public class UnitTrack
 {
     public float TileX;
     public float TileY;
-    public string UnitIdx;
-    //public int ReinforceLv;
+    public string UnitName;
+    public int ReinforceLv;
 }
 
 [System.Serializable]

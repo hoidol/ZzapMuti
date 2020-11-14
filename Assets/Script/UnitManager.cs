@@ -60,11 +60,10 @@ public class UnitManager : MonoBehaviour
                 continue;
             _curUnitsOnTile[i].StartBattle();
         }
-
         StartCoroutine(ProcessUnit());
     }
 
-
+    //어떻게 해야지 좋을까...
     IEnumerator ProcessUnit()
     {
         yield return new WaitForSeconds(0.75f);
@@ -77,25 +76,21 @@ public class UnitManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1f);
-        while (true)
-        {
-            for (int i = 0; i < _curUnitsOnTile.Count; i++)
-            {
-                if (!_curUnitsOnTile[i].gameObject.activeSelf)
-                    continue;
-                _curUnitsOnTile[i].CheckMoveAndAttack();
-            }
 
-            yield return new WaitForSeconds(0.2f);
+        for (int i = 0; i < _curUnitsOnTile.Count; i++)
+        {
+            if (!_curUnitsOnTile[i].gameObject.activeSelf)
+                continue;
+            _curUnitsOnTile[i].StartBehaviour();
         }
+
     }
 
     //이건 근거리고
-
     //원거리 유닛은 이걸로 가져올 필요가 없지
 
     //타겟 적 유닛 
-    public Unit SearchEnemyUnit(Unit _unit)
+    public Unit SearchNearestEnemyUnit(Unit _unit)
     {
         // 탐색
         float _minDis = float.MaxValue;
@@ -236,10 +231,6 @@ public class UnitManager : MonoBehaviour
     }
 
 
-
-
-
-
     IEnumerator ProcessResult(EnumInfo.TeamType _winTeam, int _loseLife)
     {
         yield return new WaitForSeconds(2f);
@@ -248,7 +239,6 @@ public class UnitManager : MonoBehaviour
         FinishBattle();
     }
 
-    
 
     public void TimeOver()
     {
@@ -260,13 +250,12 @@ public class UnitManager : MonoBehaviour
         }
     }
 
-    public Unit CreateUnitWithUnitIdx(string _uIdx, Tile _t, EnumInfo.TeamType _tType)
+    public Unit CreateUnit(string _uName,int _lv,Tile _t, EnumInfo.TeamType _tType)
     {
-        //        ....
-        Unit _unit = BringAbleToUseUnit(_uIdx);
-        _unit.InitUnit(_tType);
+        Unit _unit = GetUnit(_uName);
+        UnitData _uData = DataManager.Instance.GetUnitDataWithUnitName(_uName, _lv);
+        _unit.SetUserData(_tType, _uData);
         _unit.SetTile(_t);
-
         _curUnitsOnTile.Add(_unit);
 
         switch (_tType)
@@ -280,7 +269,6 @@ public class UnitManager : MonoBehaviour
         }
 
         SynergyManager.Instance.CheckSynergy();
-
         return _unit;
     }
 
@@ -294,7 +282,11 @@ public class UnitManager : MonoBehaviour
     public Unit CombineUnit(Unit _tUnit, Unit _mUnit,Tile _t) // 유닛 병합
     {
         int _nextLv = _tUnit._unitData.ReinforceLv + _mUnit._unitData.ReinforceLv;
-        return CreateUnitWithUnitIdx(GetNextLvUnit(_tUnit._unitData.UnitName, _nextLv).UnitIdx, _t,_tUnit._teamType);
+
+        if (_tUnit._unitData.MaxReinforce < _nextLv)
+            return null;
+
+        return CreateUnit(_tUnit._unitData.UnitName, _nextLv,_t,_tUnit._teamType);
     }
 
 
@@ -312,28 +304,25 @@ public class UnitManager : MonoBehaviour
 
 
 
-    Unit BringAbleToUseUnit(string _uIdx)
+    Unit GetUnit(string _uName)
     {
         for(int i =0;i< _poolingUnits.Count; i++)
         {
             if (_poolingUnits[i].gameObject.activeSelf)
                 continue;
-            if (_poolingUnits[i]._unitIdx.Equals(_uIdx))
+            if (_poolingUnits[i].unitName.Equals(_uName))
+            {
                 return _poolingUnits[i];
+            }
         }
-        return CreateUnit(_uIdx);
-    }
 
 
-
-    Unit CreateUnit(string _uIdx)
-    {
-
-        for(int i =0;i< _units.Length;i++)
+        for (int i = 0; i < _units.Length; i++)
         {
-            if (_units[i]._unitIdx.Equals(_uIdx))
+            if (_units[i].unitName.Equals(_uName))
             {
                 Unit _u = Instantiate(_units[i]);
+                _u.InitUnit();
                 _poolingUnits.Add(_u);
                 return _u;
             }
@@ -344,7 +333,9 @@ public class UnitManager : MonoBehaviour
     }
 
 
-    UnitData GetNextLvUnit(string _uName,int _nextLv)
+
+
+   /* UnitData GetNextLvUnit(string _uName,int _nextLv)
     {
         for(int i =0; i < DataManager.Instance._unitDataContainer.UnitData.Length; i++)
         {
@@ -357,7 +348,7 @@ public class UnitManager : MonoBehaviour
 
         Debug.LogError("강화 시킬 유닛이 없습니다.");
         return null;
-    }
+    }*/
 
    /* private void Update()
     {

@@ -6,12 +6,24 @@ public class AnimManager : MonoBehaviour
 {
     Unit _unit;
     public Transform _tr;
-    public Animator _anim;
+
+    UnitAnim[] unitAnims;
+    UnitAnim curUnitAnim;
     public void InitAnimMgr(Unit _u)
     {
         _tr = transform;
         _unit = _u;
-        _anim = GetComponentInChildren<Animator>();
+        unitAnims = GetComponentsInChildren<UnitAnim>();
+
+        for (int i = 0; i < unitAnims.Length; i++)
+            unitAnims[i].InitUnitAnim(this);
+
+    }
+
+    public void SetUserData(UnitData _uData, EnumInfo.TeamType _tType)
+    {
+        curUnitAnim = unitAnims[_uData.ReinforceLv - 1];
+        curUnitAnim.SetUserData(_uData, _tType);
 
         if (_unit._teamType.Equals(EnumInfo.TeamType.Player))
             UpdateDirection(Vector2.up);
@@ -35,7 +47,7 @@ public class AnimManager : MonoBehaviour
 
     public void PlayAnim(string _trigger)
     {
-        _anim.SetTrigger(_trigger);
+        curUnitAnim.SetTrigger(_trigger);
     }
     public void FinishBattle()
     {

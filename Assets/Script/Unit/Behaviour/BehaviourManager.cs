@@ -6,35 +6,40 @@ public class BehaviourManager : MonoBehaviour
 {
     public Unit unit;
 
-    ReinforceBehaviour[] reinforceBehaivours;    
-    
-    AttackSpeedState _attackSpeedState;
+    UnitBehaviour[] unitBehaivours;
+    UnitBehaviour curUnitBehaivour;
     [SerializeField] bool _ableToCallNormalBehaviour = false;
     public void InitBehaviourMgr(Unit _u)
     {
         unit = _u;
+        unitBehaivours = GetComponentsInChildren<UnitBehaviour>();       
+    }
 
-        reinforceBehaivours = GetComponentsInChildren<ReinforceBehaviour>();
-
-        _attackSpeedState = (AttackSpeedState)unit._stateMgr.GetState(EnumInfo.State.AttakSpeed);
+    public void SetUserData(UnitData _uData, EnumInfo.TeamType _tType)
+    {
+        curUnitBehaivour = unitBehaivours[_uData.ReinforceLv - 1];
+        curUnitBehaivour.SetUserData(_uData, _tType);
     }
 
     public void StartBattle()
     {
         _ableToCallNormalBehaviour = false;
-
-        for(int i =0;i< reinforceBehaivours.Length; i++)
-        {
-            reinforceBehaivours[i].StartBattle();
-        }
-
-        Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
+        curUnitBehaivour.StartBattle();
+        
+        Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / unit.unitRealData.AttackSpeed);
         StartCoroutine(ProcessNonTargetBehaviour());
     }
 
-    public void TakedDameage()
+    public void StartBehaviour()
     {
-        //맞았을때
+        //NonTargetBehaviour있으면 돌리고 없으면 돌리지마
+        curUnitBehaivour.StartBehaviour();
+    }
+
+    Unit targetUnit;
+    public void SetTargetUnit(Unit _tUnit)
+    {
+        targetUnit = _tUnit;
     }
 
     IEnumerator ProcessNonTargetBehaviour()
@@ -96,7 +101,7 @@ public class BehaviourManager : MonoBehaviour
            // _skillBehaviour.DoBehaviour(_tU);
             _usedSkill = true;
             CancelInvoke("ResetCoolTime");
-            Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
+            Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / unit.unitRealData.AttackSpeed);
 
         }
 
@@ -104,7 +109,7 @@ public class BehaviourManager : MonoBehaviour
         {
             _ableToCallNormalBehaviour = false;
             CancelInvoke("ResetCoolTime");
-            Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
+            Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / unit.unitRealData.AttackSpeed);
 
             //일반 공격해라
             //_normalBehaviour.DoBehaviour(_tU);

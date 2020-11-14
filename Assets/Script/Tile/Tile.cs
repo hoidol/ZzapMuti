@@ -94,13 +94,13 @@ public class Tile : MonoBehaviour
         _unit.SetTile(this);
     }
 
-    public void SetUnit(string _unitIdx, EnumInfo.TeamType _teamTy)
+    public void SetUnit(string _unitName, EnumInfo.TeamType _teamTy)
     {
         //UnitData _uniData= DataManager.Instance.GetUnitDataWithUnitIdx(_unitIdx);
 
         hasUnit = true;
 
-        _unitIndex = UnitManager.Instance.CreateUnitWithUnitIdx(_unitIdx,this, _teamTy);
+        _unitIndex = UnitManager.Instance.CreateUnit(_unitName,1,this, _teamTy);
         _unitIndex.gameObject.SetActive(true);
 
         _unitIndex.SetTile(this);

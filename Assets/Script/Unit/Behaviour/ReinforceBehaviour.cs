@@ -17,6 +17,11 @@ public class ReinforceBehaviour : MonoBehaviour
         }
     }
 
+    public void SetUserData(UnitData _uData, EnumInfo.TeamType _tType)
+    {
+
+    }
+
     public void StartBattle()
     {
 

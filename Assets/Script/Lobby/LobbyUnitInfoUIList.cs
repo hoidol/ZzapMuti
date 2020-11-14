@@ -19,7 +19,7 @@ namespace Lobby
         {
             for(int i=0;i<_lobbyUnitInfoUIs.Length;i++)
             {
-                _lobbyUnitInfoUIs[i].SetUI(DataManager.Instance.GetUnitDataWithUnitName(_unitNameList[i]));
+                _lobbyUnitInfoUIs[i].SetUI(DataManager.Instance.GetUnitDataWithUnitName(_unitNameList[i],1));
             }
         }
     }

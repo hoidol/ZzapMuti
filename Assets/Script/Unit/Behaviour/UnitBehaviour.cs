@@ -14,7 +14,16 @@ public class UnitBehaviour : MonoBehaviour
         _unit = _u;
     }
     
+    public virtual void SetUserData(UnitData _uData, EnumInfo.TeamType _tType)
+    {
+
+    }
     public virtual void StartBattle()
+    {
+
+    }
+
+   public virtual void StartBehaviour()
     {
 
     }

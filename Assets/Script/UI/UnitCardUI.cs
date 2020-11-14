@@ -24,7 +24,7 @@ public class UnitCardUI : MonoBehaviour
 
     public void CreateUnit()
     {
-        TileManager._Instance.CreateUnit(_deckData._unit.UnitIdx, _spawnTeam);
+        TileManager._Instance.CreateUnit(_deckData._unit.UnitName, _spawnTeam);
         _deckData.isUsed = true;
         CreateEvent?.Invoke();
     }
