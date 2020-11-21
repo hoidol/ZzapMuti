@@ -25,7 +25,7 @@ public class ProvokeState : State // 도발 상태
         {
             yield return null;
 
-            if (!_cS._resourceUnit._stateMgr._isLiving)
+            if (!_cS._resourceUnit.stateMgr._isLiving)
                 break;
 
             _timer -= Time.deltaTime;

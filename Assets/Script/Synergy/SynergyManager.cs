@@ -44,7 +44,7 @@ public class SynergyManager : MonoBehaviour
             bool overlap = false;
             for(int j =0;j< _checkUnitNameList.Count; j++) //같은 유닛은 한번만 시너지 체크함
             {
-                if (_checkUnitNameList[j].Equals(UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.UnitName))
+                if (_checkUnitNameList[j].Equals(UnitManager.Instance._curPlayerUnitsOnTile[i].unitData.UnitName))
                 {
                     overlap = true;
                     break;
@@ -60,7 +60,7 @@ public class SynergyManager : MonoBehaviour
                 _charCount.UnitList.Add(UnitManager.Instance._curPlayerUnitsOnTile[i]);
                 _charCount.NumberOfUnit++;
             }
-            _checkUnitNameList.Add(UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.UnitName);
+            _checkUnitNameList.Add(UnitManager.Instance._curPlayerUnitsOnTile[i].unitData.UnitName);
         }
 
         _checkUnitNameList.Clear();
@@ -69,7 +69,7 @@ public class SynergyManager : MonoBehaviour
             bool overlap = false;
             for (int j = 0; j < _checkUnitNameList.Count; j++)
             {
-                if (_checkUnitNameList[j].Equals(UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.UnitName))
+                if (_checkUnitNameList[j].Equals(UnitManager.Instance._curOppositeUnitsOnTile[i].unitData.UnitName))
                 {
                     overlap = true;
                     break;
@@ -83,7 +83,7 @@ public class SynergyManager : MonoBehaviour
                 CharacterCount _charCount = GetOppositeCharacterCount(UnitManager.Instance._curOppositeUnitsOnTile[i]._characterInfoDataList[j].Character);
                 _charCount.NumberOfUnit++;
             }
-            _checkUnitNameList.Add(UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.UnitName);
+            _checkUnitNameList.Add(UnitManager.Instance._curOppositeUnitsOnTile[i].unitData.UnitName);
         }
 
         ShowPlayerSynergy();

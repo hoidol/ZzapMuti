@@ -80,25 +80,25 @@ public class AIPlayType : MonoBehaviour
         InitFeatureInfo();
         for (int i = 0; i < UnitManager.Instance._curPlayerUnitsOnTile.Count; i++)
         {
-            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_PhysicDamage, UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_PhysicDamage);
-            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_MasicDamage, UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_MasicDamage);
-            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_PhysicDefence, UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_PhysicDefence);
-            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_MagicResistance, UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_MagicResistance);
-            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_CC, UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_CC);
-            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_Buff, UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_Buff);
-            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_Distance, UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_Distance);
-            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_Range, UnitManager.Instance._curPlayerUnitsOnTile[i]._unitData.Feature_Range);
+            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_PhysicDamage, UnitManager.Instance._curPlayerUnitsOnTile[i].unitData.Feature_PhysicDamage);
+            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_MasicDamage, UnitManager.Instance._curPlayerUnitsOnTile[i].unitData.Feature_MasicDamage);
+            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_PhysicDefence, UnitManager.Instance._curPlayerUnitsOnTile[i].unitData.Feature_PhysicDefence);
+            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_MagicResistance, UnitManager.Instance._curPlayerUnitsOnTile[i].unitData.Feature_MagicResistance);
+            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_CC, UnitManager.Instance._curPlayerUnitsOnTile[i].unitData.Feature_CC);
+            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_Buff, UnitManager.Instance._curPlayerUnitsOnTile[i].unitData.Feature_Buff);
+            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_Distance, UnitManager.Instance._curPlayerUnitsOnTile[i].unitData.Feature_Distance);
+            UpdatePlayFeature(EnumInfo.UnitFeatureType.Feature_Range, UnitManager.Instance._curPlayerUnitsOnTile[i].unitData.Feature_Range);
         }
         for (int i = 0; i < UnitManager.Instance._curOppositeUnitsOnTile.Count; i++)
         {
-            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_PhysicDamage, UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_PhysicDamage);
-            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_MasicDamage, UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_MasicDamage);
-            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_PhysicDefence, UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_PhysicDefence);
-            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_MagicResistance, UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_MagicResistance);
-            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_CC, UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_CC);
-            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_Buff, UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_Buff);
-            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_Distance, UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_Distance);
-            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_Range, UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Feature_Range);
+            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_PhysicDamage, UnitManager.Instance._curOppositeUnitsOnTile[i].unitData.Feature_PhysicDamage);
+            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_MasicDamage, UnitManager.Instance._curOppositeUnitsOnTile[i].unitData.Feature_MasicDamage);
+            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_PhysicDefence, UnitManager.Instance._curOppositeUnitsOnTile[i].unitData.Feature_PhysicDefence);
+            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_MagicResistance, UnitManager.Instance._curOppositeUnitsOnTile[i].unitData.Feature_MagicResistance);
+            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_CC, UnitManager.Instance._curOppositeUnitsOnTile[i].unitData.Feature_CC);
+            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_Buff, UnitManager.Instance._curOppositeUnitsOnTile[i].unitData.Feature_Buff);
+            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_Distance, UnitManager.Instance._curOppositeUnitsOnTile[i].unitData.Feature_Distance);
+            UpdateAIFeature(EnumInfo.UnitFeatureType.Feature_Range, UnitManager.Instance._curOppositeUnitsOnTile[i].unitData.Feature_Range);
         }
         UpdateGapFeature();
     }
@@ -197,7 +197,7 @@ public class AIPlayType : MonoBehaviour
         {
             //UnitManager.Instance.CombineUnit() //유닛, 유닛, 타일
 
-            if (UnitManager.Instance._curOppositeUnitsOnTile[i]._unitData.Idx.Equals(_u.Idx)){
+            if (UnitManager.Instance._curOppositeUnitsOnTile[i].unitData.Idx.Equals(_u.Idx)){
 
             }
         }

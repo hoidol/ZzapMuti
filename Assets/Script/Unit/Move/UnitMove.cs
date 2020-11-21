@@ -12,7 +12,7 @@ public class UnitMove : MonoBehaviour
     public void InitUnitMove(Unit _u)
     {
         _unit = _u;
-        _moveSpeedState = (MoveSpeedState)_unit._stateMgr.GetState(EnumInfo.State.MoveSpeed);
+        _moveSpeedState = (MoveSpeedState)_unit.stateMgr.GetState(EnumInfo.State.MoveSpeed);
     }
     public virtual void StartBattle()
     {
@@ -40,7 +40,7 @@ public class UnitMove : MonoBehaviour
         {
             yield return null;
 
-            if (!_unit._needToMove)
+            if (!_unit.needToMove)
                 continue;
 
             _unit._tr.position = Vector2.MoveTowards(_unit._tr.position, _targetUnit._tr.position, Time.deltaTime * _moveSpeedState.GetMoveSpeed());

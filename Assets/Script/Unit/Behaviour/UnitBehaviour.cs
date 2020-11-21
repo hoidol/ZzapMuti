@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class UnitBehaviour : MonoBehaviour
 {
-    public bool _nonTarget;
-
     [HideInInspector] public Unit _unit;
+    [HideInInspector] public bool rootBehaviour;
+    [HideInInspector] public EnumInfo.UnitBehaviourType type;
     
     public virtual void InitUnitBehaviour(Unit _u)
     {
@@ -31,7 +31,7 @@ public class UnitBehaviour : MonoBehaviour
     {
 
     }
-    public virtual void DoBehaviour(Unit _tUnit)
+    public virtual void DoBehaviour(Unit _tUnit=null)
     {
 
     }

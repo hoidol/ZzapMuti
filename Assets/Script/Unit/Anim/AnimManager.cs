@@ -16,7 +16,7 @@ public class AnimManager : MonoBehaviour
         unitAnims = GetComponentsInChildren<UnitAnim>();
 
         for (int i = 0; i < unitAnims.Length; i++)
-            unitAnims[i].InitUnitAnim(this);
+            unitAnims[i].InitUnitAnim(this,i+1);
 
     }
 

@@ -6,54 +6,55 @@ using System;
 public class Unit : MonoBehaviour
 {
     public string unitName;
-    public UnitData _unitData;
+    public UnitData unitData;
     public Transform _tr;
     public EnumInfo.TeamType _teamType;
     public Tile _tile;
 
     public UnitRealData unitRealData;
 
-    [HideInInspector] public StateManager _stateMgr;
-    [HideInInspector] public AnimManager _animMgr;
-    [HideInInspector] public BehaviourManager _behaviourMgr;
-    [HideInInspector] public MoveManager _moveMgr;
+    [HideInInspector] public StateManager stateMgr;
+    [HideInInspector] public AnimManager animMgr;
+    [HideInInspector] public BehaviourManager behaviourMgr;
+    [HideInInspector] public MoveManager moveMgr;
 
     // 초기 스텟 유닛 테이터
     // 실제 사용 용 유닛 데이터
     public ProvokeState provokeState;
-    public Unit _targetUnit;
-    public bool _ableToAttack;
-    public bool _needToMove;
+    public Unit targetUnit;
+
+    public bool ableToAttack;
+    public bool needToMove;
 
     public List<CharacterInfoData> _characterInfoDataList= new List<CharacterInfoData>();
     public virtual void InitUnit()
     {
         _tr = transform;
 
-        _stateMgr = GetComponentInChildren<StateManager>();
-        _animMgr = GetComponentInChildren<AnimManager>();
-        _behaviourMgr = GetComponentInChildren<BehaviourManager>();
-        _moveMgr = GetComponentInChildren<MoveManager>();
+        stateMgr = GetComponentInChildren<StateManager>();
+        animMgr = GetComponentInChildren<AnimManager>();
+        behaviourMgr = GetComponentInChildren<BehaviourManager>();
+        moveMgr = GetComponentInChildren<MoveManager>();
 
-        _stateMgr.InitStateMgr(this);
-        _animMgr.InitAnimMgr(this);
-        _behaviourMgr.InitBehaviourMgr(this);
-        _moveMgr.InitMoveMgr(this);
+        stateMgr.InitStateMgr(this);
+        animMgr.InitAnimMgr(this);
+        behaviourMgr.InitBehaviourMgr(this);
+        moveMgr.InitMoveMgr(this);
 
-        provokeState = (ProvokeState)_stateMgr.GetState(EnumInfo.State.Provoke);
+        provokeState = (ProvokeState)stateMgr.GetState(EnumInfo.State.Provoke);
     }
 
     public virtual void SetUserData(EnumInfo.TeamType _tType, UnitData _uData)
     {
         _teamType = _tType;
-        _unitData = _uData;
+        unitData = _uData;
         unitRealData.InitUnitRealData(this);
-        _animMgr.SetUserData(_unitData, _teamType);
-        _behaviourMgr.SetUserData(_unitData, _teamType);
+        animMgr.SetUserData(unitData, _teamType);
+        behaviourMgr.SetUserData(unitData, _teamType);
 
-        if (!_unitData.Character.Equals("0"))
+        if (!unitData.Character.Equals("0"))
         {
-            string[] _chars = _unitData.Character.Split('/');
+            string[] _chars = unitData.Character.Split('/');
             for (int i = 0; i < _chars.Length; i++)
                 _characterInfoDataList.Add(DataManager.Instance.GetCharacterInfoDataWithCharacter(_chars[i]));
         }
@@ -70,10 +71,10 @@ public class Unit : MonoBehaviour
     {      
         unitRealData.StartBattle();
 
-        _stateMgr.StartBattle();
-        _animMgr.StartBattle();
-        _behaviourMgr.StartBattle();
-        _moveMgr.StartBattle();
+        stateMgr.StartBattle();
+        animMgr.StartBattle();
+        behaviourMgr.StartBattle();
+        moveMgr.StartBattle();
 
 
         _tr.position = _tile.transform.position;
@@ -83,31 +84,32 @@ public class Unit : MonoBehaviour
 
     public virtual void TakeImpactData(UnitImpactData _uImpactData)
     {
-        _stateMgr.TakeDamage(_uImpactData.damage);
-        _stateMgr.ChangeState(_uImpactData.changeState);
+        stateMgr.TakeDamage(_uImpactData.damage);
+        stateMgr.ChangeState(_uImpactData.changeState);
     }
 
     public virtual void SetPosition()
     {
-        _moveMgr.SetPosition();
+        moveMgr.SetPosition();
     }
     
     public virtual void StartBehaviour()
     {
-        _behaviourMgr.StartBehaviour();
+        behaviourMgr.StartBehaviour();
+        StartCoroutine(ProcessSearch());
     }
       
     public virtual void RestorePosition()
     {
-        _moveMgr.RestorePosition();
+        moveMgr.RestorePosition();
     }
 
     public virtual void FinishBattle()
     {
-        _stateMgr.FinishBattle();
-        _animMgr.FinishBattle();
-        _behaviourMgr.FinishBattle();
-        _moveMgr.FinishBattle();
+        stateMgr.FinishBattle();
+        animMgr.FinishBattle();
+        behaviourMgr.FinishBattle();
+        moveMgr.FinishBattle();
 
         _tr.position = _tile.transform.position;
         gameObject.SetActive(true);
@@ -117,26 +119,30 @@ public class Unit : MonoBehaviour
 
     public virtual void Die()
     {
-        _stateMgr.Die();
-        _animMgr.Die();
-        _behaviourMgr.Die();
-        _moveMgr.Die();
+        stateMgr.Die();
+        animMgr.Die();
+        behaviourMgr.Die();
+        moveMgr.Die();
 
-        _needToMove = false;
-        _ableToAttack = false;
+        needToMove = false;
+        ableToAttack = false;
 
         gameObject.SetActive(false);
         UnitManager.Instance.CheckBattleResult();
     }
 
-    public virtual IEnumerator ProcessBehaviour()
+    public virtual IEnumerator ProcessSearch()
     {
         yield return null;
     }
 
+    public virtual IEnumerator ProcessCoolTime()
+    {
+        yield return null;
+    }
     public bool CheckAbleToUseSkill()
     {
-        if (_stateMgr._curMana >= unitRealData.MaxMana){
+        if (stateMgr._curMana >= unitRealData.MaxMana){
             return true;
         }
         return false;

@@ -130,7 +130,7 @@ public class UnitManager : MonoBehaviour
 
         for (int i = 0; i < _curUnitsOnTile.Count; i++)
         {
-            if (_curUnitsOnTile[i]._stateMgr._isLiving)
+            if (_curUnitsOnTile[i].stateMgr._isLiving)
             {
                 _curAliveUnitsOnTile.Add(_curUnitsOnTile[i]);
 
@@ -187,7 +187,7 @@ public class UnitManager : MonoBehaviour
 
         for (int i = 0; i < _curUnitsOnTile.Count; i++)
         {
-            if (_curUnitsOnTile[i]._stateMgr._isLiving)
+            if (_curUnitsOnTile[i].stateMgr._isLiving)
             {
                 _curAliveUnitsOnTile.Add(_curUnitsOnTile[i]);
 
@@ -246,7 +246,7 @@ public class UnitManager : MonoBehaviour
         {
             if (!_curUnitsOnTile[i].gameObject.activeSelf)
                 continue;
-            _curUnitsOnTile[i]._stateMgr.Penalty();
+            _curUnitsOnTile[i].stateMgr.Penalty();
         }
     }
 
@@ -281,12 +281,12 @@ public class UnitManager : MonoBehaviour
 
     public Unit CombineUnit(Unit _tUnit, Unit _mUnit,Tile _t) // 유닛 병합
     {
-        int _nextLv = _tUnit._unitData.ReinforceLv + _mUnit._unitData.ReinforceLv;
+        int _nextLv = _tUnit.unitData.ReinforceLv + _mUnit.unitData.ReinforceLv;
 
-        if (_tUnit._unitData.MaxReinforce < _nextLv)
+        if (_tUnit.unitData.MaxReinforce < _nextLv)
             return null;
 
-        return CreateUnit(_tUnit._unitData.UnitName, _nextLv,_t,_tUnit._teamType);
+        return CreateUnit(_tUnit.unitData.UnitName, _nextLv,_t,_tUnit._teamType);
     }
 
 
@@ -337,12 +337,12 @@ public class UnitManager : MonoBehaviour
 
    /* UnitData GetNextLvUnit(string _uName,int _nextLv)
     {
-        for(int i =0; i < DataManager.Instance._unitDataContainer.UnitData.Length; i++)
+        for(int i =0; i < DataManager.Instance.unitDataContainer.UnitData.Length; i++)
         {
-            if (DataManager.Instance._unitDataContainer.UnitData[i].UnitName.Equals(_uName))
+            if (DataManager.Instance.unitDataContainer.UnitData[i].UnitName.Equals(_uName))
             {
-                if (DataManager.Instance._unitDataContainer.UnitData[i].ReinforceLv == _nextLv)
-                    return DataManager.Instance._unitDataContainer.UnitData[i];
+                if (DataManager.Instance.unitDataContainer.UnitData[i].ReinforceLv == _nextLv)
+                    return DataManager.Instance.unitDataContainer.UnitData[i];
             }
         }
 

@@ -98,7 +98,7 @@ public class TileMousePointer : MonoBehaviour
         if (_downTile._TileIndexType != TileIndexType.Unit || _upTile._TileIndexType != TileIndexType.Unit)
             return;
 
-        if (_downTile._UnitIndex._unitData.UnitName == _upTile._UnitIndex._unitData.UnitName)
+        if (_downTile._UnitIndex.unitData.UnitName == _upTile._UnitIndex.unitData.UnitName)
         {
             ReinforceUnit(_downTile, _upTile);
         }

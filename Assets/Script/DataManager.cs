@@ -90,7 +90,7 @@ public class DataManager : MonoBehaviour
     {
         for(int i = 0; i < _entityDataContainer.EntityData.Length; i++)
         {
-            if (_entityDataContainer.EntityData[i].Idx.Equals(_idx))
+            if (_entityDataContainer.EntityData[i].EntityIdx.Equals(_idx))
             {
                 return _entityDataContainer.EntityData[i];
             }

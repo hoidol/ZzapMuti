@@ -7,6 +7,6 @@ public class ApplySkillDamageEntityBehaviour : EntityBehaviour
     public override void DoBehaviour(Unit _tUnit)
     {
         
-            _tUnit._stateMgr.TakeDamage(entity.ownUnit.unitRealData.skillDamage);
+            _tUnit.stateMgr.TakeDamage(entity.ownUnit.unitRealData.skillDamage);
     }
 }

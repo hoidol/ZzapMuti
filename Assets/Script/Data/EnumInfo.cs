@@ -116,4 +116,17 @@ public class EnumInfo
         Subtraction,
         Division
     }
+
+    public enum UnitBehaviourType
+    {
+        NORMAL, // 일반 행동 (공격)
+        SKILL, // 마나 소비 행동 (스킬)
+        PASSIVE, // 특정 조건 시 발동 되는 행동 (페시브)
+        COMMON // 공용으로 많이 사용되는 행동
+    }
+    public enum EntityAnimType
+    {
+        NONE,
+        LOOKAT
+    }
 }

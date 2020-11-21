@@ -41,7 +41,7 @@ public class EntityManager : MonoBehaviour
             if (_entityList[i].gameObject.activeSelf)
                 continue;
 
-            if (_idx.Equals(_entityList[i].Idx))
+            if (_idx.Equals(_entityList[i].entityIdx))
             {
                 return _entityList[i];
             }
@@ -54,7 +54,7 @@ public class EntityManager : MonoBehaviour
     {
         for(int i =0;i< _entities.Length; i++)
         {
-            if (_entities[i].Idx.Equals(_idx))
+            if (_entities[i].entityIdx.Equals(_idx))
             {
                 Entity _e = Instantiate(_entities[i]);
                 _entityList.Add(_e);

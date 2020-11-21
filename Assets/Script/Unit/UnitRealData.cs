@@ -31,38 +31,38 @@ public class UnitRealData //시너지 등등의 영향으로 바뀌는 캐릭터
     public void InitUnitRealData(Unit _u)
     {
         _curUnit = _u;
-        Hp = _u._unitData.Hp;
-        Defence = _u._unitData.Defence;
-        MagicResistance = _u._unitData.MagicResistance;
+        Hp = _u.unitData.Hp;
+        Defence = _u.unitData.Defence;
+        MagicResistance = _u.unitData.MagicResistance;
 
 
-        AttackSpeed = _u._unitData.AttackSpeed;
-        AttackDistance = _u._unitData.AttackDistance;
+        AttackSpeed = _u.unitData.AttackSpeed;
+        AttackDistance = _u.unitData.AttackDistance;
 
-        DodgeRate = _u._unitData.DodgeRate;
-        RecoverRate = _u._unitData.RecoverRate;
+        DodgeRate = _u.unitData.DodgeRate;
+        RecoverRate = _u.unitData.RecoverRate;
 
-        CriticalRate = _u._unitData.CriticalRate;
-        CriticalDamage = _u._unitData.CriticalDamage;
+        CriticalRate = _u.unitData.CriticalRate;
+        CriticalDamage = _u.unitData.CriticalDamage;
 
-        MaxMana = _u._unitData.MaxMana;
-        ManaChargeAmount = _u._unitData.ManaChargeAmount;
+        MaxMana = _u.unitData.MaxMana;
+        ManaChargeAmount = _u.unitData.ManaChargeAmount;
 
-        InitMana = _u._unitData.InitMana;
+        InitMana = _u.unitData.InitMana;
 
-        if (_u._unitData.DamageType.Equals("Physic"))
+        if (_u.unitData.DamageType.Equals("Physic"))
             normalDamage.Type = EnumInfo.DamageType.Physic;
         else
             normalDamage.Type = EnumInfo.DamageType.Magic;
-        normalDamage.DamagePower = _u._unitData.Damage;
+        normalDamage.DamagePower = _u.unitData.Damage;
         normalDamage.ResourceUnit = _u;
 
-        if (_u._unitData.SkillDamageType.Equals("Physic"))
+        if (_u.unitData.SkillDamageType.Equals("Physic"))
             skillDamage.Type = EnumInfo.DamageType.Physic;
         else
             skillDamage.Type = EnumInfo.DamageType.Magic;
 
-        skillDamage.DamagePower = _u._unitData.SkillDamage;
+        skillDamage.DamagePower = _u.unitData.SkillDamage;
         skillDamage.ResourceUnit = _u;
         unitStageChange.Clear();
     }

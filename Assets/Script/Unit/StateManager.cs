@@ -41,7 +41,7 @@ public class StateManager : MonoBehaviour
         for (int i = 0; i < _states.Length; i++)
             _states[i].InitState(_u);
 
-        _unitInfoText.text = "Lv." + _unit._unitData.ReinforceLv + " " + _unit._unitData.UnitName;
+        _unitInfoText.text = "Lv." + _unit.unitData.ReinforceLv + " " + _unit.unitData.UnitName;
         _dodgeRateState = (DodgeRateState)GetState(EnumInfo.State.DodgeRate);
     }
 
@@ -126,6 +126,16 @@ public class StateManager : MonoBehaviour
             return;
 
         GetState(_cS._changeState).ChangeState(_cS);
+    }
+
+    public bool CheckFullMana()
+    {
+        if(_curMana >= _unit.unitRealData.MaxMana)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public void Penalty()

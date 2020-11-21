@@ -3,57 +3,69 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Archer : Unit
-{
-    public override IEnumerator ProcessBehaviour()
+{ 
+    public override IEnumerator ProcessSearch() //적 찾고 이동 관련 
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.1f);
             if (provokeState._curProvokeStateInfo._resourceUnit != null)
             {
-                if (provokeState._curProvokeStateInfo._resourceUnit._stateMgr._isLiving)
+                if (provokeState._curProvokeStateInfo._resourceUnit.stateMgr._isLiving)
                 {
-                    ProcessMoveAndAttack(provokeState._curProvokeStateInfo._resourceUnit);
+                    ProcessBehaviour(provokeState._curProvokeStateInfo._resourceUnit);
                     continue;
                 }
             }
 
-            if(_targetUnit != null)
+            if(targetUnit != null)
             {
-                if(!_targetUnit._stateMgr._isLiving)
-                    _targetUnit = UnitManager.Instance.SearchNearestEnemyUnit(this);
+                if(!targetUnit.stateMgr._isLiving)
+                    targetUnit = UnitManager.Instance.SearchNearestEnemyUnit(this);
             }
             else
             {
-                _targetUnit = UnitManager.Instance.SearchNearestEnemyUnit(this);
+                targetUnit = UnitManager.Instance.SearchNearestEnemyUnit(this);
             }
 
-            if (_targetUnit == null)
+            if (targetUnit == null)
                 continue;
 
-            ProcessMoveAndAttack(_targetUnit);
+            ProcessBehaviour(targetUnit);
+
+            yield return new WaitForSeconds(0.1f);
         }       
     }
 
-    void ProcessMoveAndAttack(Unit _tUnit)
+    void ProcessBehaviour(Unit _tUnit)
     {
-        _animMgr.UpdateDirection(_tUnit._tr.position - _tr.position);
-
-        if (_unitData.AttackDistance >= Vector2.Distance(_tr.position, _tUnit._tr.position)) // 공격 가능 상태
+        animMgr.UpdateDirection(_tUnit._tr.position - _tr.position);
+        if (unitRealData.AttackDistance >= Vector2.Distance(_tr.position, _tUnit._tr.position)) // 공격 가능 상태
         {
-            _ableToAttack = true;
-            _needToMove = false;
+            needToMove = false;
 
-            _behaviourMgr.DoBehaviour(_tUnit);
+            if (ableToAttack) //공격 속도로
+            {
+                ableToAttack = false;
+                StartCoroutine(ProcessCoolTime());
+                if (stateMgr.CheckFullMana())
+                    behaviourMgr.curBehaviourContainer.SkillBehaviour(targetUnit);                
+                else
+                    behaviourMgr.curBehaviourContainer.NormalBehaviour(targetUnit);
+            }
+           
         }
         else
         {
-            _ableToAttack = false;
-            _needToMove = true;
-            _moveMgr.MoveToUnit(_tUnit);
+            needToMove = true;
+            moveMgr.MoveToUnit(_tUnit);
         }
     }
 
+    public override IEnumerator ProcessCoolTime()
+    {
+        yield return new WaitForSeconds(unitRealData.AttackSpeed);
+        ableToAttack = true;
+    }
 
 
 

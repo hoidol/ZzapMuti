@@ -1,69 +1,25 @@
 {
   "EntityData": [
     {
-      "Idx": 0,
+      "EntityIdx": 0,
+      "EntityName": 0,
+      "ReinforceLv": 0,
       "Duration": 0,
       "MoveSpeed": 0
     },
     {
-      "Idx": "Archer_1_Arrow",
+      "EntityIdx": "ArcherNormal_0",
+      "EntityName": "ArcherNormal",
+      "ReinforceLv": 0,
       "Duration": 5,
       "MoveSpeed": 10
     },
     {
-      "Idx": "AttackBuffSupporter_1_Magic",
-      "Duration": 5,
-      "MoveSpeed": 7
-    },
-    {
-      "Idx": "FireWizard_1_Magic",
-      "Duration": 5,
-      "MoveSpeed": 7
-    },
-    {
-      "Idx": "TrapWizard_1_Magic",
-      "Duration": 5,
-      "MoveSpeed": 7
-    },
-    {
-      "Idx": "HealSupporter_1_Magic",
-      "Duration": 5,
-      "MoveSpeed": 7
-    },
-    {
-      "Idx": "Archer_1_Skill",
+      "EntityIdx": "ArcherSkill_0",
+      "EntityName": "ArcherSkill",
+      "ReinforceLv": 0,
       "Duration": 5,
       "MoveSpeed": 10
-    },
-    {
-      "Idx": "FireWizard_1_Skill",
-      "Duration": 5,
-      "MoveSpeed": 9
-    },
-    {
-      "Idx": "TrapWizard_1_Skill",
-      "Duration": 5,
-      "MoveSpeed": 9
-    },
-    {
-      "Idx": "TrapWizard_2_Skill",
-      "Duration": 5,
-      "MoveSpeed": 9
-    },
-    {
-      "Idx": "TrapWizard_3_Skill",
-      "Duration": 5,
-      "MoveSpeed": 9
-    },
-    {
-      "Idx": "TrapWizard_4_Skill",
-      "Duration": 5,
-      "MoveSpeed": 9
-    },
-    {
-      "Idx": "TrapWizard_5_Skill",
-      "Duration": 5,
-      "MoveSpeed": 9
     }
   ]
 

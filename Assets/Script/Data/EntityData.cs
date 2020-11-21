@@ -1,7 +1,10 @@
 ﻿[System.Serializable]
 public class EntityData 
 {
-    public string Idx;
+    public string EntityIdx;
+    public string EntityName;
+
+    public int ReinforceLv;
     public float Duration;
     public float MoveSpeed;
 }

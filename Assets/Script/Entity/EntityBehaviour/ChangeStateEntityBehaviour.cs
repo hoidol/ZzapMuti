@@ -16,6 +16,6 @@ public class ChangeStateEntityBehaviour : EntityBehaviour
 
     public override void DoBehaviour(Unit _tUnit)
     {
-        _tUnit._stateMgr.ChangeState(_changeState);
+        _tUnit.stateMgr.ChangeState(_changeState);
     }
 }

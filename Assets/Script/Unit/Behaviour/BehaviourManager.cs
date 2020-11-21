@@ -6,114 +6,54 @@ public class BehaviourManager : MonoBehaviour
 {
     public Unit unit;
 
-    UnitBehaviour[] unitBehaivours;
-    UnitBehaviour curUnitBehaivour;
+    BehaviourContainer[] behaviourContainers;
+    public BehaviourContainer curBehaviourContainer;
     [SerializeField] bool _ableToCallNormalBehaviour = false;
-    public void InitBehaviourMgr(Unit _u)
+    public virtual void InitBehaviourMgr(Unit _u)
     {
         unit = _u;
-        unitBehaivours = GetComponentsInChildren<UnitBehaviour>();       
+        behaviourContainers = GetComponentsInChildren<BehaviourContainer>();
+        for (int i = 0; i < behaviourContainers.Length; i++)
+        {
+            behaviourContainers[i].InitBehaviourContainer(_u, i + 1);
+            behaviourContainers[i].gameObject.SetActive(false);
+        }
     }
 
-    public void SetUserData(UnitData _uData, EnumInfo.TeamType _tType)
+    public virtual void SetUserData(UnitData _uData, EnumInfo.TeamType _tType)
     {
-        curUnitBehaivour = unitBehaivours[_uData.ReinforceLv - 1];
-        curUnitBehaivour.SetUserData(_uData, _tType);
+        curBehaviourContainer = behaviourContainers[_uData.ReinforceLv - 1];
+        curBehaviourContainer.SetUserData(_uData, _tType);
+        curBehaviourContainer.gameObject.SetActive(true);
     }
 
-    public void StartBattle()
+    public virtual void StartBattle()
     {
         _ableToCallNormalBehaviour = false;
-        curUnitBehaivour.StartBattle();
-        
-        //Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / unit.unitRealData.AttackSpeed);
-        //StartCoroutine(ProcessNonTargetBehaviour());
+        curBehaviourContainer.StartBattle();
     }
 
-    public void StartBehaviour()
+
+    public virtual void StartBehaviour()
     {
+
         //NonTargetBehaviour있으면 돌리고 없으면 돌리지마
-        curUnitBehaivour.StartBehaviour();
+        curBehaviourContainer.StartBehaviour();
+    }
+    
+    public virtual void NormalBehaviour(Unit _targetUnit = null)
+    {
+        curBehaviourContainer.NormalBehaviour(_targetUnit);
     }
 
-    Unit targetUnit;
-    public void SetTargetUnit(Unit _tUnit)
+    public virtual void SkillBehaviour(Unit _targetUnit = null)
     {
-        targetUnit = _tUnit;
+        curBehaviourContainer.SkillBehaviour(_targetUnit);
     }
 
-    IEnumerator ProcessNonTargetBehaviour()
+    public virtual void PassiveBehaviour(Unit _targetUnit = null)
     {
-        while (true)
-        {
-            bool _usedSkill = false;
-           /* if(_skillBehaviour)
-            {
-                if (_skillBehaviour._nonTarget)
-                {
-                    if (unit._stateMgr._curMana >= unit.unitRealData.MaxMana)
-                    {
-                        _ableToCallNormalBehaviour = false;
-                        unit._stateMgr.ConsumeAllMana();
-                        _skillBehaviour.DoBehaviour();
-                        _usedSkill = true;
-                        CancelInvoke("ResetCoolTime");
-                        Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
-                    }
-                }
-            }
-           
-            if(_normalBehaviour)
-            {
-                if (!_usedSkill)
-                {
-                    if (_normalBehaviour._nonTarget && _ableToCallNormalBehaviour)
-                    {
-                        _ableToCallNormalBehaviour = false;
-                        CancelInvoke("ResetCoolTime");
-                        Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / _attackSpeedState.GetAttackSpeed());
-
-                        _normalBehaviour.DoBehaviour();
-                    }
-                }
-            }
-               */ 
-            yield return null;
-        }
-    }
-
-
-    public void DoBehaviour()
-    {
-
-    }
-
-    public void DoBehaviour(Unit _tU)
-    {
-        bool _usedSkill = false;
-        if (unit._stateMgr._curMana >= unit.unitRealData.MaxMana)
-        {
-
-            _ableToCallNormalBehaviour = false;
-            unit._stateMgr.ConsumeAllMana();
-
-            //마법 써라
-           // _skillBehaviour.DoBehaviour(_tU);
-            _usedSkill = true;
-            CancelInvoke("ResetCoolTime");
-            Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / unit.unitRealData.AttackSpeed);
-
-        }
-
-        if (!_usedSkill && _ableToCallNormalBehaviour)
-        {
-            _ableToCallNormalBehaviour = false;
-            CancelInvoke("ResetCoolTime");
-            Invoke("ResetCoolTime", unit.unitRealData.AttackSpeed * 1 / unit.unitRealData.AttackSpeed);
-
-            //일반 공격해라
-            //_normalBehaviour.DoBehaviour(_tU);
-        }
+        curBehaviourContainer.PassiveBehaviour(_targetUnit);
     }
 
     void ResetCoolTime()

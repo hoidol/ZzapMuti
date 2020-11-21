@@ -5,12 +5,14 @@ using UnityEngine;
 public class UnitAnim : MonoBehaviour
 {
     AnimManager animMgr;
-    public int reinforceLv;
+    int reinforceLv;
     Animator anim;
 
-    public void InitUnitAnim(AnimManager _aMgr)
+    public void InitUnitAnim(AnimManager _aMgr, int _rLv)
     {
-        anim = GetComponent<Animator>();
+
+           anim = GetComponent<Animator>();
+        reinforceLv = _rLv;
         animMgr = _aMgr;
     }
 

@@ -6,6 +6,6 @@ public class ApplyDamageEntityBehaviour : EntityBehaviour
 {
     public override void DoBehaviour(Unit _tUnit)
     {
-        _tUnit._stateMgr.TakeDamage(entity.ownUnit.unitRealData.normalDamage);
+        _tUnit.stateMgr.TakeDamage(entity.ownUnit.unitRealData.normalDamage);
     }
 }

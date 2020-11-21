@@ -41,7 +41,7 @@ public class AssassinMove : UnitMove
         {
             yield return null;
 
-            if (!_unit._needToMove)
+            if (!_unit.needToMove)
                 continue;
 
 

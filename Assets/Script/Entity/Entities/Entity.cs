@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    public string Idx;
+    public string entityIdx;
+    public string entityName;
     public EntityData entityData;
     public Transform tr;
     public Unit ownUnit;
     public EntityAnimManager animMgr;
     public EntityBehaviourManager behaviourMgr;
     public EntityMoveManager moveMgr;
-    public void InitEntity()
+    public virtual void InitEntity()
     {
         tr = transform;
         
-        entityData = DataManager.Instance.GetEntityDataWithIdx(Idx);
+        entityData = DataManager.Instance.GetEntityDataWithIdx(entityIdx);
+
         animMgr = GetComponentInChildren<EntityAnimManager>();
         behaviourMgr = GetComponentInChildren<EntityBehaviourManager>();
         moveMgr = GetComponentInChildren<EntityMoveManager>();
@@ -26,7 +28,7 @@ public class Entity : MonoBehaviour
     }
 
 
-    public void CallEntity(Unit _u, Unit _tUnit)
+    public virtual void CallEntity(Unit _u, Unit _tUnit)
     {
         ownUnit = _u;
 
@@ -37,7 +39,7 @@ public class Entity : MonoBehaviour
         StartCoroutine(ProcessDuration());
     }
 
-    public void CallEntity(Unit _u, Vector2 _v)
+    public virtual void CallEntity(Unit _u, Vector2 _v)
     {
         ownUnit = _u;
 
@@ -47,13 +49,13 @@ public class Entity : MonoBehaviour
         StartCoroutine(ProcessDuration()); 
     }
 
-    IEnumerator ProcessDuration()
+    public IEnumerator ProcessDuration()
     {
         yield return new WaitForSeconds(entityData.Duration);
         DestroyEntity();
     }
 
-    public void DestroyEntity()
+    public virtual void DestroyEntity()
     {
         gameObject.SetActive(false);
     }

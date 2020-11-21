@@ -5,9 +5,12 @@ using UnityEngine;
 public class EntityAnim : MonoBehaviour
 {
     public Entity entity;
+
+    public EnumInfo.EntityAnimType type;
     public virtual void InitEntityAnim(Entity _e)
     {
         entity = _e;
+        gameObject.SetActive(false);
     }
 
     public virtual void CallEntity(Unit _tUnit)

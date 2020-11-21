@@ -38,7 +38,7 @@ public class RepeatDamageState : State
             if (_timer <= 0)
                 break;
 
-            _unit._stateMgr.TakeDamage(_d);
+            _unit.stateMgr.TakeDamage(_d);
             yield return new WaitForSeconds(0.5f);
             _timer -= 0.5f;
         }
